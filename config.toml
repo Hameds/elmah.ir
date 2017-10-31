@@ -1,7 +1,7 @@
 baseURL = "http://elmah.ir/"
 languageCode = "fa-ir"
 title = "elmah"
-theme = "hugo-nuo"
+theme = "nuo"
 enableRobotsTXT = true
 pygmentsuseclasses = true
 PygmentsCodeFences = true
