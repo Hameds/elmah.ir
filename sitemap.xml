@@ -3,17 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>http://elmah.ir/about/</loc>
+    <lastmod>2017-10-31T20:50:36+03:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://elmah.ir/post/hello-world/</loc>
+    <lastmod>2017-10-31T20:50:36+03:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://elmah.ir/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://elmah.ir/post/</loc>
+    <lastmod>2017-10-31T20:50:36+03:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://elmah.ir/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://elmah.ir/</loc>
+    <lastmod>2017-10-31T20:50:36+03:30</lastmod>
     <priority>0</priority>
   </url>
   
