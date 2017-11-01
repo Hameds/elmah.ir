@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>تست جوئل قسمت اول: source control</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="جوئل کیست؟ جوئل اسپالسکی، یک مهندس نرم‌افزار اهل نیویورک است، او در سال 2000 شرکت Fog Creek را بنیان نهاد و در سال 2008 به همراه جف آتوود، سایت Stack overflow را ایجاد کرد. شهرت اسپالسکی در کنار موسس Stack overflow بودن، به خاطر وبلاگی که در حوزه توسعه نرم‌افزاری دارد هم هست: Joel On Software
+ جوئل اسپالسکی   داستان تست جوئل چیست؟ یکی از مطالب مهم و مفیدی که جوئل در وبلاگش نوشته، تست جوئل 12 گام برای کد بهتر هست، که نسخه اصلی تست را در این آدرس و نسخه ترجمه فارسی را در این آدرس می‌توانید مشاهده کنید." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="تست جوئل قسمت اول: source control" />
+    <meta name="twitter:description" content="جوئل کیست؟ جوئل اسپالسکی، یک مهندس نرم‌افزار اهل نیویورک است، او در سال 2000 شرکت Fog Creek را بنیان نهاد و در سال 2008 به همراه جف آتوود، سایت Stack overflow را ایجاد کرد. شهرت اسپالسکی در کنار موسس Stack overflow بودن، به خاطر وبلاگی که در حوزه توسعه نرم‌افزاری دارد هم هست: Joel On Software
+ جوئل اسپالسکی   داستان تست جوئل چیست؟ یکی از مطالب مهم و مفیدی که جوئل در وبلاگش نوشته، تست جوئل 12 گام برای کد بهتر هست، که نسخه اصلی تست را در این آدرس و نسخه ترجمه فارسی را در این آدرس می‌توانید مشاهده کنید." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/2-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--source-control/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">تست جوئل قسمت اول: source control</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 6 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="جوئل-کیست">جوئل کیست؟</h3>
+
+<p>جوئل اسپالسکی، یک مهندس نرم‌افزار اهل نیویورک است، او در سال 2000 شرکت <a href="http://www.fogcreek.com/">Fog Creek</a> را بنیان نهاد و در سال 2008 به همراه جف آتوود، سایت <a href="http://stackoverflow.com/">Stack overflow</a> را ایجاد کرد. شهرت اسپالسکی در کنار موسس Stack overflow بودن، به خاطر وبلاگی که در حوزه توسعه نرم‌افزاری دارد هم هست: <a href="http://www.joelonsoftware.com/">Joel On Software</a></p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/JoelSpolsky.jpg"  />
+    
+    
+    <figcaption>
+        <h4>جوئل اسپالسکی</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="داستان-تست-جوئل-چیست">داستان تست جوئل چیست؟</h3>
+
+<p>یکی از مطالب مهم و مفیدی که جوئل در وبلاگش نوشته، تست جوئل 12 گام برای کد بهتر هست، که نسخه اصلی تست را در <a href="http://www.joelonsoftware.com/articles/fog0000000043.html">این آدرس</a> و نسخه ترجمه فارسی را در <a href="http://farsi.joelonsoftware.com/Articles/TheJoelTest.html">این آدرس</a> می‌توانید مشاهده کنید.<br />
+تست جوئل در واقع به شرکت‌ها و تیم‌های نرم‌افزاری کمک می‌کند کیفیت و شایستگی خودشان را بسنجند، جوئل در معرفی تستش این‌طور می‌نویسد:</p>
+
+<blockquote>
+<p>آیا تا بحال نام  SEMA (Software Engineering Measurement and Analysis)  را شنیده‌اید؟  SEMA، سیستم نسبتاً مبهمی است برای اندازه گیری شايستگی یک تیم نرم‌افزاری. نه! صبر كنيد، به سایت آن نروید، زیرا فقط شش سال طول می‌کشد تا مطالب آن را بفهمید. به همین علت من تست کاملاً نامرتب و نامعتبر (!) خودم را برای ارزیابی كيفيت یک تیم نرم‌افزاری درست كردم. بهترین قسمت ماجرا اینجاست كه فقط سه دقیقه از وقتتان را می‌گيرد. با وقتی كه صرفه جویی می‌كنید، می‌توانید به سراغ حرفه پزشکی بروید!</p>
+
+<p>ویژگی شسته و رفته تست جوئل در این است كه به راحتی می‌توان به هر سؤال جواب <strong>بله</strong> یا <strong>نه</strong> داد. شما مجبور نیستید كه تعداد خطهای كد در روز یا تعداد متوسط اشكال در هر قسمت را بشمارید. نقطه ضعف تست جوئل در این است كه نباید از آن برای اطمینان از صحت نرم‌افزار نیروگاه اتمی خود استفاده كنید!</p>
+</blockquote>
+
+<h3 id="تست-شماره-1-آیا-از-source-control-استفاده-می-کنید">تست شماره 1: آیا از source control استفاده می‌کنید؟</h3>
+
+<p>ضمن اینکه توصیه می‌کنم توضیح جوئل درباره تست اول را بخوانید، من از شما سوال می‌کنم ;) آیا در شرکت/تیم نرم‌افزاری خودتان یا حتی در کارهای شخصی از source control استفاده می‌کنید؟</p>
+
+<p>هر نرم‌افزاری از تعدادی فایل source‌ به زبان‌های مختلف تشکیل شده است، مثلاً این وب سایت که با ASP.NET MVC ایجاد شده، تعدادی فایل کد سی شارپ،‌ تعدادی فایل view با استفاده از Razor، تعدادی فایل css و javascript و &hellip; دارد. اگر من فردا بخواهم قابلیت جدیدی به سایت اضافه کنم یا قابلیت‌های موجود را ارتقاء بدهم یا باگی را برطرف کنم باید در این فایل‌ها دستکاری کنم، اما صبر کنید، چه بلایی سر نسخه قبلی فایل‌ها می‌آید؟</p>
+
+<p>در این موارد 2 راه حل وجود دارد:</p>
+
+<p>1- کپی کردن source های نسخه قبلی و مثلاً rar کردن و بکاپ گرفتن به همراه درج تاریخ بکاپ در عنوان فایل rar!</p>
+
+<p>2- استفاده از نرم‌افزارهای source control</p>
+
+<p>کار اصلی نرم‌افزارهای source control‌ این است که تغییرات داده شده روی فایل‌های source را نگهداری می‌کنند. البته این نرم‌افزارها قابلیت‌های دیگری هم دارند که به آن‌ها اشاره خواهم کرد.
+مکانیزم اصلی source control ها این است که در یک تیم، اعضاء‌ می‌توانند یک یا تعدادی فایل را دریافت کنند، موقع دریافت این فایل‌ها به آن‌ها تحویل می‌شود (check out)، برنامه‌نویس، تغییرات لازم را در فایل ایجاد می‌کند و بعد دوباره فایل را تحویل می‌دهد (check in یا commit) موقع تحویل دادن می‌تواند کامنتی هم بنویسد که مثلاً فلان باگ را در تابع xyz برطرف کردم.</p>
+
+<p>source control در این پروسه، یک نسخه جدید از فایل را ایجاد و نسخه قبلی را نیز نگهداری می‌کند تا اگر روزی بخواهید تاریخچه فایل را نگاه کنید، یا بعداً خواستید نسخه خاصی را بازیابی کنید بتوانید به راحتی این کار را انجام دهید.این مکانیزم، نسخه بندی نرم‌افزار را بسیار ساده‌تر می‌کند، از overwrite های اشتباهی و از دست رفتن کد جلوگیری می‌کند و بالاخره کار تیمی روی پروژه‌های نرم‌افزاری را ممکن می‌سازد.</p>
+
+<p>در کنار این قابلیت اصلی، قابلیت‌های دیگری مثل ایجاد یک branch از source اصلی و کار بر روی آن و اعمال تغییرات (merge) از کارهای تیمی نیز وجود دارد و همچنین قابلیت‌های ریز و درشت دیگر که برای خودش یک داستان دیگر دارد و در نوشته‌ای دیگر به آن اشاره خواهم کرد.</p>
+
+<h4 id="متوجه-شدم-source-control-خوبه-حالا-از-کدام-source-contol-استفاده-کنم">متوجه شدم، source control خوبه، حالا از کدام source contol استفاده کنم؟</h4>
+
+<p>برای پاسخ به این سوال کمی از شما فرصت می‌خواهم تا به تدریج زوایای پنهان انتخاب source control‌ مناسب و همین‌طور فرهنگ کدنویسی در یک محیط تیمی را در چند نوشته برایتان روشن کنم، اما برای پاسخ اجمالی باید اشاره کنم که source control‌های مختلفی وجود دارند، یک مقایسه کامل از امکانات مختلف نرم‌افزارهای این حوزه را می‌توانید در این صفحه ویکی پدیا مشاهده کنید:</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Comparison_of_revision_control_software">Comparison of revision control software</a></p>
+
+<p>اگر برای اولین بار هست که دارید از source control‌ها استفاده می‌کنید و در یک محیط ویندوزی، به توسعه نرم‌افزار مشغول هستید از نرم‌افزارهای ساده‌تر شروع کنید چیزی مثل Source Safe (لازم است توضیح بدهم که آخرین نسخه Source Safe مربوط به سال 2005 هست و برای یک تیم بزرگ یا حجم زیاد کد جوابگو نیست) اما اگر از نان گندم استفاده نکردید اما دست مردم دیدید، بروید سراغ نرم‌افزارهای جدید و قوی تر مثل TFS.</p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/tfs_sc1.png"  />
+    
+    
+    <figcaption>
+        <h4>نمایی از مشاهده اطلاعات فایل‌های تغییر یافته در یک changeset در نسخه تحت وب TFS 2012</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>قبل از اینکه طرفداران git یا svn مرا به طرفداری و معرفی صرف نرم‌افزارهای مایکروسافتی متهم کنند، خواهش می‌کنم تا نوشته‌ای که به صورت خاص در توضیح source control ها خواهم نوشت صبر کنید، آن زمان لینک نوشته را به این پست هم اضافه خواهم کرد.</p>
+
+<h4 id="اشتباهات-رایج-در-استفاده-از-source-control-ها">اشتباهات رایج در استفاده از source control ها</h4>
+
+<p>خب همه چیز مرتب به نظر می‌آید، دیگر از انبوه فایل‌های rar مربوط به source‌ که لیست تغییرات در فایل txt در آن‌ها ذخیره شده خبری نیست، شما یک source control روی سیستم‌تان نصب کردید. صبر کن! چی گفتی؟ روی سیستم خودت نصب کردی؟</p>
+
+<p>اجازه بدهید دوباره من از شما سوال کنم: اگر خدای نکرده هارد سیستم شما افتاد و دیگر هیچ فایلی قابل بازیابی نبود، آیا مهم هست که فایل‌های شما نسخه خورده باشند یا نخورده باشند؟ source control آمده تا در روز گرفتاری، نسخه پشتیبان را به شما برساند، اگر قرار باشد خودش در معرض خطر نابودی قرار بگیرد که اصلی‌ترین هدفش نقض غرض می‌شود!</p>
+
+<p>source control را حتماً روی یک سیستم دیگر نصب کنید و از طریق شبکه با آن کار کنید و هر از گاهی هم یک backup از database مربوط به source control تهیه کنید.</p>
+
+<p>بسیار خب، source control روی سیستم دیگر نصب شد، حالا بروم به سراغ رفع اون 5 تا باگ که دیروز گزارش شد، خب این از این، این هم از این و حالا 5 تا باگ رفع شدند، این هم از check in کد.</p>
+
+<p>اشکال رفتار بالا این است که برنامه‌نویس 5 تا باگ که احتمالاً از بخش‌های مختلفی از کد و در فایل‌های متفاوتی هستند را با هم حل کرده و بعد کد را یکجا check in کرده، این کار، رهگیری تغییرات را در آینده مشکل می‌کند. برای اطلاع از خصوصیات یک commit‌ یا check in‌ خوب این مطلب را مطالعه کنید: <a href="http://dev.solita.fi/2013/07/04/whats-in-a-good-commit.html">What&rsquo;s in a Good Commit</a></p>
+
+<p>همان‌طور که اشاره کردم، استفاده از source control در تیم‌های نرم‌افزاری نیازمند فرهنگ سازی است، در این باره و درباره انتخاب source control در مجالی دیگر خواهم نوشت.</p>
+
+<p>پی نوشت: از جوئل اسپالسکی و افراد مشابه در صنعت نرم‌افزار و شرح بر مقالات و نظراتشان بیشتر در این سایت خواهید دید.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>736633</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

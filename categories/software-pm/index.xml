@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Pm on elmah</title>
+    <link>http://elmah.ir/categories/software-pm/</link>
+    <description>Recent content in Software Pm on elmah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fa-ir</language>
+    
+	<atom:link href="http://elmah.ir/categories/software-pm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>تست جوئل قسمت اول: source control</title>
+      <link>http://elmah.ir/post/2-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--source-control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://elmah.ir/post/2-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--source-control/</guid>
+      <description>جوئل کیست؟ جوئل اسپالسکی، یک مهندس نرم‌افزار اهل نیویورک است، او در سال 2000 شرکت Fog Creek را بنیان نهاد و در سال 2008 به همراه جف آتوود، سایت Stack overflow را ایجاد کرد. شهرت اسپالسکی در کنار موسس Stack overflow بودن، به خاطر وبلاگی که در حوزه توسعه نرم‌افزاری دارد هم هست: Joel On Software
+ جوئل اسپالسکی   داستان تست جوئل چیست؟ یکی از مطالب مهم و مفیدی که جوئل در وبلاگش نوشته، تست جوئل 12 گام برای کد بهتر هست، که نسخه اصلی تست را در این آدرس و نسخه ترجمه فارسی را در این آدرس می‌توانید مشاهده کنید.</description>
+    </item>
+    
+  </channel>
+</rss>

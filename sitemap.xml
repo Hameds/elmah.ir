@@ -24,6 +24,11 @@
   </url>
   
   <url>
+    <loc>http://elmah.ir/categories/software-pm/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://elmah.ir/tags/</loc>
     <priority>0</priority>
   </url>
@@ -32,6 +37,10 @@
     <loc>http://elmah.ir/</loc>
     <lastmod>2017-10-31T20:50:36+03:30</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://elmah.ir/post/2-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--source-control/</loc>
   </url>
   
 </urlset>
