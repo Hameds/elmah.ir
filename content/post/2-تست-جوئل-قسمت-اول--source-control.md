@@ -1,6 +1,6 @@
 ---
  title: "تست جوئل قسمت اول: source control" 
- date: 2013-7-18T19:12:16+03:30
+ date: 2013-07-18T19:12:16+03:30
  draft: false 
  categories: ["Software PM"]
 ---
