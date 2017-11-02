@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sharepoint Development on elmah</title>
+    <link>http://elmah.ir/categories/sharepoint-development/</link>
+    <description>Recent content in Sharepoint Development on elmah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fa-ir</language>
+    <lastBuildDate>Mon, 29 Jul 2013 19:18:30 +0330</lastBuildDate>
+    
+	<atom:link href="http://elmah.ir/categories/sharepoint-development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>پروژه افزونه بارگذاری jQuery در شیرپوینت 2010</title>
+      <link>http://elmah.ir/post/14-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D8%A7%D9%81%D8%B2%D9%88%D9%86%D9%87-%D8%A8%D8%A7%D8%B1%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-jquery-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-2010/</link>
+      <pubDate>Mon, 29 Jul 2013 19:18:30 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/14-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D8%A7%D9%81%D8%B2%D9%88%D9%86%D9%87-%D8%A8%D8%A7%D8%B1%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-jquery-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-2010/</guid>
+      <description>در شیرپوینت 2010 اگر بخواهید کد jQuery بنویسید یا از پلاگین‌های آن استفاده کنید باید مثل هر وب اپلکیشن دیگر ابتدا رفرنسی به فایل jQuery بدهید. این کار از دو طریق امکان پذیر است: استفاده از یک وب پارت مثلاً فرم html و قرار دادن تگ script در آن و دوم از طریق قرار دادنش در master page.
+راه حل اول به درد زمانی می‌خورد که می‌خواهید jQuery را در یک صفحه داشته باشید و راه حل دوم برای زمانی که می‌خواهید jQuery در تمام سایت قابل استفاده باشد.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>پروژه افزونه بارگذاری jQuery در شیرپوینت 2010</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="در شیرپوینت 2010 اگر بخواهید کد jQuery بنویسید یا از پلاگین‌های آن استفاده کنید باید مثل هر وب اپلکیشن دیگر ابتدا رفرنسی به فایل jQuery بدهید. این کار از دو طریق امکان پذیر است: استفاده از یک وب پارت مثلاً فرم html و قرار دادن تگ script در آن و دوم از طریق قرار دادنش در master page.
+راه حل اول به درد زمانی می‌خورد که می‌خواهید jQuery را در یک صفحه داشته باشید و راه حل دوم برای زمانی که می‌خواهید jQuery در تمام سایت قابل استفاده باشد." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="پروژه افزونه بارگذاری jQuery در شیرپوینت 2010" />
+    <meta name="twitter:description" content="در شیرپوینت 2010 اگر بخواهید کد jQuery بنویسید یا از پلاگین‌های آن استفاده کنید باید مثل هر وب اپلکیشن دیگر ابتدا رفرنسی به فایل jQuery بدهید. این کار از دو طریق امکان پذیر است: استفاده از یک وب پارت مثلاً فرم html و قرار دادن تگ script در آن و دوم از طریق قرار دادنش در master page.
+راه حل اول به درد زمانی می‌خورد که می‌خواهید jQuery را در یک صفحه داشته باشید و راه حل دوم برای زمانی که می‌خواهید jQuery در تمام سایت قابل استفاده باشد." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/14-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D8%A7%D9%81%D8%B2%D9%88%D9%86%D9%87-%D8%A8%D8%A7%D8%B1%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-jquery-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-2010/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">پروژه افزونه بارگذاری jQuery در شیرپوینت 2010</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 5 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>در شیرپوینت 2010 اگر بخواهید کد jQuery بنویسید یا از پلاگین‌های آن استفاده کنید باید مثل هر وب اپلکیشن دیگر ابتدا رفرنسی به فایل jQuery بدهید. این کار از دو طریق امکان پذیر است: استفاده از یک وب پارت مثلاً فرم html و قرار دادن تگ script در آن و دوم از طریق قرار دادنش در master page.<br />
+راه حل اول به درد زمانی می‌خورد که می‌خواهید jQuery را در یک صفحه داشته باشید و راه حل دوم برای زمانی که می‌خواهید jQuery در تمام سایت قابل استفاده باشد.</p>
+
+<p>برای راه حل دوم یعنی دستکاری masterpage روال کار این‌طوری است که ابتدا با استفاده از شیرپوینت دیزاینتر به سایت متصل شوید و فایل masterpage اصلی را تحویل بگیرید (check out) و برای ویرایش باز کنید و تگ script را به بخش مناسبی از آن اضافه کنید و بعد آن را تحویل بدهید (check in) و سپس برای اینکه همه کاربران آن تغییر را مشاهده کنند آن را publish و سپس تایید (Approve) کنید.<br />
+البته ملاحظاتی هم درباره محل قرارگیری فایل jQuery وجود دارد مثلاً می‌توانید آن را در پوشه layouts قرار بدهید یا در سایت آپلود کنید ولی به هر حال باز هم مساله آدرس دهی نسبی پیش می‌آید که البته قابل حل است. درباره آدرس‌دهی نسبی در ادامه همین نوشته توضیح خواهم داد.</p>
+
+<p>اما راه حل ساده‌تری هم هست. امروز من یک پروژه در github قرار دادم که به کمک آن به فعال کردن یک feature‌ می‌توانید jQuery را به سایت خودتان اضافه کنید. <a href="https://github.com/Hameds/Araye.SharePoint.jQueryLoader">پروژه Araye jQuery Loader</a></p>
+
+<p><img src="http://elmah.ir/oldimg/araye_jqueryloader_feature.png" alt="" /></p>
+
+<p>مزیت اصلی پروژه Araye jQuery Loader این است که بدون اینکه هیچ تغییری در master page بدهید هر موقع بخواهید می‌توانید با فعال کردن feature مربوطه jQuery را به سایت اضافه و با غیرفعال کردن آن از سایت حذف کنید. همچنین این feature به دلیل آنکه د سطح سایت تعریف شده می‌توان به صورت جداگانه برای زیرسایت‌های مختلف آن را فعال یا غیرفعال کرد.</p>
+
+<h3 id="کالبد-شکافی-پروژه-jquery-loader">کالبد شکافی پروژه jQuery Loader</h3>
+
+<p>قبل از هر چیز اگر فقط مایل هستید که محصول نهایی  استفاده کنید می‌توانید فایل wsp را از <a href="https://github.com/Hameds/Araye.SharePoint.jQueryLoader/tree/master/wsp">پوشه wsp</a> پروژه بردارید و استفاده کنید (اگر نحوه نصب را نمی‌دانید در readme پروژه مراحل افزودن wsp به شیرپوینت نوشته شده است) اما اگر مایل هستید با نحوه کار پروژه آشنا بشوید به موارد زیر احتیاج دارید:</p>
+
+<ul>
+<li>Visual Studio 2012 که الگوهای پروژه شیرپوینتی هم در آن باشد.</li>
+<li><a href="http://cksdev.codeplex.com/">CKS Dev</a> مخصوص Visual Studio 2012 البته از آن برای ساخت Custom Action استفاده کردم ولی شما می‌توانید با یک Empty Element هم کارتان را راه بیاندازید.</li>
+</ul>
+
+<p>اگر سورس پروژه jQuery Loader را نگاه کنید می‌بینید از دو بخش ساده که در قالب فایل‌های xml هستند تشکیل شده، یکی بخش module که وظیفه آپلود فایل jQuery را دارد و دیگری یک فایل xml که Custom Action مورد نیاز برای اضافه کردن refrence به فایل jQuery است.</p>
+
+<h3 id="module-آپلود-کننده-فایل-jquery">module آپلود کننده فایل jQuery</h3>
+
+<p>ابتدا تعریف موجود در فایل xml مربوط به jQueryFileModule را با هم بررسی می‌کنیم:</p>
+
+<script src="//gist.github.com/hameds/58b56bc46cafedce4fe413d3bf8613ea.js"></script>
+
+<p>همان طور که در خط highlight شده مشخص است، فایل موجود در پوشه jQueryFileModule که فایل نسخه 1.10.2 jQuery است به root سایت اضافه می‌شود. اگر بخواهیم می‌توانیم آن را در کتابخانه مشخصی آپلود کنیم.<br />
+ضمناً تعریف مربوط به File یک Attribute به نام Type دارد که مقادیر Ghostable یا GhostableInLibrary را می‌تواند داشته باشد. درباره module ها در برنامه‌نویسی شیرپوینت و فرق این Type ها بعداً در نوشته جداگانه‌ای مفصل صحبت خواهم کرد. <br />
+فعلاً همین‌قدر بدانید که فایل jQuery در root سایت کپی می‌شود اما شما نمی‌توانید آن را ببینید. در واقع فقط به دیتابیس سایت اضافه شده و به صورت یک فایل فیزیکی قابل مشاهده نیست.</p>
+
+<h3 id="customaction-اضافه-کننده-لینک-به-jquery">CustomAction اضافه کننده لینک به jQuery</h3>
+
+<p>هدف این است که یک تگ script که src آن لینک به فایل jQuery آپلود شده در مرحله قبل است ایجاد کنیم. داخل masterpage های شیرپوینتی در داخل تگ head یک کنترل شیرپوینتی هست به نام ScriptLink که تعریف زیر را دارد. به این کنترل می‌توانیم با برنامه‌نویسی یا از طریق CustomAction ها می‌توانیم در حین اجرا به آن‌ها کنترل یا کد اضافه کنیم!</p>
+
+<script src="//gist.github.com/hameds/329c9c9f31db77fdee99bc3955a7fae0.js"></script>
+
+<p>در این پروژه از تعریف xml ای زیر برای ایجاد لینک مورد نظر در masterpage استفاده می‌کنیم:</p>
+
+<script src="//gist.github.com/hameds/6b02428a0fa853c6c3d33361a96050a1.js"></script>
+
+<p>تنها نکته مهم در این تعریف استفاده از توکن <code>~site</code> برای آدرس‌دهی است. همان‌طور که در ابتدای نوشته گفتم اگر بخواهیم می‌توانیم همه این کارها را به صورت دستی در masterpage انجام بدهیم، اگر بخواهیم از آدرس‌دهی نسبی استفاده کنیم برای آدرس دادن به سایت جاری از توکن <code>~site</code> و برای آدرس دهی مجموعه سایت از توکن <code>~sitecollection</code> می‌توانیم استفاده کنیم.</p>
+
+<p>خب بخش‌های اصلی پروژه تمام هستند. بقیه بخش‌ها بیشتر مربوط به package کردن و برندینگ package است. یک تصویر برای لوگو انتخاب شده، فایل‌های resource پروژه برای زبان‌های فارسی و همین‌طور زبان عمومی (انگلیسی) ایجاد شده و در نهایت دو بخشی که در بالا توضیح داده شد به یک feature در scope وب اضافه شده‌اند. کامپایل مجموعه این پروژه و Publish کردن یک wsp استاندارد به شما می‌دهد که به راحتی می‌توانید آن را به فارم شیرپوینتی خود اضافه کنید. از آنجایی که این پروژه هیچ resource ای که آن را محدود به یک سایت خاص بکند ندارد به صورت global در فارم deploy می‌شود و در هر Web Application و سایت شیرپوینتی قابل استفاده خواهد بود.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1556</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

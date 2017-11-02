@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>نگاهی به چند اشتباه رایج در طراحی نرم‌افزارهای تعاملی</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="چوپان دروغگو در نرم‌افزار از ویندوز ویستا به بعد مایکروسافت یک فناوری برای افزایش امنیت را معرفی کرد به نام User Access Control که کارش این بود که از کاربر بپرسد آیا مطمئن است؟ UAC در ظاهر راه حل مناسبی برای کاهش ریسک‌های امنیتی به نظر می‌آمد اما تعداد زیاد پیغام‌ها و این حقیقت که UAC برای هر چیز کوچکی سوال می‌پرسید باعث این شد که کاربران ویندوز بعد از مدتی نسبت به آن واکنش نشان ندهند!" />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="نگاهی به چند اشتباه رایج در طراحی نرم‌افزارهای تعاملی" />
+    <meta name="twitter:description" content="چوپان دروغگو در نرم‌افزار از ویندوز ویستا به بعد مایکروسافت یک فناوری برای افزایش امنیت را معرفی کرد به نام User Access Control که کارش این بود که از کاربر بپرسد آیا مطمئن است؟ UAC در ظاهر راه حل مناسبی برای کاهش ریسک‌های امنیتی به نظر می‌آمد اما تعداد زیاد پیغام‌ها و این حقیقت که UAC برای هر چیز کوچکی سوال می‌پرسید باعث این شد که کاربران ویندوز بعد از مدتی نسبت به آن واکنش نشان ندهند!" />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/15-%D9%86%DA%AF%D8%A7%D9%87%DB%8C-%D8%A8%D9%87-%DA%86%D9%86%D8%AF-%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87-%D8%B1%D8%A7%DB%8C%D8%AC-%D8%AF%D8%B1-%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%AA%D8%B9%D8%A7%D9%85%D9%84%DB%8C/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">نگاهی به چند اشتباه رایج در طراحی نرم‌افزارهای تعاملی</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 3 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="چوپان-دروغگو-در-نرم-افزار">چوپان دروغگو در نرم‌افزار</h3>
+
+<p>از ویندوز ویستا به بعد مایکروسافت یک فناوری برای افزایش امنیت را معرفی کرد به نام User Access Control که کارش این بود که <strong>از کاربر بپرسد آیا مطمئن است؟</strong> UAC در ظاهر راه حل مناسبی برای کاهش ریسک‌های امنیتی به نظر می‌آمد اما تعداد زیاد پیغام‌ها و این حقیقت که UAC برای هر چیز کوچکی سوال می‌پرسید باعث این شد که کاربران ویندوز بعد از مدتی نسبت به آن <strong>واکنش نشان ندهند</strong>! یعنی هر زمان که پیغام UAC را می‌دیدند به دلیل سابقه پیغام‌های بی‌مورد قبلی، بدون خواندن آن پیغام پنجره را ببندند یا yes بزنند که این خود نقض غرض بود. بعضی دیگر از کاربران هم اساساً این ویژگی را off می‌کنند.</p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/Windows_7_UAC.png"  />
+    
+    
+    <figcaption>
+        <h4>تعداد زیاد false alarm ها باعث کاهش حساسیت کاربر نسبت به وقایع گزارش شده توسط نرم‌افزار می‌شود</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>اگر نرم‌افزاری که طراحی و پیاده‌سازی کردید بیش از حد به کاربر پیغام هشدارگونه می‌دهد این باعث سلب اطمینان کاربران از نرم‌افزار می‌شود و دیگر به نوعی نرم‌افزار یک چوپان دروغگو محسوب می‌شود که به هیچ دلیلی می‌خواهد کاربر را دچار استرس تصمیم‌گیری کند.</p>
+
+<p>جنبه دیگری نیز در این ماجرا وجود دارد: در طراحی نرم‌افزارهای ایرانی بسیار دیدم که موقع خروج می‌پرسند آیا مطمئن هستید که می‌خواهید خارج شوید؟ این در حالی است که هیچ فایل ذخیره نشده‌ای در نرم‌افزار نیست. طراح نرم‌افزار باید بپذیرد که اگر کاربر مطمئن نبود روی دکمه خروج کلیک نمی‌کرد. در واقع شانس اینکه کاربر به صورت تصادفی با موس روی دکمه خروج کلیک کرده باشد به اندازه شانس پیدا شدن پنگوئن در استوا کم است!</p>
+
+<h3 id="عدم-پذیرش-مسئولیت-توسط-تولیدکننده-نرم-افزار">عدم پذیرش مسئولیت توسط تولیدکننده نرم‌افزار</h3>
+
+<p>نرم‌افزار خوب باید بتواند با الگوریتم‌های خودش بیشتر تصمیمات را گرفته و نتیجه را به کاربر منتقل کند و فقط در دریافت ورودی‌ها از کاربر انتظار پاسخ داشته باشد. تصمیم‌گیری در خصوص نحوه پردازش اطلاعات باید از طریق بخش تنظیمات صورت بگیرد نه اینکه هر کاربر نظر کاربر را درباره تصمیماتش بپرسیم. این‌طوری نرم‌افزار تبدیل به یک موجودیت کاملاً منفعل می‌شود. درست است که در برنامه‌نویسی ما باید دقیقاً به کامپیوتر بگوییم که چه می‌خواهیم و چطوری پردازش را انجام دهد اما گاهی اوقات هم عدم پذیرش مسئولیت اتفاقات توسط برنامه‌نویس برای کاربر آزاردهنده است.</p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/sql_pr_opt.png"  />
+    
+    
+    <figcaption>
+        <h4>برنامه‌نویس با قرار دادن این گزینه سعی کرده است از خودش رفع مسئولیت کند!</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>یک نمونه از این عدم پذیرش مسئولیت در نرم‌افزار دیگر مایکروسافت یعنی SQL Server مشاهده می‌شود. در نسخه 2008 به بعد، اگر شما در یک دیتابیس یک جدول ایجاد و سپس سعی کنید آن جدول را تغییر دهید، SQL Server بر اساس تنظیمات پیش فرض به شما اجازه ذخیره تغییرات را نمی‌دهد. شما مجبور هستید برای تغییر دادن به بخش تنظیمات نرم‌افزار رفته و گزینه را علامت بزنید که مشخص می‌کند مسئولیت این تغییرات با شماست!</p>
+
+<h3 id="رفتار-و-نگاه-کاربر-به-نرم-افزار-همیشه-مانند-رفتار-و-نگاه-طراح-و-برنامه-نویس-نیست">رفتار و نگاه کاربر به نرم‌افزار همیشه مانند رفتار و نگاه طراح و برنامه‌نویس نیست</h3>
+
+<p>چیز دیگری که استفاده بیش از حد آن باعث صدمه دیدن ارتباط کاربران با نرم‌افزار می‌شود، اعمال سلیقه طراح/برنامه‌نویس به کاربر است. به عنوان مثال در نرم‌افزاری داخلی دیدم که چون بعضی کاربران موقع کار با نرم‌افزار آن را می‌بستند و بعد notification های نرم‌افزار را دریافت نمی‌کردند، تصمیم بر آن شد که دکمه بستن پنجره ویندوزی نرم‌افزار disable شود! این تحمیل سلیقه باعث ناراحتی بخش دیگری از کاربران که برای خروج از نرم‌افزار باید کلیک اضافه داشته باشند می‌شود. <br />
+برای طراحی یک نرم‌افزار موفق باید بتوانیم رفتار کاربر را شبیه‌سازی کنیم، صرف تولید نرم‌افزاری که یک فرایند را به صورت عادی و بدون تغییر الکترونیکی می‌کند به معنی تولید نرم‌افزار موفق نیست. نرم‌افزار باید بتواند فرایندهایی که کاربر با آن‌ها درگیر است را ساده‌سازی کند. در پروسه تولید نرم‌افزار به جز الکترونیکی شدن فرآیندها، ساده‌سازی و اضافه شدن دقت و سرعت انجام کارها هم مهم است.</p>
+
+<p>در این مورد بیشتر صحبت خواهیم کرد.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1556</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

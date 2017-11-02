@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>ساختار تیم‌های مدرن نرم‌افزار قسمت اول: رابطه کار و پول</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="مقدمه: قبل از شروع این نوشته، لازم است یادآوری کنم که در این سایت به سبک سایت‌ها و وبلاگ‌های خارجی که مطالبشان را در قالب سری نوشته‌هایی به مخاطبان ارائه می‌کنند، قصد دارم که در قالب چند سری نوشته، دیدگاه‌ها و تجربیاتم در حوزه توسعه نرم‌افزار و مدیریت پروژه‌های نرم‌افزاری را با شما در میان بگذارم. تا حالا این سری‌ها را شروع کردم:
+ سری تست جوئل، بررسی و شرح 12 تست جوئل اسپالسکی به عنوان راه‌هایی برای نوشتن کد بهتر سری مهارت‌های کار تیمی نرم‌افزار، صحبت درباره فرهنگ کار تیمی نرم‌افزار سری ساختار تیم‌های مدرن نرم‌افزار، نگاهی نو به شرایط و پارامترهای کاری و حرفه‌ای در صنعت نرم‌افزار  با بیشتر شدن مطالب، بخشی در سایت را برای بایگانی این سری‌ها در نظر می‌گیرم تا راحت‌تر بتوانید این نوشته‌ها را دنبال کنید." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="ساختار تیم‌های مدرن نرم‌افزار قسمت اول: رابطه کار و پول" />
+    <meta name="twitter:description" content="مقدمه: قبل از شروع این نوشته، لازم است یادآوری کنم که در این سایت به سبک سایت‌ها و وبلاگ‌های خارجی که مطالبشان را در قالب سری نوشته‌هایی به مخاطبان ارائه می‌کنند، قصد دارم که در قالب چند سری نوشته، دیدگاه‌ها و تجربیاتم در حوزه توسعه نرم‌افزار و مدیریت پروژه‌های نرم‌افزاری را با شما در میان بگذارم. تا حالا این سری‌ها را شروع کردم:
+ سری تست جوئل، بررسی و شرح 12 تست جوئل اسپالسکی به عنوان راه‌هایی برای نوشتن کد بهتر سری مهارت‌های کار تیمی نرم‌افزار، صحبت درباره فرهنگ کار تیمی نرم‌افزار سری ساختار تیم‌های مدرن نرم‌افزار، نگاهی نو به شرایط و پارامترهای کاری و حرفه‌ای در صنعت نرم‌افزار  با بیشتر شدن مطالب، بخشی در سایت را برای بایگانی این سری‌ها در نظر می‌گیرم تا راحت‌تر بتوانید این نوشته‌ها را دنبال کنید." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/8-%D8%B3%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1-%D8%AA%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D9%85%D8%AF%D8%B1%D9%86-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--%D8%B1%D8%A7%D8%A8%D8%B7%D9%87-%DA%A9%D8%A7%D8%B1-%D9%88-%D9%BE%D9%88%D9%84/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">ساختار تیم‌های مدرن نرم‌افزار قسمت اول: رابطه کار و پول</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 4 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>مقدمه: قبل از شروع این نوشته، لازم است یادآوری کنم که در این سایت به سبک سایت‌ها و وبلاگ‌های خارجی که مطالبشان را در قالب سری نوشته‌هایی به مخاطبان ارائه می‌کنند، قصد دارم که در قالب چند سری نوشته، دیدگاه‌ها و تجربیاتم در حوزه توسعه نرم‌افزار و مدیریت پروژه‌های نرم‌افزاری را با شما در میان بگذارم. تا حالا این سری‌ها را شروع کردم:</p>
+
+<ul>
+<li>سری تست جوئل، بررسی و شرح 12 تست جوئل اسپالسکی به عنوان راه‌هایی برای نوشتن کد بهتر</li>
+<li>سری مهارت‌های کار تیمی نرم‌افزار، صحبت درباره فرهنگ کار تیمی نرم‌افزار</li>
+<li>سری ساختار تیم‌های مدرن نرم‌افزار، نگاهی نو به شرایط و پارامترهای کاری و حرفه‌ای در صنعت نرم‌افزار</li>
+</ul>
+
+<p>با بیشتر شدن مطالب، بخشی در سایت را برای بایگانی این سری‌ها در نظر می‌گیرم تا راحت‌تر بتوانید این نوشته‌ها را دنبال کنید. دلیل اینکه همه نوشته‌های سری را پشت سر هم منتشر نمی‌کنم این است که به جای خواندن مطالبی یکنواخت در سایت، ترکیبی از مطالب حوزه‌های مختلف را شاهد باشید. با این مقدمه دعوت می‌کنم اولین نوشته از سری &ldquo;ساختار تیم‌های مدرن نرم‌افزار&rdquo; را بخوانید.</p>
+
+<h3 id="صنعت-نرم-افزار-صنعتی-متکی-به-نیروی-انسانی">صنعت نرم‌افزار صنعتی متکی به نیروی انسانی</h3>
+
+<p>نرم‌افزار جزء صنایعی است که برای ارائه محصول نیاز به ماده اولیه ندارد و بیشترین سهم هزینه در این صنعت مربوط به نیروی انسانی است. در واقع نیروی انسانی هست که با فکر و کار خود، محصول نرم‌افزاری را ایجاد می‌کند.<br />
+در صنایع دیگر برای تولید یک واحد از یک محصول شما باید زمان، نیروی انسانی، انرِژی و ماده اولیه را به نسبت مشخصی هزینه کنید. مثلاً برای تولید یک خودکار، باید ماده اولیه بدنه و جوهر و نوک قلم توسط انسان/ماشین به همراه انرژی و وقت مشخصی صرف شود تا یک خودکار آماده عرضه به بازار شود. برای تولید خودکار دوم، مجدداً باید همان پروسه تکرار شود. اما در تولید نرم‌افزار اینگونه نیست، ما می‌توانیم یک نرم‌افزار را یک بار با صرف وقت و با استفاده از تحلیل مشخص آماده کنیم و ده‌ها نسخه از آن را به راحتی به بازار عرضه کنیم، بدون اینکه نیاز باشد دوباره وقتی صرف شود.</p>
+
+<p><img src="http://elmah.ir/oldimg/humanfactor.jpg" alt="" /></p>
+
+<p>با این دید، نرم‌افزار صنعت بسیار پرسودی است، بر همین اساس هست که غول‌های نرم‌افزاری مثل مایکروسافت با تکیه بر عرضه میلیونی محصولاتشان، درآمدهای میلیارد دلاری دارند.</p>
+
+<h3 id="هزینه-نیروی-انسانی-در-تیم-های-نرم-افزاری-چگونه-محاسبه-می-شود">هزینه نیروی انسانی در تیم‌های نرم‌افزاری چگونه محاسبه می‌شود؟</h3>
+
+<p>اساساً توسعه‌دهندگان نرم‌افزار به یکی از روش‌های زیر برای تولید یک نرم‌افزار استخدام می‌شوند:</p>
+
+<ul>
+<li>استخدام در یک شرکت یا تیم نرم‌افزاری و دریافت حقوق ماهیانه برای انجام تعداد ساعت مشخصی کار</li>
+<li>استخدام به صورت پروژه‌ای برای انجام یک یا چند پروژه خاص</li>
+<li>استخدام به صورت ساعتی برای انجام خدمات یا تولید کدهای سفارشی</li>
+</ul>
+
+<p>اما اساس هر سه روش بالا، استفاده از تخمین نفر/ساعتی برای تولید نرم‌افزار است. اجازه بدهید یک مثال بزنم. فرض کنیم یک شرکت یا تیم نرم‌افزاری در حال مذاکره برای گرفتن یک پروژه تولید نرم‌افزار انبارداری است.</p>
+
+<p>اگر شرکت یا تیم نرم‌افزار از روش اول استفاده کند یعنی از تعدادی برنامه‌نویس یا توسعه‌دهنده که به صورت تمام وقت برایش کار می‌کنند استفاده کند، محاسبه قیمت پروژه بر اساس نفر/ساعت تولید نرم‌افزار + سربار هزینه‌هایی است که به واسطه مواردی مثل بیمه یا مالیات مربوط به افراد و قرارداد برای شرکت ایجاد می‌شود. اگر شرکت یا تیم نرم‌افزاری متشکل از افراد ثابت دارید باید توجه داشته باشید که ریسک بی‌کار ماندن افراد تیم (به واسطه نبود پروژه یا محصول جهت کار) به هزینه‌های شما اضافه می‌کنند، بالاخره دولوپر سر ماه حقوقش را از شما می‌خواهد چه کاری انجام داده باشد چه نداده باشد!</p>
+
+<p>روش دوم و سوم ممکن است در ظاهر هزینه کمتری داشته باشد، اما ریسک انجام پروژه را بالا می‌برد. در واقع در روش اول چون نیروی کار از طریق پروسه گزینش نیرو به تیم اضافه شده و تضمین‌های لازم از نظر قدرت و تعهد به کار از وی گرفته شده و به نوعی صلاحیتش احراز شده،‌ انتظار می‌رود که محصول ارائه شده کیفیت مطلوب‌تری داشته باشد. اما در روش‌های دوم و سوم که عمدتاً‌ به صورت outsource کردن تمام یا بخشی از پروژه به افراد freelance (آزادکار) اجرایی می‌شود، هیچ وقت صد در صد نمی‌توان در مورد صحت عملکرد مجری کار مطمئن شد.</p>
+
+<p>در این مورد در نوشته‌های بعدی بیشتر صحبت خواهیم کرد.</p>
+
+<h3 id="تنظیم-رابطه-مالی-بر-اساس-انجام-وظایف">تنظیم رابطه مالی بر اساس انجام وظایف</h3>
+
+<p>روش جدیدی که در تیم‌های مدرن نرم‌افزاری برای تنظیم رابطه مالی و تحمین مناسب هزینه‌های اجرای پروژه به کار گرفته می‌شود، شکسته شدن پروژه به وظایف مشخص و کوچک (و قابل سنجش از نظر کیفیت) و محاسبه دستمزد بر اساس انجام این وظایف به صورت مطلوب است.</p>
+
+<p>این‌ها را که گفتم داشته باشید تا در قسمت بعدی بیشتر درباره روش pay per task با هم صحبت کنیم. تا آن زمان می‌توانید از طریق بخش کامنت‌ها، درباه تجربه خودتان از رابطه کار و پول در تولید نرم‌افزار بگویید.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1562</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>
