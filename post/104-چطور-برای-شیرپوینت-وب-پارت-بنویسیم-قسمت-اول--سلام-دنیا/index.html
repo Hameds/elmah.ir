@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>چطور برای شیرپوینت وب پارت بنویسیم؟ قسمت اول: سلام دنیا</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="این نوشته اولین قسمت از مجموعه نوشته‌های مرتبط با برنامه‌نویسی وب‌پارت‌ها در شیرپوینت است. در طول چند ماه آینده ضمن تکمیل این سری نوشته، به تدریج به سراغ سایر حوزه‌های برنامه‌نویسی شیرپوینت نیز خواهیم رفت.
+وب پارت شیرپوینت چیست؟ وب پارت‌ها یکی از راهکارهای توسعه شیرپوینت به روش برنامه‌نویسی هستند. یک وب پارت در حقیقت یک ماژول قابل استفاده مجدد است که می‌توان آن را بر حسب شرایط به شکل‌های مختلف تنظیم کرد و در صفحه شیرپوینتی قرار داد." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="چطور برای شیرپوینت وب پارت بنویسیم؟ قسمت اول: سلام دنیا" />
+    <meta name="twitter:description" content="این نوشته اولین قسمت از مجموعه نوشته‌های مرتبط با برنامه‌نویسی وب‌پارت‌ها در شیرپوینت است. در طول چند ماه آینده ضمن تکمیل این سری نوشته، به تدریج به سراغ سایر حوزه‌های برنامه‌نویسی شیرپوینت نیز خواهیم رفت.
+وب پارت شیرپوینت چیست؟ وب پارت‌ها یکی از راهکارهای توسعه شیرپوینت به روش برنامه‌نویسی هستند. یک وب پارت در حقیقت یک ماژول قابل استفاده مجدد است که می‌توان آن را بر حسب شرایط به شکل‌های مختلف تنظیم کرد و در صفحه شیرپوینتی قرار داد." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/104-%DA%86%D8%B7%D9%88%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-%D9%88%D8%A8-%D9%BE%D8%A7%D8%B1%D8%AA-%D8%A8%D9%86%D9%88%DB%8C%D8%B3%DB%8C%D9%85-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--%D8%B3%D9%84%D8%A7%D9%85-%D8%AF%D9%86%DB%8C%D8%A7/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">چطور برای شیرپوینت وب پارت بنویسیم؟ قسمت اول: سلام دنیا</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 5 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>این نوشته اولین قسمت از مجموعه نوشته‌های مرتبط با برنامه‌نویسی وب‌پارت‌ها در شیرپوینت است. در طول چند ماه آینده ضمن تکمیل این سری نوشته، به تدریج به سراغ سایر حوزه‌های برنامه‌نویسی شیرپوینت نیز خواهیم رفت.</p>
+
+<h3 id="وب-پارت-شیرپوینت-چیست">وب پارت شیرپوینت چیست؟</h3>
+
+<p>وب پارت‌ها یکی از راهکارهای توسعه شیرپوینت به روش برنامه‌نویسی هستند. یک وب پارت در حقیقت یک ماژول قابل استفاده مجدد است که می‌توان آن را بر حسب شرایط به شکل‌های مختلف تنظیم کرد و در صفحه شیرپوینتی قرار داد. یک مثال برای وب‌پارت‌ها، وب پارت نمایش وضعیت آب و هواست. می‌توان وب پارتی نوشت که با اتصال به سرویس پیش بینی وضعیت آب و هوا، دما و سایر ویژگی‌های مرتبط با وضعیت آب و هوا را نمایش دهد. این وب پارت را می‌توان در محل دلخواه در سایت شیرپوینتی قرار داد و اگر تنظیمات شهر را به آن افزوده باشیم می‌توانیم وب پارت را به گونه‌ای تنظیم کنیم که به عنوان مثال وضعیت آب و هوا تهران را نمایش دهد.<br />
+در نوشته‌های بعدی درباره انواع تنظیمات وب پارت و scope آن‌ها صحبت خواهیم کرد اما خوب است بدانید اگر کاربران دسترسی لازم را داشته باشند و تنظیمات قرار داده شده در وب پارت قابلیت ست شدن به ازای هر کاربر را داشته باشد، هر کاربر می‌تواند تنظیمات مخصوص به خودش را داشته باشد. در مثال وب پارت آب و هوا گرچه یک وب پارت نوشته شده اما یک کاربر می‌تواند آن را برای نمایش آب و هوای تهران و دیگری برای نمایش آب و هوا شیراز تنظیم کند.</p>
+
+<h3 id="وب-پارت-سلام-دنیا">وب پارت سلام دنیا</h3>
+
+<p>هدف این نوشته، آشنایی اولیه با مفاهیم برنامه‌نویسی وب پارت در شیرپوینت است و در نوشته‌های بعدی مباحث پیشرفته‌تر در خصوص تنظیمات و برندینگ وب پارت را مطرح خواهیم کرد.</p>
+
+<p>برای نوشتن اولین وب پارتمان به Visual Studio 2012 یا بالاتر احتیاج داریم. مطابق تصویر زیر یک پروژه جدید از نوع SharePoint 2010 Project ایجاد می‌کنیم. در نوشته‌های بعدی درباره Visual Web Part و Silverlight Web Part توضیح خواهیم داد. فعلاً می‌خواهیم یک پروژه ساده داشته باشیم.</p>
+
+<p><img src="http://elmah.ir/oldimg/5_1.png" alt="" /></p>
+
+<p>بعد از انتخاب نام و مسیر پروژه در مرحله بعد ویزارد ایجاد پروژه شیرپوینتی آدرس سایت شیرپوینتی را داده و گزینه Deploy as a farm Solution را انتخاب می‌کنیم. درباره راهکارهای sandbox در نوشته‌های بعدی توضیح داده خواهد شد.</p>
+
+<p><img src="http://elmah.ir/oldimg/4_2.png" alt="" /></p>
+
+<p>حالا پروژه ما ایجاد شده است. در نگاه اول خیلی خالی به نظر می‌رسد. موقع آن رسیده که یک وب پارت به این پروژه شیرپوینتی اضافه کنیم.</p>
+
+<p><img src="http://elmah.ir/oldimg/3.png" alt="" /></p>
+
+<p>برای اضافه کردن یک وب پارت به پروژه جدید روی پروژه کلیک راست کرده و یک New Item از نوع Web Part به پروژه اضافه می‌کنیم. همانطور که در تصویر زیر نیز مشخص است انواع دیگری مثل Visual Web Part‌ و Silverlight Web Part نیز وجود دارند که در نوشته‌های بعدی درباره آن‌ها صحبت خواهیم کرد. نام Web Part را HelloWorld انتخاب کنید.</p>
+
+<p><img src="http://elmah.ir/oldimg/4.png" alt="" /></p>
+
+<p>حالا پروژه ما به شکل زیر درآمده است و فایل‌های جدیدی به آن اضافه شده. اجازه بدهید این فایل‌ها را با هم بررسی کنیم.</p>
+
+<p><img src="http://elmah.ir/oldimg/5.png" alt="" /></p>
+
+<p>ابتدا پوشه Features: در این پوشه یک Feature جدید تحت عنوان Feature1 اضافه شده است. راهکارهای شیرپوینتی برای نصب می‌توانند Feature داشته باشند که با توجه به scope آن از بخش تنظیمات سایت یا تنظیمات مجموعه سایت (site collection) یا تنظیمات Web Application یا حتی تنظیمات Farm قابل فعالسازی هستند.</p>
+
+<p>برای این Feature ها حتی می‌توان کد نوشت تا مثلاً در هنگام فعالسازی Feature نیازمندی‌های پروژه به سایت اضافه شود به عنوان مثال هنگام فعال کردن Feature ضمن اضافه شدن وب پارت به مجموعه وب پارت‌های سایت، یک لیست هم ساخته شود یا تغییری در تنظیمات سایت شیرپوینتی ایجاد شود و &hellip; در خصوص Feature ها نیز در نوشته‌های بعدی صحبت خواهیم کرد. فعلاً Feature1 را به HelloWorldFeature تغییر نام داده و روی آن کلیک می‌کنیم تا پنجره مشخصات Feature باز شود. در این پنجره می‌توانیم عنوان یا شرح Feature را بنویسیم و مشخص کنیم این Feature کدامیک از بخش‌های پروژه را فعال خواهد کرد. در مثال جاری Feature ما وب پارت HelloWorld را فعال می‌کند.</p>
+
+<p><img src="http://elmah.ir/oldimg/6.png" alt="" /></p>
+
+<p>یک نکته دیگر درباره عنوان و شرح Feature این است که می‌توان آن را برای چند زبانه بودن تنظیم کرد. یعنی عنوان و شرح بر حسب زبان سایت متفاوت باشد که این موضوع را نیز در مباحث برندینگ در نوشته‌های بعدی توضیح خواهیم داد.</p>
+
+<p>فایل Elements.xml: در این فایل یک ویژگی وجود دارد که می‌توانیم آن را برای بهتر شدن نمایش وب پارت تغییر دهیم. آن هم دسته بندی است که وب پارت در آن قرار می‌گیرد. در شیرپوینت وقتی می‌خواهیم به یک صفحه، یک وب پارت اضافه کنیم آن را از میان دسته‌بندی‌های موجود انتخاب می‌کنیم. به صورت پیش فرض دسته‌بندی یک وب پارت جدید روی Custom قرار دارد که آن را به مقدار دلخواه تغییر می‌دهیم. ما برای وب پارت‌های آرایه دسته‌بندی Araye را انتخاب می‌کنیم. دقت کنید که این بخش را نیز می‌توان از طریق resource ها چند زبانه کرد.</p>
+
+<script src="//gist.github.com/hameds/f1d68dc790f947a7136abc7af7cddc31.js"></script>
+
+<p>فایل HelloWebpart.webpart: در این فایل مشخصات نام و شرح و حتی آیکن وب پارت را می‌توانیم تعریف کنیم. این فایل نیز به صورت xml است و می‌توان محتویات آن را به صورت دلخواه ویرایش کرد و از طریق resource ها چند زبانه نمود.</p>
+
+<p><code>$Resources:core,ImportErrorMessage;</code></p>
+
+<p><code>Araye - HelloWorld</code></p>
+
+<p><code>Araye HelloWorld Web Part</code></p>
+
+<p>فایل کد وب پارت (فایل HelloWorld.cs): در این فایل کد برنامه‌نویسی #C وب پارت نوشته می‌شود. تمام کاری که باید انجام دهیم override کردن متد CreateChildControls و افزودن کد دلخواه به آن است. در این مثال ما کد وب پارت را به صورت زیر ویرایش می‌کنیم تا متن Hello World from SharePoint Webpart در آن نمایش داده شود.</p>
+
+<script src="//gist.github.com/hameds/82872e81d6e72c0de2cceb366359dcee.js"></script>
+
+<p>مشاهده خروجی: برای مشاهده خروجی دو راه دارید. Publish کردن کد که یک فایل wsp به شما خواهد داد و می‌توانید مانند سایر فایل‌های wsp آن را به شیرپوینت اضافه کنید و یا اجرا در حالت debug.</p>
+
+<p>ادامه دارد&hellip;</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1057</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

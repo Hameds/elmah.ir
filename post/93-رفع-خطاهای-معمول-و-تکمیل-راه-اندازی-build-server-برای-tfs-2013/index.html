@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>رفع خطاهای معمول و تکمیل راه‌اندازی Build Server برای TFS 2013</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="Build به کمک TFS اگر سری نوشته‌های تست جوئل را دنبال کرده باشید، حتماً درباره اهمیت build روزانهخوانده‌اید. برای داشتن یک روال build خوب ابتدا باید یک build serer داشته باشید. خوشبختانه TFS به خصوص در نسخه‌های جدید، کار build را برای پروژه‌های تیمی بسیار ساده کرده است. در این نوشته درباره خطاهایی که پس از نصب سرویس build در TFS ممکن است با آن‌ها برخورد داشته باشید و راه حل آن‌ها صحبت می‌کنیم." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="رفع خطاهای معمول و تکمیل راه‌اندازی Build Server برای TFS 2013" />
+    <meta name="twitter:description" content="Build به کمک TFS اگر سری نوشته‌های تست جوئل را دنبال کرده باشید، حتماً درباره اهمیت build روزانهخوانده‌اید. برای داشتن یک روال build خوب ابتدا باید یک build serer داشته باشید. خوشبختانه TFS به خصوص در نسخه‌های جدید، کار build را برای پروژه‌های تیمی بسیار ساده کرده است. در این نوشته درباره خطاهایی که پس از نصب سرویس build در TFS ممکن است با آن‌ها برخورد داشته باشید و راه حل آن‌ها صحبت می‌کنیم." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/93-%D8%B1%D9%81%D8%B9-%D8%AE%D8%B7%D8%A7%D9%87%D8%A7%DB%8C-%D9%85%D8%B9%D9%85%D9%88%D9%84-%D9%88-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-build-server-%D8%A8%D8%B1%D8%A7%DB%8C-tfs-2013/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">رفع خطاهای معمول و تکمیل راه‌اندازی Build Server برای TFS 2013</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 4 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="build-به-کمک-tfs">Build به کمک  TFS</h3>
+
+<p>اگر سری نوشته‌های تست جوئل را دنبال کرده باشید، حتماً درباره اهمیت <strong>build روزانه</strong><a href="http://elmah.ir/post/23-تست-جوئل-قسمت-سوم--build-روزانه/"> خوانده‌اید</a>. برای داشتن یک روال build خوب ابتدا باید یک build serer داشته باشید. خوشبختانه TFS به خصوص در نسخه‌های جدید، کار build را برای پروژه‌های تیمی بسیار ساده کرده است. در این نوشته درباره خطاهایی که پس از نصب سرویس build در TFS ممکن است با آن‌ها برخورد داشته باشید و راه حل آن‌ها صحبت می‌کنیم.</p>
+
+<p>در توسعه نرم‌افزار آرایه، ما به صورت گسترده از TFS 2013 استفاده می‌‌کنیم. از میان ویژگی‌های اصلی TFS در حوزه Source Control پیشتر از نرم‌افزار داخلی TFS و به تازگی از Git بر روی TFS استفاده می‌کنیم. در حوزه برنامه‌ریزی کارها، از نسخه سفارشی شده‌‌ای از فرم‌های TFS برای ایجاد و رهگیری وظایف برنامه‌نویسی استفاده می‌کنیم که به زودی از آن خواهیم نوشت. در حوزه build نیز از امکان سرویس build موجود در TFS بهره می‌گیریم. به کمک این سرویس انجام آزمون‌های واحد را نیز در هر build کنترل می‌کنیم. در شش ماه دوم سال ۹۳ همچنین برنامه گسترده‌ای برای استفاده از قابلیت‌های Test (به جز اجرای اتوماتیک آزمون‌ها در هنگام build) و Microsoft Test Manager داریم.</p>
+
+<p>در این نوشته درباره خطاها و هشدارهایی که پس از نصب سرویس build به آن‌ها برخورد کردیم و روش حل آن‌ها می‌نویسیم. لازم به ذکر است پیش‌فرض این نوشته این است که شما TFS و Build Controller و Build Agent مورد نظر را نصب و تنظیم کرده‌اید. build server ما بر روی ویندوز سرور ۲۰۱۲ ایجاد شده است و بر مبنای TFS 2013 می‌باشد.</p>
+
+<h3 id="رفع-خطای-webapplication-targets">رفع خطای WebApplication.Targets</h3>
+
+<p>پس از نصب و تنظیم build service نخستین خطایی که به خصوص هنگام build کردن پروژه‌های تحت وب ممکن است به آن برخورد داشته باشید، خطای WebApplication.Targets به شرح زیر است:</p>
+
+<p><code>error MSB4019: The imported project “C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v12.0\WebApplications\Microsoft.WebApplication.targets” was not found. Confirm that the path in the declaration is correct, and that the file exists on disk.</code></p>
+
+<p>برای رفع این خطا، از روی سیستم برنامه‌نویسی که در آن Visual Studio 2013 نصب شده است پوشه موجود در مسیر زیر را به مسیر مشابه در مسیر build server کپی کنید.</p>
+
+<p><code>C:\Program Files(x86)\MSBuild\Microsoft\VisualStudio\v12.0</code></p>
+
+<p>پیشنهاد آرایه: همان‌طور که در ادامه این نوشته می‌آید، پیشنهاد می‌کنیم بر روی build server خود Visual Studio 2013 را نصب کنید.</p>
+
+<h3 id="رفع-هشدار-نصب-دات-نت-فریمورک-۴-۵">رفع هشدار نصب دات نت فریمورک ۴.۵</h3>
+
+<p>یکی دیگر از مواردی که موقع build پروژه‌های تحت وب به آن برخورد می‌کنید، هشدار زیر است.</p>
+
+<p><code>warning MSB3644: The reference assemblies for framework “.NETFramework,Version=v4.5″ were not found.</code></p>
+
+<p>برای رفع این هشدار همانطور که مشخص است باید دات نت فریمورک ۴.۵ را نصب کنید. البته در حقیقت باید  .NET Framework 4.5.1 SDK را نصب نمایید. برای نصب آن به <a href="http://msdn.microsoft.com/en-US/windows/desktop/hh852363.aspx">صفحه دانلود Windows Software Development Kit (SDK) for Windows 8</a> بروید و پس از دانلود فایل و اجرای آن SDK اشاره شده را نصب نمایید. البته این SDK برای ویندوز ۸.۱ را هم می‌توانید از این صفحه <a href="http://msdn.microsoft.com/en-us/windows/desktop/bg162891">دانلود کنید</a>. SDK نصب شده برای ویندوز سرور ۲۰۱۲ نیز معتبر است.</p>
+
+<h3 id="رفع-خطای-visual-studio-test-runner">رفع خطای Visual Studio Test Runner</h3>
+
+<p>اگر build خود را برای اجرای تست‌ها تنظیم کرده باشید، ممکن است به خطای زیر برخورد کنید.</p>
+
+<p><code>TF900547: The directory containing the assemblies for the Visual Studio Test Runner is not valid ''</code></p>
+
+<p>برای رفع این خطا دو راه حل وجود دارد. راه ساده‌تر نصب Visual Studio 2013 بر روی سرور build است. این کار مشکل خطای اول اشاره شده در این نوشته را نیز برطرف می‌کند. راه دیگر تغییر template مربوط به گردش کار build برای استفاده از نسخه قدیمی‌تر مربوط به VS 2012 است.</p>
+
+<h3 id="رفع-هشدار-عدم-شناسایی-آزمون-های-nunit">رفع هشدار عدم شناسایی آزمون‌های NUnit</h3>
+
+<p>اگر مثل ما از NUnit برای مبحث آزمون‌ها استفاده می‌کنید، ممکن است علیرغم build موفق با هشدار زیر مواجه شوید.</p>
+
+<p><code>No test found. Make sure that installed test discoverers &amp; executors, platform &amp; framework version settings are appropriate and try again.</code></p>
+
+<p>برای اینکه پروژه‌های حاوی آزمون‌ها شناسایی شوند، <a href="https://www.nuget.org/packages/NUnitTestAdapter/">NUnit Test Adapter for VS2012 and VS2013</a> را از طریق nuget به پروژه حاوی آزمون‌های نرم‌افزاری اضافه کنید.</p>
+
+<p><strong>رفع خطای Timeout برای drop folder</strong></p>
+
+<p>به دلایل مختلف ممکن است با خطای timeout زیر مواجه شوید.</p>
+
+<p><code>Exception Message: The HTTP request timed out after 00:01:40. (type TimeoutException)Exception Stack Trace:    at Microsoft.TeamFoundation.Build.Workflow.Activities.FileContainerDropProvider.EndCopyDirectory(IAsyncResult result)</code></p>
+
+<p>یک راه خوب برای برطرف کردن آن، تغییر اندازه timeout است. برای این کار به مسیر زیر بروید و فایل tfsbuildservicehost.exe.config را پیدا کنید.</p>
+
+<p><code>C:\Program Files\Microsoft Team Foundation Server 12.0\Tools</code></p>
+
+<p>در این فایل کدهای زیر را برای تغییر مقدار زمان timeout اضافه کنید. به عنوان مثال کد زیر زمان ۵ دقیقه را برای این timeout تنظیم می‌کند که زمان مناسبی محسوب می‌شود.</p>
+
+<script src="//gist.github.com/hameds/6b55fa33993b3da4265164f92553dcb3.js"></script>
+
+<p>با اجرای دستورالعمل‌های فوق در آرایه موفق شدیم build روزانه و انواع build های مورد نیاز برای پروژه‌ها را با استفاده از TFS ایجاد کنیم. به زودی درباره استفاده از TFS در حوزه برنامه‌‌ریزی کارها و سفارشی‌کردن آن بر اساس نیاز تیم خواهیم نوشت.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1140</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>نکاتی درباره کار با سایت‌ها به صورت برنامه‌نویسی در شیرپوینت</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="قبل از شروع، برای اینکه در شیرپوینت بخواهید با برنامه‌نویسی تحت سرور با داده‌ها کار کنید نیاز به dll مرتبط یعنی Microsoft.SharePoint.dll دارید. این dll را به پروژه‌تان اضافه کنید. اگر در پنجره Add Reference این dll را پیدا نکردید، محل قرارگیری آن در آدرس زیر می‌باشد
+C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI
+به جای c در آدرس بالا درایوی که ویندوز در آن نصب شده است را قرار می‌دهید و به جای عدد 14 عدد مربوط به نسخه شیرپوینتتان." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="نکاتی درباره کار با سایت‌ها به صورت برنامه‌نویسی در شیرپوینت" />
+    <meta name="twitter:description" content="قبل از شروع، برای اینکه در شیرپوینت بخواهید با برنامه‌نویسی تحت سرور با داده‌ها کار کنید نیاز به dll مرتبط یعنی Microsoft.SharePoint.dll دارید. این dll را به پروژه‌تان اضافه کنید. اگر در پنجره Add Reference این dll را پیدا نکردید، محل قرارگیری آن در آدرس زیر می‌باشد
+C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI
+به جای c در آدرس بالا درایوی که ویندوز در آن نصب شده است را قرار می‌دهید و به جای عدد 14 عدد مربوط به نسخه شیرپوینتتان." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/35-%D9%86%DA%A9%D8%A7%D8%AA%DB%8C-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%DA%A9%D8%A7%D8%B1-%D8%A8%D8%A7-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7-%D8%A8%D9%87-%D8%B5%D9%88%D8%B1%D8%AA-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">نکاتی درباره کار با سایت‌ها به صورت برنامه‌نویسی در شیرپوینت</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 3 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>قبل از شروع، برای اینکه در شیرپوینت بخواهید با برنامه‌نویسی تحت سرور با داده‌ها کار کنید نیاز به dll مرتبط یعنی <code>Microsoft.SharePoint.dll</code> دارید. این dll را به پروژه‌تان اضافه کنید. اگر در پنجره Add Reference این dll را پیدا نکردید، محل قرارگیری آن در آدرس زیر می‌باشد</p>
+
+<p><code>C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI</code></p>
+
+<p>به جای c در آدرس بالا درایوی که ویندوز در آن نصب شده است را قرار می‌دهید و به جای عدد 14 عدد مربوط به نسخه شیرپوینتتان. عدد 12 مربوط به شیرپوینت 2007،‌ عدد 14 مربوط به شیرپوینت 2010 و عدد 15 مربوط به شیرپوینت 2013 است.</p>
+
+<h3 id="نکاتی-درباره-کار-با-object-سایت-ها-در-شیرپوینت">نکاتی درباره کار با object سایت‌ها در شیرپوینت</h3>
+
+<p>اول باید توجه کنید که هر سایتی که در شیرپوینت ایجاد می‌شود در واقع یک Site Collection‌ یا مجموعه سایت است. به هر مجموعه سایت می‌توان به تعداد دلخواه زیرسایت اضافه کرد، تنها محدودیتی که وجود دارد محدودیت‌هایی درباره حجم دیتابیس شیرپوینت است. هر مجموعه سایت حداقل یک زیرسایت اصلی دارد. در شیرپوینت به مجموعه سایت، Site‌ و به زیرسایت‌ها Web گفته می‌شود و معادل همین دو عبارت نیز در کلاس‌های مربوط به کار با سایت‌ها در شیرپوینت وجود دارد که در موردشان توضیح خواهم داد. مفهوم اشاره شده در خصوص سایت و زیرسایت در توسعه راهکارهای شیرپوینتی که feature ای برای نصب دارند نیز استفاده می‌شود، feature شما می‌تواند در سطح مجموعه سایت باشد یا در سطح زیرسایت‌ها (البته سطوح farm و web application نیز وجود دارند)</p>
+
+<p>در <code>Microsoft.SharePoint</code> دو کلاس اصلی برای کار با سایت‌ها وجود دارد: <code>SPSite‌</code> و <code>SPWeb</code> که با توجه به توضیح بالا <code>SPSite</code> برای کار با مجموعه سایت و <code>SPWeb</code> برای کار با زیرسایت‌ها مورد استفاده قرار می‌گیرد.</p>
+
+<p>اگر بخواهیم به یک سایت در شیرپوینت دسترسی داشته باشیم به شکل زیر عمل می‌کنیم (به جای siteUrl آدرس سایت خودتان را قرار بدهید)</p>
+
+<script src="//gist.github.com/hameds/fc6fd4551b1265ec063ec9fd4d0a059f.js"></script>
+
+<p>با کمک خطوط بالا تنها به شی مجموعه سایت دسترسی ایجاد کرده‌ایم. حالا اگر بخواهیم مثلاً به یک لیست شیرپوینت دسترسی داشته باشیم ابتدا باید شی زیرسایت مربوطه را باز کنیم. اگر زیر سایت مورد نظر زیرسایت اصلی مجموعه سایت باشد به یکی از دو شکل زیر می‌توانیم به آن دسترسی داشته باشیم:</p>
+
+<script src="//gist.github.com/hameds/9f5048af5ccd268f9c6365f11038391d.js"></script>
+
+<p>یا روش دوم استفاده از مند OpenWeb</p>
+
+<script src="//gist.github.com/hameds/918f5a0f8fec803037a88a48a859855c.js"></script>
+
+<p>و اگر زیرسایت مربوطه در آدرس دیگری وجود داشته باشد می‌توانیم از روش‌های دیگر استفاده از متد <code>OpenWeb</code> بهره ببریم یا همین روال را تکرار کرده و به جای siteUrl از آدرس آن زیرسایت استفاده کنیم. در واقع می‌توان به هر زیرسایت نیز در برنامه‌نویسی شیرپوینت به چشم یک مجموعه سایت نگاه کرد که خودش می‌تواند حاوی زیرسایت‌های دیگری باشد، بر این اساس مثلاً برای دسترسی به زیرسایت fa که در مجموعه سایت وجود دارد با متد <code>OpenWeb</code> به روش زیر می‌توانیم عمل کنیم:</p>
+
+<script src="//gist.github.com/hameds/2a4d2f4b410e5e5f89ea330a40a6f287.js"></script>
+
+<h3 id="سطح-مجوز-دسترسی-در-کد">سطح مجوز دسترسی در کد</h3>
+
+<p>مهمترین نکته‌ای که در کار با اشیاء و کلاس‌های شیرپوینتی باید به آن توجه کنید میزان مجوز کاربری است که در حال کار با کد شماست. کد ساده <code>OpenWeb</code> یک آدرس اگر کاربر جاری به آن آدرس دسترسی نداشته باشد، باعث بروز خطای Access Deny می‌شود. در حالت عادی وقتی شما کدی مشابه کدهای بالا را می‌نویسید کد با دسترسی کاربر جاری اجرا می‌شود، یعنی هر کاربری که به شیرپوینت login کرده باشد بسته به مجوزهای خودش از طریق کد شما با داده‌های شیرپوینت کار می‌کند.</p>
+
+<p>چنانچه بخواهیم کار با دسترسی مدیرسیستم انجام شود از متد <code>SPSecurity.RunWithElevatedPrivileges</code> می‌توانیم استفاده کنیم. <code>SPSecurity.RunWithElevatedPrivileges</code> باید برای شی‌ که از کلاس SPWeb گرفته می‌شود استفاده شود و لزومی به استفاده از آن برای SPSite نیست. کد نحوه استفاده از <code>SPSecurity.RunWithElevatedPrivileges</code> به شرح زیر است. در این حالت کد شما با دسترسی کاربری که در Application Pool درون IIS برای web application شیرپوینتی شما ست شده است اجرا خواهد شد.</p>
+
+<script src="//gist.github.com/hameds/a2861de4891d14b87941a7b61eb22708.js"></script>
+
+<p>در نوشته بعدی در خصوص کار با لیست‌ها صحبت خواهم کرد.</p>
+
+<p>پی نوشت: کدهای نوشته شده در این مطلب در تمامی نسخه‌های شیرپوینت به صورت یکسان کار می‌کند.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1533</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

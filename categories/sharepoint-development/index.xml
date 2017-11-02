@@ -6,10 +6,82 @@
     <description>Recent content in Sharepoint Development on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Mon, 29 Jul 2013 19:18:30 +0330</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2015 00:00:00 +0330</lastBuildDate>
     
 	<atom:link href="http://elmah.ir/categories/sharepoint-development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>آگاهی امنیتی : چگونگی بدست آوردن کلمه عبور Application Pool های IIS</title>
+      <link>http://elmah.ir/post/116-%D8%A2%DA%AF%D8%A7%D9%87%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C---%DA%86%DA%AF%D9%88%D9%86%DA%AF%DB%8C-%D8%A8%D8%AF%D8%B3%D8%AA-%D8%A2%D9%88%D8%B1%D8%AF%D9%86-%DA%A9%D9%84%D9%85%D9%87-%D8%B9%D8%A8%D9%88%D8%B1-application-pool-%D9%87%D8%A7%DB%8C-iis/</link>
+      <pubDate>Tue, 07 Apr 2015 00:00:00 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/116-%D8%A2%DA%AF%D8%A7%D9%87%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C---%DA%86%DA%AF%D9%88%D9%86%DA%AF%DB%8C-%D8%A8%D8%AF%D8%B3%D8%AA-%D8%A2%D9%88%D8%B1%D8%AF%D9%86-%DA%A9%D9%84%D9%85%D9%87-%D8%B9%D8%A8%D9%88%D8%B1-application-pool-%D9%87%D8%A7%DB%8C-iis/</guid>
+      <description>این نوشته را در دسته‌بندی برنامه‌نویسی شیرپوینت قرار دادم چرا که بیشترین زمانی که با Application Pool ها سر و کار داشتم زمان نصب و تنظیم شیرپوینت بوده است.
+کد اصلی مربوط به نوشته آقای Sahil Malikاست. در شیرپوینت ۲۰۰۷ می‌توانستیم با استفاده از SPApplicationPool.Password کلمه عبور Application Pool را بدست آوریم که در نسخه‌های بعدی دیگر استفاده نمی‌شود. برنامه‌ای به نام appcmd در آدرس c:\windows\system32\inetsrv وجود دارد که با استفاده از دستور زیر کلمه عبور Application Pool را به شما نمایش می‌دهد.</description>
+    </item>
+    
+    <item>
+      <title>چطور برای شیرپوینت وب پارت بنویسیم؟ قسمت اول: سلام دنیا</title>
+      <link>http://elmah.ir/post/104-%DA%86%D8%B7%D9%88%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-%D9%88%D8%A8-%D9%BE%D8%A7%D8%B1%D8%AA-%D8%A8%D9%86%D9%88%DB%8C%D8%B3%DB%8C%D9%85-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--%D8%B3%D9%84%D8%A7%D9%85-%D8%AF%D9%86%DB%8C%D8%A7/</link>
+      <pubDate>Thu, 11 Dec 2014 00:00:00 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/104-%DA%86%D8%B7%D9%88%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-%D9%88%D8%A8-%D9%BE%D8%A7%D8%B1%D8%AA-%D8%A8%D9%86%D9%88%DB%8C%D8%B3%DB%8C%D9%85-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--%D8%B3%D9%84%D8%A7%D9%85-%D8%AF%D9%86%DB%8C%D8%A7/</guid>
+      <description>این نوشته اولین قسمت از مجموعه نوشته‌های مرتبط با برنامه‌نویسی وب‌پارت‌ها در شیرپوینت است. در طول چند ماه آینده ضمن تکمیل این سری نوشته، به تدریج به سراغ سایر حوزه‌های برنامه‌نویسی شیرپوینت نیز خواهیم رفت.
+وب پارت شیرپوینت چیست؟ وب پارت‌ها یکی از راهکارهای توسعه شیرپوینت به روش برنامه‌نویسی هستند. یک وب پارت در حقیقت یک ماژول قابل استفاده مجدد است که می‌توان آن را بر حسب شرایط به شکل‌های مختلف تنظیم کرد و در صفحه شیرپوینتی قرار داد.</description>
+    </item>
+    
+    <item>
+      <title>استفاده از کنترل CssRegistration در شیرپوینت 2010</title>
+      <link>http://elmah.ir/post/66-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%DA%A9%D9%86%D8%AA%D8%B1%D9%84-cssregistration-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-2010/</link>
+      <pubDate>Wed, 13 Nov 2013 22:20:48 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/66-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%DA%A9%D9%86%D8%AA%D8%B1%D9%84-cssregistration-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-2010/</guid>
+      <description>چه در یک masterpage، چه در یک وب پارت، اگر بخواهیم فایل css ای را load کنیم، روش‌های مختلفی وجود دارد. یکی از روش‌های استاندارد در شیرپوینت برای تعریف فایل‌های css استفاده از کنترل CssRegistration است. قصد دارم در این مطلب به صورت کوتاه این کنترل را معرفی کنم.
+اگر بخواهیم به صورت markup از این کنترل استفاده کنیم به شکل زیر خواهد بود:
+در صورتی که در کد بخواهیم از آن استفاده کنیم از کدی مانند کد زیر می‌توان استفاده کرد:</description>
+    </item>
+    
+    <item>
+      <title>کارهایی در لیست‌های شیرپوینت که فقط با برنامه‌نویسی می‌توان انجام داد</title>
+      <link>http://elmah.ir/post/51-%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1-%D9%84%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-%DA%A9%D9%87-%D9%81%D9%82%D8%B7-%D8%A8%D8%A7-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86-%D8%A7%D9%86%D8%AC%D8%A7%D9%85-%D8%AF%D8%A7%D8%AF/</link>
+      <pubDate>Mon, 16 Sep 2013 19:58:22 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/51-%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1-%D9%84%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-%DA%A9%D9%87-%D9%81%D9%82%D8%B7-%D8%A8%D8%A7-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86-%D8%A7%D9%86%D8%AC%D8%A7%D9%85-%D8%AF%D8%A7%D8%AF/</guid>
+      <description>Object Model شیرپوینت این امکان را به شما می‌دهد که کلیه کارهایی که از طریق اینترفیس خود شیرپوینت انجام می‌دهید را با برنامه‌نویسی نیز بتوانید پیاده‌سازی کنید.
+اما یک سری کارها هست که خود شیرپوینت آن‌ها را انجام می‌دهد ولی از طریق اینترفیس امکان انجامشان نیست. در این نوشته به کارهایی که فقط با برنامه‌نویسی در لیست‌های شیرپوینت می‌توان انجام داد می‌پردازیم.
+قبل از شروع توجه کنید که هر جا خطا دریافت کردید مبنی بر اینکه اجازه تغییرات در SPWeb وجود ندارد AllowUnsafeUpdates را برای object ای که از کلاس SPWeb گرفته‌اید true و بعد از اتمام عملیات آن را false‌ کنید.</description>
+    </item>
+    
+    <item>
+      <title>برنامه‌نویسی برای عملیات CRUD در لیست‌های شیرپوینت</title>
+      <link>http://elmah.ir/post/37-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-crud-%D8%AF%D8%B1-%D9%84%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA/</link>
+      <pubDate>Sat, 24 Aug 2013 20:19:34 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/37-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-crud-%D8%AF%D8%B1-%D9%84%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA/</guid>
+      <description>افزودن اطلاعات به لیست شیرپوینت برای افزودن اطلاعات به لیست شیرپوینت از کدی مانند کد زیر استفاده می‌کنیم. در این کد هم همان‌طور که مشاهده می‌کنید بحث استفاده از display name ستون‌ها مطرح است. در کد زیر لیستی داریم که دو ستون Title و Birthday دارد و با کد به آن‌ها مقدار داده‌ایم.
+ در کد بالا نکته قابل توجه اول در خط 6 است جایی که ابتدا یک شی از کلاس SPListItem ایجاد کرده‌ایم.</description>
+    </item>
+    
+    <item>
+      <title>کار با لیست‌ها به صورت برنامه‌نویسی در شیرپوینت</title>
+      <link>http://elmah.ir/post/36-%DA%A9%D8%A7%D8%B1-%D8%A8%D8%A7-%D9%84%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7-%D8%A8%D9%87-%D8%B5%D9%88%D8%B1%D8%AA-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA/</link>
+      <pubDate>Fri, 23 Aug 2013 15:41:05 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/36-%DA%A9%D8%A7%D8%B1-%D8%A8%D8%A7-%D9%84%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7-%D8%A8%D9%87-%D8%B5%D9%88%D8%B1%D8%AA-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA/</guid>
+      <description>قبل از شروع لازم است بدانید که ذخیره سازی اطلاعات در شیرپوینت در لیست‌ها و کتابخانه‌ها انجام می‌شود، در لیست‌های رکوردهای اطلاعاتی ذخیره می‌شوند و در کتابخانه‌ها، فایل‌ها را می‌توانید قرار دهید. بقیه امکانات لیست و کتابخانه‌ها مشابه هم هستند. البته شیرپونت تعدادی لیست و کتابخانه پیش فرض دارد مثل لیست تقویم، لیست تماس، لیست پیوند یا کتابخانه تصاویر و کتابخانه اسناد و &amp;hellip; که از آن‌ها هم می‌توانید استفاده کنید، اما عمومی‌ترین نوع لیست در شیرپوینت، لیست سفارشی یا Custom List است که به هر شکلی می‌توانید با آن کار کنید و تنها یک ستون از پیش تعریف شده عنوان دارد و بقیه ستون‌ها را بر حسب نیاز می‌توانید به آن اضافه کنید.</description>
+    </item>
+    
+    <item>
+      <title>نکاتی درباره کار با سایت‌ها به صورت برنامه‌نویسی در شیرپوینت</title>
+      <link>http://elmah.ir/post/35-%D9%86%DA%A9%D8%A7%D8%AA%DB%8C-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%DA%A9%D8%A7%D8%B1-%D8%A8%D8%A7-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7-%D8%A8%D9%87-%D8%B5%D9%88%D8%B1%D8%AA-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA/</link>
+      <pubDate>Wed, 21 Aug 2013 21:12:15 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/35-%D9%86%DA%A9%D8%A7%D8%AA%DB%8C-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%DA%A9%D8%A7%D8%B1-%D8%A8%D8%A7-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7-%D8%A8%D9%87-%D8%B5%D9%88%D8%B1%D8%AA-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA/</guid>
+      <description>قبل از شروع، برای اینکه در شیرپوینت بخواهید با برنامه‌نویسی تحت سرور با داده‌ها کار کنید نیاز به dll مرتبط یعنی Microsoft.SharePoint.dll دارید. این dll را به پروژه‌تان اضافه کنید. اگر در پنجره Add Reference این dll را پیدا نکردید، محل قرارگیری آن در آدرس زیر می‌باشد
+C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI
+به جای c در آدرس بالا درایوی که ویندوز در آن نصب شده است را قرار می‌دهید و به جای عدد 14 عدد مربوط به نسخه شیرپوینتتان.</description>
+    </item>
     
     <item>
       <title>پروژه افزونه بارگذاری jQuery در شیرپوینت 2010</title>

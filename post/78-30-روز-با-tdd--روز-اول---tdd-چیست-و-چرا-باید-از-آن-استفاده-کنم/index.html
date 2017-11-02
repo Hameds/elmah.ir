@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>30 روز با TDD: روز اول - TDD چیست و چرا باید از آن استفاده کنم؟</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="داستان چیه؟ سپتامبر سال گذشته آقای James Bender در وبلا‌گ‌های تلریک یک مجموعه نوشته منتشر کرد به نام 30 روز با TDD. من می‌خوام یک ترجمه آزاد از این نوشته‌ها براتون داشته باشم تا با هم درباره Test Driven Development بیشتر بدونیم. اگر نمی‌دونید داستان TDD چی هست نگران نباشید، این مجموعه نوشته‌ها برای همین هست که با این روش بیشتر آشنا بشیم ;)
+در هر نوشته، لینکی به مطلب اصلی هم خواهم داد که اگر خواستید متن رو به زبان انگلیسی مطالعه کنید راحت باشید و ممکنه در بعضی نوشته‌ها علاوه بر متن اصلی (که معمولاً خلاصه می‌شه و نکات مهمش ترجمه می‌شه) مطالب اضافه‌تری که از تجربه خودم یا دیگران هست رو هم اضافه کنم." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="30 روز با TDD: روز اول - TDD چیست و چرا باید از آن استفاده کنم؟" />
+    <meta name="twitter:description" content="داستان چیه؟ سپتامبر سال گذشته آقای James Bender در وبلا‌گ‌های تلریک یک مجموعه نوشته منتشر کرد به نام 30 روز با TDD. من می‌خوام یک ترجمه آزاد از این نوشته‌ها براتون داشته باشم تا با هم درباره Test Driven Development بیشتر بدونیم. اگر نمی‌دونید داستان TDD چی هست نگران نباشید، این مجموعه نوشته‌ها برای همین هست که با این روش بیشتر آشنا بشیم ;)
+در هر نوشته، لینکی به مطلب اصلی هم خواهم داد که اگر خواستید متن رو به زبان انگلیسی مطالعه کنید راحت باشید و ممکنه در بعضی نوشته‌ها علاوه بر متن اصلی (که معمولاً خلاصه می‌شه و نکات مهمش ترجمه می‌شه) مطالب اضافه‌تری که از تجربه خودم یا دیگران هست رو هم اضافه کنم." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/78-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%A7%D9%88%D9%84---tdd-%DA%86%DB%8C%D8%B3%D8%AA-%D9%88-%DA%86%D8%B1%D8%A7-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%A2%D9%86-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%DA%A9%D9%86%D9%85/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">30 روز با TDD: روز اول - TDD چیست و چرا باید از آن استفاده کنم؟</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 7 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="داستان-چیه">داستان چیه؟</h3>
+
+<p>سپتامبر سال گذشته آقای <a href="http://blogs.telerik.com/james-bender/posts.aspx">James Bender</a> در وبلا‌گ‌های تلریک یک مجموعه نوشته منتشر کرد به نام 30 روز با TDD. من می‌خوام یک ترجمه آزاد از این نوشته‌ها براتون داشته باشم تا با هم درباره Test Driven Development بیشتر بدونیم. اگر نمی‌دونید داستان TDD چی هست نگران نباشید، این مجموعه نوشته‌ها برای همین هست که با این روش بیشتر آشنا بشیم ;)</p>
+
+<p>در هر نوشته، لینکی به مطلب اصلی هم خواهم داد که اگر خواستید متن رو به زبان انگلیسی مطالعه کنید راحت باشید و ممکنه در بعضی نوشته‌ها علاوه بر متن اصلی (که معمولاً خلاصه می‌شه و نکات مهمش ترجمه می‌شه) مطالب اضافه‌تری که از تجربه خودم یا دیگران هست رو هم اضافه کنم. این اولین نوشته از مجموعه نوشته‌های مربوط به TDD هست.</p>
+
+<h3 id="30rooztdd">#30RoozTDD</h3>
+
+<p>در توییتر با هشتگ 30RoozTDD# می‌تونید مطالب مرتبط به این سری نوشته‌ها رو پیدا کنید. خود آقای James Bender خوانندگان رو تشویق کرده بود که با هشتگ 30DaysOfTDD# مطلب هر روز رو توییت کنند تا شانس برنده شدن یک لایسنس رایگان نرم‌افزارهای تلریک مثل JustMock یا JustCode رو داشته باشند. من هم از ایده مشابه حمایت می‌کنم، حرکت 30 روز با TDD برای ارتقاء دانش خودم و همه دوستان و همکاران برنامه‌نویسم هست و اگر کسی مایل هست از این حرکت حمایتی بکنه، می‌تونه با من در تماس باشه.</p>
+
+<p>و اما <strong>اولین روز: TDD چیست و چرا باید ازش استفاده کنم؟</strong></p>
+
+<p>نوشته اصلی را در <a href="http://blogs.telerik.com/james-bender/posts.aspx/13-09-09/30-days-tdd-day-one-what-is-tdd">این آدرس</a> می‌توانید مطالعه کنید، سعی من این هست که فقط بخش‌های مهم و مفید رو ترجمه کردم بنابراین به عنوان مثال در این نوشته، بخش مقدمه رو ترجمه نکردم.</p>
+
+<h3 id="tdd-چیست">TDD چیست؟</h3>
+
+<p>قبل از اینکه وارد بحث اینکه TDD‌ دقیقاً‌ چیست و چطوری کار می‌کند بشویم لازم است یک درک مشخص و مشترک از مفهوم Unit Test (آزمون واحد) داشته باشیم. آزمون واحد نوع خیلی خاصی از تست نرم‌افزار، با اهداف و مجموعه ویژگی‌های خیلی روشن است. خوشبختانه تعریف اولیه آزمون واحد، نسبتاً خیلی ساده است: Unit Test یک تست است که <strong>یک</strong><strong>نیاز</strong> مشخص برای <strong>یک</strong><strong>متد</strong> مشخص را آزمایش می‌کند. بعداً در این سری نوشته‌ها به مفاهیم مربوط به row tests و series tests و set tests خواهیم پرداخت ولی در نهایت همه این‌ها unit test هستند و اگر درست پیاده شوند در قانون <em>یک نیاز/ یک متد</em> می‌گنجند. توجه داشته باشید که اگر تست شما،‌ قانون <em>یک نیاز/یک متد</em> را نقض کند، همچنان یک تست است اما دیگر unit test نیست.</p>
+
+<p>آزمون‌های واحد که قانون یک نیاز/یک متد را رعایت می‌کنند، ویژگی‌های زیر را هم به عنوان یک unit test‌ دارند:</p>
+
+<ul>
+<li>Targeted: آزمون‌های واحدی که یک چیز (شامل مجموعه‌ای از ورودی‌ها) را در یک زمان آزمایش می‌کنند، هدف‌گیری‌شده هستند.</li>
+<li>Isolated: کدی که در حال تست آن هستید باید از کد اصلی برنامه و وابستگی‌های خارجی یا رویدادها جدا بوده و ایزوله شده باشد.</li>
+<li>Repeatable &amp; Predictable: یک آزمون واحد باید قابلیت بارها تکرار مجدد را داشته باشد (Repeatable باشد) و با فرض اینکه کد در حال تست و خود تست تغییر نکنند، هر دفعه همان نتیجه را تولید کند (قابل پیش‌بینی یا Predictable باشد)</li>
+<li>Independent: این آزمون‌ها باید مستقل باشد، به صورت کلی هیچ تضمینی در خصوص ترتیب اجرا unit test ها وجود ندارد و بنابراین تست‌های نوشته شده توسط شما نباید انتظار یا نیاز به این مساله داشته باشند.</li>
+</ul>
+
+<p>درباره این ویژگی‌ها در مطالب بعدی، جزئیات بیشتری را مطرح می‌کنیم. در روند ادامه این سری نوشته‌ها، خواهید دید که چطور می‌شود unit test واقعی نوشت و این تست‌ها چه تفاوتی با سایر تست‌ها دارند.</p>
+
+<h3 id="test-driven-development">Test DRIVEN Development</h3>
+
+<p>بیشتر برنامه‌نویس‌هایی که کار با آزمون‌های واحد را شروع می‌کنند، ابتدا کد برنامه‌شان را می‌نویسند و بعد unit test ها را. این گام مشترک و حتی می‌توان گفت اولین گام منطقی برای ورود به دنیای TDD و unit testing است. بالاخره نمی‌شود یک تست نوشت وقتی چیزی برای تست کردن وجود ندارد. خیلی از این برنامه‌نویس‌ها این کار را با یک روش و نیت خوب شروع می‌کنند: حتماً بعد از نوشتن کد، تست مربوط به کد را هم می‌نویسند. آن‌ها نوشتن تست‌ها را فراموش نمی‌کنند یا به خاطر یک کار مهم دیگر به تاخیر نمی‌اندازند.</p>
+
+<p>اما در واقعیت، تعهد به نوشتن تست کار بسیار دشواری است و تقریباً همه برنامه‌نویس‌ها بعد از مدتی دچار TED یا Test Eventually Develpoment می‌شوند و در واقع می‌گویند که بالاخره <em>یک روزی</em> تستش می‌کنیم و تا آن <em>یک روزی</em> ممکن است زمان زیادی طول بکشد یا حتی هرگز فرا نرسد!</p>
+
+<p>اولین D در TDD مخفف Driven هست. ایده این روش این است که اولین کاری که برنامه‌نویس انجام می‌دهد نوشتن تست بر اساس ویژگی مورد انتظار فعلی نرم‌افزار (specification) است که روی آن کار می‌کند. این تست‌ها باید fail شوند چرا که قابلیتی که می‌خواهند آزمایش کنند هنوز به وجود نیامده است. در این شرایط کار برنامه‌نویس این خواهد بود که ساده‌ترین کد ممکن را بنویسد یا تست pass شود. اگر نرم‌افزار امکانات مورد انتظار (specification) بیشتری دارد، تست‌های بیشتری بنویسید و چرخه refactor و بهینه کردن کد را ادامه دهید. وقتی همه مشخصات نرم‌افزار تست داشتند و تست‌هایشان pass می‌شد نرم‌افزار شما آماده است. عرضه‌اش کنید!</p>
+
+<p><img src="http://elmah.ir/oldimg/tdd_cycle.jpg" alt="" /></p>
+
+<p>تمرین کردن TDD به نظر ساده می‌رسد اما در حقیقت اجرا کردن TDD به معنی ایجاد تغییرات بنیادی در روش‌هایی هست که برنامه‌نویس‌ها برای ورود به حوزه توسعه نرم‌افزار آموزش دیده‌اند. اوایل ممکن است حتی کمی غیرطبیعی به نظر برسد اما در نهایت اغلب برنامه‌نویس‌ها متوجه می‌شوند که آخرش همان کد نوشتن‌ است با این تفاوت که قبل از کدنویسی، کدهای تست را می‌نویسیم.</p>
+
+<h3 id="چرا-باید-از-tdd-استفاده-کنم">چرا باید از TDD استفاده کنم؟</h3>
+
+<p>مزایای زیادی برای استفاده از روش TDD‌ در توسعه نرم‌افزار وجود دارد. برخی از این مزایا واضح هستند و بعضی نه. شاید واضح‌ترین مزیت این باشد که کد شما وقتی کاملاً منطبق بر نیازهای مورد انتظار نرم‌افزار نیست،‌ مشکلات و باگ‌های کمتری خواهد داشت. یکی از انواع باگ‌هایی که TDD می‌تواند به صورت کامل حذفشان کند، &ldquo;<strong>باگ‌های زامبی</strong>&rdquo; هستند: باگ‌هایی که به نظر می‌رسد رفع شده‌اند ولی چند build‌ بعدتر دوباره ظاهر می‌شوند!</p>
+
+<p>وقتی رسیدگی به یک باگ یا مشکل به یک TDD کار محول می‌شود، اولین کاری که انجام می‌دهد نوشتن یک تست جدید است که باگ را آشکار و تست را fail می‌کند. بعد از این کار، برنامه‌نویس روش عادی کار در TDD را دنبال می‌کند: آن‌قدر کد بنویس که تست مورد نظر pass شود و بقیه تست‌ها هم همچنان pass شده باقی بمانند. وقتی این کار تمام شد با فرض اینکه شما شرایطی که باعث بروز مشکل شده را به درستی تست کنید، مشکل دیگر نباید در iteration های بعدی برنامه دیده شود. درباره این موضوع بیشتر صحبت خواهیم کرد.</p>
+
+<p>مزیت دیگر استفاده از TDD بهبود کیفیت کد است.همان‌طور که گفته شد در TDD برنامه‌نویس‌ها باید ساده‌ترین کد برای pass شدن تست‌ها را بنویسند: ساده‌ترین و کوتاه‌ترین کد که معمولاً کیفیت بیشتری دارد. همچنین این کدها خوانایی بیشتری دارند که باعث می‌شود نگهداری کد ساده‌تر شود.</p>
+
+<p>مزیت دیگر استفاده از TDD حذف موثر <strong>کدهای مرده</strong> از برنامه شماست. کدهای مرده یا Dead Code کدهایی هستند که در برنامه هستند اما هیچ وقت اجرا نمی‌شوند. این کد ممکن است یک متد یا کلاس باشند که هیچ وقت فراخوانی یا ارجاع داده نشدند یا بخشی از یک شرط باشند که هیچ وقت محقق نخواهد شد.<br />
+با استفاده از TDD شما فقط کدهایی را می‌نویسید که برای pass شدن تست نیاز دارید. اگر تست‌ها بر اساس نیازمندی‌های نرم‌افزار باشند، هیچ کدی از برنامه نیست که اجرا نشود و کدهایی که با روش TDD ایجاد می‌شوند همیشه مورد استفاده قرار می‌گیرند. با این حال تغییرات در نرم‌افزار به مرور زمان ممکن است باعث شوند یک متد که امروز مورد استفاده قرار می‌گیرد فردا هیچ استفاده‌ای نداشته باشد.</p>
+
+<p>با مانیتور کردن کدها در TDD اگر کدی داشته باشید که در تستی مورد استفاده قرار نگرفته از دو حال خارج نیست: یا یک تست از دست شما در رفته یا آن کد یک کد مرده (dead code) است و باید حذف شود.</p>
+
+<p>ادامه دارد&hellip;</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1373</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

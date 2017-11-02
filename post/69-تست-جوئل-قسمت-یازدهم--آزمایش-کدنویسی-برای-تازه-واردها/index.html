@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>تست جوئل قسمت یازدهم: آزمایش کدنویسی برای تازه‌واردها</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="تست یازدهم جوئل: آیا داوطلبان جدید، در موقع مصاحبه کد هم می‌نویسند؟ در سایر نوشته‌هایی که مربوط به شرح تست جوئل بود، معمولاً عباراتی از متن اصلی تست به زبان آقای اسپالسکی می‌آوردم و بعد درباره‌اش صحبت‌های تکمیلی ارائه می‌کردم.
+اما در مورد تست یازدهم به نظرم همه چیز کاملاً روشن است: هر زمان که فرد جدیدی را استخدام می‌کنید حتماً و حتماً تست کدنویسی بگیرید. در مورد مساله استخدام برنامه‌نویس در تیم‌های نرم‌افزاری قبلاً یک مطلب نسبتاً مفصل نوشته بودم: چطور متقاضیان عضویت در یک تیم نرم‌افزاری را ارزیابی کنیم؟" />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="تست جوئل قسمت یازدهم: آزمایش کدنویسی برای تازه‌واردها" />
+    <meta name="twitter:description" content="تست یازدهم جوئل: آیا داوطلبان جدید، در موقع مصاحبه کد هم می‌نویسند؟ در سایر نوشته‌هایی که مربوط به شرح تست جوئل بود، معمولاً عباراتی از متن اصلی تست به زبان آقای اسپالسکی می‌آوردم و بعد درباره‌اش صحبت‌های تکمیلی ارائه می‌کردم.
+اما در مورد تست یازدهم به نظرم همه چیز کاملاً روشن است: هر زمان که فرد جدیدی را استخدام می‌کنید حتماً و حتماً تست کدنویسی بگیرید. در مورد مساله استخدام برنامه‌نویس در تیم‌های نرم‌افزاری قبلاً یک مطلب نسبتاً مفصل نوشته بودم: چطور متقاضیان عضویت در یک تیم نرم‌افزاری را ارزیابی کنیم؟" />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/69-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%DB%8C%D8%A7%D8%B2%D8%AF%D9%87%D9%85--%D8%A2%D8%B2%D9%85%D8%A7%DB%8C%D8%B4-%DA%A9%D8%AF%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B2%D9%87-%D9%88%D8%A7%D8%B1%D8%AF%D9%87%D8%A7/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">تست جوئل قسمت یازدهم: آزمایش کدنویسی برای تازه‌واردها</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 3 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="تست-یازدهم-جوئل-آیا-داوطلبان-جدید-در-موقع-مصاحبه-کد-هم-می-نویسند">تست یازدهم جوئل: آیا داوطلبان جدید، در موقع مصاحبه کد هم می‌نویسند؟</h3>
+
+<p>در سایر نوشته‌هایی که مربوط به شرح تست جوئل بود، معمولاً عباراتی از متن اصلی تست به زبان آقای اسپالسکی می‌آوردم و بعد درباره‌اش صحبت‌های تکمیلی ارائه می‌کردم.</p>
+
+<p>اما در مورد تست یازدهم به نظرم همه چیز کاملاً روشن است: هر زمان که فرد جدیدی را استخدام می‌کنید حتماً و حتماً تست کدنویسی بگیرید. در مورد مساله استخدام برنامه‌نویس در تیم‌های نرم‌افزاری قبلاً یک مطلب نسبتاً مفصل نوشته بودم: <a href="http://elmah.ir/post/48-چطور-متقاضیان-عضویت-در-یک-تیم-نرم-افزاری-را-ارزیابی-کنیم/">چطور متقاضیان عضویت در یک تیم نرم‌افزاری را ارزیابی کنیم؟</a></p>
+
+<p>در این نوشته می‌خواهم به باید‌ها و نباید‌ها در حوزه همین تست کدنویسی بپردازم.</p>
+
+<p><img src="http://elmah.ir/oldimg/exam_mb1sz.jpg" alt="" /><br />
+آدم‌ها، در شرایط آزمون واکنش‌های مختلفی نشان می‌دهند.  هدف آزمون کدنویسی را فراموش نکنید: سنجش میزان کیفیت و دقت کار متقاضی  در این آزمون‌ها چیزی که اهمیت دارد خروجی کار است نه اینکه متقاضی با مک بوک کد می‌نویسد!</p>
+
+<h3 id="نکاتی-درباره-برگزاری-تست-کدنویسی">نکاتی درباره برگزاری تست کدنویسی</h3>
+
+<p>اولین نکته‌ای که باید به آن توجه کنید این است که تست کدنویسی، قرار نیست سوال تعریفی باشد. پرسیدن اینکه HashTable چیست یا delegate به چه دردی می‌خورد، خوب است اما نه برای یک متقاضی کدنویسی.</p>
+
+<p>وقتی می‌گوییم تست کدنویسی یعنی تستی که در آن <strong>عمل کدنویسی</strong> انجام شود و شما <strong>خروجی کد فرد</strong> را ببینید و ارزیابی کنید. پاسخ درست یا غلط طرف مقابل به سوال تستی و تشریحی تئوری، هیچ چیزی را راجع به مهارت یا استایل کدنویسی‌اش به شما نشان نمی‌دهد.</p>
+
+<p>نکته دوم این است که سوالی را مطرح کنید که <strong>خودتان جوابش را بدانید</strong> و درباره‌اش مطالعه کرده باشید. افرادی را می‌شناسم که اگر یک الگوی جدید برنامه‌نویسی را دیروز یاد گرفته باشند، امروز آن را در یک تست برنامه‌نویسی مطرح می‌کنند!</p>
+
+<p>ممکن است این نکته بدیهی به نظر برسد، اما نکته مهمی است و نباید از آن غفلت کرد. اگر شما به عنوان یک برنامه‌نویس می‌خواهید برنامه‌نویسی قوی‌تر از خودتان را استخدام کنید و سوالی که برای تست به متقاضی می‌دهید بالاتر از سطح شماست، بهتر است کار استخدام را به فرد دیگری واگذار کنید. چون در نهایت صلاحیت ارزیابی پاسخ متقاضی را به دلیل دانش کمتر نخواهید داشت!</p>
+
+<p>نکته بسیار مهم بعدی این است که اگر مثلاً از 10 نفر تست برنامه‌نویسی می‌گیرید <strong>به همه یک سوال مشخص و یکسان بدهید</strong>. این‌طوری می‌شود از روی نتیجه کدنویسی افراد، تصمیم گرفت که کدامیک مساله را به شکل بهتری حل کرده‌، ولی اگر به هر نفر یک سوال مجزا بدهید، عملاً 10 خروجی متفاوت دارید که اصلاً قابل مقایسه با هم نیستند و بنابراین انتخاب بین آن‌ها اگر غیرممکن نباشد، بسیار مشکل خواهد بود.</p>
+
+<p>مساله بعدی در خصوص <strong>سطح سوال</strong> است. سوال مطرح شده نباید آن چنان روتین باشد که هر کس که یک sample های یک کتاب برنامه‌نویسی را دیده باشد بتواند از پسش بربیاید و همچنین نباید آن چنان خاص باشد که فقط با دانستن نکات انحرافی (یا فوت‌های کوزه‌گری!) بتوان آن را حل کرد. دقت کنید که ساده یا دشوار بودن بیش از حد، باعث نامعتبر شدن نتایج می‌شود و این‌طور نیست که اگر یک سوال مشکل مطرح کنید، موفق به جذب برنامه‌نویس‌های بهتری بشوید.</p>
+
+<p>اگر امتحان شما به صورت کتاب باز است یعنی متقاضی دسترسی به اینترنت دارد، حتماً بر مواردی که جستجو می‌کند <strong>نظارت</strong> داشته باشید. این‌طوری می‌توانید مطمئن شوید که به جای developer یک googler استخدام نکرده‌اید.</p>
+
+<p>نکته پایانی اینکه حتماً برای بررسی نتیجه و کد خروجی داوطلب، وقت بگذارید (که بهتر است در حضور وی هم نباشد) و انتظار نداشته باشید که در 5 دقیقه و با پرسیدن 2 سوال، کد وی را مورد ارزیابی قرار بدهید. شاید لازم باشد برای بررسی کدها از نظر سایر افراد هم کمک بگیرید.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1436</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

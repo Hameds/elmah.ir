@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>۳۰ روز با TDD: روز نهم - مقدمات Refactoring</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="نوشته زبان انگلیسی مربوط به روز نهم را از این آدرس می‌توانید مطالعه کنید. درباره مفهوم Refactoring در ادامه توضیح خواهم داد.
+زمانی برای بازبینی کد (Code Review) درنوشته قبلی از این سری نوشته‌ها درباره defect ها صحبت کردیم. آخرین کدی که نوشتیم این بود:
+ نقصی که برطرفش کردیم این بود که کاربر می‌توانست یک رشته دو حرفی را به عنوان پارامتر دوم به تابع FindNumberOfOccurences ارسال کند و exception ای از نوع FormatException بگیرد." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="۳۰ روز با TDD: روز نهم - مقدمات Refactoring" />
+    <meta name="twitter:description" content="نوشته زبان انگلیسی مربوط به روز نهم را از این آدرس می‌توانید مطالعه کنید. درباره مفهوم Refactoring در ادامه توضیح خواهم داد.
+زمانی برای بازبینی کد (Code Review) درنوشته قبلی از این سری نوشته‌ها درباره defect ها صحبت کردیم. آخرین کدی که نوشتیم این بود:
+ نقصی که برطرفش کردیم این بود که کاربر می‌توانست یک رشته دو حرفی را به عنوان پارامتر دوم به تابع FindNumberOfOccurences ارسال کند و exception ای از نوع FormatException بگیرد." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/87-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%86%D9%87%D9%85---%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA-refactoring/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">۳۰ روز با TDD: روز نهم - مقدمات Refactoring</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 4 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>نوشته زبان انگلیسی مربوط به روز نهم را از <a href="http://blogs.telerik.com/james-bender/posts.aspx/13-09-27/30-days-of-tdd-day-nine-refactoring-basics">این آدرس</a> می‌توانید مطالعه کنید. درباره مفهوم Refactoring در ادامه توضیح خواهم داد.</p>
+
+<h3 id="زمانی-برای-بازبینی-کد-code-review">زمانی برای بازبینی کد (Code Review)</h3>
+
+<p>درنوشته قبلی از این سری نوشته‌ها درباره defect ها <a href="http://elmah.ir/post/85-۳۰-روز-با-tdd--روز-هشتم--برخورد-با-defect-ها/">صحبت کردیم</a>. آخرین کدی که نوشتیم این بود:</p>
+
+<script src="//gist.github.com/hameds/9bb4fa64ff48c56b452de5ced736b2b0.js"></script>
+
+<p>نقصی که برطرفش کردیم این بود که کاربر می‌توانست یک رشته دو حرفی را به عنوان پارامتر دوم به تابع FindNumberOfOccurences ارسال کند و exception ای از نوع FormatException بگیرد. رفتار مورد انتظار در این شرایط این بود که متد exception از نوع ArgumentException را throw (پرتاب) کند.</p>
+
+<p>راه حل من برای رفع این نقص این بود که خیلی ساده کل بدنه تابع را داخل یک try/catch قرار بدهم و اگر خطایی رخ داد یک ArgumentException را throw کنم. این نیاز مربوط به رفع نقص کد را برآورده می‌کند اما اگر به دنبال کد خوب باشیم نیاز به کار بیشتری دارد و اینجاست که می‌توانیم کمی Refactor انجام بدهیم.</p>
+
+<p>مارتین فولر Refactoring را این‌طور تعریف می‌کند: «&hellip; یک تکنیک کنترل‌شده برای بهبود طراحی کد موجود». اساساً Refactoring درباره یافتن راه‌هایی است که کدمان را بهتر کنیم. «بهتر» ممکن است معانی زیادی داشته باشد. بعضی مواقع به این معنی است که کد را تغییر بدهیم تا خوانایی بیشتری داشته باشد. بعضی اوقات به معنی حذف کردن کدها یا logic تکراری است. بعضی اوقات به معنی جدا کردن متدها یا کلاس‌های بزرگ برای مدیریت بهتر آن‌هاست. دلایل زیادی برای Refactor کردن کدها وجود دارد. در نوشته‌های بعدی درباره بعضی از مشکلات مشترک کدها و نحوه برخورد با آن‌ها صحبت خواهم کرد.</p>
+
+<p>TDD به سادگی امکان Refactor را فراهم می‌کند. بدون آزمون‌های واحد من باید نگران تغییر کدهایی بودم که کار می‌کنند. چون از Unit Test ها استفاده می‌کنم می‌توانم تا هر جا که مایل باشم کدهایم را Refactor کنم و تا زمانی که تست‌ها pass می‌شوند، صرفنظر از تغییراتی که در کد دادم، مطمئن هستم که نیازمندی‌ها همچنان رعایت شده‌اند.</p>
+
+<p>موقع Refactor کردن شما تغییرات کوچکی ایجاد کرده و بعد آزمون‌های واحد را اجرا می‌کنید تا مطمئن شوید که به برنامه آسیبی وارد نشده است. تغییرات کوچک باعث می‌شوند اگر به هر دلیل آن تغییرات کار نکردند (در واقع آزمون‌های واحد fail شدند) بتوانیم به سادگی به عقب برگردیم.</p>
+
+<p>در پیاده‌سازی جاری متد FindNumberOfOccurences روشی که برای رفع نقص در نظر گرفتیم احتمالاً بهترین راه نبود. چیزی که در واقع احتمالاً به آن نیاز داریم این است که یک قانون اعتبارسنجی برای تعیین تعداد کاراکترهای پارامتر characterToScanFor داشته باشیم و اگر تعداد کاراکترها برابر یک نبود آنگاه یک exception را throw کنیم. من کد متد FindNumberOfOccurences را برای پیاده‌سازی این روش تغییر می‌دهم:</p>
+
+<script src="//gist.github.com/hameds/64ceca1a109dcb456f2ddb9033410405.js"></script>
+
+<p>به جای اینکه کل بدنه متد را در یک try/catch قرار دهم، طول رشته characterToScanFor را چک می‌کنم. اگر طول رشته برابر یک نبود، آنگاه یک exception از نوع AgurmentException را throw می‌کنم. در مقایسه با روش قبل این روش بسیار بهتری است («کار کردن بر حسب تصادف» یکی از مشکلات کد است که در نوشته‌های بعدی درباره‌اش توضیح خواهم داد) این روش همچنین باعث می‌شود که نقایص احتمالی که به قانون اعتبارسنجی (همان قانون یک کاراکتری بودن پارامتر دوم) مرتبط نیستند فراموش نشوند. در هر حال این روش بهتری است اما آیا درست کار می‌کند. راه فهمیدن این موضوع اجرا کردن آزمون‌های واحد است.</p>
+
+<p><img src="http://elmah.ir/oldimg/TDD/9/image_thumb1C38E05DC5B75.png" alt="" /></p>
+
+<p>چون unit test ها هنوز هم pass می‌شوند، متوجه می‌شویم که صرفنظر از تغییری که در کد دادیم، برنامه و منطق تجاری آن هنوز کار می‌کند. ممکن است defect ها یا نیازمندی‌های دیگری در آینده به وجود آیند اما در حال حاضر کد ما تمام نیازمندهای تجاری برنامه را پوشش می‌دهد.</p>
+
+<p>Refactoring یک گام مهم در TDD است. در TDD شما معمولاً عبارت &ldquo;Red,Green,Refactor&rdquo; را می‌شنوید. Red اشاره به این ایده دارد که تستی را می‌نویسیم و fail شدنش را برای اولین بار می‌بینیم. به محض اینکه کد لازم برای pass کردن تست نوشته شد ما به بخش Green در چرخه کاری TDD می‌رسیم. Refactoring آخرین مرحله است: بهتر کردن کد به صورت مداوم برای اینکه خواناتر و بهینه‌تر و انعطاف‌پذیرتر باشد.</p>
+
+<p>ادامه دارد&hellip;</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1282</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

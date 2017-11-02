@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>مهارت‌های کار تیمی نرم‌افزار قسمت پنجم: استانداردسازی کدنویسی</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="چرا به کد استاندارد نیاز داریم؟ مهمترین اعضای یک تیم نرم‌افزاری چیست؟ جواب بدیهی است: کدنویسی. اما کدنویسی از آن نوع مهارت‌هاست که هر شخص می‌تواند سلیقه خودش را در آن دخیل کند. به عبارت بهتر اگر شما تیمی متشکل از 5 برنامه‌نویس دارید، اگر به پروژه‌ای که توسط این 5 برنامه‌نویس ایجاد شده نگاه کنید، کدهایی متفاوت خواهید دید: از نام‌گذاری object ها و class ها گرفته تا استفاده از الگوهای برنامه‌نویسی." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="مهارت‌های کار تیمی نرم‌افزار قسمت پنجم: استانداردسازی کدنویسی" />
+    <meta name="twitter:description" content="چرا به کد استاندارد نیاز داریم؟ مهمترین اعضای یک تیم نرم‌افزاری چیست؟ جواب بدیهی است: کدنویسی. اما کدنویسی از آن نوع مهارت‌هاست که هر شخص می‌تواند سلیقه خودش را در آن دخیل کند. به عبارت بهتر اگر شما تیمی متشکل از 5 برنامه‌نویس دارید، اگر به پروژه‌ای که توسط این 5 برنامه‌نویس ایجاد شده نگاه کنید، کدهایی متفاوت خواهید دید: از نام‌گذاری object ها و class ها گرفته تا استفاده از الگوهای برنامه‌نویسی." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/28-%D9%85%D9%87%D8%A7%D8%B1%D8%AA-%D9%87%D8%A7%DB%8C-%DA%A9%D8%A7%D8%B1-%D8%AA%DB%8C%D9%85%DB%8C-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%82%D8%B3%D9%85%D8%AA-%D9%BE%D9%86%D8%AC%D9%85--%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%DA%A9%D8%AF%D9%86%D9%88%DB%8C%D8%B3%DB%8C/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">مهارت‌های کار تیمی نرم‌افزار قسمت پنجم: استانداردسازی کدنویسی</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 4 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="چرا-به-کد-استاندارد-نیاز-داریم">چرا به کد استاندارد نیاز داریم؟</h3>
+
+<p>مهمترین اعضای یک تیم نرم‌افزاری چیست؟ جواب بدیهی است: کدنویسی. اما کدنویسی از آن نوع مهارت‌هاست که هر شخص می‌تواند سلیقه خودش را در آن دخیل کند. به عبارت بهتر اگر شما تیمی متشکل از 5 برنامه‌نویس دارید، اگر به پروژه‌ای که توسط این 5 برنامه‌نویس ایجاد شده نگاه کنید، کدهایی متفاوت خواهید دید: از نام‌گذاری object ها و class ها گرفته تا استفاده از الگوهای برنامه‌نویسی.</p>
+
+<p>در نگاه اول شاید این مساله مهم به نظر نرسد و بگویید اگر کد درست کار می‌کند اینکه چطور نوشته شده مهم نیست. اما واقعیت این است که در یک تیم یا شرکت نرم‌افزاری افراد مدام در حال تغییر هستند و گروهی که روی یک پروژه کار می‌کنند ممکن است بسته به شرایط تغییر کنند یا از تیم بروند یا افراد جدیدی به تیم اضافه بشوند. اگر افراد جدید نتوانند کد نوشته شده قبلی را درک کنند، احتمال اینکه برای توسعه آن شما را قانع کنند که بهتر است همه چیز از اول (در واقع طبق استایل کدنویسی آن‌ها)‌ نوشته شود بسیار زیاد است! این بازنویسی خودش باعث ایجاد باگ و صرف زمان برای تست و اشکال‌زدایی و تحمیل هزینه به تیم یا شرکت نرم‌افزاری می‌شود.</p>
+
+<p><img src="http://elmah.ir/oldimg/ds5l5.jpg" alt="" /></p>
+
+<p>جدای از مساله توسعه که بسیار مهم است، مساله دیگری که نبود استاندارد کدنویسی ایجاد می‌کند در برندینگ محصول نرم‌افزاری است: اختلافات در انتخاب نام محصول، آیکن آن یا نحوه نگارش توضیحات آن!</p>
+
+<p>با یک روش ساده می‌توان از پرداخت این هزینه ناخواسته که شاید برای توسعه نرم‌افزار اجتناب ناپذیر به نظر برسد، جلوگیری کرد: تدوین استاندارد کدنویسی.</p>
+
+<h3 id="چطور-استاندارد-کدنویسی-درست-کنیم">چطور استاندارد کدنویسی درست کنیم؟</h3>
+
+<p>استاندارد کدنویسی در تیم‌های نرم‌افزاری مختلف ممکن است متفاوت باشد، اما بعضی از آن‌ها مثل استاندارد نام‌گذاری را می‌توان برای هر نوع تیم‌ نرم‌افزاری توصیه کرد.<br />
+ به عنوان مثال مایکروسافت راهنماهایی را برای استاندارد نام‌گذاری در زبان سی شارپ برای بخش‌های مختلف تدوین کرده است که از <a href="http://msdn.microsoft.com/en-us/library/ms229002.aspx">این آدرس</a> می‌توانید آن را مشاهده کنید. این استانداردها شامل راهنمای نام‌گذاری اسمبلی‌ها، namespace ها، کلاس‌ها و struct ها و interface ها، پارامترها و resource‌هاست. خود مایکروسافت هم از همین نام‌گذاری استفاده می‌کند برای همین است که کد هر dll یا API را چه در دات نت فریمورک و چه در هر محصول دیگر مایکروسافت نگاه کنید، به راحتی می‌توانید با آن کار کنید و همه نام‌گذاری‌های استاندارد را در آن می‌توان مشاهده کنید.<br />
+در این حوزه البته استفاده از نرم‌افزارهای چون <a href="http://www.jetbrains.com/resharper/">Resharper</a> هم بسیار مفید است.</p>
+
+<p>نکته دیگر در بحث استانداردسازی کدنویسی، مساله استفاده از کتابخانه‌های پایه که پروژه به آن‌ها وابستگی دارد می‌باشد. این کتابخانه‌ها خود می‌توانند تولید تیم نرم‌افزاری ما باشند یا مثلاً از یک پکیج nuget استفاده کرده باشیم. در هر حال شما باید رویه مشخصی در استفاده از این کتابخانه‌های زیرساختی داشته باشید. این رویه شامل نسخه بندی و نگهداری همه نسخه‌ها و همچنین مشخص کردن این مساله است که در هر پروژه از کدامیک از این کتابخانه‌ها باید استفاده بشود. به عنوان مثال در هر پروژه باید کتابخانه‌ای که مسئول log کردن اتفاقات است استفاده شود، یا مثلاً در پروژه‌هایی که با database سر و کار دارند، فلان کتابخانه که مسئول ارتباط با database است اضافه شود یا اگر نیاز به ارسال notification در برنامه دارید فلان کتابخانه را اضافه کنید تا بتوانید به کمک آن sms یا ایمیل ارسال کنید.</p>
+
+<p>مورد بعدی مشخص کردن الگوهای مورد استفاده در توسعه نرم‌افزار است. لیستی از این الگوها را به همراه مثال می‌توانید در <a href="http://www.dofactory.com/Patterns/Patterns.aspx">این آدرس</a> مشاهده کنید. باید برای تیم شما مشخص باشد که در هر شرایط از چه الگویی استفاده می‌کنید.</p>
+
+<p>در کنار همه مسائل مربوط به کدنویسی، می‌بایست روال‌های مربوط به مستندسازی و کامنت نویسی در کدها نیز استاندارد شوند. باید اعضای تیم دقیقاً بدانند که در چه مواردی باید در کد کامنت بنویسند و مستندات کدشان را چطوری و با چه فرمتی تهیه و در کجا ذخیره کنند و چطور آن را با هم تیمی‌هایشان به اشتراک بگذارند.</p>
+
+<h3 id="چطور-استاندارد-تدوین-شده-را-در-تیم-مستقر-کنیم">چطور استاندارد تدوین شده را در تیم مستقر کنیم؟</h3>
+
+<p>برای استقرار مناسب استانداردهای کدنویسی تدوین شده ابتدا باید راهکاری برای ذخیره و اطلاع رسانی آن‌ها در نظر بگیرید. یک پورتال داخلی می‌تواند مناسب باشد یا از یک نرم‌افزار ویکی <a href="http://www.screwturn.eu/">مثل این</a> استفاده کنید. اگر از TFS استفاده می‌کنید خودش امکان یکپارچه شدن با شیرپوینت برای تولید سایت به منظور نگهداری مستندات پروژه‌ها را دارد.</p>
+
+<p>گام مهم بعدی آموزش مداوم تیم و به خصوص افراد تازه وارد به تیم و همین‌طور نظارت بر رعایت استانداردهای کدنویسی از طریق مکانیزم‌هایی مثل Code Review است. باز اگر از TFS استفاده کنید امکان درخواست Code Review از داخل Visual Studio به راحتی برای برنامه‌نویسان فراهم است.<br />
+در نهایت به یاد داشته باشید میزان موفقیت شما در نهادینه کردن فرهنگ کدنویسی و تولید نرم‌افزار بر اساس استانداردهایی که تدوین می‌کنید، عاملی در تعیین میزان کیفیت محصول نرم‌افزاری تولید شده در تیم شماست.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1542</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

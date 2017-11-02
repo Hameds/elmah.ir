@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>ویندوز یا لینوکس، مساله این نیست!</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="دیروز مطلبی در سایت .NET Tips دیدم تحت عنوان &amp;ldquo;PHP سریع‌تر از ASP.NET! واقعیت یا افسانه&amp;ldquo; نویسنده مطلب اشاراتی به بعضی دلایل فنی از جمله تفاوت PHP و ASP.NET از نظر نوع زبان (مفسری یا کامپایلی بودن) و تعدادی benchmark داشته و در نهایت نتیجه گرفته است که سریع‌تر بودن PHP درست نیست.
+در این نوشته به یک موضوع اساسی در حوزه فناوری اطلاعات می‌پردازم: طرفداری. این طرفداری می‌تواند مثلاً در حوزه سیستم عامل باشد (دعوای طرفداران لینوکس و ویندوز) یا موبایل و سیستم عامل موبایل (دعوای طرفداران اندروید و iOS) یا تکنولوژی‌های وب (دعوای طرفداران PHP‌ و ASP." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="ویندوز یا لینوکس، مساله این نیست!" />
+    <meta name="twitter:description" content="دیروز مطلبی در سایت .NET Tips دیدم تحت عنوان &amp;ldquo;PHP سریع‌تر از ASP.NET! واقعیت یا افسانه&amp;ldquo; نویسنده مطلب اشاراتی به بعضی دلایل فنی از جمله تفاوت PHP و ASP.NET از نظر نوع زبان (مفسری یا کامپایلی بودن) و تعدادی benchmark داشته و در نهایت نتیجه گرفته است که سریع‌تر بودن PHP درست نیست.
+در این نوشته به یک موضوع اساسی در حوزه فناوری اطلاعات می‌پردازم: طرفداری. این طرفداری می‌تواند مثلاً در حوزه سیستم عامل باشد (دعوای طرفداران لینوکس و ویندوز) یا موبایل و سیستم عامل موبایل (دعوای طرفداران اندروید و iOS) یا تکنولوژی‌های وب (دعوای طرفداران PHP‌ و ASP." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/52-%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2-%DB%8C%D8%A7-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D9%85%D8%B3%D8%A7%D9%84%D9%87-%D8%A7%DB%8C%D9%86-%D9%86%DB%8C%D8%B3%D8%AA/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">ویندوز یا لینوکس، مساله این نیست!</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 4 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>دیروز مطلبی در سایت .NET Tips دیدم تحت عنوان &ldquo;<a href="http://www.dotnettips.info/post/1496/php-%D8%B3%D8%B1%DB%8C%D8%B9%D8%AA%D8%B1-%D8%A7%D8%B2-asp-net-%D8%A7%D9%81%D8%B3%D8%A7%D9%86%D9%87-%DB%8C%D8%A7-%D9%88%D8%A7%D9%82%D8%B9%DB%8C%D8%AA">PHP سریع‌تر از ASP.NET! واقعیت یا افسانه</a>&ldquo; نویسنده مطلب اشاراتی به بعضی دلایل فنی از جمله تفاوت PHP و ASP.NET از نظر نوع زبان (مفسری یا کامپایلی بودن) و تعدادی benchmark داشته و در نهایت نتیجه گرفته است که سریع‌تر بودن PHP درست نیست.</p>
+
+<p>در این نوشته به یک موضوع اساسی در حوزه فناوری اطلاعات می‌پردازم: <strong>طرفداری</strong>. این طرفداری می‌تواند مثلاً در حوزه سیستم عامل باشد (دعوای طرفداران لینوکس و ویندوز) یا موبایل و سیستم عامل موبایل (دعوای طرفداران اندروید و iOS) یا تکنولوژی‌های وب (دعوای طرفداران PHP‌ و ASP.NET) و &hellip;</p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/linux-vs-windows.jpg"  />
+    
+    
+    <figcaption>
+        <h4>شما یادتون نمیاد! یکی از معروف‌ترین wallpaper های زمان ما که به دعوای لینوکسی‌ها و ویندوزی‌ها اشاره داشت</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="مقایسه-درست-و-مقایسه-غلط">مقایسه درست و مقایسه غلط</h3>
+
+<p>یک واقعیت این است که در بسیاری از حوزه‌های فناوری نمی‌توان یک مقایسه کامل و بی‌نقص انجام داد. مثلاً همین مساله سرعت PHP‌ و ASP.NET را در نظر بگیرید. هر دو این فناوری‌ها برای تولید صفحات پویا استفاده می‌شوند، بنابراین مقایسه سرعت برای تولید یک کد html ساده (در حد echo کردن یا معادل دات نتی آن Response.Write) چیزی را معلوم نمی‌کند و مهم نیست!</p>
+
+<p>مقایسه اصلی زمانی است که مثلاً هر دو قرار است اطلاعاتی را از بانک اطلاعاتی دریافت کرده و نمایش دهند. خب اینجا هم نمی‌توان مقایسه درستی داشت چون دیتابیس‌هایی که در هر کدام از فناوری‌ها مورد استفاده است با دیگری فرق دارد و بخشی از سرعت واکشی اطلاعات به سرعت کوئری‌های دیتابیس برمی‌گردد.</p>
+
+<p>و همه این‌ها به کنار، من به عنوان یک برنامه‌نویس ASP.NET می‌توانم برنامه‌ام را به شکلی بنویسم که با بدترین performance و کندترین شکل ممکن اجرا شود! یعنی الگوهای استفاده شده در تولید نرم‌افزار و مهارت برنامه‌نویس و روش اجرا هم واقعاً در مقایسه تاثیرگذار است: فرض کنید به دو برنامه‌نویس که یکی PHP‌ کار است و دیگری ASP.NET کار بگویید برنامه‌ای بسازد که در یک آرایه مشخص (که برای هر دو برنامه یکسان است) به دنبال یک عنصر خاص بگردد. یکی بهینه‌ترین (و خفن‌ترین) الگوریتم جستجو را پیاده‌‌سازی کند و دیگری جستجوی خطی را پیاده کند. معلوم است که نتیجه چه خواهد بود.</p>
+
+<p>مقایسه گوشی‌ها را در پلتفرم‌های مختلف در نظر بگیرید. یک بازی مشخص را روی آیفون و مثلاً گلکسی اس 4 نصب می‌کنیم و بعد نتیجه می‌گیریم که عملکرد کدام بهتر است غافل از اینکه گرچه بازی یک بازی است اما به دلیل تفاوتی ذاتی پلتفرم‌های iOS و اندروید عملاً دو بار نوشته شده است (یا از یک پلتفرم به دیگری پورت شده) و این یعنی مبنای مقایسه ما درست نیست.</p>
+
+<p>بنابراین در دعواهای طرفداری همیشه این موضوع را در نظر بگیرید که آیا مقایسه انجام شده کاملاً قابل اطمینان است یا خیر؟</p>
+
+<h3 id="فناوری-یک-ابزار-در-دست-شماست-نه-بیشتر-نه-کمتر">فناوری، یک ابزار در دست شماست. نه بیشتر نه کمتر</h3>
+
+<p>اگر در رشته کامپیوتر درس خوانده باشید، لابد دعواهای دانشجویی بر سر انتخاب سیستم عامل و زبان برنامه‌نویسی را از ترم‌های اول دانشگاه به یاد دارید!</p>
+
+<p>تجربه ده ساله من می‌گوید آن‌ها که حرفه‌ای هستند سر این مسائل با هم بحث و جدل نمی‌کنند! البته ممکن است شما نوشته‌ای از جف آتوود در مذمت PHP به من <a href="http://www.codinghorror.com/blog/2012/06/the-php-singularity.html">نشان بدهید</a>، اما این را به یاد داشته باشید همان جف آتوود وقتی می‌خواهد پروژه <a href="http://www.discourse.org/">discourse</a> را بسازد از ruby <a href="http://www.codinghorror.com/blog/2013/03/why-ruby.html">استفاده می‌کند</a>. چرا؟ خیلی ساده است <strong>طرفدار بودن با متعصب بودن فرق دارد.</strong></p>
+
+<p>به عبارت بهتر <strong>همه این فناوری‌ها فقط ابزار هستند و نباید آن‌ها را از اندازه ابزار بزرگتر دید.</strong></p>
+
+<p>من و شما ممکن است بر حسب علاقه یا اتفاق، یک فناوری یا سیستم عامل را انتخاب کنیم. این روش ماست و انتخاب ما. اما در شرایطی ممکن است بهتر باشد از ابزار، روش یا فناوری دیگری استفاده کنیم.</p>
+
+<p>به همه این فناوری‌ها به شکل ابزار نگاه کنید. اگر این ابزارها به شما در راه رسیدن به هدفتان کمک می‌کنند از آن‌ها استفاده کنید و گرنه خیلی راحت بروید سراغ یک ابزار دیگر.</p>
+
+<p>من رفقایی داشتم که با تعصب خاصی معتقد بودند دلفی خیلی قوی‌تر از vb است. شاید درست می‌گفتند ولی آخرش بورلند (به آن شکلی که می‌شناختیم) تمام شد! و آن طرفداران متعصب ماندند و ابزاری که دیگر مثل قبل نبود و در برابر دات نت زانو زده بود.</p>
+
+<p>وقتی در ترم‌های اول دانشگاه پاسکال و C می‌خواندم به یاد دارم که استادم می‌گفت اگر اصول برنامه‌نویسی را درست یاد بگیرید، ظرف یک هفته می‌توانید با هر زبان برنامه‌نویسی که بخواهید کار کنید. واقعیت هم همین است. زبان‌های برنامه‌نویسی اغلب بر پایه‌های ثابتی استوار هستند و فقط گرامر آن‌ها با هم متفاوت است.</p>
+
+<p>بار دیگر تاکید می‌کنم چه در موضوع برنامه‌نویسی چه در هر موضوع مرتبط با فناوری اطلاعات دیگر، به فناوری به چشم یک ابزار نگاه کنید. این‌طوری هیچ وقت وارد حاشیه‌های بی‌سرانجام نخواهید شد.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1505</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

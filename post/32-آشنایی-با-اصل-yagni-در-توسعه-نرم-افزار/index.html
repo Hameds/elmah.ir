@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>آشنایی با اصل YAGNI در توسعه نرم‌افزار</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="مدتی پیش وقتی یکی از همکاران برنامه‌نویس از تیم ما جدا می‌شد من مسئول تحویل گرفتن کدهایی شدم که نوشته بود. با هم جلسه‌ای گذاشتیم و کدهای نوشته شده را مرور کردیم، در حین این کار من لیستی از کدهای مختلف و پراکنده‌ای که قابلیت حضور در یک کتابخانه مستقل را داشتند برداشتم. صدها خط کد که با اضافه شدن به یک کتابخانه مشترک از تکرار بیهوده آن‌ها جلوگیری می‌شد." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="آشنایی با اصل YAGNI در توسعه نرم‌افزار" />
+    <meta name="twitter:description" content="مدتی پیش وقتی یکی از همکاران برنامه‌نویس از تیم ما جدا می‌شد من مسئول تحویل گرفتن کدهایی شدم که نوشته بود. با هم جلسه‌ای گذاشتیم و کدهای نوشته شده را مرور کردیم، در حین این کار من لیستی از کدهای مختلف و پراکنده‌ای که قابلیت حضور در یک کتابخانه مستقل را داشتند برداشتم. صدها خط کد که با اضافه شدن به یک کتابخانه مشترک از تکرار بیهوده آن‌ها جلوگیری می‌شد." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/32-%D8%A2%D8%B4%D9%86%D8%A7%DB%8C%DB%8C-%D8%A8%D8%A7-%D8%A7%D8%B5%D9%84-yagni-%D8%AF%D8%B1-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">آشنایی با اصل YAGNI در توسعه نرم‌افزار</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 4 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>مدتی پیش وقتی یکی از همکاران برنامه‌نویس از تیم ما جدا می‌شد من مسئول تحویل گرفتن کدهایی شدم که نوشته بود. با هم جلسه‌ای گذاشتیم و کدهای نوشته شده را مرور کردیم، در حین این کار من لیستی از کدهای مختلف و پراکنده‌ای که قابلیت حضور در یک کتابخانه مستقل را داشتند برداشتم. صدها خط کد که با اضافه شدن به یک کتابخانه مشترک از تکرار بیهوده آن‌ها جلوگیری می‌شد.<br />
+اغلب این کدها به برنامه‌نویسی شیرپوینت مربوط بودند. همان زمان با مجموعه‌ای از کدهای آماده مربوط به شیرپوینت در زمینه‌های مختلف آشنا شده بودم. هدف اولم این بود که همه این کدها را در کنار هم تبدیل به یک کتابخانه بزرگ بکنم که برای هر کاری در شیرپوینت بشود از آن استفاده کرد. اما همان اولین ساعاتی که شروع به آماده سازی کتابخانه کد کردم، از این کار منصرف شدم. دلیلش به یاد آوردن اصل YAGNI بود.</p>
+
+<h3 id="فقط-کدی-که-الان-لازم-دارید-را-بنویسید">فقط کدی که الان لازم دارید را بنویسید</h3>
+
+<p>اعضای یک تیم نرم‌افزاری هر روز ده‌ها خط کد به مجموعه کدها اضافه می‌کنند تا یک یا چند feature به نرم‌افزار خروجی اضافه شود. یک راه درست برای مدیریت کدهای قابل استفاده مجدد این است که آن‌هایی که در یک حوزه هستند را در قالب یک کتابخانه کد کامپایل کرده و در صورت نیاز به کدهای موجود اضافه کنیم. اما همیشه و برای همه برنامه‌نویسان این <strong>وسوسه</strong> وجود دارد که کدهایی را تولید کنند که <strong>ممکن است در آینده</strong> به آنها نیاز پیدا کنند یا کدهایی تولید کنند که مشابه آن‌ها هست اما از نظر آن‌ها مطابق نیازشان نیست.</p>
+
+<p>این <strong>ذهن ایده‌آل گرا</strong>ی برنامه‌نویسانی که دوست دارند همه چیز را در <strong>کلی‌ترین حالت ممکن</strong> تولید کنند و کاری کنند که در آینده بتوان به اشکال مختلف آن را سفارشی کرد باعث ایجاد دردسرهای بزرگی برای تیم و مجموعه نرم‌افزارهای تولیدی آن می‌شود.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/You_aren't_gonna_need_it">YAGNI</a> یا You aren&rsquo;t gonna need it‌ اصلی است که می‌گوید تا زمانی که نیاز نشده کدی را ننویسید. این اصل برنامه‌نویسان را تشویق به سبک نگه داشتن منطق برنامه و همچنین استفاده از کدهای موجود می‌کند. ضمناً گوشزد می‌کند که نوشتن کدهایی که ممکن است در آینده به آن‌ها نیازی پیدا شود فقط وقت تلف کردن است.</p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/3td7y0.jpg"  />
+    
+    
+    <figcaption>
+        <h4>وقتی بتمن به رابین سیلی می‌زند که چرا YAGNI را رعایت نکرده، شما از مدیر پروژه‌تان انتظار دارید در صورت عدم رعایت YAGNI با شما مهربان باشد؟ ;)</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>دلیل مهمی که برای YAGNI آورده می‌شود این است که کدی که شما با پیش‌بینی آینده می‌نویسید به احتمال زیاد در آینده برای شما مفید نخواهد بود! چرایی این مساله هم خیلی روشن است: شما امروز و بر اساس تفکرات امروز اقدام به طراحی و پیاده‌سازی کد می‌کنید. اگر به همین صورت مساله مثلاً 6 ماه دیگر نگاه بکنید ممکن است روش متفاوتی را برای پیاده‌سازی آن در نظر بگیرید. <br />
+علاوه بر این باید در نظر گرفت که زمان و در نتیجه هزینه کلی نوشتن کدهای اضافی برای یک کتابخانه فقط شامل هزینه نوشتن کد نیست،‌ بلکه باید هزینه دیباگ و تست و احتمالاً توسعه آن در آینده (به دلیل عدم شناخت کافی از مساله‌ای که امروز آن را در اختیار نداریم!) هم زمان‌بر و هزینه‌بر است.</p>
+
+<p>به همین علت لازم است همیشه تنها کدهایی را داشته باشید که از آن‌ها استفاده می‌کنید. برگردیم به داستانی که اول این مطلب برایتان گفتم. بعد از به یاد آوردن اصل YAGNI تنها کدهایی که برای عموم پروژه‌ها از آن استفاده می‌شد را به کتابخانه اضافه کردم و اولین نسخه از کتابخانه مورد نظر در زمان کوتاهی آماده شد. از آن زمان به بعد این کتابخانه 3 نسخه جدیدتر هم داشته است و در هر نسخه تعدادی تابع که از آن‌ها در پروژه‌های جدیدتر هم استفاده می‌شده اضافه شده است. کتابخانه‌ کد که می‌رفت شامل هزاران خط کد بی‌استفاده باشد تبدیل به یک کتابخانه ساده و سبک (زیر 100 کیلوبایت) شده که تنها کدهایی که مورد استفاده هستند در آن قرار گرفته. این کار باعث شده تا رفع باگ احتمالی در این کتابخانه و نگهداری کد آن بسیار ساده باشد.</p>
+
+<p>دقت داشته باشید که در YAGNI سایز کد شما اهمیتی ندارد، مثلاً اگر کتابخانه اصلی شیرپوینت (Microsoft.SharePoint.dll) را در نظر بگیرید در شیرپوینت 2013 یک کتابخانه با حجمی بیش از 25 مگابایت است، اما وقتی به عنوان یک API برای کار با شیرپوینت و داده‌های ذخیره شده در آن به این کتابخانه نگاه می‌کنید، در هیچ حوزه‌ای کد اضافی نمی‌بینید. شاهد این مدعا وجود کدهایی مثل کتابخانه‌ای که در ابتدای مطلب به آن اشاره کردم هست. در واقع یک راه مطمئن شدن از اینکه اصل YAGNI را رعایت کرده‌اید این است که دیگران بتوانند روی کدهای شما کتابخانه درست کنند، اگر این‌طور نباشد یعنی شما به همه حالات ممکن فکر کرده باشید و همه توابع ممکن را نوشته باشید بدانید که بخشی از کد تولید شده شما، آنچنان بی‌کیفیت است که خیلی زود مجبور به تغییر آن خواهید شد و تغییر در کد به دلیل مسائلی مثل حفظ سازگاری با نسخه‌های قبلی یکی از هزینه‌بر ترین بخش‌های توسعه نرم‌افزار است.</p>
+
+<p>اصل دیگری هم در همین راستا وجود دارد به نام KISS یا Keep it simple,stupid که در نوشته دیگری درباره آن صحبت خواهم کرد.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1538</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

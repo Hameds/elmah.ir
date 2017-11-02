@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>It on elmah</title>
+    <link>http://elmah.ir/categories/it/</link>
+    <description>Recent content in It on elmah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fa-ir</language>
+    <lastBuildDate>Fri, 03 Apr 2015 00:00:00 +0330</lastBuildDate>
+    
+	<atom:link href="http://elmah.ir/categories/it/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(تقریباً) همه چیزی که درباره Windows Azure باید بدانید</title>
+      <link>http://elmah.ir/post/115-%D8%AA%D9%82%D8%B1%DB%8C%D8%A8%D8%A7%D9%8B-%D9%87%D9%85%D9%87-%DA%86%DB%8C%D8%B2%DB%8C-%DA%A9%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-windows-azure-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D8%AF%D8%A7%D9%86%DB%8C%D8%AF/</link>
+      <pubDate>Fri, 03 Apr 2015 00:00:00 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/115-%D8%AA%D9%82%D8%B1%DB%8C%D8%A8%D8%A7%D9%8B-%D9%87%D9%85%D9%87-%DA%86%DB%8C%D8%B2%DB%8C-%DA%A9%D9%87-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-windows-azure-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D8%AF%D8%A7%D9%86%DB%8C%D8%AF/</guid>
+      <description>ویندوز آژور و آرایه سال گذشته و پس از طی مراحل مشکلی (البته مشکل به خاطر ایرانی بودن) این امکان را یافتیم تا خدمات Azure مایکروسافت را آزمایش کنیم. این نوشته که به صورت پرسش و پاسخ است، نگاهی دارد به امکانات Azure.
+این نوشته با پرسش‌های شما تکمیل خواهد شد. می‌توانید در بخش نظرات پرسش‌های خود را در خصوص Azure مطرح کنید. در نگارش این مطلب، از نوشته اسکات هنسلمن که به مبحث قیمت‌های آژور می‌پردازد نیز استفاده شده است.</description>
+    </item>
+    
+    <item>
+      <title>نابینایی سازمان‌ها و راه درمان آن</title>
+      <link>http://elmah.ir/post/67-%D9%86%D8%A7%D8%A8%DB%8C%D9%86%D8%A7%DB%8C%DB%8C-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%87%D8%A7-%D9%88-%D8%B1%D8%A7%D9%87-%D8%AF%D8%B1%D9%85%D8%A7%D9%86-%D8%A2%D9%86/</link>
+      <pubDate>Sat, 23 Nov 2013 09:28:34 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/67-%D9%86%D8%A7%D8%A8%DB%8C%D9%86%D8%A7%DB%8C%DB%8C-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%87%D8%A7-%D9%88-%D8%B1%D8%A7%D9%87-%D8%AF%D8%B1%D9%85%D8%A7%D9%86-%D8%A2%D9%86/</guid>
+      <description>چند هفته پیش برای تدریس در یک کارگاه 2 روزه آموزشی شیرپوینت برای مدیران و کارشناسان فناوری اطلاعات سازمان‌های دولتی به محمودآباد رفته بودم. در این سفر، یکی از دوستانم همراهم من بود تا پیش از من، در مورد business intelligence برای شرکت کنندگان ارائه‌ای داشته‌ باشد.
+وقتی نوبت به من رسید و خواستم در مورد پورتال و استفاده از شیرپوینت برای پورتال‌های داخلی و اینترنتی صحبت کنم، صحبتم را با یک مثال شروع کردم که منجر به تولید عبارت &amp;ldquo;نابینایی سازمان‌ها&amp;rdquo; شد.</description>
+    </item>
+    
+    <item>
+      <title>رزومه ارزش محور به جای رزومه کار محور برای توسعه دهندگان نرم‌افزار</title>
+      <link>http://elmah.ir/post/59-%D8%B1%D8%B2%D9%88%D9%85%D9%87-%D8%A7%D8%B1%D8%B2%D8%B4-%D9%85%D8%AD%D9%88%D8%B1-%D8%A8%D9%87-%D8%AC%D8%A7%DB%8C-%D8%B1%D8%B2%D9%88%D9%85%D9%87-%DA%A9%D8%A7%D8%B1-%D9%85%D8%AD%D9%88%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%AF%D9%87%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1/</link>
+      <pubDate>Tue, 08 Oct 2013 23:02:44 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/59-%D8%B1%D8%B2%D9%88%D9%85%D9%87-%D8%A7%D8%B1%D8%B2%D8%B4-%D9%85%D8%AD%D9%88%D8%B1-%D8%A8%D9%87-%D8%AC%D8%A7%DB%8C-%D8%B1%D8%B2%D9%88%D9%85%D9%87-%DA%A9%D8%A7%D8%B1-%D9%85%D8%AD%D9%88%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%AF%D9%87%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1/</guid>
+      <description>یکی از کارهایی که ما به عنوان Software Developer توی زندگی حرفه‌ای باهاش روبرو هستیم نوشتن رزومه هستش. نوشتن رزومه کار مشکلی نیست و حتی اگر ندونید که چطور میشه رزومه نوشت، ده‌ها مطلب توی اینترنت می‌تونید پیدا کنید که به شما می‌گن که چه چیزهایی رو با چه فرمتی باید توی رزومه‌تون بنویسید.
+اما یکی از چیزهایی که توی اغلب راهنمای رزومه‌نویسی بهش توجه نمی‌شه، نحوه بیان سوابق کاری هست.</description>
+    </item>
+    
+    <item>
+      <title>ویندوز یا لینوکس، مساله این نیست!</title>
+      <link>http://elmah.ir/post/52-%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2-%DB%8C%D8%A7-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D9%85%D8%B3%D8%A7%D9%84%D9%87-%D8%A7%DB%8C%D9%86-%D9%86%DB%8C%D8%B3%D8%AA/</link>
+      <pubDate>Wed, 18 Sep 2013 21:34:36 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/52-%D9%88%DB%8C%D9%86%D8%AF%D9%88%D8%B2-%DB%8C%D8%A7-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D9%85%D8%B3%D8%A7%D9%84%D9%87-%D8%A7%DB%8C%D9%86-%D9%86%DB%8C%D8%B3%D8%AA/</guid>
+      <description>دیروز مطلبی در سایت .NET Tips دیدم تحت عنوان &amp;ldquo;PHP سریع‌تر از ASP.NET! واقعیت یا افسانه&amp;ldquo; نویسنده مطلب اشاراتی به بعضی دلایل فنی از جمله تفاوت PHP و ASP.NET از نظر نوع زبان (مفسری یا کامپایلی بودن) و تعدادی benchmark داشته و در نهایت نتیجه گرفته است که سریع‌تر بودن PHP درست نیست.
+در این نوشته به یک موضوع اساسی در حوزه فناوری اطلاعات می‌پردازم: طرفداری. این طرفداری می‌تواند مثلاً در حوزه سیستم عامل باشد (دعوای طرفداران لینوکس و ویندوز) یا موبایل و سیستم عامل موبایل (دعوای طرفداران اندروید و iOS) یا تکنولوژی‌های وب (دعوای طرفداران PHP‌ و ASP.</description>
+    </item>
+    
+  </channel>
+</rss>

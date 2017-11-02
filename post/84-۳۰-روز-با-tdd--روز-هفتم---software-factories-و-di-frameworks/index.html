@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>۳۰ روز با TDD: روز هفتم - Software Factories و DI Frameworks</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="قبل از هر چیز، نوشته زبان انگلیسی روز هفتم را در این آدرس می‌توانید مطالعه کنید. لازم است یادآوری کنم معتقدم در کار برنامه‌نویسی تا حد امکان نباید عبارات تخصصی را ترجمه کرد (مثل ترجمه کردن نام داروها و ترکیبات شیمیایی آن‌ها در پزشکی) مگر اینکه معادل مناسبی برای آن‌ها وجود داشته باشد. در مورد نوشته امروز هم این نکته صادق است.
+اگر مشکل را نبینم پس مشکلی نیست. درسته؟ تزریق وابستگی (DI) یک تکنیک برای تولید برنامه‌های با پیوند ضعیف به وابستگی‌ها (loosely bound dependencies) هست." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="۳۰ روز با TDD: روز هفتم - Software Factories و DI Frameworks" />
+    <meta name="twitter:description" content="قبل از هر چیز، نوشته زبان انگلیسی روز هفتم را در این آدرس می‌توانید مطالعه کنید. لازم است یادآوری کنم معتقدم در کار برنامه‌نویسی تا حد امکان نباید عبارات تخصصی را ترجمه کرد (مثل ترجمه کردن نام داروها و ترکیبات شیمیایی آن‌ها در پزشکی) مگر اینکه معادل مناسبی برای آن‌ها وجود داشته باشد. در مورد نوشته امروز هم این نکته صادق است.
+اگر مشکل را نبینم پس مشکلی نیست. درسته؟ تزریق وابستگی (DI) یک تکنیک برای تولید برنامه‌های با پیوند ضعیف به وابستگی‌ها (loosely bound dependencies) هست." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/84-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%87%D9%81%D8%AA%D9%85---software-factories-%D9%88-di-frameworks/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">۳۰ روز با TDD: روز هفتم - Software Factories و DI Frameworks</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 7 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>قبل از هر چیز، نوشته زبان انگلیسی روز هفتم را در <a href="http://blogs.telerik.com/justteam/posts/13-09-23/30-days-of-tdd-day-seven-software-factories-and-di-frameworks">این آدرس</a> می‌توانید مطالعه کنید. لازم است یادآوری کنم معتقدم در کار برنامه‌نویسی تا حد امکان نباید عبارات تخصصی را ترجمه کرد (مثل ترجمه کردن نام داروها و ترکیبات شیمیایی آن‌ها در پزشکی) مگر اینکه معادل مناسبی برای آن‌ها وجود داشته باشد. در مورد نوشته امروز هم این نکته صادق است.</p>
+
+<h3 id="اگر-مشکل-را-نبینم-پس-مشکلی-نیست-درسته">اگر مشکل را نبینم پس مشکلی نیست. درسته؟</h3>
+
+<p>تزریق وابستگی (DI) یک تکنیک برای تولید برنامه‌های با پیوند ضعیف به وابستگی‌ها (loosely bound dependencies) هست. با پاس دادن کلاس‌هایی که برنامه به آن‌ها وابسته است در constructor، به دو چیز دست پیدا می‌کنیم: اول اینکه می‌توانیم کلاس‌هایمان را به abstraction ها وابسته کنیم نه پیاده‌سازی اصلی و واقعی و دوم اینکه می‌توانیم در زمان اجرا تصمیم بگیریم که از کدام پیاده‌سازی استفاده کنیم.</p>
+
+<p>این روش البته یک مشکل جدید هم برای ما ایجاد می‌کند. وقتی یک instance از یک کلاس ایجاد می‌کنیم، به دلیل اینکه در سازنده آن کلاس به کلاس‌های دیگری وابستگی ایجاد کردیم، کدی که کار ساختن instance را انجام می‌دهد باید component هایی که instance ما به آن‌ها وابسته است را ایجاد کند. این یعنی معرفی مجدد binding به روش tightly coupled. در واقع ما وابستگی‌ها را یک مرحله بالاتر برده‌ایم و در واقع به جای حل مشکل، آن را منتقل کردیم!</p>
+
+<p>به علاوه انتقال مشکل قدیم، یک مشکل جدید هم ایجاد کرده‌ایم. ما نه تنها مسئولیت ساخت component های فرزند (child) را به کلاس parent منتقل کردیم، بلکه کلاس‌های parent را در موقعیتی قرار دادیم که باید حتماً بدانند کدام پیاده‌سازی را برای کلاس child باید استفاده کنند. با انجام این کار یک اصل دیگر SOLID (رجوع کنید به نوشته <a href="http://elmah.ir/post/82-30-روز-با-tdd--روز-پنجم---کد-solid-ایجاد-کنید/">روز پنجم</a>) یعنی اصل Single Responsibility یا SPR را هم نقض کرده‌ایم. کلاس parent فقط باید مسئول قابلیت اصلی خودش باشد و فقط باید زمانی تغییر کند که قابلیت اصلی‌اش تغییر کرده باشد، اما حالا با کاری که در تزریق وابستگی کردیم، بر اساس child ها و وابستگی آن‌ها تغییر می‌کند.</p>
+
+<h3 id="software-factories">Software Factories</h3>
+
+<p>یک راه حل برای مشکلی که گفتم، استفاده از Software Factory است. software factory یک الگو برای abstract کردن اطلاعات و کد مورد نیاز برای ساختن یک instance از کلاس است. چند مدل از الگوهای software factory وجود دارد که هر کدام برای شرایط و نیازمندی‌های خاصی طراحی شده‌اند. برای آشنایی با مهم‌ترین و مشهورترین این الگوها، مطالعه کتاب <a href="http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?ie=UTF8&amp;amp;qid=1379600397&amp;amp;sr=8-1&amp;amp;keywords=design+patterns">Design Patterns</a> را توصیه می‌کنم.</p>
+
+<p>با وجود اینکه چندین الگوی مختلف software factory وجود دارد اما همه آن‌ها یک ایده مشابه دارند: یک component داریم که همه وابستگی‌ها و نحوه ایجادشان را یکی می‌کند. نمونه یک کلاس ساده factory به شکل زیر است:</p>
+
+<script src="//gist.github.com/hameds/3d14a94b0b3fb0f7dee4d096f5b9d2b5.js"></script>
+
+<p>الگوی software factory موثر و کاراست. همان‌طور که در کد بالا می‌توانید ببینید من کاری کردم که تمام قابلیت‌های مورد نیازم برای ساخت یک instance از کلاس BusinessService یکجا جمع شوند. این یعنی کلاس‌هایی که از BusinessService استفاده می‌کنند، می‌توانند به کار خودشان مشغول بوده و نگران وابستگی‌های BusinessService نباشند.</p>
+
+<p>این یک مثال ساده software factory است که در آن هر interface یک رابطه یک به یک با پیاده‌سازی واقعی دارد. ولی الزامی به رعایت این نوع رابطه یک به یک نیست. چون software factory هم کد است، پس می‌توانم هر منطقی که برای مشخص شدن پیاده‌سازی برگشتی لازم دارم را استفاده کنم. مثلاً ممکن است بخواهم کاربر بتواند بین MS SQL Server و Oracle انتخاب داشته باشد، می‌توانم کاری کنم که factory من یک فایل تنظیمات را بخواند تا مشخص شود از کدام دیتابیس باید استفاده شود.</p>
+
+<p>با وجود موثر و کارا بودن software factory، آن‌ها لزوماً ایده‌آل نیستند. حتی با اینکه الگوهای خاص factory برای شرایط خاص طراحی شده‌اند، در برنامه‌های کوچک هم ممکن است نیازمند نگهداری و تغییرات در factory ها باشیم. خوشبختانه یک راه حتی بهتر از software factory برای مدیریت وابستگی‌ها در نرم‌افزار وجود دارد.</p>
+
+<h3 id="چرا-از-software-factory-استفاده-کنیم-وقتی-می-شود-از-framework-ها-استفاده-کرد">چرا از Software Factory استفاده کنیم وقتی می‌شود از Framework ها استفاده کرد؟</h3>
+
+<p>DI Framewrok ها مشابه software factory هستند اما این مزیت را دارند که بسیاری از وظایفی که باید به صورت دستی انجام دهیم را اتوماتیک می‌کنند. به عنوان مثال، به جای اینکه یک متد کامل برای bind کردن یک implement به یک interface را تعریف کنم، با استفاده از فریمورک‌های تزریق وابستگی، می‌توانم در یک خط کد یک binding rule تعریف کنم.</p>
+
+<p>فریمورک‌های مختلفی برای تزریق وابستگی وجود دارد. من در این سری از نوشته‌ها از <a href="http://www.ninject.org/">Ninject</a> استفاده می‌کنم. در پایان این نوشته لینک چند DI Framework معروف و خوب دیگر را هم معرفی می‌کنم. اگر تا به حال از یک DI Framework استفاده نکردید، پیشنهاد می‌کنم که همه موارد معرفی شده در این نوشته یا سایر framework ها را امتحان کنید و فریمورکی که بیشتر مورد پسندتان است را انتخاب کنید.</p>
+
+<p>با وجود اینکه DI Framework ها اصطلاحات مختلفی برای اجزای خودشان دارند، اما همه آن‌ها شامل ۴ بخش مهم زیر می‌شوند:</p>
+
+<ul>
+<li>The Application: برنامه شما یا بخشی از آن که به یک instance از کلاس نیاز دارد.</li>
+<li>The Kernel یا the Container: اینترفیسی در برنامه شما برای DI Framework که آن را به منظور ایجاد instance ها نیاز دارید.</li>
+<li>The Provider: این شامل قوانین و راهنمایی‌ها برای ایجاد کلاس‌های مختلف و وابستگی‌های آن‌هاست.</li>
+<li>The Created Class: این چیزی است که توسط Kernel ایجاد شده و به برنامه شما برگردانده می‌شود. instance ای از کلاس شما با همه وابستگی‌هایش است.</li>
+</ul>
+
+<p>لطفاً توجه داشته باشید که تعاریف بالا بر اساس نام اصطلاحات Ninject است و در فریمورک شما ممکن است نام متفاوتی داشته باشند.</p>
+
+<p>برای بازنویسی مثال بالا با Ninject باید ابتدا reference آن را به برنامه‌ام اضافه کنم. برای این کار می‌توان dll مربوط به Ninject را از سایت خودش دانلود و به صورت دستی به برنامه اضافه کرد یا به صورت اتوماتیک و با استفاده از Nuget آن را به برنامه افزود.</p>
+
+<p>در Ninject اولین کاری که باید انجام دهم تعریف یک ماژول است. جایی که binding rule های مربوط به برنامه را در آن تعریف می‌کنم:</p>
+
+<script src="//gist.github.com/hameds/7dfc53fc7b6e28f9577c82ff52689f91.js"></script>
+
+<p>برای ایجاد یک ماژول باید کلاسی که از NinjectModule ارث‌بری می‌کند ایجاد کنم. این کلاس در namespace (فضا نام) Ninject.Module قرار دارد. کلاس NinjectModule  یک متد abstract به نام Load‌ دارد که باید آن را override کرد. این جایی است که binding rule های مربوط به کلاس‌ها را در آن تعریف می‌کنیم.</p>
+
+<p>برای تعریف binding rule ها من از متد Bind در Ninject استفاده می‌کنم. در مثال بالا کلاس DataStoreProvider را به اینترفیس IDataStoreProvider در خط ۵ کد bind کرده‌ام. این بدان معنی است که هر وقت از Ninject بخواهیم که instance از IDataStoreProvider به ما بدهد، instance ای از DataStoreProvider را ایجاد خواهد کرد.</p>
+
+<p>binding rule های کد بالا ساده‌ترین نوع binding rule هستند. Ninject قابلیت ایجاد binding های پیچیده‌تر را نیز داراست. در نوشته‌های بعدی چند binding پیچیده را با استفاده از Ninject توضیح خواهم داد اما تا آن موقع نگاهی به این <a href="http://lukewickstead.wordpress.com/2013/01/18/ninject-cheat-sheet/">برگه تقلب</a> داشته باشید ;)</p>
+
+<h3 id="می-خواهید-یک-کلک-جادویی-ببینید">می‌خواهید یک کلک جادویی ببینید؟</h3>
+
+<p>binding rule رو ایجاد کردیم، حالا از Ninject می‌خواهیم که یک instance از کلاسمان به ما بدهد. این کار هم همان‌طور که در کد زیر مشخص است خیلی ساده است:</p>
+
+<script src="//gist.github.com/hameds/14e9b9dad124dcc8d08899a5c1976a63.js"></script>
+
+<p>در کد بالا یک instance از کلاس StandardKernel در Ninject ایجاد می‌کنم. StandardKernel یک (یا حتی چند) instance از NinjectModule را به عنوان پارامتر سازنده (constructor) می‌گیرد. بعد از این کار  شی kernel در واقع container ماست که با فراخوانی متد Get به ما instance کلاس‌هایی که می‌خواهیم را ارائه می‌دهد. همان‌طور که در کد بالا مشخص است من در خط ۹ با استفاده از فراخوانی متد Get یک instance از کلاس BusinessService را درخواست کرده‌ام. اما اگر از کد قبلی به خاطر داشته‌ باشید، اینجا من به صورت دقیق نگفتم که چطور کلاس BusinessService را ایجاد کن، در واقع Ninject می‌تواند کلاس BusinessService را آنالیز کند و خودش وابستگی‌های این کلاس را از طریق سازنده (constructor) تشخیص داده و آن‌ها را تامین کند.</p>
+
+<p>اما صبر کنید! هنوز تمام نشده. اجازه بدهید یک تغییر جزئی در DataStoreProvider ایجاد کنیم:</p>
+
+<script src="//gist.github.com/hameds/629a4bfe8dfa1c3b67c4f7e3c563a901.js"></script>
+
+<p>من یک وابستگی به ILoggingProvider  در کلاس DataStoreProvider ایجاد کردم. حالا کلاس BusinessService من به کلاسی وابسته است که خودش به یک interface وابستگی دارد. من یک تغییر کلی در برنامه‌ام ایجاد کردم ولی بر خلاف software factory با Ninject نیاز به نوشتن کد بیشتر نیست. من همین حالا هم مشخص کردم که چطور LoggingProvider ایجاد شود بنابراین وقتی Ninject به کلاس DataStoreProvider می‌رسد خودش می‌داند که چطور این وابستگی به IDataStoreProvider را مدیریت کرده و instance لازم را ایجاد کند و من لازم نیست کار دیگری انجام دهم.</p>
+
+<h3 id="سایر-di-framework-ها">سایر DI Framework ها</h3>
+
+<p>در متن اشاره داشتم که DI Framework های مختلفی وجود دارد و در این سری نوشته‌ها من از Ninject استفاده می‌کنم، اما همان‌طور که گفتم بهتر است همه آن‌ها را بررسی و فریمورکی که می‌پسندید را انتخاب کنید. در این مسیر نگاهی به <a href="http://docs.structuremap.net/">Structure Map</a> و <a href="http://unity.codeplex.com/">Microsoft Unity</a> هم داشته باشید.</p>
+
+<p>ادامه دارد &hellip;</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1358</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

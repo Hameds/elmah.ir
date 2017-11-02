@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>مهارت‌های کار تیمی نرم‌افزار قسمت ششم: Code Review</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="بازبینی کد چیست؟ بازبینی کد همان‌طور که از اسمش پیداست ارسال یک کد نوشته شده توسط یک برنامه‌نویس به برنامه‌نویسی دیگری جهت بررسی آن و پیدا کردن ایرادات احتمالی است.
+یکی از مهارت‌های ضروری که اعضای هر تیم نرم‌افزاری باید با فرهنگ آن آشنا باشند،‌ موضوع بازبینی کد است. برای اینکه بازبینی کد واقعاً‌ کار کند، برنامه‌نویسی که کار بازبینی را انجام می‌دهد بهتر است هم‌سطح یا بالاتر از برنامه‌نویسی باشد که کد را نوشته، هر چند اگر این‌طور هم نباشد باز هم مفید است چرا که تجربه کاری برنامه‌نویس سطح پایین‌تر را بالا می‌برد اما در صورتی که شرط اشاره در Code Review به کار رود،‌ می‌توانید مطمئن باشید که مزایای آن را در تیم‌تان احساس خواهید کرد." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="مهارت‌های کار تیمی نرم‌افزار قسمت ششم: Code Review" />
+    <meta name="twitter:description" content="بازبینی کد چیست؟ بازبینی کد همان‌طور که از اسمش پیداست ارسال یک کد نوشته شده توسط یک برنامه‌نویس به برنامه‌نویسی دیگری جهت بررسی آن و پیدا کردن ایرادات احتمالی است.
+یکی از مهارت‌های ضروری که اعضای هر تیم نرم‌افزاری باید با فرهنگ آن آشنا باشند،‌ موضوع بازبینی کد است. برای اینکه بازبینی کد واقعاً‌ کار کند، برنامه‌نویسی که کار بازبینی را انجام می‌دهد بهتر است هم‌سطح یا بالاتر از برنامه‌نویسی باشد که کد را نوشته، هر چند اگر این‌طور هم نباشد باز هم مفید است چرا که تجربه کاری برنامه‌نویس سطح پایین‌تر را بالا می‌برد اما در صورتی که شرط اشاره در Code Review به کار رود،‌ می‌توانید مطمئن باشید که مزایای آن را در تیم‌تان احساس خواهید کرد." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/33-%D9%85%D9%87%D8%A7%D8%B1%D8%AA-%D9%87%D8%A7%DB%8C-%DA%A9%D8%A7%D8%B1-%D8%AA%DB%8C%D9%85%DB%8C-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%82%D8%B3%D9%85%D8%AA-%D8%B4%D8%B4%D9%85--code-review/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">مهارت‌های کار تیمی نرم‌افزار قسمت ششم: Code Review</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 4 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="بازبینی-کد-چیست">بازبینی کد چیست؟</h3>
+
+<p>بازبینی کد همان‌طور که از اسمش پیداست ارسال یک کد نوشته شده توسط یک برنامه‌نویس به برنامه‌نویسی دیگری جهت بررسی آن و پیدا کردن ایرادات احتمالی است.</p>
+
+<p>یکی از مهارت‌های ضروری که اعضای هر تیم نرم‌افزاری باید با فرهنگ آن آشنا باشند،‌ موضوع بازبینی کد است. برای اینکه بازبینی کد واقعاً‌ کار کند، برنامه‌نویسی که کار بازبینی را انجام می‌دهد بهتر است هم‌سطح یا بالاتر از برنامه‌نویسی باشد که کد را نوشته، هر چند اگر این‌طور هم نباشد باز هم مفید است چرا که تجربه کاری برنامه‌نویس سطح پایین‌تر را بالا می‌برد اما در صورتی که شرط اشاره در Code Review به کار رود،‌ می‌توانید مطمئن باشید که مزایای آن را در تیم‌تان احساس خواهید کرد.</p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/yoda.jpg"  />
+    
+    
+    <figcaption>
+        <h4>اگر لوک اسکای واکر برنامه‌نویس بود و یودا می‌خواست نصیحتش کند حتماً می‌گفت: «کد رو بازبینی کن لوک!»</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>روش انجام Code Review خیلی مهم نیست، می‌توانید source را zip کنید و با ایمیل بفرستید یا مثلاً در TFS خیلی راحت از محیط Visual Studio‌ برای شخص مورد نظر درخواست Code Review ارسال کنید. مهم این است که Code Review واقعاً انجام شود، یعنی واقعاً برای بازبینی کد وقت گذاشته شود و صرفاً یک درخواست تشریفاتی نباشد.</p>
+
+<h3 id="چرا-خوب-است-کدها-را-بازبینی-کنیم">چرا خوب است کدها را بازبینی کنیم؟</h3>
+
+<p>دلایل مختلفی را می‌توان برای لزوم Code Review برشمرد. این دلایل دو جنبه دارند، یک جنبه آن بحث آماری قضیه است که مثلاً Code Review در عمل چقدر می‌تواند تفاوت ایجاد کند. مثلاً اشاره شده یک برنامه 500 هزار خطی از IBM در 11 مرحله بازبینی کد شد و علاوه بر اینکه زودتر از موعد مقرر عرضه شد، حدود 1 درصد از ایرادات پیش‌بینی شده برای چنین حجمی از کد را در بر داشت! این مورد و سایر شواهد مرتبط با مزیت‌های کمی Code Review را به نقل از کتاب Code Complete را در <a href="http://www.codinghorror.com/blog/2006/01/code-reviews-just-do-it.html">این نوشته</a> از جف آتوود می‌توانید مطالعه کنید. اما جنبه دیگر اهمیت و مزیت‌های بازبینی کد در تفاوتی است که در رفتار اعضای تیم ایجاد می‌کند.</p>
+
+<p>مهمترین مزیت‌های یک پروسه بازبینی کد برای یک تیم نرم‌افزاری به شرح زیر است:</p>
+
+<ul>
+<li>باعث <strong>یکسان شدن</strong> هر چه بیشتر <strong>استایل کدنویسی</strong> می‌شود. در نوشته قبل سری مهارت‌های کار تیمی نرم‌افزار درباره اهمیت یکسان‌سازی استایل کدنویسی <a href="http://elmah.ir/post/28-مهارت-های-کار-تیمی-نرم-افزار-قسمت-پنجم--استانداردسازی-کدنویسی/">نوشتم</a>. هر چه اعضای تیم بیشتر کد همدیگر را مرور کنند به تدریج بیشتر با استانداردهای کدنویسی در تیم آشنا شده و در یک<strong>آموزش جمعی</strong> بهتر آن‌ها را فرا می‌گیرند.</li>
+<li>به <a href="http://elmah.ir/post/6-مهارت-های-کار-تیمی-نرم-افزار-قسمت-دوم--اشتراک-گذاری-دانش/">اشتراک گذاری دانش</a> که یکی دیگر از مهارت‌های کار تیمی نرم‌افزار است بسیار کمک می‌کند. اگر شما از یک روش یا الگوریتم جدید برای sort کردن یک آرایه یا پیدا کردن یک رشته در یک فایل استفاده کردید، دوست و همکار شما که در حال بازبینی کد شماست هم به صورت عملی این کد را خواهد دید و به این ترتیب <strong>دانش برنامه‌نویسی</strong> خیلی سریع و خوب به اشتراک گذاشته شده و استفاده می‌شود.</li>
+<li>برنامه‌نویسان را <strong>مجبور می‌کند کد خوانا بنویسند</strong>! این یکی از مهمترین مزیت‌های بازبینی کد است. بدون Code Review و البته مستندسازی و کامنت‌گذاری اگر کدی که یک برنامه‌نویس خودش نوشته را 6 ماه بعد به خودش بدهید، متوجه می‌شوید که آن‌قدر بدخط آن را نوشته که حتی خودش هم نمی‌تواند از آن سر دربیاورد! اما وقتی برنامه‌نویس بداند کدش برای بازبینی ارجاع داده خواهد شد برای آبروی خودش هم که شده آن را قابل خواندن می‌کند.</li>
+<li>باعث می‌شود کد دیگر <strong>وابسته به زندگی برنامه‌نویسش نباشد</strong>. به طور معمول اگر کدی را فقط یک برنامه‌نویس نوشته باشد، خودش می‌داند چه کار کرده و در صورتی که برنامه‌نویس خدای ناکرده بمیرد کد هم با وی دفن می‌شود! اما Code Review این شانس را به اعضای دیگر تیم می‌دهد که بدون کدنویسی در تولید همه بخش‌های نرم‌افزار حتی بخش‌هایی که خودشان در تولیدش نقشی نداشته‌اند مشارکت کنند. این‌طوری برای دفن شدن یک برنامه لازم است کل برنامه‌نویسان تیم دفن بشوند!</li>
+<li>بازبینی کد یک <strong>تفریح سالم</strong> برای اعضای تیم است! باعث می‌شود بیشتر به هم نزدیک بشوند: به سوتی‌های هم بخندند، از کدهای قدرتمند هم درس بگیرند، در رفع مشکلات کد با هم همکاری کنند و خلاصه <strong>تیم شما را تیم‌تر می‌کند</strong>.</li>
+</ul>
+
+<p>اگر تجربه خوبی از Code Review دارید می‌توانید آن را در بخش نظرات با دیگران به اشتراک بگذارید.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1537</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

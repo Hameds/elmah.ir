@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>پنج دلیل اصلی (اشتباه) که شما تست کننده نرم‌افزار ندارید</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="دلیل اشتباه اول: باگ‌ها توسط برنامه‌نویسان تنبل ایجاد می‌شوند دید اشتباه این است که &amp;ldquo;اگر تست‌کننده نرم‌افزار استخدام کنیم&amp;rdquo; آن‌‌گاه &amp;ldquo;برنامه‌نویس‌ها، تنبل می‌شوند و کدهای باگ‌دار تولید می‌کنند. با استخدام نکردن تست‌کننده نرم‌افزار، برنامه‌نویسان مجبور می‌شوند که از همان اول کد خوب و بی‌باگ ایجاد کنند&amp;rdquo;
+واقعیت این است که باگ‌ها، به این خاطر ایجاد می‌شوند که برنامه‌نویس آن‌ها در کد خودش ندیده است و برای دیدن باگ‌ها در اغلب اوقات به یک جفت چشم دیگر هم نیاز هست." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="پنج دلیل اصلی (اشتباه) که شما تست کننده نرم‌افزار ندارید" />
+    <meta name="twitter:description" content="دلیل اشتباه اول: باگ‌ها توسط برنامه‌نویسان تنبل ایجاد می‌شوند دید اشتباه این است که &amp;ldquo;اگر تست‌کننده نرم‌افزار استخدام کنیم&amp;rdquo; آن‌‌گاه &amp;ldquo;برنامه‌نویس‌ها، تنبل می‌شوند و کدهای باگ‌دار تولید می‌کنند. با استخدام نکردن تست‌کننده نرم‌افزار، برنامه‌نویسان مجبور می‌شوند که از همان اول کد خوب و بی‌باگ ایجاد کنند&amp;rdquo;
+واقعیت این است که باگ‌ها، به این خاطر ایجاد می‌شوند که برنامه‌نویس آن‌ها در کد خودش ندیده است و برای دیدن باگ‌ها در اغلب اوقات به یک جفت چشم دیگر هم نیاز هست." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/76-%D9%BE%D9%86%D8%AC-%D8%AF%D9%84%DB%8C%D9%84-%D8%A7%D8%B5%D9%84%DB%8C-%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87-%DA%A9%D9%87-%D8%B4%D9%85%D8%A7-%D8%AA%D8%B3%D8%AA-%DA%A9%D9%86%D9%86%D8%AF%D9%87-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%86%D8%AF%D8%A7%D8%B1%DB%8C%D8%AF/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">پنج دلیل اصلی (اشتباه) که شما تست کننده نرم‌افزار ندارید</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 5 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<h3 id="دلیل-اشتباه-اول-باگ-ها-توسط-برنامه-نویسان-تنبل-ایجاد-می-شوند">دلیل اشتباه اول: باگ‌ها توسط برنامه‌نویسان تنبل ایجاد می‌شوند</h3>
+
+<p>دید اشتباه این است که &ldquo;اگر تست‌کننده نرم‌افزار استخدام کنیم&rdquo; آن‌‌گاه &ldquo;برنامه‌نویس‌ها، تنبل می‌شوند و کدهای باگ‌دار تولید می‌کنند. با استخدام نکردن تست‌کننده نرم‌افزار، برنامه‌نویسان مجبور می‌شوند که از همان اول کد خوب و بی‌باگ ایجاد کنند&rdquo;</p>
+
+<p>واقعیت این است که باگ‌ها، به این خاطر ایجاد می‌شوند که برنامه‌نویس آن‌ها در کد خودش <em>ندیده است</em> و برای دیدن باگ‌ها در اغلب اوقات به یک جفت چشم دیگر هم نیاز هست. جوئل به خاطراتی از خودش اشاره می‌کند که زمانی که برنامه‌نویسی می‌کرده، از عادت‌‌های خودش برای تست نرم‌افزارها استفاده می‌کرده و مثلاً خیلی با Mouse کار می‌کرده است. بخش تست اما بیشتر با keyboard کار می‌کردند. نتیجه این شده که بخش‌های از برنامه وقتی با keyboard با آن‌ها کار می‌شده اصلاً کار نمی‌کرده است!</p>
+
+<h3 id="دلیل-اشتباه-دوم-برنامه-من-تحت-وب-است-و-هر-باگی-را-در-چند-ثانیه-می-توانم-حل-کنم">دلیل اشتباه دوم. برنامه من تحت وب است و هر باگی را در چند ثانیه می‌توانم حل کنم</h3>
+
+<p>این اشاره درستی هست که کار رفع باگ‌ها (bug fix) در نرم‌افزارهای تحت وب سریع‌تر از نرم‌افزارهای دسکتاپی است اما باید به نکات جانبی رفع باگ نیز توجه داشت. چه اتفاقی می‌افتد اگر رفع باگی که انجام دادید باعث ایجاد چند باگ دیگر شود؟ اگر به دقت به روال رفع باگ‌ در برنامه‌های تحت وب نگاه کنید، شاید به این نتیجه برسید که این کار خیلی پرهزینه‌تر از آن است که در ابتدا تصور می‌شود و این تازه صرفنظر از تاثیر بدی است که بر دید مشتریان می‌تواند داشته باشد.</p>
+
+<p>به عنوان یک مثال که اخیراً اتفاق افتاده، می‌شود به ماجرای تغییر سایت بانک سامان هم اشاره کرد. هر چند این مساله رفع باگ نبوده، اما نشان می‌دهد تغییر نرم‌افزارهای تحت وب به همان سادگی که تصور می‌شود نیست. برای آشنایی با مشکل پیش‌‌آمده در بانک سامان <a href="http://jadi.net/2014/01/saman-bank-are-you-drunk/">این نوشته</a> را بخوانید.</p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/prestige1.jpg"  />
+    
+    
+    <figcaption>
+        <h4>عواقب استفاده از محصولی که به درستی تست نشده ممکن است جبران ناپذیر باشد: صحنه معروف کلاه‌ها در فیلم پرستیژ</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="دلیل-اشتباه-سوم-مشتریان-نرم-افزار-را-برای-من-تست-خواهند-کرد">دلیل اشتباه سوم: مشتریان، نرم‌افزار را برای من تست خواهند کرد</h3>
+
+<p>جوئل در توضیح اشتباه بودن این دلیل، متدولوژی مسخره netscape برای تست نرم‌افزارهایش (که به قول جوئل به شکل ماورا‌ الطبیعی به اعتبار شرکت صدمه وارد کرد) را توضیح می‌دهد:</p>
+
+<ul>
+<li>وقتی برنامه‌نویسان، هنوز نیمی از کار را انجام دادند، نرم‌افزار را بدون تست در وب منتشر کن</li>
+<li>وقتی <em>برنامه‌نویسان می‌گویند</em> که کار تمام شده، نرم‌افزار را بدون تست در وب منتشر کن</li>
+<li>این کار را شش هفت بار تکرار کن</li>
+<li>یکی از نسخه‌هایی که با این روش منتشر کردی را &ldquo;نسخه نهایی&rdquo; نام‌گذاری کن</li>
+<li>هر دفعه که به یک باگ که باعث شرمساری می‌شود در سایت cnet اشاره شد،‌ نسخه‌های 0.1,0.2,0.3 را منتشر کن!</li>
+</ul>
+
+<p>نتیجه این روش این شد که مشتریان بسیار زیادی در دنیا، همیشه و همیشه با نرم‌افزارهای باگ‌دار netscape کار کردند و این باعث شد حتی وقتی که نسخه نسبتاً بی‌باگی از نرم‌افزار release می‌شد، باز هم دید عمومی به آن به شکل یک نرم‌افزار باگ‌دار باشد.</p>
+
+<p>مشکل بدتر در این مثال این بود که کل ایده اینکه باگ‌ها توسط مشتریان کشف و اعلام شوند، برای این بود که بعد از اعلام مشتری، شرکت بتواند باگ‌ها را رفع کند. اما متاسفانه نه netscape و نه هیچ شرکتی در دنیا، امکانات و نیروی انسانی و توان فنی برای بررسی اولویت‌ها و رفع باگ‌های اعلامی بیش از 2 میلیون مشتری را نداشت. در نتیجه باگ‌ها و ایرادات مهم در میان انبوه درخواست‌‌های رسیده دفن می‌شدند.</p>
+
+<p>احتمالاً می‌توانید تصور کنید که چه صدمه‌ای به اعتبار شرکت زده شد و امروز هم netscape تبدیل شده به مثالی برای درس‌ها و عبرت‌های این چنینی.</p>
+
+<h3 id="دلیل-اشتباه-چهارم-کسانی-که-شایستگی-لازم-برای-تست-کردن-نرم-افزار-را-دارند-نمی-خواهند-تست-کننده-نرم-افزار-باشند">دلیل اشتباه چهارم: کسانی که شایستگی لازم برای تست کردن نرم‌افزار را دارند نمی‌خواهند تست کننده نرم‌افزار باشند</h3>
+
+<p>این یک واقعیت هست که پیدا کردن تست‌کننده خوب نرم‌افزار مثل برنامه‌نویس خوب مشکل است. جوئل اشاره می‌کند که در شرکت Juno که کار می‌کرده،‌ یکی از تست‌کننده‌های نرم‌افزار به تنهایی سه برابر مجموع همه باگ‌هایی که 4 تست کننده دیگر نرم‌افزار گزارش کرده بودند را کشف و گزارش کرده.</p>
+
+<p>جوئل اشاره می‌کند که اغلب تست‌کننده‌های نرم‌افزار خوب بعد از مدتی حوصله‌شان از کار روتین تست نرم‌افزار به صورت روزانه سر می‌رود. این مشکلی هست که وجود دارد و باید آن را پذیرفت. پیشنهادهای جوئل برای این مساله این‌ها هستند:</p>
+
+<ul>
+<li>تست نرم‌افزار را به عنوان یک ارتقاء شغلی از بخش پشتیبانی مشتریان در نظر بگیرید</li>
+<li>به تست‌کننده‌های خوب و باهوش اجازه بدهید که تا حدی برنامه‌نویسی کار کنند و unit test با استفاده از ابزارهای برنامه‌نویسی ایجاد کنند. این کار خیلی جذاب‌تر از تست دوباره و دوباره و دوباره و دوباره یک پنجره دیالوگ در نرم‌افزار هست.</li>
+<li>بپذیرید که بعد از مدتی تست‌کننده‌های خوب شما را ترک خواهند کرد. همیشه در پی استخدام تست‌کننده باشید و روند استخدام آن‌ها را به خاطر اینکه موقتاً ظرفیت شما تکمیل شده را متوقف نکنید.</li>
+<li>به صورت موقت استخدام کنید. اگر به عنوان مثال 10 نفر را به صورت موقت و چند روزه برای تست نرم‌افزاری استخدام کنید، خواهید دید که ده‌ها باگ پیدا می‌شود. بعضی از این افراد موقت، ممکن است توانمندی‌های لازم برای تبدیل شدن به یک تست‌کننده نرم‌افزار را داشته باشند که در این صورت می‌توانید آن‌ها را به صورت تمام وقت استخدام کنید.</li>
+</ul>
+
+<h3 id="دلیل-اشتباه-پنجم-من-توان-مالی-برای-استخدام-تست-کننده-نرم-افزار-را-ندارم">دلیل اشتباه پنجم: من توان مالی برای استخدام تست‌کننده نرم‌افزار را ندارم!</h3>
+
+<p>این احمقانه‌ترین دلیل برای استخدام نکردن تست‌کننده نرم‌افزار است. مهم نیست که چقدر پیدا کردن تست‌کننده نرم‌افزار سخت باشد، به هر حال آن‌ها ارزان‌تر از برنامه‌نویس‌ها هستند. خیلی ارزان‌تر.</p>
+
+<p>اگر شما از تست‌کننده نرم‌افزار استفاده نکنید، برنامه‌نویس شما باید کار تست را انجام دهد و علاوه بر هزینه‌ای که این کار به شما تحمیل می‌کند، باید صبر کنید و منتظر لحظه‌ای باشید که برنامه‌نویس ارشد شما از اینکه بارها به وی گفته شده که &ldquo;چند هفته‌ بیشتر روی تست نرم‌افزار وقت بگذار قبل از اینکه منتشرش کنی&rdquo; خسته می‌شود و می‌رود تا در شرکتی حرفه‌ای‌تر کار کند.</p>
+
+<p>شما می‌توانید 3 تست‌کننده نرم‌افزار را برای یک سال استخدام کنید و هنوز ارزان‌تر از هزینه جایگزینی یک برنامه‌نویس ارشد هست.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1389</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

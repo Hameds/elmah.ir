@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>30 روز با TDD: روز چهارم - Pass کردن اولین تست</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="نوشته زبان انگلیسی را در این آدرس می‌توانید مشاهده کنید. در روز سوم، اولین تست‌مان را نوشتیم. هدف این بود:
+&amp;ldquo;یک متد بنویسید که یک جمله و یک کاراکتر را به عنوان ورودی دریافت کند و عددی را برگرداند که مشخص کند آن کاراکتر چند بار در آن جمله استفاده شده است&amp;rdquo;
+کدی در پایان نوشته روز سوم، داشتیم کد زیر بود. در این کد فقط متد مربوط به تست را نوشتیم و امروز کاری خواهیم کرد که این تست Pass شود." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="30 روز با TDD: روز چهارم - Pass کردن اولین تست" />
+    <meta name="twitter:description" content="نوشته زبان انگلیسی را در این آدرس می‌توانید مشاهده کنید. در روز سوم، اولین تست‌مان را نوشتیم. هدف این بود:
+&amp;ldquo;یک متد بنویسید که یک جمله و یک کاراکتر را به عنوان ورودی دریافت کند و عددی را برگرداند که مشخص کند آن کاراکتر چند بار در آن جمله استفاده شده است&amp;rdquo;
+کدی در پایان نوشته روز سوم، داشتیم کد زیر بود. در این کد فقط متد مربوط به تست را نوشتیم و امروز کاری خواهیم کرد که این تست Pass شود." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/81-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%DA%86%D9%87%D8%A7%D8%B1%D9%85---pass-%DA%A9%D8%B1%D8%AF%D9%86-%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%AA%D8%B3%D8%AA/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">30 روز با TDD: روز چهارم - Pass کردن اولین تست</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 9 دقیقه خواندن</p>
+    </header>
+    <article class="post-content"><p>نوشته زبان انگلیسی را در <a href="http://blogs.telerik.com/justteam/posts/13-09-16/30-days-of-tdd-day-four-making-your-first-test-pass">این آدرس</a> می‌توانید مشاهده کنید. در <a href="../../../Posts/80">روز سوم</a>، اولین تست‌مان را نوشتیم. هدف این بود:</p>
+
+<p>&ldquo;یک متد بنویسید که یک جمله و یک کاراکتر را به عنوان ورودی دریافت کند و عددی را برگرداند که مشخص کند آن کاراکتر چند بار در آن جمله استفاده شده است&rdquo;</p>
+
+<p>کدی در پایان نوشته <a href="http://elmah.ir/post/80-30-روز-با-tdd--روز-سوم---اولین-تست-شما/">روز سوم</a>، داشتیم کد زیر بود. در این کد فقط متد مربوط به تست را نوشتیم و امروز کاری خواهیم کرد که این تست Pass شود.</p>
+
+<script src="//gist.github.com/hameds/78fb2a47ac5aaf2e28e72ab14cd9f118.js"></script>
+
+<p>این تست آماده است. حالا اولین کاری که می‌خواهیم بکنیم اجرا کردن این تست است. این یک بخش کلیدی در چرخه کاری TDD است: یک تست بنویسید و بلافاصله آن را اجرا و fail شدنش را ببینید. بیشتر اوقات تست در اولین اجرا fail می‌شود (و باید هم بشود). واقعیت این است که یک تست fail شده به خصوص تست fail‌ شده مربوط به قابلیتی که نباید در برنامه شما باشد،‌ اطلاعات زیادی به شما می‌دهد.</p>
+
+<p>اگر من یک تست برای یک قابلیت بنوسیم که نباید در برنامه من باشد، این کار چند چیز به من خواهد گفت. اول از همه کمک می‌کند که تایید (و نه تضمین) کنم که تست درستی نوشتم. اگر تستی بنویسم و بلافاصله پس از نوشتن، اجرا و Pass شود، احتمالاً من قابلیت درستی را آزمایش نمی‌کنم چرا که آن قابلیت نباید وجود داشته باشد و تست نباید Pass‌ شود.<br />
+این مورد الان و در مورد مثال ما با توجه به ساده بودن مثال و تست و کد شاید مسخره به نظر برسد، اما وقتی روی یک پروژه بزرگ و پیچیده شروع به کار کنید، بعضی اوقات نوشتن یک تست که نبود یک feature را آشکار کند کار دشواری است.</p>
+
+<p>نتیجه اولین دلیل برای اینکه تست را اجرا و fail‌ شدنش را ببینیم این است که مطمئن شوم کار یک نفر دیگر را دوباره تکرار نمی‌کنم. بعضی اوقات به خصوص در پروژه‌های بزرگ، امکان دارد که یک قابلیت به نحوی و به اشتباه دو بار برای اجرا برنامه‌ریزی شود. در این شرایط Pass شدن تست مشخص می‌کند که من در حال اجرای مجدد کاری هستم که یک نفر قبلاً انجامش داده است. دقت نکردن در این مورد می‌تواند منجر به تولید یک کد ناخوانا، غیرقابل اطمینان و غیرقابل نگهداری شود که هیچ‌کس دوست ندارد با آن کار کند.</p>
+
+<p>قبل از اجرای تست لازم است که solution را کامپایل کنم و اینجاست که بلافاصله اولین خطا را می‌توان دید:</p>
+
+<p><img src="http://elmah.ir/oldimg/TDD/4/image_thumb111.png" alt="" /></p>
+
+<p>بر اساس تعریف <strong>اگر solution شما در Visual Studio کامپایل نشود، تست شما fail‌ محسوب می‌شود.</strong>در این مثال، ریشه خطا برمی‌گردد به کلاس StringUtils که در خط 19 کد تلاش کردم یک instance از آن ایجاد کنم در حالی که نمونه‌ای از آن در کد وجود ندارد.</p>
+
+<p>حالا برمی‌گردیم به مسیر TDD، جایی که باید کلاس‌هایی که در حال تست‌شان هستیم (در مورد این مثال کلاس StringUtils) را بسازیم. اینجا دو گزینه پیش‌رو داریم: یا باید کلاس را داخل همین پروژه فعلی بسازیم (بعضی برنامه‌نویس‌ها حتی آن را داخل فایل کلاس تست می‌سازند) یا یک پروژه Class Library جدید ایجاد و در آن کلاس مورد نظر را بسازیم.</p>
+
+<p>در مورد راه اول، ابتدا تاکید می‌کنم که ایده اصلی TDD این است که یک قابلیت را تا زمانی که به آن نیازی نیست پیاده‌سازی نکنید. این کمک می‌کند که کد شما تمیز مانده و به دور از کدهای درهم و برهمی باشد که فهمیدن منطق و کد برنامه شما را از آن چیزی که باید،‌ سخت‌تر می‌کند. بر این اساس تا زمانی که به یک قابلیت نیاز نداشته باشید آن را به برنامه اضافه نمی‌کنید و وقتی به یک کلاس احتیاج دارید آن را به پروژه‌ای در Visual Studio که آن کلاس باید جزئی از آن باشد انتقال می‌دهید.<br />
+اما اگر راه اول را برویم، در بعضی اوقات ممکن است انتقال کد از پروژه تست به پروژه اصلی فراموش شود و این یعنی دوباره‌کاری برای برنامه‌نویس‌ها. به هر حال شما بر اساس شرایط خود و شرایط پروژه‌تان راهی که بهتر هست را انتخاب کنید.</p>
+
+<p>با توجه به توضیحات بالا، ما یک کلاس جدید (در یک فایل جدید) در پروژه جاری ایجاد می‌کنیم و بعداً هم اگر لازم باشد آن را به پروژه دیگری انتقال بدهیم به راحتی می‌توانیم این کار را انجام دهیم. البته این تمیز‌ترین راه نیست اما ساده‌ترین و سریع‌ترین است.</p>
+
+<p><em>توضیح مترجم:</em> نویسنده مطلب اصلی، از برنامه تلریکی JustCode برای ایجاد کلاس یا اجرای تست‌ها و &hellip; استفاده کرده و به نوعی تبلیغ این محصول را هم در نوشته‌های مختلفش آورده است. من برای اینکه سری نوشته‌های 30 روز با TDD برای عموم دوستان برنامه‌نویس قابل استفاده باشد، از ابزارهای غیراختصاصی و عمدتاً رایگان در دسترس استفاده خواهم کرد.</p>
+
+<p>برای ایجاد یک کلاس جدید روی پروژه کلیک راست کرده و از منوی Add گزینه کلاس را انتخاب کنید و نام StringUtils را به آن بدهید. کلاس را public کنید. تا کدی مشابه کد زیر داشته باشید:</p>
+
+<script src="//gist.github.com/hameds/306e40a4513fefcd26680d86b236e356.js"></script>
+
+<p>ساختن کلاس ساده‌ترین کاری است که ممکن است منجر به Pass‌ شدن تست من شود، یا حداقل خطای کامپایل قبلی را برطرف کند. وقتی دوباره تلاش می‌کنم که برنامه را کامپایل کنم خطای زیر را می‌بینم:</p>
+
+<p><img src="http://elmah.ir/oldimg/TDD/4/image_thumb821B0A806E573.png" alt="" /></p>
+
+<p>بر اساس خطا، کار بعدی که باید انجام دهم اضافه کردن تعریف متد FindNumberOfOccurneces  به کلاس StringUtils است. این کار را انجام می‌دهم اما در داخل بدنه متد، کد خاصی نمی‌نویسم. نتیجه به صورت زیر خواهد بود:</p>
+
+<script src="//gist.github.com/hameds/7de01e06286188c665f79711152e96d7.js"></script>
+
+<p><em>پیشنهاد مترجم:</em> ابزارهای مختلفی برای اجرا تست‌ها وجود دارند، اگر به دنبال ابزار رایگان هستید، استفاده از نسخه رایگان <a href="http://www.testdriven.net/">TestDriven.NET</a> را پیشنهاد می‌کنم. TestDriven.NET از NUnit پشتیبانی می‌کند و بعد از نصب، برای اجرا تست‌ها کافی است روی پروژه کلیک راست کرده و گزینه Run Tests را انتخاب کنید. اگر به دنبال ابزارهای غیررایگان هستید Resharper به گمان من بهترین باشد. شما هم می‌توانید ابزارهای مورد نظر خود را در بخش نظرات معرفی کنید.</p>
+
+<p>بعد از نوشتن کد بالا، کامپایل برنامه موفقیت آمیز خواهد بود. حالا زمان آن رسیده که اولین تست خود را اجرا کنیم.</p>
+
+<p>خب چه اتفاقی افتاد؟ تست fail شد. چرا که ما در متد FindNumberOfOccurences هیچ کدی ننوشته یک exception را ایجاد کردیم. بسته به ابزاری که برای اجرا کردن تست‌ها انتخاب می‌کنید،‌ می‌توانید خطای مربوط به این exception را مشاهده کنید.</p>
+
+<p>قدم بعدی این است که ساده‌تری راه را برای اینکه تست Pass شود انتخاب و در کد پیاده‌سازی کنیم. هدف تست ما این است که در جمله &ldquo;!TDD is awesome&rdquo; تعداد کاراکترهای &ldquo;e&rdquo; را پیدا کنیم و خروجی مورد انتظار ما 2 است، پس اجازه بدهید کد را به صورت زیر بازنویسی کنیم:</p>
+
+<script src="//gist.github.com/hameds/4080017c81cbee4f5a5bec9aca2184e4.js"></script>
+
+<p>در کد بالا خیلی راحت عدد 2 را return می‌کنیم. حالا دوباره تست را اجرا کنید. نتیجه؟ تست Pass‌ می‌شود، هورا! نرم‌افزار آماده عرضه است!</p>
+
+<p>خب، واضح است که برنامه ما هنوز قابل عرضه نیست. منظور ما از پیاده‌سازی قابلیت مورد نظر، برگرداندن عدد دو به صورت hardcode شده در کد نبود. اما اگر تستی که نوشتیم، تنها تست موجود برای این قابلیت بود، می‌توانستیم بگوییم کار تمام شده است و مهمتر اینکه دیگر develop بیشتری در این کد انجام نمی‌دادیم. به عنوان برنامه‌نویس گاهی وقت‌ها سخت است که متوجه شویم چه زمانی دیگر کافی است: بعضی اوقات قابلیت‌هایی در کد اضافه می‌کنیم که در لیست مشخصات نرم‌افزار نیست چرا که فکر می‌کنیم &ldquo;آن‌ها الان نمی‌دانند، ولی بعداً به این نیاز خواهند داشت&rdquo;</p>
+
+<p>خب، اگر واقعاً به آن قابلیت احتیاج نداشته باشند چی؟ برای برنامه‌نویس‌ها قرار گرفتن در موقعیت &ldquo;من بهتر از کاربران می‌فهمم&rdquo; چیز تازه‌ای نیست. اما در حالی که ما در زمینه توسعه نرم‌افزار متخصص هستیم، معمولاً در زمینه‌هایی مثل تایید کردن وام یا ارزیابی اطلاعات پزشکی یا تفسیر اطلاعات فروش، تخصصی نداریم. همان‌طور که ما دوست نداریم یک نفر از بخش حسابداری یا فروش به ما بگوید که چطور کد بنویسیم، ما هم نباید به آن‌ها بگوییم که برای انجام کارشان به چه چیزی نیاز دارند. <br />
+بازار می‌داند که تجارت چیست و چه چیزی لازم دارد و اگر نداند هم بالاخره خواهد فهمید و آن را تقاضا خواهد کرد. ما فقط باید منتظر بمانیم که آن‌ها نیازشان را مطرح کنند و دقیقاً همان چیزی را که می‌خواهند به آن‌ها بدهیم. تلاش برای &ldquo;پیش‌بینی&rdquo; نیاز کاربران، باعث ایجاد کدها و قابلیت‌های بسیار زیادی در سیستم می‌شود که هرگز استفاده نمی‌شوند و هیچ ارزشی را به سیستم اضافه نمی‌کنند.</p>
+
+<p>نتیجه اخلاقی اینکه اجازه بدهید بازار (bussiness) تصمیم بگیرد که چه چیزی نیاز است. دقیقاً همان چیزی که احتیاج دارند را تولید کنید، نه بیشتر نه کمتر. اگر نگران این هستید که کاربران نیازهای غیرمنطقی مطرح کنند، با آن‌ها صحبت کنید. اما به یاد داشته باشید که در نهایت برنامه‌ای که ایجاد می‌کنید قرار است پاسخگوی نیاز آن‌ها باشد. اگر این کار کمک نکرد، هر نیاز جدید را به پول وصل کنید، واقعاً شگفت‌انگیز است که چطور تطبیق نوشتن کد با خرج کردن پول،‌ می‌تواند scope پروژه را کنترل کند ;)</p>
+
+<p>برگردیم به مثال خودمان. در مثال ما، می‌توان گفت که test case موجود کافی نیست. برای بهبود کیفیت کد، ما یک تست جدید اضافه می‌کنیم:</p>
+
+<p>من می‌خواهم جمله &ldquo;Once is unique, twice is a coincidence, three times is a pattern&rdquo; را به همراه کاراکتر &ldquo;n&rdquo; به متد پاس بدهم و خروجی مورد انتظار هم عدد 5 است.</p>
+
+<p>گام بعدی نوشتن یک تست جدید است. اسم متد تست را ShouldBeAbleToCountNumberOfLettersInAComplexSentence می‌گذارم و آن را به کلاس StringUtilsTest به شکل زیر اضافه می‌کنم:</p>
+
+<script src="//gist.github.com/hameds/4b3c1bb02b43598b02de2b724a87081e.js"></script>
+
+<p>حالا که تست را نوشتیم، بلافاصله آن را اجرا می‌کنیم تا fail شدنش را ببینیم. تست fail می‌شود.</p>
+
+<p>آخرین باری که تست fail شده داشتیم برای زمانی بودن که متد کلاسی که در حال تست آن بودیم پیاده‌سازی (implement) نشده بود. این بار متد، پیاده‌سازی شده است، اما نتیجه‌ای که می‌خواهیم (عدد 5) را نمی‌گیریم. بسته به اجرا کننده تست،‌ خطای Expected: 5 But was: 2 را خواهید دید.</p>
+
+<p>ساده‌ترین راه برای اینکه تست قبلی Pass شود این بود که خیلی راحت عدد دو را برگردانیم. این بار فکر می‌کنم ساده‌ترین راه این باشد که یک الگوریتم که تعداد یک کاراکتر را داخل یک جمله پیدا کند را پیاده‌سازی کنیم. این الگوریتم را در متد FindNumberOfOccurences در کلاس StringUtils به شکل زیر پیاده‌سازی می‌کنیم:</p>
+
+<script src="//gist.github.com/hameds/43eab52d719c8487d801b4a9a0cf47b1.js"></script>
+
+<p>این ممکن است بهینه‌ترین یا بهترین راه حل مساله نباشد، ولی الان مهم نیست: این ساده‌ترین است و من دنبال ساده‌ترین راه برای Pass کردن تست‌هایم می‌گردم. اگر دوباره تست‌ها را اجرا کنیم می‌بینیم که الگوریتم، پاسخگویی نیازمندی ما بوده است و بنابراین هر دو تست Pass می‌شوند.</p>
+
+<p>در آینده دوباره این مثال را با هم بررسی می‌کنیم تا درباره چند مبحث پیشرفته TDD و Refactoring با هم صحبت کنیم. ولی الان من می‌دانم که صرفنظر از اینکه بعداً با کد چه کار خواهم کرد، تا زمانی که این دو تست Pass شوند، کد من همچنان پاسخگوی این دو test case خواهد بود.</p>
+
+<p>ادامه دارد&hellip;</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1367</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

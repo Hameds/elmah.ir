@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>بچه‌ها، Glimpse. Glimpse، بچه‌ها!</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="این نوشته یک مطلب کوتاه تخصصی در معرفی Glimpse برای ASP.NET MVC است. در نوشته‌های دیگری درباره استفاده‌های glimpse بیشتر صحبت خواهم کرد.
+Glimpse چیست؟ به زبان خیلی ساده Glimpse یک چارچوب diagnostic‌ تحت وب است. رایگان و اپن سورس است و خیلی خوب با ASP.NET MVC کار می‌کند، البته نسخه‌هایی از آن برای PHP و Python نیز وجود دارد. به کمک Glimpse می‌توانید ببینید برای صفحه جاری چه اتفاقاتی در سمت سرور رخ می‌دهد، مثلاً اطلاعاتی در مورد زمان اجرا، تنظیمات سرور، داده‌های request و &amp;hellip; را می‌توانید مشاهده کنید." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="بچه‌ها، Glimpse. Glimpse، بچه‌ها!" />
+    <meta name="twitter:description" content="این نوشته یک مطلب کوتاه تخصصی در معرفی Glimpse برای ASP.NET MVC است. در نوشته‌های دیگری درباره استفاده‌های glimpse بیشتر صحبت خواهم کرد.
+Glimpse چیست؟ به زبان خیلی ساده Glimpse یک چارچوب diagnostic‌ تحت وب است. رایگان و اپن سورس است و خیلی خوب با ASP.NET MVC کار می‌کند، البته نسخه‌هایی از آن برای PHP و Python نیز وجود دارد. به کمک Glimpse می‌توانید ببینید برای صفحه جاری چه اتفاقاتی در سمت سرور رخ می‌دهد، مثلاً اطلاعاتی در مورد زمان اجرا، تنظیمات سرور، داده‌های request و &amp;hellip; را می‌توانید مشاهده کنید." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/27-%D8%A8%DA%86%D9%87-%D9%87%D8%A7-glimpse.-glimpse-%D8%A8%DA%86%D9%87-%D9%87%D8%A7/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">بچه‌ها، Glimpse. Glimpse، بچه‌ها!</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 2 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>این نوشته یک مطلب کوتاه تخصصی در معرفی <a href="http://getglimpse.com/">Glimpse</a> برای ASP.NET MVC است. در نوشته‌های دیگری درباره استفاده‌های glimpse بیشتر صحبت خواهم کرد.</p>
+
+<h3 id="glimpse-چیست">Glimpse چیست؟</h3>
+
+<p>به زبان خیلی ساده Glimpse یک چارچوب diagnostic‌ تحت وب است. رایگان و اپن سورس است و خیلی خوب با ASP.NET MVC کار می‌کند، البته نسخه‌هایی از آن برای <a href="https://github.com/Glimpse/Glimpse.PHP">PHP</a> و <a href="https://github.com/Glimpse/Glimpse.WSGI">Python</a> نیز وجود دارد. به کمک Glimpse می‌توانید ببینید برای صفحه جاری چه اتفاقاتی در سمت سرور رخ می‌دهد، مثلاً اطلاعاتی در مورد زمان اجرا، تنظیمات سرور، داده‌های request و &hellip; را می‌توانید مشاهده کنید. Glimpse مشابه Firebug روی مرورگر اجرا می‌شود.</p>
+
+
+
+<figure >
+    
+        <img src="http://elmah.ir/oldimg/glimpse1.png"  />
+    
+    
+    <figcaption>
+        <h4>در روایاتی از علمای دات نت آمده برنامه‌نویسی ASP.NET MVC که از glimpse استفاده نکند، بیشتر عمرشان بر فناست!</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="چطور-glimpse-را-به-پروژه-asp-net-mvc-خودم-اضافه-کنم">چطور Glimpse را به پروژه ASP.NET MVC خودم اضافه کنم؟</h3>
+
+<p>خیلی ساده، بسته nuget آن را دریافت کنید، برای این کار در پنجره Package Manager Console بنویسید:</p>
+
+<p><code>Install-Package Glimpse.Mvc4</code></p>
+
+<p>با اجرای دستور فوق، کتابخانه‌های مربوط به Glimpse به پروژه شما اضافه شده و خود Glimpse تغییراتی هم در web.config‌ پروژه شما می‌دهد. اگر در نصب glimpse به مشکلی برخورد کردید <a href="http://getglimpse.com/Help/Installation">این راهنمای نصب</a> را مطالعه کنید.</p>
+
+<p>بعد از نصب Glimpse‌ نوبت فعال کردن آن است. پروژه خودتان را run کنید و در انتهای آدرس آن عبارت Glimpse.axd را اضافه کنید تا آدرس شما به صورت زیر درآید: <code>http://your-application-url/Glimpse.axd</code> که به جای your-application-url آدرس برنامه ASP.NET MVC ای شما قرار می‌گیرد. با رفتن به این آدرس صفحه‌ای مطابق شکل زیر ظاهر می‌شود. در این صفحه روی دکمه Turn Glimpse On کلیک کنید تا glimpse برای وب اپلکیشن شما فعال شود.</p>
+
+<p><img src="http://elmah.ir/oldimg/glimpse2.png" alt="" /></p>
+
+<p>بعد از فعال کردن glimpse به هر صفحه‌ای در برنامه‌تان که بروید یک نوار در بخش پایین صفحه ظاهر می‌شود که اطلاعات مختصری درباره آن صفحه و سرعت لود و تعداد درخواست‌های ajax آن صفحه را به شما نشان می‌دهد. این نوار، مربوط به glimpse است و با کلیک بر روی آن می‌توانید جزئیات بیشتری را مشاهده کنید.</p>
+
+<p><img src="http://elmah.ir/oldimg/glimpse3.png" alt="" /></p>
+
+<h3 id="خب-من-یک-سری-عدد-درباره-سرعت-لود-صفحه-دیدم-همین-بود">خب من یک سری عدد درباره سرعت لود صفحه دیدم، همین بود؟</h3>
+
+<p>خیر، می‌توانید پلاگین‌های مختلف را به Glimpse اضافه کنید. مثلاً اگر <a href="https://www.nuget.org/packages/Glimpse.EF5/1.3.1">پلاگین Entity Framework</a> را اضافه کنید، می‌توانید در tab های Glimpse کد SQL تولید شده برای نمایش دیتا مدل صفحه را ببینید! به همراه زمانی که برای دریافت اطلاعات صرف شده است.</p>
+
+<p>لیستی از پلاگین‌های مختلف Glimpse‌ را در <a href="http://getglimpse.com/Packages">این آدرس</a> می‌توانید مشاهده کنید. در نوشته دیگری به موضوع نوشتن پلاگین برای glimpse خواهم پرداخت.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1543</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

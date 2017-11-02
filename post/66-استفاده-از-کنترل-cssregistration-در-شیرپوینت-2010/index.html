@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>استفاده از کنترل CssRegistration در شیرپوینت 2010</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="چه در یک masterpage، چه در یک وب پارت، اگر بخواهیم فایل css ای را load کنیم، روش‌های مختلفی وجود دارد. یکی از روش‌های استاندارد در شیرپوینت برای تعریف فایل‌های css استفاده از کنترل CssRegistration است. قصد دارم در این مطلب به صورت کوتاه این کنترل را معرفی کنم.
+اگر بخواهیم به صورت markup از این کنترل استفاده کنیم به شکل زیر خواهد بود:
+در صورتی که در کد بخواهیم از آن استفاده کنیم از کدی مانند کد زیر می‌توان استفاده کرد:" />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="استفاده از کنترل CssRegistration در شیرپوینت 2010" />
+    <meta name="twitter:description" content="چه در یک masterpage، چه در یک وب پارت، اگر بخواهیم فایل css ای را load کنیم، روش‌های مختلفی وجود دارد. یکی از روش‌های استاندارد در شیرپوینت برای تعریف فایل‌های css استفاده از کنترل CssRegistration است. قصد دارم در این مطلب به صورت کوتاه این کنترل را معرفی کنم.
+اگر بخواهیم به صورت markup از این کنترل استفاده کنیم به شکل زیر خواهد بود:
+در صورتی که در کد بخواهیم از آن استفاده کنیم از کدی مانند کد زیر می‌توان استفاده کرد:" />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/66-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%DA%A9%D9%86%D8%AA%D8%B1%D9%84-cssregistration-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-2010/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">استفاده از کنترل CssRegistration در شیرپوینت 2010</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 2 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>چه در یک masterpage، چه در یک وب پارت، اگر بخواهیم فایل css ای را load کنیم، روش‌های مختلفی وجود دارد. یکی از روش‌های استاندارد در شیرپوینت برای تعریف فایل‌های css استفاده از کنترل <a href="http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.webcontrols.cssregistration(office.14).aspx">CssRegistration</a> است. قصد دارم در این مطلب به صورت کوتاه این کنترل را معرفی کنم.</p>
+
+<p>اگر بخواهیم به صورت markup از این کنترل استفاده کنیم به شکل زیر خواهد بود:</p>
+
+<p><img src="http://elmah.ir/oldimg/cssregsitration1.png" alt="" /></p>
+
+<p>در صورتی که در کد بخواهیم از آن استفاده کنیم از کدی مانند کد زیر می‌توان استفاده کرد:</p>
+
+<script src="//gist.github.com/hameds/1d2004ed00b276a0ec72fe0f6a59db85.js"></script>
+
+<p>در کد بالا در خط مشخص شده، آدرس فایل css مورد نظر را وارد خواهیم کرد.</p>
+
+<p>این کنترل چند مزیت نسبت به یک تگ link ساده دارد:</p>
+
+<h3 id="امکان-تعیین-ترتیب-load">امکان تعیین ترتیب load</h3>
+
+<p>به کمک خاصیت After که در کد بالا هم مشخص شده است، می‌توانیم مشخص کنیم که فایل css ما بعد از چه فایلی load شود. این مساله به خصوص در پیاده‌سازی تم جدید برای شیرپوینت حائز اهمیت است تا بتوانیم css‌های پیش‌فرض شیرپوینت را به درستی override کنیم.<br />
+به عنوان مثال در کد سی شارپی بالا، فایل css ما بعد از corev4.css لود خواهد شد.</p>
+
+<h3 id="امکان-تعیین-شرط-برای-load">امکان تعیین شرط برای load</h3>
+
+<p>به کمک خاصیت <code>ConditionalExpression</code> در این کنترل می‌توان <a href="http://www.conditional-css.com/usage">css های شرطی</a> ایجاد نمود. به عنوان مثال اگر <code>ConditionalExpression</code> را برابر IE 7.0 قرار دهیم خروجی مشابه زیر حاصل خواهد شد.</p>
+
+<p><img src="http://elmah.ir/oldimg/cssregsitration2.png" alt="" /></p>
+
+<p>امکان اینکه مرورگری غیر IE هم در این شرط‌ها لحاظ شود وجود دارد، اما باید <code>RevealToNonIE</code> را true مقداردهی کنید.</p>
+
+<h3 id="امکان-ایجاد-پوسته-برای-استایل-ها">امکان ایجاد پوسته برای استایل‌ها</h3>
+
+<p>یکی از مواردی که در مبحث branding سایت‌های شیرپوینتی مطرح است، پوسته‌ها (شامل رنگ‌بندی و استایل فونت‌ها) می‌باشد. <code>CssRegistration</code> به شما امکان ایجاد پوسته‌ها را از طریق ست کردن <code>EnableCssTheming</code> می‌دهد.</p>
+
+<h3 id="امکان-تعیین-آدرس-نسبی-برای-فایل-ها-در-کد">امکان تعیین آدرس نسبی برای فایل‌ها در کد</h3>
+
+<p>چه در زمانی که به صورت markup از این کنترل مثلاً در masterpage یا page layout استفاده می‌کنیم چه زمانی که آن را در یک کد سی‌شارپی به کار می‌بریم این امکان وجود دارد که آدرس فایل css را به صورت نسبی بدهیم. مثلاً در کد اول این نوشته که به صورت markup هست عبارت sitecollection~ مشخص کننده آدرس مجموعه سایت است. <br />
+مزیت این کار در این است که انتقال کد حاوی کنترل <code>CssRegistration‌</code> از محیط توسعه به محیط مشتری، نیازمند تغییر و تنظیم مجدد نیست.</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1449</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>30 روز با TDD: روز دوم‌ - مروری بر اصول شی‌گرایی</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="نوشته اصلی را در این آدرس می‌توانید مطالعه کنید، سعی من این هست که فقط بخش‌های مهم و مفید رو ترجمه کنم، همچنین عباراتی تخصصی رو تا حد ممکن ترجمه نکنم مگر اینکه معادل مناسبی به زبان فارسی براش وجود داشته باشه.
+در نوشته امروز مرور مختصری خواهیم داشت بر اصول برنامه‌نویسی شی‌گرا (OOP یا Object Oriented Programming). حتی اگر برنامه‌نویس با سابقه و با تجربه‌ای هستید باز هم توصیه می‌کنم حداقل بخش‌های مربوط به Polymorphism و Interface ها را مطالعه کنید چرا که این مباحث معمولاً خیلی اشتباه فهمیده می‌شوند و البته بخش مهمی از کار TDD را تشکیل می‌دهند." />
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="30 روز با TDD: روز دوم‌ - مروری بر اصول شی‌گرایی" />
+    <meta name="twitter:description" content="نوشته اصلی را در این آدرس می‌توانید مطالعه کنید، سعی من این هست که فقط بخش‌های مهم و مفید رو ترجمه کنم، همچنین عباراتی تخصصی رو تا حد ممکن ترجمه نکنم مگر اینکه معادل مناسبی به زبان فارسی براش وجود داشته باشه.
+در نوشته امروز مرور مختصری خواهیم داشت بر اصول برنامه‌نویسی شی‌گرا (OOP یا Object Oriented Programming). حتی اگر برنامه‌نویس با سابقه و با تجربه‌ای هستید باز هم توصیه می‌کنم حداقل بخش‌های مربوط به Polymorphism و Interface ها را مطالعه کنید چرا که این مباحث معمولاً خیلی اشتباه فهمیده می‌شوند و البته بخش مهمی از کار TDD را تشکیل می‌دهند." />
+    <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="http://elmah.ir/post/79-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%AF%D9%88%D9%85----%D9%85%D8%B1%D9%88%D8%B1%DB%8C-%D8%A8%D8%B1-%D8%A7%D8%B5%D9%88%D9%84-%D8%B4%DB%8C-%DA%AF%D8%B1%D8%A7%DB%8C%DB%8C/" />
+<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+  <header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">30 روز با TDD: روز دوم‌ - مروری بر اصول شی‌گرایی</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 8 دقیقه خواندن</p>
+    </header>
+    <article class="post-content">
+
+<p>نوشته اصلی را در <a href="http://blogs.telerik.com/blogs/13-09-11/30-days-of-tdd-day-two-a-review-of-object-oriented-principles">این آدرس</a> می‌توانید مطالعه کنید، سعی من این هست که فقط بخش‌های مهم و مفید رو ترجمه کنم، همچنین عباراتی تخصصی رو تا حد ممکن ترجمه نکنم مگر اینکه معادل مناسبی به زبان فارسی براش وجود داشته باشه.</p>
+
+<p>در نوشته امروز مرور مختصری خواهیم داشت بر اصول برنامه‌نویسی شی‌گرا (OOP یا Object Oriented Programming). حتی اگر برنامه‌نویس با سابقه و با تجربه‌ای هستید باز هم توصیه می‌کنم حداقل بخش‌های مربوط به Polymorphism و Interface ها را مطالعه کنید چرا که این مباحث معمولاً خیلی اشتباه فهمیده می‌شوند و البته بخش مهمی از کار TDD را تشکیل می‌دهند.</p>
+
+<h3 id="oop-چیست">OOP چیست؟</h3>
+
+<p>Object Oriented Programming یا OOP یک روش برنامه‌نویسی است که در آن برنامه‌نویس از اشیا و ایده‌های جهان واقعی مدلی انتزاعی (abstract) در کد ایجاد می‌کند. وقتی با OOP برنامه‌ای ایجاد می‌کنید، کلاس‌هایی می‌نویسید که اشیا دنیای واقعی را مدل می‌کنند. در برنامه شما از این کلاس‌ها، نمونه‌ها (وهله یا instance) در قالب اشیاء (Objects) ایجاد می‌شوند و در طول کار برنامه این متدهایی بر روی این اشیاء فراخوانی شده یا به عنوان پارامتر به متدهای دیگر پاس داده می‌شوند.</p>
+
+<p>عبارات class و object را نمی‌توان به جای هم به کار برد. کلاس تعریفی از این است که شی باید چطوری باشد. در واقع کد #C یا VB شما نقشه‌ای است که حاوی متدها و دیگر اعضای کلاس است و object یک نمونه  (وهله یا instance) از کلاس است.</p>
+
+<p><strong>OOP دارای سه اصل اساسی است: Encapsulation و Inheritance و Polymorphism</strong></p>
+
+<p>با هم مروری خواهیم داشت بر این اصول مهم.</p>
+
+<h3 id="encapsulation">Encapsulation</h3>
+
+<p>معمولاً به Encapsulation با قانون &ldquo;جعبه سیاه&rdquo; (Black box) اشاره می‌شود. در واقع Encapsulation می‌گوید که وضعیت داخلی یک object باید محافظت شده (protected) بوده و برای موجودیت‌های خارجی (External Entities) غیرقابل دسترس باشد. در واقع کد خارجی نمی‌تواند به صورت مستقیم وضعیت یک شی را ببیند یا تغییر دهد. هر گونه دسترسی به اجزای داخلی از طریق یک Public API انجام می‌شود و این یعنی اطمینان object‌ از اینکه وضعیت داخلی معتبری دارد چرا که وضعیت داخلی اشیا از طریق متدهای عمومی (Public) تغییر می‌کند.</p>
+
+<p>به عنوان یک برنامه‌نویش OOP این مهم هست که وضعیت داخلی (internal state) رو private نگه‌ داریم یا از طریق متدهای public در اختیار کلاس‌های خارجی بگذاریم یا از طریق متدهای protected در اختیار کلاس‌هایی که از کلاس ما ارث‌بری کردند قرار بدهیم.</p>
+
+<p>نتیجه قانون &ldquo;جعبه سیاه&rdquo; این است که من به عنوان مصرف‌کننده (consumer) یک object، نباید دلواپس کارهای داخلی آن object باشم. در واقع من فقط باید یاد بگیرم که چطور از API های Public استفاده کنم و می‌توانم مطمئن باشم که هر کاری که می‌خواهم object انجام دهد، توسط منطق اعتبارسنجی داخلی که در object پیاده‌سازی شده مورد بررسی قرار گرفته و در برابر استفاده نادرست محافظت می‌شود. من به این Black box یک ورودی می‌دهم و انتظار یک خروجی دارم و به آنچه در این میان می‌گذرد کاری نخواهم داشت.</p>
+
+<p>اما Encapsulation چه ارتباطی با TDD دارد؟ تست‌ها (آزمون‌های واحد) هم مثل هر کد دیگر Object ها را مصرف (consume) می‌کنند. بنابراین طبق آنچه گفتیم تست باید فقط به Public API کد دسترسی داشته باشد و نه کارهای داخلی کلاس‌ها. این یک مفهوم بسیار مهم برای TDD کاران تازه‌کار است: <strong>شما فقط Public API را تست می‌کنید نه متدهای private یا protected.</strong></p>
+
+<p>در ادامه این نوشته‌ها خواهیم دید که متدهای private و protected برای خدمت به Public API ایجاد می‌شوند و بنابراین نیازی به تست کردن آن‌ها نیست و از طریق تست کردن Public API در واقع آن‌ها هم تست می‌شوند.</p>
+
+<h3 id="inheritance">Inheritance</h3>
+
+<p>وقتی در حال توسعه‌دادن نرم‌افزار خود بر پایه کلاس‌ها هستید،‌ متوجه می‌شوید که بعضی کلاس‌ها با هم در ارتباط هستند. بعضی مواقع دو یا چند کلاس شبیه به هم نظر می‌رسند. به عنوان مثال در شکل ز‌یر می‌توانید ببیند که سه کلاس Car‌ و Plane و Boat از چند جنبه به هم شبیه هستند:</p>
+
+<p><img src="http://elmah.ir/oldimg/image_thumb36E977DF8355C.png" alt="" /></p>
+
+<p>در حالی که هر کدام از این کلاس‌ها یک نوع متفاوت از وسیله نقلیه را نشان می‌دهند، می‌توانیم ببینیم که ویژگی‌های مشترکی دارند. به جای اینکه چند بار کارهای مشابه را در این کلاس‌ها تکرار کنیم، بهتر است که همه این کارها را در یک جا خلاصه کنیم تا بتوانیم توسط اشیا مختلف از آن استفاده کنیم. اینجاست که مفهوم وراثت (Inheritance) وارد می‌شود.</p>
+
+<p>با Inheritance من می‌توانم یک کلاس پایه (base class) تعریف کنم (در این مثال کلاس Vehicle) و Car و Plane و Boat را از آن ارث‌ ببرم این باعث ایجاد یک رابطه والد/فرزند می‌شود که در شکل زیر نمایش داده می‌شود:</p>
+
+<p><img src="http://elmah.ir/oldimg/image_thumb6.png" alt="" /></p>
+
+<p>حالا Car‌ و Plane‌ و Boat‌ می‌توانند قابلیت‌های خود شامل سه property به نام‌های FuelCapacityInGallons و PassengerCapacity و RagneOnFullTankInMiles را از کلاس پایه Vehicle‌ ارث‌بری کنند. اگر قابلیت‌های کلاس Vehicle برای هر یک از کلاس‌های مشتق شده (یعنی Car و Plane و Boat) کافی باشد برنامه‌نویس لازم نیست هیچ کار دیگری بکند. با این حال اگر کلاس مشتق شده به یک قابلیت متفاوت نسبت به پیاده‌سازی انجام شده در کلاس پایه نیاز داشته باشد، به راحتی می‌تواند آن قابلیت را با override کردن Property در کلاس خودش، به صورت سفارشی شده پیاده‌سازی کند. شکل زیر این حالت را نشان می‌دهد:</p>
+
+<p><img src="http://elmah.ir/oldimg/image_thumb9.png" alt="" /></p>
+
+<p>در شکل بالا فراخوانی RangeOnFullTankInMiles در کلاس Plane از نسخه مخصوص پیاده‌سازی شده در خود کلاس Plane استفاده می‌کند در حالی که در کلاس‌های Car و Boat از همان پیاده‌‌سازی انجام شده در کلاس پایه Vehicle استفاده می‌شود.</p>
+
+<h3 id="polymorphism">Polymorphism</h3>
+
+<p>اغلب برنامه‌نویس‌ها مفاهیم Encapsulation و Inheritance را خیلی ساده متوجه می‌شوند. اما Polymorphism از آن مفاهیمی است که برنامه‌نویس‌ها معمولاً برای فهمیدنش دچار مشکل هستند و این جای تاسف دارد چرا که بخش زیادی از قدرت اصلی OOP مربوط به توانایی‌های Polymorphism هست.</p>
+
+<p>ایده چندریختی (Polymorphism) این است که گرچه دو کلاس ممکن است آنچنان به هم شبیه باشند که مجموعه رفتار (behaviour) مشابهی را به اشتراک بگذارند و بر اساس این رفتارهای مشابه به شکل یکسان با آن‌ها برخورد شود ولی این امکان وجود دارد که آن رفتارها به شکل‌های متفاوتی پیاده‌سازی شوند</p>
+
+<p>در آخرین شکل بالا، همه وسایل نقلیه از کلاس Vehicle مشتق شده‌اند ولی به شکل‌های مختلفی حرکت می‌کنند: ماشین‌ها در جاده حرکت می‌کنند، کشتی‌ها در آب شناور هستند و هواپیماها در هوا پرواز می‌کنند. ولی همه این‌ها وسلیه نقلیه هستند پس اگر من یک متد داشته باشم که به یک وسلیه نقلیه نیاز داشته و مهم نباشد وسیله نقلیه چه چیزی هست، ‌می‌توانم نوع (Type) از جنس Vehicle را به عنوان پارامتر ورودی در نظر بگیرم و در زمان فراخوانی شی از هر یک از کلاس‌های Car یا Boat یا Plane را به آن پاس بدهم.</p>
+
+<p>در واقع class من حتی لزوماً نیازی نیست بداند که چه نوع وسیله نقلیه‌ای به آن پاس داده شده است چرا که این وسیله نقلیه از کلاس Vehicle مشتق شده که من همه چیزی که در موردش لازم دارم را از طریق property ها و method های عمومی‌اش (Public API) می‌دانم. من می‌توانم تمام property ها و method‌ های عمومی Vehicle را فراخوانی کنم. اگر کلاس وسیله نقلیه‌ای که از آن استفاده می‌کنم، تعریف یا پیاده‌سازی دیگری از یک property یا method داشت می‌توانم از آن تعریف خاص به جای تعریف کلاس پایه Vehicle استفاده کنم.</p>
+
+<p>این یک ایده بسیار قدرتمند است که به کد من قابلیت کلی یا general شدن را می‌دهد. لازم نیست برای هر یک از کلاس‌های مشتق شده از کلاس Vehicle متدهای مختلفی تعریف کنم. کافی است که یک وهله (instance) از کلاس پایه Vehicle را در کدم بپذیرم و این یعنی از هر یک از کلاس‌های مشتق شده از Vehicle نیز می‌توانم استفاده کنم.</p>
+
+<p>اما بر اساس این ایده کاری که نمی‌شود انجام داد این است که متدهایی که به صورت خاص در یک کلاس خاص نوشته شده را استفاده کنیم. مثلاً اگر متدی به نام OpenTrunk در کلاس Car داشته باشم که در کلاس پایه Vehicle تعریف نشده باشد باید قبل از فراخوانی این متد، object وسیله نقلیه را به Car تبدیل (Cast) کنم. به طور کلی اگر دیدید خیلی از این Cast ها در کدتان دارید، احتمالاً یک عیب در طراحی کلاس‌هایتان دارید: یا کلاس پایه شما به اندازه کافی، general نیست یا کلاس پایه، برای متدی که دارید می‌نویسید خیلی خیلی کلی است.</p>
+
+<h3 id="interface">Interface</h3>
+
+<p>Polymorphism بر اساس وراثت (Inheritance) همیشه بهترین گزینه نیست. به عنوان مثال کلاس‌های زیر را در نظر بگیرید (propert ها برای بهتر شدن خوانایی دیاگرام برداشته شدند)</p>
+
+<p><img src="http://elmah.ir/oldimg/image_thumb15.png" alt="" /></p>
+
+<p>به سه کلاس ردیف پایین یعنی Plane و Bird‌ و FlyingSquirrel نگاه کنید. واضح است که همه این کلاس‌ها کار &ldquo;پرواز کردن&rdquo; را انجام می‌دهند اما به شیوه‌های متفاوتی. این کلاس‌ها یک رفتار مشترک دارند اما به جز این چیز مشترک دیگری ندارند. دو تا از آن‌ها حیوان هستند و یکی حیوان نیست. تلاش برای قرار دادن این سه کلاس متفاوت در یک کلاس مشترک کار اشتباهی است. پیدا کردن یک abstarction با معنی برای این کلاس‌ها کار بسیار بسیار دشواری است.</p>
+
+<p>خبر خوب این است که لازم نیست برای این کار تلاش کنیم. می‌توانیم از Interface استفاده کنیم. Interface در واقع یک قرارداد است که اعلام می‌کند کد شما Public API مشخصی را پیاده‌سازی و پشتیبانی خواهد کرد. در واقع لیستی از property‌ ها و method‌ های عمومی (public) است که شما قول می‌دهید آن‌ها را در کلاستان تعریف کنید. اینکه این قابلیت چطور تعریف می‌شود جز قرارداد نیست، تنها چیزی که در این قرارداد مهم است این است که آن متدها و ویژگی‌ها وجود خواهند داشت و قابل فراخوانی هستند.</p>
+
+<p>برای اعمال Interface به مساله جاری، من می‌توانم یک Interface به نام IFly با یک متد به نام Fly درست کنم. مرحله بعدی پیاده‌سازی (implement) کردن این Interface در کلاس‌های Plane و Bird‌ و FlyingSquirrel به شکل زیر است:</p>
+
+<p><img src="http://elmah.ir/oldimg/image_thumb18.png" alt="" /></p>
+
+<p>با توجه به اینکه هر کدام از کلاس‌ها Interface من یعنی IFly را implement کرده‌اند، هر کدام متد Fly خود را خواهند داشت. مثل چندریختی مبتنی بر وراثت (Inheritance based Polymorphism) استفاده از Interface ها این امکان را به من می‌دهد که متدهایی تعریف کنم که پارامتر ورودی از جنس IFly دارند و می‌توانند اشیا از هر نوع کلاسی که این Interface را implement کرده باشد بپذیرند.</p>
+
+<p>شناخت و فهمیدن چندریختی مبتنی بر اینترفیس (interface based Polymorphism) از مهارت‌های ضروری TDD‌ است. وقتی در این سری نوشته‌ها به مبحث mocking‌ و وابستگی‌ها (dependencies) برسیم، دانش شما در این حوزه هر روز به کار خواهد آمد.</p>
+
+<p>ادامه دارد &hellip;</p>
+</article>
+    <footer class="post-footer">
+      
+      <p class="post-copyright">       
+        این نوشته  <strong>1372</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+      </p>
+    </footer>
+    
+      
+    
+  </section>
+  <footer class="site-footer">
+  <p>© 2017 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="http://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>
