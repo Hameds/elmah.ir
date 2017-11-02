@@ -1,6 +1,6 @@
 # elmah.ir
 
-elmah.ir is [my](https://github.com/Hameds) personal weblog built with [Hugo](https://github.com/gohugoio/hugo) (A Fast and Flexible Static Site Generator built in [Go](https://golang.org/)). 
+[elmah.ir](http://elmah.ir) is my personal weblog built with [Hugo](https://github.com/gohugoio/hugo) (A Fast and Flexible Static Site Generator built in [Go](https://golang.org/)). 
 
 ### Run source code locally
 The source code is in [master branch](https://github.com/Hameds/elmah.ir/tree/master), after installing [Hugo](https://github.com/gohugoio/hugo) you need to clone this repo
