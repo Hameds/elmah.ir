@@ -29,3 +29,9 @@ googleAnalytics = "UA-109151384-1"
   weight = 10
   identifier = "home"
   url = "/"
+
+[[menu.main]]
+  name = "پرزنت‌های من"
+  weight = 15
+  identifier = "presentations"
+  url = "https://hameds.github.io/slides/"
