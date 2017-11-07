@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>چطور (تقریباً) هر چیزی را در git به حالت قبلی برگردانیم؟ قسمت اول</title>
+  <title>دغدغه مستند‌سازی</title>
 
   
   
@@ -15,18 +15,14 @@
 
   
   <meta name="author" content="حامد سعیدی فرد" />
-  <meta name="description" content="این نوشته ترجمه خلاصه شده‌ای است از How to undo (almost) anything with Git که در وبلاگ گیت‌هاب انتشار یافته است و از سهیل رشیدی برای معرفی آن در خبرنامه iDevCenter تشکر می‌کنیم.
-undo کردن تغییر عمومی (Public) سناریو:شما از دستورgit push استفاده کردید و تغییرات را به گیت‌هاب فرستادید و حالا متوجه شدید که یکی از commit ها مشکلی دارد، می‌خواهید آن commit را undo کنید.
-دستور Undo:برای سناریو بالا از دستور زیر استفاده کنید:" />
+  <meta name="description" content="این روزها خیلی به مستند کردن کارها فکر می‌کنم." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@hamed" />
-    <meta name="twitter:title" content="چطور (تقریباً) هر چیزی را در git به حالت قبلی برگردانیم؟ قسمت اول" />
-    <meta name="twitter:description" content="این نوشته ترجمه خلاصه شده‌ای است از How to undo (almost) anything with Git که در وبلاگ گیت‌هاب انتشار یافته است و از سهیل رشیدی برای معرفی آن در خبرنامه iDevCenter تشکر می‌کنیم.
-undo کردن تغییر عمومی (Public) سناریو:شما از دستورgit push استفاده کردید و تغییرات را به گیت‌هاب فرستادید و حالا متوجه شدید که یکی از commit ها مشکلی دارد، می‌خواهید آن commit را undo کنید.
-دستور Undo:برای سناریو بالا از دستور زیر استفاده کنید:" />
+    <meta name="twitter:title" content="دغدغه مستند‌سازی" />
+    <meta name="twitter:description" content="این روزها خیلی به مستند کردن کارها فکر می‌کنم." />
     <meta name="twitter:image" content="http://elmah.ir/img/twittercard.png" />
   
 
@@ -36,7 +32,7 @@ undo کردن تغییر عمومی (Public) سناریو:شما از دستور
 <meta name="generator" content="Hugo 0.27.1" />
 
 
-<link rel="canonical" href="http://elmah.ir/post/118-%DA%86%D8%B7%D9%88%D8%B1-%D8%AA%D9%82%D8%B1%DB%8C%D8%A8%D8%A7%D9%8B-%D9%87%D8%B1-%DA%86%DB%8C%D8%B2%DB%8C-%D8%B1%D8%A7-%D8%AF%D8%B1-git-%D8%A8%D9%87-%D8%AD%D8%A7%D9%84%D8%AA-%D9%82%D8%A8%D9%84%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B1%D8%AF%D8%A7%D9%86%DB%8C%D9%85-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/" />
+<link rel="canonical" href="http://elmah.ir/post/documentation/" />
 <link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
 
 
@@ -190,45 +186,15 @@ undo کردن تغییر عمومی (Public) سناریو:شما از دستور
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">چطور (تقریباً) هر چیزی را در git به حالت قبلی برگردانیم؟ قسمت اول</h1>
-      <p class="post-meta">@حامد سعیدی فرد · 2 دقیقه خواندن</p>
+      <h1 class="post-title">دغدغه مستند‌سازی</h1>
+      <p class="post-meta">@حامد سعیدی فرد · 1 دقیقه خواندن</p>
     </header>
-    <article class="post-content">
-
-<p>این نوشته ترجمه خلاصه شده‌ای است از How to undo (almost) anything with Git که در وبلاگ گیت‌هاب <a href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git">انتشار یافته است</a> و از سهیل رشیدی برای معرفی آن در <a href="http://www.idevcenter.com/">خبرنامه iDevCenter</a> تشکر می‌کنیم.</p>
-
-<h3 id="undo-کردن-تغییر-عمومی-public">undo کردن تغییر عمومی (Public)</h3>
-
-<p><strong>سناریو:</strong>شما از دستور<code>git push</code>   استفاده کردید و تغییرات را به گیت‌هاب فرستادید و حالا متوجه شدید که یکی از commit ها مشکلی دارد، می‌خواهید آن commit را undo کنید.</p>
-
-<p><strong>دستور Undo:</strong>برای سناریو بالا از دستور زیر استفاده کنید:</p>
-
-<p><code>git revert&amp;nbsp;&amp;lt;SHA&amp;gt;</code></p>
-
-<h3 id="تعمیر-توضیح-آخرین-commit">تعمیر توضیح آخرین commit</h3>
-
-<p><strong>سناریو:</strong>در آخرین commit اشتباه تایپی دارید، دستور شما مثلاً <code>git commit -m &quot;Fxies bug #42&quot;</code> بوده است اما قبل از <code>git push</code> متوجه شدید که Fixes اشتباه تایپ شده است.</p>
-
-<p><strong>دستور Undo:</strong> برای سناریو بالا از دستور زیر استفاده کنید:</p>
-
-<p><code>git commit --amend or git commit --amend -m &quot;Fixes bug #42&quot;</code></p>
-
-<h3 id="undo-کردن-تغییرات-محلی-local-changes">Undo کردن تغییرات محلی (local changes)</h3>
-
-<p><strong>سناریو:</strong>گربه‌ای روی کیبورد راه رفته و تغییرات ایجاد شده هم به شکلی ذخیره شده‌اند.، بعد ادیتور هم crash کرده است. شما این تغییرات را commit نکرده‌اید و می‌خواهید فایل را به حالت قبلی‌اش (آخرین commit) برگردانید.</p>
-
-<p><strong>دستور Undo:</strong>برای سناریو بالا از دستور زیر استفاده کنید</p>
-
-<p><code>git checkout -- &amp;lt;bad filename&amp;gt;</code></p>
-
-<p>به یاد داشته باشید هر تغییری که به این شیوه Undo می‌کنید واقعاً از بین خواهد رفت. در واقع تغییرات در این حالت هیچ وقت commit‌ نمی‌شوند و لذا git در بازیابی ‌آن‌ها به ما کمکی نخواهد کرد. بنابراین پیش از استفاده از این دستور، مطمئن شوید می‌دانید چه چیزهایی را دور می‌ریزید. از git diff استفاده کنید تا مطمئن شوید کارتان برای undo کردن درست است</p>
-
-<p>پی‌نوشت: به خاطر طولانی بودن مطلب اصلی، ترجمه آن در قالب چند نوشته مجزا منتشر خواهد شد</p>
+    <article class="post-content"><p>این روزها خیلی به مستند کردن کارها فکر می‌کنم.</p>
 </article>
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>731</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        
       </p>
     </footer>
     
