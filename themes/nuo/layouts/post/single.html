@@ -18,6 +18,18 @@
         {{ if .Site.Copyright }}{{ .Site.Copyright }}{{ end }}{{ if gt (div (sub now.Unix .Lastmod.Unix) 86400) 100 }}این نوشته  <strong>{{ div (sub now.Unix .Lastmod.Unix) 86400 }}</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.{{ end }}
       </p>
     </footer>
+    <hr>
+    <div id="darinternet_comment"></div>
+    <script type="text/javascript">    
+      (function () {
+        var cmt = document.createElement('script');
+        cmt.type = 'text/javascript';
+        cmt.async = true;
+        cmt.src = 'https://www.darinternet.com/script/commentscript/ccc91a81-b2c4-e711-90f9-005056000124';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(cmt);
+      })();
+    </script>
+    
     {{ if ne .Params.comments false }}
       {{ if .Site.Params.changyan }}
       <div id="cyReward" role="cylabs" data-use="reward"></div>
