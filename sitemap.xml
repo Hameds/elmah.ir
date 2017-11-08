@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>http://elmah.ir/post/documentation/</loc>
-    <lastmod>2017-11-05T23:20:30+03:30</lastmod>
-  </url>
-  
-  <url>
     <loc>http://elmah.ir/post/hello-world/</loc>
     <lastmod>2017-10-31T20:50:36+03:30</lastmod>
   </url>
@@ -579,7 +574,7 @@
   
   <url>
     <loc>http://elmah.ir/post/</loc>
-    <lastmod>2017-11-05T23:20:30+03:30</lastmod>
+    <lastmod>2017-10-31T20:50:36+03:30</lastmod>
     <priority>0</priority>
   </url>
   
