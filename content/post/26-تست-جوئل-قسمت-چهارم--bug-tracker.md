@@ -3,6 +3,7 @@
  date: 2013-08-10T12:12:58+03:30
  draft: false 
  categories: ["Software PM"]
+ cover: "/oldimg/bug_his4.jpg"
 ---
 
 

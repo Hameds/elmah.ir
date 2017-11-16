@@ -3,6 +3,7 @@
  date: 2014-09-19T00:00:00+03:30
  draft: false 
  categories: ["Software Development"]
+ cover: "/img/TFS-large.png"
 ---
 
 

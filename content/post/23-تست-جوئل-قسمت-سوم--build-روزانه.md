@@ -3,6 +3,7 @@
  date: 2013-08-07T19:41:32+03:30
  draft: false 
  categories: ["Software PM"]
+ cover: "/oldimg/i_broke_the_build.jpg"
 ---
 
 

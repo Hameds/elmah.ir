@@ -3,6 +3,7 @@
  date: 2015-04-07T00:00:00+03:30
  draft: false 
  categories: ["SharePoint Development"]
+ cover: "/img/iis_applicaitonpool.png"
 ---
 
 

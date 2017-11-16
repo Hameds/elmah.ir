@@ -3,6 +3,7 @@
  date: 2013-11-13T22:20:48+03:30
  draft: false 
  categories: ["SharePoint Development"]
+ cover: "/img/sharepoint-logo.png"
 ---
 
 

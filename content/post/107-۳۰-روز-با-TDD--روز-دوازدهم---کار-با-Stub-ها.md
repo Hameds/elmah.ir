@@ -3,6 +3,7 @@
  date: 2014-12-27T00:00:00+03:30
  draft: false 
  categories: ["Test Driven Development"]
+ cover: "/oldimg/tdd_cycle.jpg"
 ---
 
 نوشته به زبان انگلیسی روز دوازدهم را در [این آدرس](http://blogs.telerik.com/james-bender/posts.aspx/13-10-07/30-days-of-tdd-day-12-working-with-stubs) می‌توانید مطالعه کنید. در [نوشته قبلی](/post/94-۳۰-روز-با-tdd--روز-یازدهم---درباره-mocking/) این سری یک پروتوتایپ از اینکه PlaceOrder برای یک OrderService در یک برنامه e-commerce چطور باید باشد به شما نشان دادم. برای نمایش mocking ما یک نسخه کاربردی از این منطق تجاری (business logic) را با TDD پیاده‌سازی خواهیم کرد. این به آن معنی است که با یک نیازمندی تجاری شروع می‌کنیم:

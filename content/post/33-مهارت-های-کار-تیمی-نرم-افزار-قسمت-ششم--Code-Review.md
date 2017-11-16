@@ -3,6 +3,7 @@
  date: 2013-08-17T21:39:53+03:30
  draft: false 
  categories: ["Software PM"]
+ cover: "/oldimg/yoda.jpg"
 ---
 
 

@@ -3,6 +3,7 @@
  date: 2013-08-11T22:35:39+03:30
  draft: false 
  categories: ["Software Development"]
+ cover: "/oldimg/glimpse2.png"
 ---
 
 

@@ -3,6 +3,7 @@
  date: 2013-07-28T23:56:33+03:30
  draft: false 
  categories: ["Software PM"]
+ cover: "/oldimg/build_a2.png"
 ---
 
 

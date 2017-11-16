@@ -2,6 +2,7 @@
 title: "سلام دنیا"
 date: 2017-10-31T20:50:36+03:30
 draft: false
+cover: "/img/hello-world-1.png"
 ---
 
 ### داستان چیه؟

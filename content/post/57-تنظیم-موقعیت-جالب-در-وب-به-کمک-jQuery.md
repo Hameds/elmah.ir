@@ -3,6 +3,7 @@
  date: 2013-10-07T19:15:27+03:30
  draft: false 
  categories: ["Web"]
+ cover: "/oldimg/corners.jpg"
 ---
 
 

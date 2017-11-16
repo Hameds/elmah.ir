@@ -3,6 +3,7 @@
  date: 2013-08-08T20:58:01+03:30
  draft: false 
  categories: ["Cinema"]
+ cover: "/oldimg/Oblivion-Poster.jpg"
 ---
 
 

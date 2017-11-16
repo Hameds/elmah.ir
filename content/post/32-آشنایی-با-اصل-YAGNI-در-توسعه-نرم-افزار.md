@@ -3,6 +3,7 @@
  date: 2013-08-16T19:44:54+03:30
  draft: false 
  categories: ["Software PM"]
+ cover: "/oldimg/3td7y0.jpg"
 ---
 
 

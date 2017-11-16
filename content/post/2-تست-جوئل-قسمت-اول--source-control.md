@@ -3,6 +3,7 @@
  date: 2013-07-18T19:12:16+03:30
  draft: false 
  categories: ["Software PM"]
+ cover: "/oldimg/JoelSpolsky.jpg"
 ---
 
 

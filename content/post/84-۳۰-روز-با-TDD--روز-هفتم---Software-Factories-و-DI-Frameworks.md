@@ -3,6 +3,7 @@
  date: 2014-02-13T10:53:53+03:30
  draft: false 
  categories: ["Test Driven Development"]
+ cover: "/oldimg/tdd_cycle.jpg"
 ---
 
 
