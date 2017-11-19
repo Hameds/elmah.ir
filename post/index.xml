@@ -6,10 +6,19 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Wed, 15 Nov 2017 16:18:22 +0330</lastBuildDate>
+    <lastBuildDate>Sun, 19 Nov 2017 19:44:27 +0330</lastBuildDate>
     
 	<atom:link href="http://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>بدهی فنی چیه و چطور باید بازپرداختش کنیم؟ </title>
+      <link>http://elmah.ir/post/technical-debt/</link>
+      <pubDate>Sun, 19 Nov 2017 19:44:27 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/technical-debt/</guid>
+      <description>یک وام با بهره بالا بدهی فنی هزینه دوباره‌کاری‌هاییه که به خاطر انتخاب راه حل ساده و سریع به جای راه حل اصولی و زمان‌بر می‌پردازیم. اغلب اوقات به خاطر فشار مدیران و گاهی هم به دلایل دیگر، عمدی یا غیرعمدی بخشی از کد رو اون‌طور که باید پیاده نمی‌کنیم به این امید که بعداً درستش خواهیم کرد. درست در همین لحظه برای خودمون بدهی فنی درست کردیم. تصویر زیر یک نمونه واضح بدهی فنی است.</description>
+    </item>
     
     <item>
       <title>شرکت، خانواده نیست!</title>
