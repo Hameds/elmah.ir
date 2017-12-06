@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Wed, 29 Nov 2017 15:50:59 +0330</lastBuildDate>
+    <lastBuildDate>Wed, 06 Dec 2017 12:03:48 +0330</lastBuildDate>
     
 	<atom:link href="http://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>اینترنت بی‌طرف حق مسلم ماست</title>
+      <link>http://elmah.ir/post/net-neutrality/</link>
+      <pubDate>Wed, 06 Dec 2017 12:03:48 +0330</pubDate>
+      
+      <guid>http://elmah.ir/post/net-neutrality/</guid>
+      <description>شاید شما یادتون نباشه اما من از اینترنت بدون فیلترینگ در ایران یادمه. چند سال دیگه شما می‌تونید به بچه‌های اون زمان بگید، اینترنت بی‌طرف رو یادتونه. چون داریم از دستش می‌دیم!
+داستان چیه؟ وزارت ارتباطات، ارائه‌کنندگان اینترنت رو مجبور کرده تا بر اساس تعرفه جدید خدمات بدهند و روی حجم ماهیانه رقابت کنند. شرکت‌ها هم ترافیک داخل کشور رو نصف قیمت ترافیک خارج کشور حساب می‌کنند و حتی بعضی برای ۵۰۰ سایت پربازدید داخلی ترافیک رو رایگان محاسبه می‌کنند و این نقض بی‌طرفی شبکه محسوب می‌شه.</description>
+    </item>
     
     <item>
       <title>کتابچه تست جوئل روی گیت‌بوک</title>
