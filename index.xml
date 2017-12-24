@@ -6,10 +6,19 @@
     <description>Recent content on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Tue, 31 Oct 2017 20:50:36 +0330</lastBuildDate>
+    <lastBuildDate>Sun, 24 Dec 2017 09:23:58 +0330</lastBuildDate>
     
 	<atom:link href="http://elmah.ir/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>نوشته‌های دنباله‌دار</title>
+      <link>http://elmah.ir/series/</link>
+      <pubDate>Sun, 24 Dec 2017 09:23:58 +0330</pubDate>
+      
+      <guid>http://elmah.ir/series/</guid>
+      <description>تعدادی از مطالب این وبلاگ رو به صورت دنباله‌دار و در چند پست نوشتم. اینجا لیستی از این نوشته‌‌های دنباله‌دار رو می‌تونید ببینید</description>
+    </item>
     
     <item>
       <title>درباره من</title>

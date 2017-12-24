@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://elmah.ir/series/</loc>
+    <lastmod>2017-12-24T09:23:58+03:30</lastmod>
+  </url>
+  
+  <url>
     <loc>http://elmah.ir/about/</loc>
     <lastmod>2017-10-31T20:50:36+03:30</lastmod>
   </url>
@@ -640,7 +645,7 @@
   
   <url>
     <loc>http://elmah.ir/</loc>
-    <lastmod>2017-10-31T20:50:36+03:30</lastmod>
+    <lastmod>2017-12-24T09:23:58+03:30</lastmod>
     <priority>0</priority>
   </url>
   
