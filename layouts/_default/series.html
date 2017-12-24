@@ -1,0 +1,23 @@
+{{ define "title" }}
+  {{ .Title }} | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
+{{ end }}
+
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <section class="main post-detail">
+    {{ .Content }}
+    {{ range $.Site.Data.series }}
+    {{ range .item}}
+      <article class="post-content">
+        <h3 class="">{{ .title }}</h3>
+        <p class="">{{ .description }}</p>
+          {{ range $index, $element := .posts }}         
+              <a style="padding-top:15px;display:table;clear:both" href={{ index $element 1 }}>{{ index $element 0 }}</a>          
+          {{ end }}
+        <hr>
+        {{ end }}
+      </article>
+    {{ end }}
+  </section>
+  {{ partial "footer.html" . }}
+{{ end }}
