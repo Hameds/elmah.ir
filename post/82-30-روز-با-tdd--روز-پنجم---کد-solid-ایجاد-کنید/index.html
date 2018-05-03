@@ -25,7 +25,7 @@
     <meta name="twitter:title" content="30 روز با TDD: روز پنجم - کد SOLID ایجاد کنید" />
     <meta name="twitter:description" content="نوشته روز پنجم به زبان انگلیسی را در این آدرس می‌توانید مطالعه کنید. در روز سوم اولین تست‌مان را نوشتم و در روز چهارم هم مطابق با روش TDD کدمان را تکمیل کردیم تا اولین تستی که نوشته بودیم Pass شود. امروز می‌خواهیم کمی درباره مباحث تئوریکی که پایه کارهای آینده در این سری نوشته‌هاست صحبت کنیم.
 آیا کد شما SOLID است؟ اصول SOLID در توسعه نرم‌افزار اصولی هستند که توسط رابرت مارتین معرفی شده‌اند." />
-    <meta name="twitter:image" content="http://elmah.ir/oldimg/tdd_cycle.jpg" />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/tdd_cycle.jpg" />
   
 
 
@@ -34,8 +34,8 @@
 <meta name="generator" content="Hugo 0.27.1" />
 
 
-<link rel="canonical" href="http://elmah.ir/post/82-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%BE%D9%86%D8%AC%D9%85---%DA%A9%D8%AF-solid-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%DA%A9%D9%86%DB%8C%D8%AF/" />
-<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+<link rel="canonical" href="https://elmah.ir/post/82-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%BE%D9%86%D8%AC%D9%85---%DA%A9%D8%AF-solid-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%DA%A9%D9%86%DB%8C%D8%AF/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
 
 
 <meta name="renderer" content="webkit" />
@@ -60,19 +60,19 @@
 <meta name='msapplication-navbutton-color' content="#5fbf5e" />
 <meta name="msapplication-TileColor" content="#5fbf5e" />
 <meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
-<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
-<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
-<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
-<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
 
 
 
 <link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
 
-<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
-<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
 
   
   <!--[if lt IE 9]>
@@ -119,13 +119,13 @@
       
       
       
-        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
       
         <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
       
     </ul>
   </nav>
@@ -181,7 +181,7 @@
       
 
       <li class="social-item">
-        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
       </li>
 
     </ul>
@@ -195,7 +195,7 @@
     </header>
     <article class="post-content">
 
-<p>نوشته روز پنجم به زبان انگلیسی را در <a href="http://blogs.telerik.com/james-bender/posts/13-09-18/30-days-of-tdd-day-five-make-your-code-solid">این آدرس</a> می‌توانید مطالعه کنید. در <a href="http://elmah.ir/post/80-30-روز-با-tdd--روز-سوم---اولین-تست-شما/">روز سوم</a> اولین تست‌مان را نوشتم و در <a href="http://elmah.ir/post/81-30-روز-با-tdd--روز-چهارم---pass-کردن-اولین-تست/">روز چهارم</a> هم مطابق با روش TDD کدمان را تکمیل کردیم تا اولین تستی که نوشته بودیم Pass شود. امروز می‌خواهیم کمی درباره مباحث تئوریکی که پایه کارهای آینده در این سری نوشته‌هاست صحبت کنیم.</p>
+<p>نوشته روز پنجم به زبان انگلیسی را در <a href="http://blogs.telerik.com/james-bender/posts/13-09-18/30-days-of-tdd-day-five-make-your-code-solid">این آدرس</a> می‌توانید مطالعه کنید. در <a href="https://elmah.ir/post/80-30-روز-با-tdd--روز-سوم---اولین-تست-شما/">روز سوم</a> اولین تست‌مان را نوشتم و در <a href="https://elmah.ir/post/81-30-روز-با-tdd--روز-چهارم---pass-کردن-اولین-تست/">روز چهارم</a> هم مطابق با روش TDD کدمان را تکمیل کردیم تا اولین تستی که نوشته بودیم Pass شود. امروز می‌خواهیم کمی درباره مباحث تئوریکی که پایه کارهای آینده در این سری نوشته‌هاست صحبت کنیم.</p>
 
 <h3 id="آیا-کد-شما-solid-است">آیا کد شما SOLID است؟</h3>
 
@@ -217,7 +217,7 @@ SOLID سرنام این اصول پنج‌گانه است: <strong>S</strong>in
 
 <h3 id="the-open-close-principle">The Open/Close Principle</h3>
 
-<p>اصل Open/Close یا به اختصار OCP ارتباط نزدیکی با مباحث Encapsulation و Inheritance که <a href="http://elmah.ir/post/79-30-روز-با-tdd--روز-دوم----مروری-بر-اصول-شی-گرایی/">روز دوم</a> در موردشان صحبت کردیم دارد. در حقیقت می‌توان گفت OCP ایده‌ای است که این دو قانون OOP را با هم متحد می‌کند. OCP بیان می‌کند که <strong>در نرم‌افزار، خواه متد یا کلاس، باید راه برای توسعه (extension) باز و برای تغییر (modification) بسته باشد</strong>. برای اینکه بهتر متوجه دو بخش این عبارت شویم، هر کدام را به صورت جداگانه بررسی می‌کنیم.</p>
+<p>اصل Open/Close یا به اختصار OCP ارتباط نزدیکی با مباحث Encapsulation و Inheritance که <a href="https://elmah.ir/post/79-30-روز-با-tdd--روز-دوم----مروری-بر-اصول-شی-گرایی/">روز دوم</a> در موردشان صحبت کردیم دارد. در حقیقت می‌توان گفت OCP ایده‌ای است که این دو قانون OOP را با هم متحد می‌کند. OCP بیان می‌کند که <strong>در نرم‌افزار، خواه متد یا کلاس، باید راه برای توسعه (extension) باز و برای تغییر (modification) بسته باشد</strong>. برای اینکه بهتر متوجه دو بخش این عبارت شویم، هر کدام را به صورت جداگانه بررسی می‌کنیم.</p>
 
 <p>وقتی برنامه‌نویسان یک نرم‌افزار می‌نویسند اغلب متکی به کتابخانه‌های نرم‌افزاری نوشته شده توسط سایر برنامه‌نویسان هستند. به منظور اینکه این اجزا (components) به صورت گسترده مورد استفاده قرار می‌گیرند، قابلیت‌های آن‌ها را در کلی‌ترین (general) حالات در نظر می‌گیرند. اغلب اوقات که از قابلیت‌های این component ها به همان صورتی که هست استفاده می‌کنیم، به معنی این است که نیاز ما در دایره حالات کلی تعریف شده در آن کتابخانه قرار دارد. اما بعضی اوقات ممکن است به نسخه خاص‌تری از این component ها نیاز داشته باشیم.<br />
  بر اساس OCP این component ها را باید بتوان گسترش داد (راه برای extension باز باشد). راه‌های مختلفی برای این کار وجود دارد: مشخص‌ترین راه ایجاد یک کلاس جدید مشتق شده از کلاس پایه (base) مربوط به component‌ است که یا متدهای موجود آن را override کند یا متدهای جدیدی را بر اساس نیاز به آن اضافه کند.<br />
@@ -261,7 +261,7 @@ SOLID سرنام این اصول پنج‌گانه است: <strong>S</strong>in
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1507</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1546</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -312,7 +312,7 @@ SOLID سرنام این اصول پنج‌گانه است: <strong>S</strong>in
   });
 </script>
 
-<script src="http://elmah.ir/js/bundle.js"></script>
+<script src="https://elmah.ir/js/bundle.js"></script>
 
 
 <script>

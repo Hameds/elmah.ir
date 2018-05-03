@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software Development on elmah</title>
-    <link>http://elmah.ir/categories/software-development/</link>
+    <link>https://elmah.ir/categories/software-development/</link>
     <description>Recent content in Software Development on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
     <lastBuildDate>Sat, 07 Nov 2015 00:00:00 +0330</lastBuildDate>
     
-	<atom:link href="http://elmah.ir/categories/software-development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://elmah.ir/categories/software-development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>چطور (تقریباً) هر چیزی را در git به حالت قبلی برگردانیم؟ قسمت اول</title>
-      <link>http://elmah.ir/post/118-%DA%86%D8%B7%D9%88%D8%B1-%D8%AA%D9%82%D8%B1%DB%8C%D8%A8%D8%A7%D9%8B-%D9%87%D8%B1-%DA%86%DB%8C%D8%B2%DB%8C-%D8%B1%D8%A7-%D8%AF%D8%B1-git-%D8%A8%D9%87-%D8%AD%D8%A7%D9%84%D8%AA-%D9%82%D8%A8%D9%84%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B1%D8%AF%D8%A7%D9%86%DB%8C%D9%85-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/</link>
+      <link>https://elmah.ir/post/118-%DA%86%D8%B7%D9%88%D8%B1-%D8%AA%D9%82%D8%B1%DB%8C%D8%A8%D8%A7%D9%8B-%D9%87%D8%B1-%DA%86%DB%8C%D8%B2%DB%8C-%D8%B1%D8%A7-%D8%AF%D8%B1-git-%D8%A8%D9%87-%D8%AD%D8%A7%D9%84%D8%AA-%D9%82%D8%A8%D9%84%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B1%D8%AF%D8%A7%D9%86%DB%8C%D9%85-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/</link>
       <pubDate>Sat, 07 Nov 2015 00:00:00 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/118-%DA%86%D8%B7%D9%88%D8%B1-%D8%AA%D9%82%D8%B1%DB%8C%D8%A8%D8%A7%D9%8B-%D9%87%D8%B1-%DA%86%DB%8C%D8%B2%DB%8C-%D8%B1%D8%A7-%D8%AF%D8%B1-git-%D8%A8%D9%87-%D8%AD%D8%A7%D9%84%D8%AA-%D9%82%D8%A8%D9%84%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B1%D8%AF%D8%A7%D9%86%DB%8C%D9%85-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/</guid>
+      <guid>https://elmah.ir/post/118-%DA%86%D8%B7%D9%88%D8%B1-%D8%AA%D9%82%D8%B1%DB%8C%D8%A8%D8%A7%D9%8B-%D9%87%D8%B1-%DA%86%DB%8C%D8%B2%DB%8C-%D8%B1%D8%A7-%D8%AF%D8%B1-git-%D8%A8%D9%87-%D8%AD%D8%A7%D9%84%D8%AA-%D9%82%D8%A8%D9%84%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B1%D8%AF%D8%A7%D9%86%DB%8C%D9%85-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/</guid>
       <description>این نوشته ترجمه خلاصه شده‌ای است از How to undo (almost) anything with Git که در وبلاگ گیت‌هاب انتشار یافته است و از سهیل رشیدی برای معرفی آن در خبرنامه iDevCenter تشکر می‌کنیم.
 undo کردن تغییر عمومی (Public) سناریو:شما از دستورgit push استفاده کردید و تغییرات را به گیت‌هاب فرستادید و حالا متوجه شدید که یکی از commit ها مشکلی دارد، می‌خواهید آن commit را undo کنید.
 دستور Undo:برای سناریو بالا از دستور زیر استفاده کنید:</description>
@@ -24,39 +24,39 @@ undo کردن تغییر عمومی (Public) سناریو:شما از دستور
     
     <item>
       <title>۱۰ اصل برای داشتن یک رابط کاربری خوب</title>
-      <link>http://elmah.ir/post/117-%DB%B1%DB%B0-%D8%A7%D8%B5%D9%84-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D8%A7%D8%B4%D8%AA%D9%86-%DB%8C%DA%A9-%D8%B1%D8%A7%D8%A8%D8%B7-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C-%D8%AE%D9%88%D8%A8/</link>
+      <link>https://elmah.ir/post/117-%DB%B1%DB%B0-%D8%A7%D8%B5%D9%84-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D8%A7%D8%B4%D8%AA%D9%86-%DB%8C%DA%A9-%D8%B1%D8%A7%D8%A8%D8%B7-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C-%D8%AE%D9%88%D8%A8/</link>
       <pubDate>Thu, 09 Apr 2015 00:00:00 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/117-%DB%B1%DB%B0-%D8%A7%D8%B5%D9%84-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D8%A7%D8%B4%D8%AA%D9%86-%DB%8C%DA%A9-%D8%B1%D8%A7%D8%A8%D8%B7-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C-%D8%AE%D9%88%D8%A8/</guid>
+      <guid>https://elmah.ir/post/117-%DB%B1%DB%B0-%D8%A7%D8%B5%D9%84-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D8%A7%D8%B4%D8%AA%D9%86-%DB%8C%DA%A9-%D8%B1%D8%A7%D8%A8%D8%B7-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C-%D8%AE%D9%88%D8%A8/</guid>
       <description>یک قول قدیمی
 وقتی درباره تست جوئل می‌نوشتم، در توضیحات مربوط به کاربردپذیری راهرویی قول دادم که درباره مواردی که به ایجاد یک UI خوب نرم‌افزاری می‌انجامد یک سری نوشته بنویسم. حالا بعد از نزدیک به یک سال و سه ماه از آن نوشته، از خلاصه اصول کاربردی برای داشتن یک UI خوب به روایت جیکوب نیلسن برایتان خواهم گفت. اگر از خوانندگان قدیمی وبلاگ آٰرایه باشید، احتمالاً آقای نیلسن را از نوشته مرتبط با قانون تجربه اینترنتی جیکوب به یاد دارید.</description>
     </item>
     
     <item>
       <title>رفع خطاهای معمول و تکمیل راه‌اندازی Build Server برای TFS 2013</title>
-      <link>http://elmah.ir/post/93-%D8%B1%D9%81%D8%B9-%D8%AE%D8%B7%D8%A7%D9%87%D8%A7%DB%8C-%D9%85%D8%B9%D9%85%D9%88%D9%84-%D9%88-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-build-server-%D8%A8%D8%B1%D8%A7%DB%8C-tfs-2013/</link>
+      <link>https://elmah.ir/post/93-%D8%B1%D9%81%D8%B9-%D8%AE%D8%B7%D8%A7%D9%87%D8%A7%DB%8C-%D9%85%D8%B9%D9%85%D9%88%D9%84-%D9%88-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-build-server-%D8%A8%D8%B1%D8%A7%DB%8C-tfs-2013/</link>
       <pubDate>Fri, 19 Sep 2014 00:00:00 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/93-%D8%B1%D9%81%D8%B9-%D8%AE%D8%B7%D8%A7%D9%87%D8%A7%DB%8C-%D9%85%D8%B9%D9%85%D9%88%D9%84-%D9%88-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-build-server-%D8%A8%D8%B1%D8%A7%DB%8C-tfs-2013/</guid>
+      <guid>https://elmah.ir/post/93-%D8%B1%D9%81%D8%B9-%D8%AE%D8%B7%D8%A7%D9%87%D8%A7%DB%8C-%D9%85%D8%B9%D9%85%D9%88%D9%84-%D9%88-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-build-server-%D8%A8%D8%B1%D8%A7%DB%8C-tfs-2013/</guid>
       <description>Build به کمک TFS اگر سری نوشته‌های تست جوئل را دنبال کرده باشید، حتماً درباره اهمیت build روزانهخوانده‌اید. برای داشتن یک روال build خوب ابتدا باید یک build serer داشته باشید. خوشبختانه TFS به خصوص در نسخه‌های جدید، کار build را برای پروژه‌های تیمی بسیار ساده کرده است. در این نوشته درباره خطاهایی که پس از نصب سرویس build در TFS ممکن است با آن‌ها برخورد داشته باشید و راه حل آن‌ها صحبت می‌کنیم.</description>
     </item>
     
     <item>
       <title>دیزاین متفاوت سایت‌ها: خوب یا بد؟</title>
-      <link>http://elmah.ir/post/71-%D8%AF%DB%8C%D8%B2%D8%A7%DB%8C%D9%86-%D9%85%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7--%D8%AE%D9%88%D8%A8-%DB%8C%D8%A7-%D8%A8%D8%AF/</link>
+      <link>https://elmah.ir/post/71-%D8%AF%DB%8C%D8%B2%D8%A7%DB%8C%D9%86-%D9%85%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7--%D8%AE%D9%88%D8%A8-%DB%8C%D8%A7-%D8%A8%D8%AF/</link>
       <pubDate>Fri, 06 Dec 2013 23:13:16 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/71-%D8%AF%DB%8C%D8%B2%D8%A7%DB%8C%D9%86-%D9%85%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7--%D8%AE%D9%88%D8%A8-%DB%8C%D8%A7-%D8%A8%D8%AF/</guid>
+      <guid>https://elmah.ir/post/71-%D8%AF%DB%8C%D8%B2%D8%A7%DB%8C%D9%86-%D9%85%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%B3%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7--%D8%AE%D9%88%D8%A8-%DB%8C%D8%A7-%D8%A8%D8%AF/</guid>
       <description>در دنیای طراحی وب، با سبک‌های مختلفی در طراحی چه از نظر ظاهری و چه از نظر ساختاری روبرو هستیم. یک روز استفاده از وب سایت‌های سنتی با انواع صفحات کاربردی است و روز دیگر SPA یا Single Page Application ها رواج می‌یابد. گاهی اوقات طراحان وب، طرح‌های خلاقانه‌ و متفاوتی را ارائه می‌دهند. طرح‌هایی که کمتر سایت مشابهی را می‌توان برایش پیدا کرد.
 اما آیا این تفاوت در دیزاین سایت‌ها همیشه خوب است؟ برای پاسخ به این سوال، یک دیدگاه که از طرف آقای جیکوب نیلسن مطرح شده است را با هم مرور می‌کنیم.</description>
     </item>
     
     <item>
       <title>تست جوئل قسمت دوازدهم: کاربردپذیری راهرویی</title>
-      <link>http://elmah.ir/post/70-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%AF%D9%88%D8%A7%D8%B2%D8%AF%D9%87%D9%85--%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%AF%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C-%D8%B1%D8%A7%D9%87%D8%B1%D9%88%DB%8C%DB%8C/</link>
+      <link>https://elmah.ir/post/70-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%AF%D9%88%D8%A7%D8%B2%D8%AF%D9%87%D9%85--%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%AF%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C-%D8%B1%D8%A7%D9%87%D8%B1%D9%88%DB%8C%DB%8C/</link>
       <pubDate>Tue, 26 Nov 2013 20:46:31 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/70-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%AF%D9%88%D8%A7%D8%B2%D8%AF%D9%87%D9%85--%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%AF%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C-%D8%B1%D8%A7%D9%87%D8%B1%D9%88%DB%8C%DB%8C/</guid>
+      <guid>https://elmah.ir/post/70-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%AF%D9%88%D8%A7%D8%B2%D8%AF%D9%87%D9%85--%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%AF%D9%BE%D8%B0%DB%8C%D8%B1%DB%8C-%D8%B1%D8%A7%D9%87%D8%B1%D9%88%DB%8C%DB%8C/</guid>
       <description>تست دوازدهم جوئل: آیا از آزمایش &amp;ldquo;کاربردپذیری راهرویی&amp;rdquo; استفاده می‌کنید؟ در ابتدای توضیح درباره آخرین تست جوئل، باید اشاره کنم که کاربردپذیری را به عنوان ترجمه‌ای برای usability به کار بردم و در اینجا منظور از آن طراحی واسط کاربر یا user interface برای نرم‌افزارهاست.
 جوئل اشاره می‌کند که
  در تست hallway usability، شما خِر اولین فردی را که از راهرو رد می‌شود می‌گیرید و مجبورش می‌کنید بنشیند پای برنامه‌ای که الان نوشته‌اید.</description>
@@ -64,69 +64,69 @@ undo کردن تغییر عمومی (Public) سناریو:شما از دستور
     
     <item>
       <title>20 نکته برای اینکه برنامه‌نویس بهتری بشوید</title>
-      <link>http://elmah.ir/post/58-20-%D9%86%DA%A9%D8%AA%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%DB%8C%D9%86%DA%A9%D9%87-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C-%D8%A8%D8%B4%D9%88%DB%8C%D8%AF/</link>
+      <link>https://elmah.ir/post/58-20-%D9%86%DA%A9%D8%AA%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%DB%8C%D9%86%DA%A9%D9%87-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C-%D8%A8%D8%B4%D9%88%DB%8C%D8%AF/</link>
       <pubDate>Mon, 07 Oct 2013 21:34:48 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/58-20-%D9%86%DA%A9%D8%AA%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%DB%8C%D9%86%DA%A9%D9%87-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C-%D8%A8%D8%B4%D9%88%DB%8C%D8%AF/</guid>
+      <guid>https://elmah.ir/post/58-20-%D9%86%DA%A9%D8%AA%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%DB%8C%D9%86%DA%A9%D9%87-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C-%D8%A8%D8%B4%D9%88%DB%8C%D8%AF/</guid>
       <description>دوستی دارم که throw کردن عمدی exception را به عنوان الگویی در توابع استفاده می‌کند (البته با دلایل خاص خودش)، در واقع هر کدام از ما عادت‌هایی در برنامه‌نویسی داریم که آن‌ها را بر حسب شرایط، تجربه، خواندن مقالات یا کد دیگران و &amp;hellip; یاد گرفته‌ایم.
 امروز مطلبی خواندم که به 20 نکته جالب برای اینکه برنامه‌نویس بهتری بشویم اشاره کرده بود. این مطلب را برای آن دوست عزیز، خودم و سایر برنامه‌نویسان ترجمه می‌کنم (البته ترجمه آزاد) به امید اینکه کمکی باشد برای پیشرفت در زندگی حرفه‌ای‌مان به عنوان توسعه‌دهنده نرم‌افزار.</description>
     </item>
     
     <item>
       <title>ساده کد بنویسید</title>
-      <link>http://elmah.ir/post/53-%D8%B3%D8%A7%D8%AF%D9%87-%DA%A9%D8%AF-%D8%A8%D9%86%D9%88%DB%8C%D8%B3%DB%8C%D8%AF/</link>
+      <link>https://elmah.ir/post/53-%D8%B3%D8%A7%D8%AF%D9%87-%DA%A9%D8%AF-%D8%A8%D9%86%D9%88%DB%8C%D8%B3%DB%8C%D8%AF/</link>
       <pubDate>Sun, 22 Sep 2013 22:32:35 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/53-%D8%B3%D8%A7%D8%AF%D9%87-%DA%A9%D8%AF-%D8%A8%D9%86%D9%88%DB%8C%D8%B3%DB%8C%D8%AF/</guid>
+      <guid>https://elmah.ir/post/53-%D8%B3%D8%A7%D8%AF%D9%87-%DA%A9%D8%AF-%D8%A8%D9%86%D9%88%DB%8C%D8%B3%DB%8C%D8%AF/</guid>
       <description>قوانینی برای برنامه‌نویس‌ها هستند که در زندگی حرفه‌ای به آن‌ها خیلی کمک می‌کنند. یکی از مهمترین این قوانین قانون نوشتن کد ساده است.
 کد ساده چیست؟ همه ما برنامه‌نویس‌ها علاقمند به حل مساله هستیم. این‌قدر هر روز درگیر حل مسائل مختلف می‌شیم که عادت حل مساله بعد از مدتی در درون ما تبدیل به یک کار روتین می‌شه. این مساله بد نیست، حتی یه جاهایی به درد می‌خوره: مثلاً من وقتی می‌خوام یک کار فیزیکی انجام بدم، قبلش به جای اینکه یک دفعه آستین‌ها رو بالا بزنم و برم سراغ کار، به صورت اتوماتیک به بهینه‌ترین روش انجامش فکر می‌کنم.</description>
     </item>
     
     <item>
       <title>بچه‌ها، Glimpse. Glimpse، بچه‌ها!</title>
-      <link>http://elmah.ir/post/27-%D8%A8%DA%86%D9%87-%D9%87%D8%A7-glimpse.-glimpse-%D8%A8%DA%86%D9%87-%D9%87%D8%A7/</link>
+      <link>https://elmah.ir/post/27-%D8%A8%DA%86%D9%87-%D9%87%D8%A7-glimpse.-glimpse-%D8%A8%DA%86%D9%87-%D9%87%D8%A7/</link>
       <pubDate>Sun, 11 Aug 2013 22:35:39 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/27-%D8%A8%DA%86%D9%87-%D9%87%D8%A7-glimpse.-glimpse-%D8%A8%DA%86%D9%87-%D9%87%D8%A7/</guid>
+      <guid>https://elmah.ir/post/27-%D8%A8%DA%86%D9%87-%D9%87%D8%A7-glimpse.-glimpse-%D8%A8%DA%86%D9%87-%D9%87%D8%A7/</guid>
       <description>این نوشته یک مطلب کوتاه تخصصی در معرفی Glimpse برای ASP.NET MVC است. در نوشته‌های دیگری درباره استفاده‌های glimpse بیشتر صحبت خواهم کرد.
 Glimpse چیست؟ به زبان خیلی ساده Glimpse یک چارچوب diagnostic‌ تحت وب است. رایگان و اپن سورس است و خیلی خوب با ASP.NET MVC کار می‌کند، البته نسخه‌هایی از آن برای PHP و Python نیز وجود دارد. به کمک Glimpse می‌توانید ببینید برای صفحه جاری چه اتفاقاتی در سمت سرور رخ می‌دهد، مثلاً اطلاعاتی در مورد زمان اجرا، تنظیمات سرور، داده‌های request و &amp;hellip; را می‌توانید مشاهده کنید.</description>
     </item>
     
     <item>
       <title>کاری کنید کاربران با نرم‌افزارتان بازی کنند!</title>
-      <link>http://elmah.ir/post/17-%DA%A9%D8%A7%D8%B1%DB%8C-%DA%A9%D9%86%DB%8C%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D8%B2%DB%8C-%DA%A9%D9%86%D9%86%D8%AF/</link>
+      <link>https://elmah.ir/post/17-%DA%A9%D8%A7%D8%B1%DB%8C-%DA%A9%D9%86%DB%8C%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D8%B2%DB%8C-%DA%A9%D9%86%D9%86%D8%AF/</link>
       <pubDate>Thu, 01 Aug 2013 23:34:30 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/17-%DA%A9%D8%A7%D8%B1%DB%8C-%DA%A9%D9%86%DB%8C%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D8%B2%DB%8C-%DA%A9%D9%86%D9%86%D8%AF/</guid>
+      <guid>https://elmah.ir/post/17-%DA%A9%D8%A7%D8%B1%DB%8C-%DA%A9%D9%86%DB%8C%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D8%B2%DB%8C-%DA%A9%D9%86%D9%86%D8%AF/</guid>
       <description>مساله کمیت تعامل کاربران با نرم‌افزارها همیشه یکی از نقاط مورد بحث در تعیین میزان موفقیت نرم‌افزارها بوده است. اگر شما نرم‌افزار دسکتاپ/وب/موبایلی تولید می‌کنید که کاربران از آن استفاده نمی‌کنند نمی‌توانید متوجه ایراداتش بشوید، نمی‌توانید بفهمید چطور گسترشش بدهید و یا چه ویژگی‌هایی باید به آن اضافه شود و از همه مهم‌تر نرم‌افزاری که نتواند کاربران درگیر خود کند، خیلی زود با نرم‌افزار دیگری جایگزین خواهد شد!
 ارتباط بازی و تعامل کاربران با نرم‌افزار یک مفهوم نسبتاً جدیدی هست که چند سال است وارد حوزه نرم‌افزار شده به نام Gamification.</description>
     </item>
     
     <item>
       <title>نگاهی به چند اشتباه رایج در طراحی نرم‌افزارهای تعاملی</title>
-      <link>http://elmah.ir/post/15-%D9%86%DA%AF%D8%A7%D9%87%DB%8C-%D8%A8%D9%87-%DA%86%D9%86%D8%AF-%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87-%D8%B1%D8%A7%DB%8C%D8%AC-%D8%AF%D8%B1-%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%AA%D8%B9%D8%A7%D9%85%D9%84%DB%8C/</link>
+      <link>https://elmah.ir/post/15-%D9%86%DA%AF%D8%A7%D9%87%DB%8C-%D8%A8%D9%87-%DA%86%D9%86%D8%AF-%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87-%D8%B1%D8%A7%DB%8C%D8%AC-%D8%AF%D8%B1-%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%AA%D8%B9%D8%A7%D9%85%D9%84%DB%8C/</link>
       <pubDate>Tue, 30 Jul 2013 00:00:00 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/15-%D9%86%DA%AF%D8%A7%D9%87%DB%8C-%D8%A8%D9%87-%DA%86%D9%86%D8%AF-%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87-%D8%B1%D8%A7%DB%8C%D8%AC-%D8%AF%D8%B1-%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%AA%D8%B9%D8%A7%D9%85%D9%84%DB%8C/</guid>
+      <guid>https://elmah.ir/post/15-%D9%86%DA%AF%D8%A7%D9%87%DB%8C-%D8%A8%D9%87-%DA%86%D9%86%D8%AF-%D8%A7%D8%B4%D8%AA%D8%A8%D8%A7%D9%87-%D8%B1%D8%A7%DB%8C%D8%AC-%D8%AF%D8%B1-%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1%D9%87%D8%A7%DB%8C-%D8%AA%D8%B9%D8%A7%D9%85%D9%84%DB%8C/</guid>
       <description>چوپان دروغگو در نرم‌افزار از ویندوز ویستا به بعد مایکروسافت یک فناوری برای افزایش امنیت را معرفی کرد به نام User Access Control که کارش این بود که از کاربر بپرسد آیا مطمئن است؟ UAC در ظاهر راه حل مناسبی برای کاهش ریسک‌های امنیتی به نظر می‌آمد اما تعداد زیاد پیغام‌ها و این حقیقت که UAC برای هر چیز کوچکی سوال می‌پرسید باعث این شد که کاربران ویندوز بعد از مدتی نسبت به آن واکنش نشان ندهند!</description>
     </item>
     
     <item>
       <title>ساختار تیم‌های مدرن نرم‌افزار قسمت اول: رابطه کار و پول</title>
-      <link>http://elmah.ir/post/8-%D8%B3%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1-%D8%AA%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D9%85%D8%AF%D8%B1%D9%86-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--%D8%B1%D8%A7%D8%A8%D8%B7%D9%87-%DA%A9%D8%A7%D8%B1-%D9%88-%D9%BE%D9%88%D9%84/</link>
+      <link>https://elmah.ir/post/8-%D8%B3%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1-%D8%AA%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D9%85%D8%AF%D8%B1%D9%86-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--%D8%B1%D8%A7%D8%A8%D8%B7%D9%87-%DA%A9%D8%A7%D8%B1-%D9%88-%D9%BE%D9%88%D9%84/</link>
       <pubDate>Wed, 24 Jul 2013 00:28:26 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/8-%D8%B3%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1-%D8%AA%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D9%85%D8%AF%D8%B1%D9%86-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--%D8%B1%D8%A7%D8%A8%D8%B7%D9%87-%DA%A9%D8%A7%D8%B1-%D9%88-%D9%BE%D9%88%D9%84/</guid>
+      <guid>https://elmah.ir/post/8-%D8%B3%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1-%D8%AA%DB%8C%D9%85-%D9%87%D8%A7%DB%8C-%D9%85%D8%AF%D8%B1%D9%86-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--%D8%B1%D8%A7%D8%A8%D8%B7%D9%87-%DA%A9%D8%A7%D8%B1-%D9%88-%D9%BE%D9%88%D9%84/</guid>
       <description>مقدمه: قبل از شروع این نوشته، لازم است یادآوری کنم که در این سایت به سبک سایت‌ها و وبلاگ‌های خارجی که مطالبشان را در قالب سری نوشته‌هایی به مخاطبان ارائه می‌کنند، قصد دارم که در قالب چند سری نوشته، دیدگاه‌ها و تجربیاتم در حوزه توسعه نرم‌افزار و مدیریت پروژه‌های نرم‌افزاری را با شما در میان بگذارم. تا حالا این سری‌ها را شروع کردم:
  سری تست جوئل، بررسی و شرح 12 تست جوئل اسپالسکی به عنوان راه‌هایی برای نوشتن کد بهتر سری مهارت‌های کار تیمی نرم‌افزار، صحبت درباره فرهنگ کار تیمی نرم‌افزار سری ساختار تیم‌های مدرن نرم‌افزار، نگاهی نو به شرایط و پارامترهای کاری و حرفه‌ای در صنعت نرم‌افزار  با بیشتر شدن مطالب، بخشی در سایت را برای بایگانی این سری‌ها در نظر می‌گیرم تا راحت‌تر بتوانید این نوشته‌ها را دنبال کنید.</description>
     </item>
     
     <item>
       <title>تفاوت بین توسعه‌دهنده نرم‌افزار و برنامه‌نویس چیست؟</title>
-      <link>http://elmah.ir/post/7-%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%A8%DB%8C%D9%86-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%AF%D9%87%D9%86%D8%AF%D9%87-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%88-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%DA%86%DB%8C%D8%B3%D8%AA/</link>
+      <link>https://elmah.ir/post/7-%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%A8%DB%8C%D9%86-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%AF%D9%87%D9%86%D8%AF%D9%87-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%88-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%DA%86%DB%8C%D8%B3%D8%AA/</link>
       <pubDate>Mon, 22 Jul 2013 22:04:35 +0330</pubDate>
       
-      <guid>http://elmah.ir/post/7-%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%A8%DB%8C%D9%86-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%AF%D9%87%D9%86%D8%AF%D9%87-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%88-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%DA%86%DB%8C%D8%B3%D8%AA/</guid>
+      <guid>https://elmah.ir/post/7-%D8%AA%D9%81%D8%A7%D9%88%D8%AA-%D8%A8%DB%8C%D9%86-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%AF%D9%87%D9%86%D8%AF%D9%87-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%88-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%DA%86%DB%8C%D8%B3%D8%AA/</guid>
       <description>چرا یک عده از جمله من خودشون رو توسعه‌دهنده نرم‌افزار صدا می‌کنند در حالی که کارشون برنامه‌نویسی هست؟
 در بخشی از نوشته مهارت‌های کار تیمی نرم‌افزار قسمت دوم: اشتراک گذاری دانش اشاره کردم که درباره تفاوت برنامه‌نویسی و توسعه نرم‌افزار خواهم نوشت. این مطلب به این موضوع اختصاص خواهد داشت.
 برای اینکه تفاوت بین این دو کلمه رو از نظر فنی (و نه صرفاً معنایی) متوجه بشوید، اجازه بدید از مثالی که در این مقاله آمده استفاده کنم.</description>

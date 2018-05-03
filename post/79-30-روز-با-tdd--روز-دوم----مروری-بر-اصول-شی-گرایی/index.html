@@ -25,7 +25,7 @@
     <meta name="twitter:title" content="30 روز با TDD: روز دوم‌ - مروری بر اصول شی‌گرایی" />
     <meta name="twitter:description" content="نوشته اصلی را در این آدرس می‌توانید مطالعه کنید، سعی من این هست که فقط بخش‌های مهم و مفید رو ترجمه کنم، همچنین عباراتی تخصصی رو تا حد ممکن ترجمه نکنم مگر اینکه معادل مناسبی به زبان فارسی براش وجود داشته باشه.
 در نوشته امروز مرور مختصری خواهیم داشت بر اصول برنامه‌نویسی شی‌گرا (OOP یا Object Oriented Programming). حتی اگر برنامه‌نویس با سابقه و با تجربه‌ای هستید باز هم توصیه می‌کنم حداقل بخش‌های مربوط به Polymorphism و Interface ها را مطالعه کنید چرا که این مباحث معمولاً خیلی اشتباه فهمیده می‌شوند و البته بخش مهمی از کار TDD را تشکیل می‌دهند." />
-    <meta name="twitter:image" content="http://elmah.ir/oldimg/tdd_cycle.jpg" />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/tdd_cycle.jpg" />
   
 
 
@@ -34,8 +34,8 @@
 <meta name="generator" content="Hugo 0.27.1" />
 
 
-<link rel="canonical" href="http://elmah.ir/post/79-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%AF%D9%88%D9%85----%D9%85%D8%B1%D9%88%D8%B1%DB%8C-%D8%A8%D8%B1-%D8%A7%D8%B5%D9%88%D9%84-%D8%B4%DB%8C-%DA%AF%D8%B1%D8%A7%DB%8C%DB%8C/" />
-<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+<link rel="canonical" href="https://elmah.ir/post/79-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%AF%D9%88%D9%85----%D9%85%D8%B1%D9%88%D8%B1%DB%8C-%D8%A8%D8%B1-%D8%A7%D8%B5%D9%88%D9%84-%D8%B4%DB%8C-%DA%AF%D8%B1%D8%A7%DB%8C%DB%8C/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
 
 
 <meta name="renderer" content="webkit" />
@@ -60,19 +60,19 @@
 <meta name='msapplication-navbutton-color' content="#5fbf5e" />
 <meta name="msapplication-TileColor" content="#5fbf5e" />
 <meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
-<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
-<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
-<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
-<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
 
 
 
 <link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
 
-<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
-<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
 
   
   <!--[if lt IE 9]>
@@ -119,13 +119,13 @@
       
       
       
-        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
       
         <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
       
     </ul>
   </nav>
@@ -181,7 +181,7 @@
       
 
       <li class="social-item">
-        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
       </li>
 
     </ul>
@@ -225,17 +225,17 @@
 
 <p>وقتی در حال توسعه‌دادن نرم‌افزار خود بر پایه کلاس‌ها هستید،‌ متوجه می‌شوید که بعضی کلاس‌ها با هم در ارتباط هستند. بعضی مواقع دو یا چند کلاس شبیه به هم نظر می‌رسند. به عنوان مثال در شکل ز‌یر می‌توانید ببیند که سه کلاس Car‌ و Plane و Boat از چند جنبه به هم شبیه هستند:</p>
 
-<p><img src="http://elmah.ir/oldimg/image_thumb36E977DF8355C.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/image_thumb36E977DF8355C.png" alt="" /></p>
 
 <p>در حالی که هر کدام از این کلاس‌ها یک نوع متفاوت از وسیله نقلیه را نشان می‌دهند، می‌توانیم ببینیم که ویژگی‌های مشترکی دارند. به جای اینکه چند بار کارهای مشابه را در این کلاس‌ها تکرار کنیم، بهتر است که همه این کارها را در یک جا خلاصه کنیم تا بتوانیم توسط اشیا مختلف از آن استفاده کنیم. اینجاست که مفهوم وراثت (Inheritance) وارد می‌شود.</p>
 
 <p>با Inheritance من می‌توانم یک کلاس پایه (base class) تعریف کنم (در این مثال کلاس Vehicle) و Car و Plane و Boat را از آن ارث‌ ببرم این باعث ایجاد یک رابطه والد/فرزند می‌شود که در شکل زیر نمایش داده می‌شود:</p>
 
-<p><img src="http://elmah.ir/oldimg/image_thumb6.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/image_thumb6.png" alt="" /></p>
 
 <p>حالا Car‌ و Plane‌ و Boat‌ می‌توانند قابلیت‌های خود شامل سه property به نام‌های FuelCapacityInGallons و PassengerCapacity و RagneOnFullTankInMiles را از کلاس پایه Vehicle‌ ارث‌بری کنند. اگر قابلیت‌های کلاس Vehicle برای هر یک از کلاس‌های مشتق شده (یعنی Car و Plane و Boat) کافی باشد برنامه‌نویس لازم نیست هیچ کار دیگری بکند. با این حال اگر کلاس مشتق شده به یک قابلیت متفاوت نسبت به پیاده‌سازی انجام شده در کلاس پایه نیاز داشته باشد، به راحتی می‌تواند آن قابلیت را با override کردن Property در کلاس خودش، به صورت سفارشی شده پیاده‌سازی کند. شکل زیر این حالت را نشان می‌دهد:</p>
 
-<p><img src="http://elmah.ir/oldimg/image_thumb9.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/image_thumb9.png" alt="" /></p>
 
 <p>در شکل بالا فراخوانی RangeOnFullTankInMiles در کلاس Plane از نسخه مخصوص پیاده‌سازی شده در خود کلاس Plane استفاده می‌کند در حالی که در کلاس‌های Car و Boat از همان پیاده‌‌سازی انجام شده در کلاس پایه Vehicle استفاده می‌شود.</p>
 
@@ -257,7 +257,7 @@
 
 <p>Polymorphism بر اساس وراثت (Inheritance) همیشه بهترین گزینه نیست. به عنوان مثال کلاس‌های زیر را در نظر بگیرید (propert ها برای بهتر شدن خوانایی دیاگرام برداشته شدند)</p>
 
-<p><img src="http://elmah.ir/oldimg/image_thumb15.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/image_thumb15.png" alt="" /></p>
 
 <p>به سه کلاس ردیف پایین یعنی Plane و Bird‌ و FlyingSquirrel نگاه کنید. واضح است که همه این کلاس‌ها کار &ldquo;پرواز کردن&rdquo; را انجام می‌دهند اما به شیوه‌های متفاوتی. این کلاس‌ها یک رفتار مشترک دارند اما به جز این چیز مشترک دیگری ندارند. دو تا از آن‌ها حیوان هستند و یکی حیوان نیست. تلاش برای قرار دادن این سه کلاس متفاوت در یک کلاس مشترک کار اشتباهی است. پیدا کردن یک abstarction با معنی برای این کلاس‌ها کار بسیار بسیار دشواری است.</p>
 
@@ -265,7 +265,7 @@
 
 <p>برای اعمال Interface به مساله جاری، من می‌توانم یک Interface به نام IFly با یک متد به نام Fly درست کنم. مرحله بعدی پیاده‌سازی (implement) کردن این Interface در کلاس‌های Plane و Bird‌ و FlyingSquirrel به شکل زیر است:</p>
 
-<p><img src="http://elmah.ir/oldimg/image_thumb18.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/image_thumb18.png" alt="" /></p>
 
 <p>با توجه به اینکه هر کدام از کلاس‌ها Interface من یعنی IFly را implement کرده‌اند، هر کدام متد Fly خود را خواهند داشت. مثل چندریختی مبتنی بر وراثت (Inheritance based Polymorphism) استفاده از Interface ها این امکان را به من می‌دهد که متدهایی تعریف کنم که پارامتر ورودی از جنس IFly دارند و می‌توانند اشیا از هر نوع کلاسی که این Interface را implement کرده باشد بپذیرند.</p>
 
@@ -276,7 +276,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1513</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1553</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -327,7 +327,7 @@
   });
 </script>
 
-<script src="http://elmah.ir/js/bundle.js"></script>
+<script src="https://elmah.ir/js/bundle.js"></script>
 
 
 <script>

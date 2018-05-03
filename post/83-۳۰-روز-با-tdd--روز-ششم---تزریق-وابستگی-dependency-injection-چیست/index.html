@@ -25,7 +25,7 @@ Tinker Toy و Lego همان‌طور که قبلاً هم در این سری ن�
     <meta name="twitter:title" content="۳۰ روز با TDD: روز ششم - تزریق وابستگی (Dependency Injection) چیست؟" />
     <meta name="twitter:description" content="نوشته به زبان انگلیسی روز ششم را در این آدرس می‌توانید مشاهده کنید. در روز پنجم درباره اصل Dependency Inversion گفتم و اینکه با Dependency Injection یا تزریق وابستگی متفاوت است. امروز می‌خواهیم بیشتر درباره تزریق وابستگی صحبت کنیم.
 Tinker Toy و Lego همان‌طور که قبلاً هم در این سری نوشته‌ها گفتم، اتصال (Coupling) و انقیاد (binding) در نرم‌افزار یک حقیقت است. به عنوان برنامه‌نویس سعی می‌کنیم که اتصالات برنامه‌مان تا حد ممکن ضعیف باشد (به اصطلاح loosely coupled باشد) اما در نهایت برای اینکه اجزای مختلف برنامه‌ای که می‌سازیم قابل استفاده باشد باید آن‌ها را bind کنیم." />
-    <meta name="twitter:image" content="http://elmah.ir/oldimg/tdd_cycle.jpg" />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/tdd_cycle.jpg" />
   
 
 
@@ -34,8 +34,8 @@ Tinker Toy و Lego همان‌طور که قبلاً هم در این سری ن�
 <meta name="generator" content="Hugo 0.27.1" />
 
 
-<link rel="canonical" href="http://elmah.ir/post/83-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%B4%D8%B4%D9%85---%D8%AA%D8%B2%D8%B1%DB%8C%D9%82-%D9%88%D8%A7%D8%A8%D8%B3%D8%AA%DA%AF%DB%8C-dependency-injection-%DA%86%DB%8C%D8%B3%D8%AA/" />
-<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+<link rel="canonical" href="https://elmah.ir/post/83-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%B4%D8%B4%D9%85---%D8%AA%D8%B2%D8%B1%DB%8C%D9%82-%D9%88%D8%A7%D8%A8%D8%B3%D8%AA%DA%AF%DB%8C-dependency-injection-%DA%86%DB%8C%D8%B3%D8%AA/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
 
 
 <meta name="renderer" content="webkit" />
@@ -60,19 +60,19 @@ Tinker Toy و Lego همان‌طور که قبلاً هم در این سری ن�
 <meta name='msapplication-navbutton-color' content="#5fbf5e" />
 <meta name="msapplication-TileColor" content="#5fbf5e" />
 <meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
-<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
-<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
-<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
-<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
 
 
 
 <link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
 
-<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
-<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
 
   
   <!--[if lt IE 9]>
@@ -119,13 +119,13 @@ Tinker Toy و Lego همان‌طور که قبلاً هم در این سری ن�
       
       
       
-        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
       
         <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
       
     </ul>
   </nav>
@@ -181,7 +181,7 @@ Tinker Toy و Lego همان‌طور که قبلاً هم در این سری ن�
       
 
       <li class="social-item">
-        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
       </li>
 
     </ul>
@@ -195,7 +195,7 @@ Tinker Toy و Lego همان‌طور که قبلاً هم در این سری ن�
     </header>
     <article class="post-content">
 
-<p>نوشته به زبان انگلیسی روز ششم را در <a href="http://blogs.telerik.com/justteam/posts/13-09-20/30-days-of-tdd-day-six-what-is-dependency-injection-">این آدرس</a> می‌توانید مشاهده کنید. در <a href="http://elmah.ir/post/82-30-روز-با-tdd--روز-پنجم---کد-solid-ایجاد-کنید/">روز پنجم</a> درباره اصل Dependency Inversion گفتم و اینکه با Dependency Injection یا تزریق وابستگی متفاوت است. امروز می‌خواهیم بیشتر درباره تزریق وابستگی صحبت کنیم.</p>
+<p>نوشته به زبان انگلیسی روز ششم را در <a href="http://blogs.telerik.com/justteam/posts/13-09-20/30-days-of-tdd-day-six-what-is-dependency-injection-">این آدرس</a> می‌توانید مشاهده کنید. در <a href="https://elmah.ir/post/82-30-روز-با-tdd--روز-پنجم---کد-solid-ایجاد-کنید/">روز پنجم</a> درباره اصل Dependency Inversion گفتم و اینکه با Dependency Injection یا تزریق وابستگی متفاوت است. امروز می‌خواهیم بیشتر درباره تزریق وابستگی صحبت کنیم.</p>
 
 <h3 id="tinker-toy-و-lego">Tinker Toy و Lego</h3>
 
@@ -240,7 +240,7 @@ Tinker Toy و Lego همان‌طور که قبلاً هم در این سری ن�
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1505</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1545</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -291,7 +291,7 @@ Tinker Toy و Lego همان‌طور که قبلاً هم در این سری ن�
   });
 </script>
 
-<script src="http://elmah.ir/js/bundle.js"></script>
+<script src="https://elmah.ir/js/bundle.js"></script>
 
 
 <script>

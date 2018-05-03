@@ -25,7 +25,7 @@
     <meta name="twitter:title" content="۳۰ روز با TDD: روز دهم - بررسی بیشتر Refactoring‌ و NUnit" />
     <meta name="twitter:description" content="در نوشته روز نهم، درباره Refactoring صحبت کردیم، نوشته به زبان انگلیسی روز دهم را در این آدرس می‌توانید مطالعه کنید. در روز دهم با امکانات بیشتری در NUnit و همچنین Refactoring آشنا خواهیم شد.
 بهترین شمشیرها از هر دو طرف می‌برند نه تنها مهم است که به صورت دوره‌ای کد business logic خودمان را refactor کنیم، بلکه لازم است به صورت دوره‌ای تست‌ها را نیز بررسی کنیم. به یاد داشته باشید که تست‌ها هم نوعی کد هستند و نیازمند نگهداری مشابه." />
-    <meta name="twitter:image" content="http://elmah.ir/oldimg/tdd_cycle.jpg" />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/tdd_cycle.jpg" />
   
 
 
@@ -34,8 +34,8 @@
 <meta name="generator" content="Hugo 0.27.1" />
 
 
-<link rel="canonical" href="http://elmah.ir/post/89-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%AF%D9%87%D9%85---%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1-refactoring--%D9%88-nunit/" />
-<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+<link rel="canonical" href="https://elmah.ir/post/89-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%AF%D9%87%D9%85---%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1-refactoring--%D9%88-nunit/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
 
 
 <meta name="renderer" content="webkit" />
@@ -60,19 +60,19 @@
 <meta name='msapplication-navbutton-color' content="#5fbf5e" />
 <meta name="msapplication-TileColor" content="#5fbf5e" />
 <meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
-<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
-<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
-<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
-<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
 
 
 
 <link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
 
-<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
-<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
 
   
   <!--[if lt IE 9]>
@@ -119,13 +119,13 @@
       
       
       
-        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
       
         <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
       
     </ul>
   </nav>
@@ -181,7 +181,7 @@
       
 
       <li class="social-item">
-        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
       </li>
 
     </ul>
@@ -195,7 +195,7 @@
     </header>
     <article class="post-content">
 
-<p>در نوشته روز نهم، درباره Refactoring <a href="http://elmah.ir/post/87-۳۰-روز-با-tdd--روز-نهم---مقدمات-refactoring/">صحبت کردیم</a>، نوشته به زبان انگلیسی روز دهم را در <a href="http://blogs.telerik.com/james-bender/posts.aspx/13-09-30/30-days-of-tdd-day-ten-more-refactoring-and-nunit-features">این آدرس</a> می‌توانید مطالعه کنید. در روز دهم با امکانات بیشتری در NUnit و همچنین Refactoring آشنا خواهیم شد.</p>
+<p>در نوشته روز نهم، درباره Refactoring <a href="https://elmah.ir/post/87-۳۰-روز-با-tdd--روز-نهم---مقدمات-refactoring/">صحبت کردیم</a>، نوشته به زبان انگلیسی روز دهم را در <a href="http://blogs.telerik.com/james-bender/posts.aspx/13-09-30/30-days-of-tdd-day-ten-more-refactoring-and-nunit-features">این آدرس</a> می‌توانید مطالعه کنید. در روز دهم با امکانات بیشتری در NUnit و همچنین Refactoring آشنا خواهیم شد.</p>
 
 <h3 id="بهترین-شمشیرها-از-هر-دو-طرف-می-برند">بهترین شمشیرها از هر دو طرف می‌برند</h3>
 
@@ -220,7 +220,7 @@
 
 <p>اجرای تست‌ها نشان می‌دهد که آن‌ها بعد از این تغییر همچنان پاس می‌شوند</p>
 
-<p><img src="http://elmah.ir/oldimg/image_thumb1ADCD814D3DB6.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/image_thumb1ADCD814D3DB6.png" alt="" /></p>
 
 <p>این کار قطعاً تست‌های ما را خواناتر کرده است. همچنین به ما این قابلیت را داده تا کدی که از StringUtils وهله می‌سازد را یک جا کپسوله‌سازی کنیم. در واقع اگر کد ما تغییری کند، ما فقط یک متد را باید تغییر بدهیم نه n تا تست! استفاده از خاصیت SetUp به ما این قابلیت را می‌دهد تا متدهایی را تعریف کنیم که قبل از هر تست اجرا شوند. در شرایطی که کلاس زیر تست ما وضعیتی دارد که هر بار باید قبل از اجرای هر تست مجدداً ایجاد شود، استفاده از SetUp گزینه خوبی است. اما StringUtils ما چنین وضعیتی ندارد و نیازی نیست هر دفعه دوباره از اول ایجاد شود. اینجاست که از می‌توانیم از خاصیت <strong>TestFixtureSetUp</strong>برای setup method خودمان استفاده کنیم. این خاصیت مشابه SetUp عمل می‌کند، اما به جای اجرا پیش از هر تست، یک بار برای هر instance از کلاس test fixture اجرا می‌شود. در مثال ما کلاس test fixture‌ سه تست دارد. در حالی که SetUp باعث اجرای سه مرتبه‌ای وهله‌سازی StringUtils می‌شود، TestFixtureSetUp یک بار برای هر سه تست ما اجرا و از یک وهله مشترک از کلاس StringUtils که توسط setup method ایجاد شده استفاده می‌کند.</p>
 
@@ -230,7 +230,7 @@
 
 <p>تست‌ها را دوباره اجرا می‌کنیم تا مطمئن شویم refactor اخیر ما چیزی را خراب نکرده باشد.</p>
 
-<p><img src="http://elmah.ir/oldimg/image_thumb1ADCD814D3DB6.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/image_thumb1ADCD814D3DB6.png" alt="" /></p>
 
 <p>آخرین نکته درباره SetUp و TestFixtureSetUp‌ این است که NUnit فقط یک وهله از این خاصیت‌ها را در هر test fixture پشتیبانی می‌کند. شما می‌توانید از هر کدام یکی در test fixture خود داشته باشید اما مثلاً امکان مزین کردن دو متد با SetUp وجود ندارد. این کار موقع کامپایل خطایی به شما نمی‌دهد، اما در صورت تخطی، NUnit نمی‌تواند تست‌های شما را اجرا کند.</p>
 
@@ -239,7 +239,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1336</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1376</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -290,7 +290,7 @@
   });
 </script>
 
-<script src="http://elmah.ir/js/bundle.js"></script>
+<script src="https://elmah.ir/js/bundle.js"></script>
 
 
 <script>

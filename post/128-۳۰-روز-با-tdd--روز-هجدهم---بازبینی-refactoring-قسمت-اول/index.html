@@ -27,7 +27,7 @@
     <meta name="twitter:description" content="توجه: قبل از این نوشته، آزمون‌های واحد (Unit testها) مربوط به تغییرات PlaceOrder نوشته قبلی را از اینجا می‌توانید دانلود کنید.
 در چند نوشته گذشته، متد PlaceOrder را از OrderService بیرون بردیم. برای مرور، متد فعلی این شکلی است:
  این متد کمی طولانی شده و همچنین داریم به محدوده نقض Single Responsibility Principel (برای مرور SRP روز پنجم را مطالعه کنید) وارد می‌شویم. در حال حاضر شش دلیل برای اینکه این متد باید تغییر کند شمردم:" />
-    <meta name="twitter:image" content="http://elmah.ir/oldimg/tdd_cycle.jpg" />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/tdd_cycle.jpg" />
   
 
 
@@ -36,8 +36,8 @@
 <meta name="generator" content="Hugo 0.27.1" />
 
 
-<link rel="canonical" href="http://elmah.ir/post/128-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%87%D8%AC%D8%AF%D9%87%D9%85---%D8%A8%D8%A7%D8%B2%D8%A8%DB%8C%D9%86%DB%8C-refactoring-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/" />
-<link rel="alternative" href="http://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+<link rel="canonical" href="https://elmah.ir/post/128-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%87%D8%AC%D8%AF%D9%87%D9%85---%D8%A8%D8%A7%D8%B2%D8%A8%DB%8C%D9%86%DB%8C-refactoring-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
 
 
 <meta name="renderer" content="webkit" />
@@ -62,19 +62,19 @@
 <meta name='msapplication-navbutton-color' content="#5fbf5e" />
 <meta name="msapplication-TileColor" content="#5fbf5e" />
 <meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
-<link rel="icon" href="http://elmah.ir/img/favicon.ico" />
-<link rel="icon" type="image/png" sizes="16x16" href="http://elmah.ir/img/favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="http://elmah.ir/img/favicon-32x32.png" />
-<link rel="icon" sizes="192x192" href="http://elmah.ir/img/touch-icon-android.png" />
-<link rel="apple-touch-icon" href="http://elmah.ir/img/touch-icon-apple.png" />
-<link rel="mask-icon" href="http://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
 
 
 
 <link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
 
-<link rel="stylesheet" href="http://elmah.ir/css/bundle.css" />
-<link rel="stylesheet" href="http://elmah.ir/css/elmah.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
 
   
   <!--[if lt IE 9]>
@@ -121,13 +121,13 @@
       
       
       
-        <li class="menu-item  is-active"><a href="http://elmah.ir/">صفحه نخست</a></li>
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
       
         <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
       
-        <li class="menu-item "><a href="http://elmah.ir/about/">درباره من</a></li>
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
       
     </ul>
   </nav>
@@ -183,7 +183,7 @@
       
 
       <li class="social-item">
-        <a href="http://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
       </li>
 
     </ul>
@@ -201,7 +201,7 @@
 
 <script src="//gist.github.com/hameds/84a4e1f9de333a2923a47e143b173a40.js"></script>
 
-<p>این متد کمی طولانی شده و همچنین داریم به محدوده نقض Single Responsibility Principel (برای مرور SRP <a href="http://elmah.ir/post/82-30-روز-با-tdd--روز-پنجم---کد-solid-ایجاد-کنید/">روز پنجم</a> را مطالعه کنید) وارد می‌شویم. در حال حاضر شش دلیل برای اینکه این متد باید تغییر کند شمردم:</p>
+<p>این متد کمی طولانی شده و همچنین داریم به محدوده نقض Single Responsibility Principel (برای مرور SRP <a href="https://elmah.ir/post/82-30-روز-با-tdd--روز-پنجم---کد-solid-ایجاد-کنید/">روز پنجم</a> را مطالعه کنید) وارد می‌شویم. در حال حاضر شش دلیل برای اینکه این متد باید تغییر کند شمردم:</p>
 
 <p>۱. اعتبارسنجی هر آیتم سبد خرید<br />
 ۲. روش باز شدن session ها با سرویس order fulfillment<br />
@@ -218,7 +218,7 @@
 
 <p>آنچه می‌بینم، حجم زیادی پروسه کار با سرویس order fulfillment است که می‌خواهم از متد PlaceOrder جدایش کنم. وقتی این کار انجام شد، برای کل این پروسه طولانی کار با order fulfillment فقط یک متد باید فراخوانی کنم. این کار مرا در برابر تغییرات مرتبط در هر یک از مراحل کار با سرویس order fulfillment محافظت می‌کند. پس قدم اول استخراج همه کدهایی که با سرویس order fulfillment کار می‌کنند برای ایجاد یک متد خصوصی جداگانه است. چون از Just Code (محصول شرکت تلریک) استفاده می‌کنم این کار ساده است: می‌توانم یک بلوک کد را انتخاب و از منوی کمکی Just Code گزینه Extract Method را مشابه تصویر زیر انتخاب کنم یا از کلید میانبر (CTRL + R, CTRL + M) استفاده کنم و Just Code بخش انتخاب شده را برای یک متد خصوصی جدید استخراج می‌کند.</p>
 
-<p><img src="http://elmah.ir/oldimg/image_thumb29c575ca485f8-png.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/image_thumb29c575ca485f8-png.png" alt="" /></p>
 
 <p>Just Code کد مورد نیاز را به همراه پارامترهای مورد نیاز استخراج می‌کند و از من درباره نام متد سوال می‌کند و من هم نام PlaceOrdeWithFulfillmentService را انتخاب می‌کنم. همچنین کد اصلی را با فراخوانی این متد تازه ساخته شده تغییر می‌دهد.</p>
 
@@ -226,7 +226,7 @@
 
 <p>تاثیر این کار بر روی متد PlaceOrder خیلی زیاد است و همین حالا هم بسیار خواناتر شده. متوجه شدم که JustCode متد تازه ساخته شده را با نوع بازگشتی void ایجاد کرده است. این به خاطر آن است که در هیچ کجای کد استخراج شده مقداری تولید نمی‌شود که در ادامه کد اصلی از آن استفاده شده باشد. در این مورد در نوشته بعدی بیشتر صحبت می‌کنیم. برای تایید این کارها و اینکه این تغییرات کد را دچار مشکل نکرده، باید unit test ها را اجرا کنم.</p>
 
-<p><img src="http://elmah.ir/oldimg/34image_thumb4-png.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/34image_thumb4-png.png" alt="" /></p>
 
 <p>نتیجه اجرای تست‌ها به این معنی است که اولین refactor من کار کرده و نوع بازگشتی متد PlaceOrderWithFulfillmentService فعلاً می‌تواند void باشد. حالا اجازه بدهید به سراغ متد تازه ایجاد شده برویم و refactor کنیم.</p>
 
@@ -240,7 +240,7 @@
 
 <p>اجرای تست‌ها نشان می‌دهد که همچنان کد بدون مشکل کار می‌کند.</p>
 
-<p><img src="http://elmah.ir/oldimg/22image_thumb-png.png" alt="" /></p>
+<p><img src="https://elmah.ir/oldimg/22image_thumb-png.png" alt="" /></p>
 
 <p>دو مرحله باقیمانده کمی سخت‌تر هستند، بنابراین در نوشته بعدی درباره‌اش صحبت می‌کنیم.</p>
 
@@ -249,7 +249,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>468</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>508</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -300,7 +300,7 @@
   });
 </script>
 
-<script src="http://elmah.ir/js/bundle.js"></script>
+<script src="https://elmah.ir/js/bundle.js"></script>
 
 
 <script>
