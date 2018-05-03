@@ -1,4 +1,4 @@
-baseURL = "http://elmah.ir/"
+baseURL = "https://elmah.ir/"
 languageCode = "fa-ir"
 title = "elmah"
 theme = "nuo"
