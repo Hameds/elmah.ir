@@ -15,3 +15,6 @@ now enter [`localhost:1313`](http://localhost:1313) in the address bar of your b
 
 ### Html Version
 if you don't want to run site from source code and just want to see html version of this site, you can [download gh-pages branch](https://github.com/Hameds/elmah.ir/archive/gh-pages.zip)
+
+### License
+Contents of this blog is licensed under [CC BY-NC-ND 3.0](https://creativecommons.org/licenses/by-nc-nd/3.0/)
