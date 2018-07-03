@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Sat, 24 Mar 2018 12:02:30 +0430</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jul 2018 11:38:36 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>تجربه برنامه‌نویس یا DX چیست و چطور DX بهتری خلق کنیم؟</title>
+      <link>https://elmah.ir/post/dx/</link>
+      <pubDate>Tue, 03 Jul 2018 11:38:36 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/dx/</guid>
+      <description>DX چیه و چرا مهمه؟ DX مخفف Developer Exprience همون تجربه کاربری یا UX است برای وقتی که کاربر نرم‌افزار ما یک برنامه‌نویس باشه. در واقع DX کمک می‌کنه برنامه‌نویس‌ها زندگی راحت‌تری داشته باشند و موقع کار با برنامه‌ها و API‌ها از کارشون لذت ببرند.
+ممکنه بخواهید بدونید چرا مهمه DX داشته باشیم؟ یعنی خب مگه برنامه‌نویس کارش این نیست که با نرم‌افزارها و API‌های مختلف کار کنه؟ چه لزومی داره این تجربه لذت‌بخش باشه؟ خب وقتی کتابخانه برنامه‌نویسی یا SDK یا API ما DX خوبی داشته باشه، برنامه‌نویس‌ها خوشحال‌ترن، بیشتر معرفیش می‌کنن و زمان طولانی‌تر از محصول نرم‌افزاری ما استفاده خواهند کرد</description>
+    </item>
     
     <item>
       <title> مرزبانی داده‌های دیجیتال</title>
