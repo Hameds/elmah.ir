@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.27.1" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/81-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%DA%86%D9%87%D8%A7%D8%B1%D9%85---pass-%DA%A9%D8%B1%D8%AF%D9%86-%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%AA%D8%B3%D8%AA/" />
@@ -201,7 +201,7 @@
 
 <p>کدی در پایان نوشته <a href="https://elmah.ir/post/80-30-روز-با-tdd--روز-سوم---اولین-تست-شما/">روز سوم</a>، داشتیم کد زیر بود. در این کد فقط متد مربوط به تست را نوشتیم و امروز کاری خواهیم کرد که این تست Pass شود.</p>
 
-<script src="//gist.github.com/hameds/78fb2a47ac5aaf2e28e72ab14cd9f118.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/78fb2a47ac5aaf2e28e72ab14cd9f118.js"></script>
 
 <p>این تست آماده است. حالا اولین کاری که می‌خواهیم بکنیم اجرا کردن این تست است. این یک بخش کلیدی در چرخه کاری TDD است: یک تست بنویسید و بلافاصله آن را اجرا و fail شدنش را ببینید. بیشتر اوقات تست در اولین اجرا fail می‌شود (و باید هم بشود). واقعیت این است که یک تست fail شده به خصوص تست fail‌ شده مربوط به قابلیتی که نباید در برنامه شما باشد،‌ اطلاعات زیادی به شما می‌دهد.</p>
 
@@ -227,7 +227,7 @@
 
 <p>برای ایجاد یک کلاس جدید روی پروژه کلیک راست کرده و از منوی Add گزینه کلاس را انتخاب کنید و نام StringUtils را به آن بدهید. کلاس را public کنید. تا کدی مشابه کد زیر داشته باشید:</p>
 
-<script src="//gist.github.com/hameds/306e40a4513fefcd26680d86b236e356.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/306e40a4513fefcd26680d86b236e356.js"></script>
 
 <p>ساختن کلاس ساده‌ترین کاری است که ممکن است منجر به Pass‌ شدن تست من شود، یا حداقل خطای کامپایل قبلی را برطرف کند. وقتی دوباره تلاش می‌کنم که برنامه را کامپایل کنم خطای زیر را می‌بینم:</p>
 
@@ -235,7 +235,7 @@
 
 <p>بر اساس خطا، کار بعدی که باید انجام دهم اضافه کردن تعریف متد FindNumberOfOccurneces  به کلاس StringUtils است. این کار را انجام می‌دهم اما در داخل بدنه متد، کد خاصی نمی‌نویسم. نتیجه به صورت زیر خواهد بود:</p>
 
-<script src="//gist.github.com/hameds/7de01e06286188c665f79711152e96d7.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/7de01e06286188c665f79711152e96d7.js"></script>
 
 <p><em>پیشنهاد مترجم:</em> ابزارهای مختلفی برای اجرا تست‌ها وجود دارند، اگر به دنبال ابزار رایگان هستید، استفاده از نسخه رایگان <a href="http://www.testdriven.net/">TestDriven.NET</a> را پیشنهاد می‌کنم. TestDriven.NET از NUnit پشتیبانی می‌کند و بعد از نصب، برای اجرا تست‌ها کافی است روی پروژه کلیک راست کرده و گزینه Run Tests را انتخاب کنید. اگر به دنبال ابزارهای غیررایگان هستید Resharper به گمان من بهترین باشد. شما هم می‌توانید ابزارهای مورد نظر خود را در بخش نظرات معرفی کنید.</p>
 
@@ -245,7 +245,7 @@
 
 <p>قدم بعدی این است که ساده‌تری راه را برای اینکه تست Pass شود انتخاب و در کد پیاده‌سازی کنیم. هدف تست ما این است که در جمله &ldquo;!TDD is awesome&rdquo; تعداد کاراکترهای &ldquo;e&rdquo; را پیدا کنیم و خروجی مورد انتظار ما 2 است، پس اجازه بدهید کد را به صورت زیر بازنویسی کنیم:</p>
 
-<script src="//gist.github.com/hameds/4080017c81cbee4f5a5bec9aca2184e4.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/4080017c81cbee4f5a5bec9aca2184e4.js"></script>
 
 <p>در کد بالا خیلی راحت عدد 2 را return می‌کنیم. حالا دوباره تست را اجرا کنید. نتیجه؟ تست Pass‌ می‌شود، هورا! نرم‌افزار آماده عرضه است!</p>
 
@@ -262,7 +262,7 @@
 
 <p>گام بعدی نوشتن یک تست جدید است. اسم متد تست را ShouldBeAbleToCountNumberOfLettersInAComplexSentence می‌گذارم و آن را به کلاس StringUtilsTest به شکل زیر اضافه می‌کنم:</p>
 
-<script src="//gist.github.com/hameds/4b3c1bb02b43598b02de2b724a87081e.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/4b3c1bb02b43598b02de2b724a87081e.js"></script>
 
 <p>حالا که تست را نوشتیم، بلافاصله آن را اجرا می‌کنیم تا fail شدنش را ببینیم. تست fail می‌شود.</p>
 
@@ -270,7 +270,7 @@
 
 <p>ساده‌ترین راه برای اینکه تست قبلی Pass شود این بود که خیلی راحت عدد دو را برگردانیم. این بار فکر می‌کنم ساده‌ترین راه این باشد که یک الگوریتم که تعداد یک کاراکتر را داخل یک جمله پیدا کند را پیاده‌سازی کنیم. این الگوریتم را در متد FindNumberOfOccurences در کلاس StringUtils به شکل زیر پیاده‌سازی می‌کنیم:</p>
 
-<script src="//gist.github.com/hameds/43eab52d719c8487d801b4a9a0cf47b1.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/43eab52d719c8487d801b4a9a0cf47b1.js"></script>
 
 <p>این ممکن است بهینه‌ترین یا بهترین راه حل مساله نباشد، ولی الان مهم نیست: این ساده‌ترین است و من دنبال ساده‌ترین راه برای Pass کردن تست‌هایم می‌گردم. اگر دوباره تست‌ها را اجرا کنیم می‌بینیم که الگوریتم، پاسخگویی نیازمندی ما بوده است و بنابراین هر دو تست Pass می‌شوند.</p>
 
@@ -281,7 +281,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1610</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1803</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -301,7 +301,7 @@
     
   </section>
   <footer class="site-footer">
-  <p>© 2017-2018 elmah</p>
+  <p>© 2017-2019 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   
 </footer>
@@ -333,15 +333,6 @@
 </script>
 
 <script src="https://elmah.ir/js/bundle.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-109151384-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 
 
 

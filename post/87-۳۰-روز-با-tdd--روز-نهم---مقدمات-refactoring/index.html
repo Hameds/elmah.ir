@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.27.1" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/87-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%86%D9%87%D9%85---%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA-refactoring/" />
@@ -203,7 +203,7 @@
 
 <p>درنوشته قبلی از این سری نوشته‌ها درباره defect ها <a href="https://elmah.ir/post/85-۳۰-روز-با-tdd--روز-هشتم--برخورد-با-defect-ها/">صحبت کردیم</a>. آخرین کدی که نوشتیم این بود:</p>
 
-<script src="//gist.github.com/hameds/9bb4fa64ff48c56b452de5ced736b2b0.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/9bb4fa64ff48c56b452de5ced736b2b0.js"></script>
 
 <p>نقصی که برطرفش کردیم این بود که کاربر می‌توانست یک رشته دو حرفی را به عنوان پارامتر دوم به تابع FindNumberOfOccurences ارسال کند و exception ای از نوع FormatException بگیرد. رفتار مورد انتظار در این شرایط این بود که متد exception از نوع ArgumentException را throw (پرتاب) کند.</p>
 
@@ -217,7 +217,7 @@
 
 <p>در پیاده‌سازی جاری متد FindNumberOfOccurences روشی که برای رفع نقص در نظر گرفتیم احتمالاً بهترین راه نبود. چیزی که در واقع احتمالاً به آن نیاز داریم این است که یک قانون اعتبارسنجی برای تعیین تعداد کاراکترهای پارامتر characterToScanFor داشته باشیم و اگر تعداد کاراکترها برابر یک نبود آنگاه یک exception را throw کنیم. من کد متد FindNumberOfOccurences را برای پیاده‌سازی این روش تغییر می‌دهم:</p>
 
-<script src="//gist.github.com/hameds/64ceca1a109dcb456f2ddb9033410405.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/64ceca1a109dcb456f2ddb9033410405.js"></script>
 
 <p>به جای اینکه کل بدنه متد را در یک try/catch قرار دهم، طول رشته characterToScanFor را چک می‌کنم. اگر طول رشته برابر یک نبود، آنگاه یک exception از نوع AgurmentException را throw می‌کنم. در مقایسه با روش قبل این روش بسیار بهتری است («کار کردن بر حسب تصادف» یکی از مشکلات کد است که در نوشته‌های بعدی درباره‌اش توضیح خواهم داد) این روش همچنین باعث می‌شود که نقایص احتمالی که به قانون اعتبارسنجی (همان قانون یک کاراکتری بودن پارامتر دوم) مرتبط نیستند فراموش نشوند. در هر حال این روش بهتری است اما آیا درست کار می‌کند. راه فهمیدن این موضوع اجرا کردن آزمون‌های واحد است.</p>
 
@@ -232,7 +232,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1525</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1718</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -252,7 +252,7 @@
     
   </section>
   <footer class="site-footer">
-  <p>© 2017-2018 elmah</p>
+  <p>© 2017-2019 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   
 </footer>
@@ -284,15 +284,6 @@
 </script>
 
 <script src="https://elmah.ir/js/bundle.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-109151384-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 
 
 

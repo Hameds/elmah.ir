@@ -37,7 +37,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.27.1" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/114-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%BE%D8%A7%D9%86%D8%B2%D8%AF%D9%87%D9%85---%D8%B3%D8%A7%D8%AF%D9%87-%D9%87%D9%85%DB%8C%D8%B4%D9%87-%D8%A8%D9%87-%D9%85%D8%B9%D9%86%DB%8C-%D9%88%D8%A7%D8%B6%D8%AD-%D9%86%DB%8C%D8%B3%D8%AA-%D9%82%D8%B3%D9%85%D8%AA-%D8%AF%D9%88%D9%85/" />
@@ -209,13 +209,13 @@
 
 <p>از تست کیس بالا به کد تست زیر رسیدیم:</p>
 
-<script src="//gist.github.com/hameds/d57af3a7a41a4bb727e480e814d6d971.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/d57af3a7a41a4bb727e480e814d6d971.js"></script>
 
 <p>تست pass‌ شد، اما هنوز یک مشکل وجود دارد. می‌خواهیم مطمئن شویم که متد PlaceOrder در کلاس OrderService یک InvalidOrderException ایجاد می‌کند و متد Save کلاس OrderDataService را فراخوانی نخواهد کرد. به نظر می‌رسد تست این اعتبارسنجی را انجام می‌دهد. ما به تست گفته‌ایم که انتظار InvalidOrderException داشته باشد و stub را طوری تعریف کرده‌ایم که متد Save فراخوانی نشود. تست pass می‌شود، پس مشکل کجاست؟</p>
 
 <p>مشکل اینجاست که تست pass می‌شود، اما فراخوانی Mock.Assert هرگز اتفاق نمی‌افتد. باور نمی‌کنید؟ بیایید یک آزمایش انجام دهیم. بیایید فراخوانی OccursNever را به OccursOnce تغییر دهیم.</p>
 
-<script src="//gist.github.com/hameds/2e79e89447b7133a48118a644738b753.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/2e79e89447b7133a48118a644738b753.js"></script>
 
 <p>اگر تست آنطوری که انتظار داریم اجرا شود باید fail شود.</p>
 
@@ -227,7 +227,7 @@
 
 <p>در بسیاری از موارد استفاده از ExpectedException خوب است. ما حالا به موقعیتی برخورد کردیم که استفاده از این خاصیت خوب نیست پس باید به دنبال راه جایگزین و دستی‌تری باشیم. اولین چیزی که لازم است انجام دهم، حذف ExpectedException از کد است. سپس باید فراخوانی PlaceOrder را در یک try/catch قرار بدهم.</p>
 
-<script src="//gist.github.com/hameds/727a829face992f2cc33ad2b845f2ce8.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/727a829face992f2cc33ad2b845f2ce8.js"></script>
 
 <p>برای تایید کد من نوع خاص InvalidOrderExpection را در catch متد PlaceOrder می‌گیرم. بعد از گرفتن این exception نوبت به Mock.Assert می‌رسد. اگر این کار کند، باید به اجرا کننده تست بگویم که تست pass شده است پس از Assert.Pass استفاده می‌کنم. اگر نوع دیگری از exception ایجاد شد یا کد خطا نداد Assert.Fail باعث fail شدن تست می‌شود.</p>
 
@@ -237,7 +237,7 @@
 
 <p>این fail به این خاطر است که setup مربوط به stub ما انتظار دارد که متد Save ذقیقاً یک بار اجرا شود. این را عمداً اصلاح نکردم تا fail شدن تست را ببینید. حالا کد را تغییر می‌دهیم تا مطمئن شویم متد Save هرگز فراخوانی نمی‌شود:</p>
 
-<script src="//gist.github.com/hameds/90b0603e33f4503be57fd418ac9beb84.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/90b0603e33f4503be57fd418ac9beb84.js"></script>
 
 <p>تست را دوباره اجرا می‌کنیم و می‌بینیم تست pass می‌شود.</p>
 
@@ -248,7 +248,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1188</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1381</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -268,7 +268,7 @@
     
   </section>
   <footer class="site-footer">
-  <p>© 2017-2018 elmah</p>
+  <p>© 2017-2019 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   
 </footer>
@@ -300,15 +300,6 @@
 </script>
 
 <script src="https://elmah.ir/js/bundle.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-109151384-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 
 
 

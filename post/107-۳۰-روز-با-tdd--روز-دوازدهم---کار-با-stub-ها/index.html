@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.27.1" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/107-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%AF%D9%88%D8%A7%D8%B2%D8%AF%D9%87%D9%85---%DA%A9%D8%A7%D8%B1-%D8%A8%D8%A7-stub-%D9%87%D8%A7/" />
@@ -207,23 +207,23 @@
 
 <p>کلاس Class1 را به OrderServiceTests تغییر نام می‌دهیم. از خواص (attribute) مربوط به NUnit برای نوشتن اولین تست استفاده می‌کنیم</p>
 
-<script src="//gist.github.com/hameds/858d113a11dcad884f10e077b35f68ed.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/858d113a11dcad884f10e077b35f68ed.js"></script>
 
 <p>در این مثال فرض می‌کنیم تیم دیگری نیز بر روی برنامه در حال کار است و پیاده‌سازی ShoppingCart و Order و همچنین Interface های OrderDataService و BillingService و FulfillmentService  و LoggingService را در یک پروژه class library انجام داده است. این پروژه که TddStore.Core نام دارد را با استفاده از <a href="https://skydrive.live.com/?cid=DE4AEBF19948423F&amp;amp;id=DE4AEBF19948423F%2112673">این فایل‌ها</a> می‌توانید ایجاد کنید. بعد از ایجاد پروژه TddStore.Core باید رفرنس آن را به پروژه TddStore.UnitTests اضافه کنید.</p>
 
 <p>برای این تست من نیاز دارم که با فراخوانی متدی که باید پیاده‌سازی شود از کلاسی که باید پیاده‌سازی شود یک سفارش ثبت کنم. مطابق معمول گردش کار TDD ابتدا تست را می‌نویسیم:</p>
 
-<script src="//gist.github.com/hameds/e434d112eea6a6cba113eb106f5dc056.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/e434d112eea6a6cba113eb106f5dc056.js"></script>
 
 <p>فهمیدن کد این تست باید خیلی ساده باشد. در قسمت Arrange من یک وهله (instance) از سبد خرید ایجاد می‌کنم و به آن یک آیتم اضافه می‌کنم. همچنین یک سفارش و شناسه مشتری فرضی برای تستم ایجاد می‌کنم. در نهایت یک OrderService برای تست ایجاد می‌کنم.</p>
 
 <p>دو بخش Act و Assert هم نیازی به توضیح خاصی ندارند و مراحل ثبت سفارش و دریافت شناسه مورد آزمون قرار می‌گیرند. در این مرحله من تست را اجرا می‌کنم تا fail شدنش را ببینم و سپس شروع به نوشتن ساده‌ترین کد ممکن برای pass شدن تست می‌کنم. در نهایت به این کد می‌رسم:</p>
 
-<script src="//gist.github.com/hameds/27bfcc868ce8d049f1d2fdfead7d5ae3.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/27bfcc868ce8d049f1d2fdfead7d5ae3.js"></script>
 
 <p>بر اساس شرایط من باید رفرنس به OrderDataService ایجاد کنم. کد را refactor کرده و از طریق تزریق وابستگی با سازنده آن را تغییر می‌دهم</p>
 
-<script src="//gist.github.com/hameds/c449d4a51b8674a7540f514efdfc52d4.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/c449d4a51b8674a7540f514efdfc52d4.js"></script>
 
 <p>من به متد PlaceOrder دسترسی به instance ای از کلاس OrderDataService (از طریق اینترفیس IOrderDataService) می‌دهم ولی الان تست من دیگر کامپایل نمی‌شود. دلیل آن این است که سازنده (Constructor) پیش فرض OrderService دیگر وجود ندارد، نیاز است تا چیزی که IOrderDataService را پیاده‌سازی کرده به OrderService پاس بدهم</p>
 
@@ -233,11 +233,11 @@
 
 <p>حالا که به JustMock دسترسی داریم، یک stub برای IOrderDataService ایجاد می‌کنیم:</p>
 
-<script src="//gist.github.com/hameds/f8beb0f738f74741c7f1084b122a776c.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/f8beb0f738f74741c7f1084b122a776c.js"></script>
 
 <p>اولین مرحله ایجاد شی mock است. قبل از این کار باید با استفاده از using فضانام Telerik.JustMock را به کلاس اضافه کنید. در خط ۲۱ من یک شی mock شده از اینترفیس IOrderDataService ایجاد کردم. چون این شی IOrderDataService را پیاده‌سازی می‌کند می‌توانم به عنوان آرگومان سازنده آن را به OrderService پاس بدهم همانطور که در خط ۲۲ می‌بینید. در ادامه کمی کد به متد PlaceOrder در کلاس OrderService اضافه می‌کنیم تا از IOrderDataService استفاده کند.</p>
 
-<script src="//gist.github.com/hameds/089f9ce11dd7eb557606f57ce8901270.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/089f9ce11dd7eb557606f57ce8901270.js"></script>
 
 <p>بر اساس تست کیس ما تنها نیاز داریم که به متد تست یک سبد خرید با حداقل یک آیتم پاس بدهیم و یک شناسه سفارش تحویل بگیریم. در این تست کیس هیچ توضیحی درباره اینکه اگر اعتبارسنجی به مشکل بخورد یا اینکه چطور بر اساس سبد خرید یک سفارش بسازیم وجود ندارد. unit test جاری پاسخگوی تست کیس تعریف شده است.</p>
 
@@ -249,7 +249,7 @@
 
 <p>گرچه یک شی mock شده برای OrderDataService ایجاد کردیم اما هنوز نگفتیم وقتی فراخوانی شد چه کار باید انجام دهد. با اشاره به لیست انواع mock ها که در نوشته قبلی توضیح داده شدند، آنچه الان داریم یک Dummy است. ما باید آن را به یک Stub واقعی ارتقاء دهیم.</p>
 
-<script src="//gist.github.com/hameds/ff5a6f1ea5f7d84f43aa6167f820519c.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/ff5a6f1ea5f7d84f43aa6167f820519c.js"></script>
 
 <p>در خط ۱۴ من از دستور Mock.Arrange برای setup کردن شی mock شده orderDataService استفاده می‌کنم که در واقع این شی را به یک stub تبدیل می‌کند. متد Arrange یک عبارت Linq می‌گیرد که مشخص می‌کند برای کدام متد می‌خواهم رفتار تعریف کنم. در این مثال من به stub می‌گویم که به فراخوانی متد Save پاسخ دهد. به عنوان بخشی از این عبارت Linq می‌توانم یک لیست پارامتر برای stub تعریف کنم. می‌توانم یک مقدار مشخص را تعیین کنم. به عنوان مثال، اگر متد Save یک int بگیرد، می‌توانم مشخص کنم فقط زمانی که مقدار ۴۲ پاس داده می‌شود پاسخ بررسی شود. اگر mock را با مقداری غیر ز ۴۲ فراخوانی کنم مقدار پیش فرض آن نوع داده بازگشتی (مثلاً صفر برای int) را برمی‌گرداند. به این دلیل بود که وقتی قبلاً تست‌ها را اجرا کردم شی mock شده orderDataService یک guid خالی (همه صفر) برگرداند. این موضوع که loose mocking نیز نامیده می‌شود در نوشته‌های بعدی مورد بررسی قرار خواهد گرفت.</p>
 
@@ -262,7 +262,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1284</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1477</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -282,7 +282,7 @@
     
   </section>
   <footer class="site-footer">
-  <p>© 2017-2018 elmah</p>
+  <p>© 2017-2019 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   
 </footer>
@@ -314,15 +314,6 @@
 </script>
 
 <script src="https://elmah.ir/js/bundle.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-109151384-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 
 
 

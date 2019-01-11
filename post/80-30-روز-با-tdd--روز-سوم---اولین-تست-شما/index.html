@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.27.1" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/80-30-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D8%B3%D9%88%D9%85---%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%AA%D8%B3%D8%AA-%D8%B4%D9%85%D8%A7/" />
@@ -253,7 +253,7 @@
 
 <p>حالا که یک پروژه داریم که اسمبلی NUnit هم به آن اضافه شده می‌توانم اولین تستم را بنویسم. اما قبل از نوشتن تست، باید به NUnit بگویم که کلاس StringUtilsTests حاوی Unit test است، این کار با افزون خاصیت (Attribute) به نام <strong>TestFixture</strong> به شکل زیر انجام می‌شود:</p>
 
-<script src="//gist.github.com/hameds/632db291b258ddd1886d26e96f1a0c8f.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/632db291b258ddd1886d26e96f1a0c8f.js"></script>
 
 <p>توجه داشته باشید که TextFixture بخشی از کتابخانه NUnit است، بنابراین حتماً به using ابتدای کد توجه کنید. بر اساس نیازمندی که ابتدای مثال مطرح کردیم، من می‌توانم خیلی راحت، تست ساده‌ای برای سناریویی که همه ورودی‌ها در محدوده قابل قبول قرار دارند بنویسم. برای این حالت، من تستم را این‌طور تعریف می‌کنم:</p>
 
@@ -265,7 +265,7 @@
 
 <p>قدم بعدی این است که این متد ShouldBeAbleToCountNumberOfLettersInSimpleSentence به عنوان یک متد تست در NUnit‌ معرفی کنیم که این کار با استفاده از خاصیت (Attribute) به نام <strong>Test</strong> انجام می‌شود. کد زیر را ببینید:</p>
 
-<script src="//gist.github.com/hameds/27b9312579fde8d8bf81f15956b043b3.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/27b9312579fde8d8bf81f15956b043b3.js"></script>
 
 <h3 id="arrange-act-assert">Arrange, Act, Assert</h3>
 
@@ -273,15 +273,15 @@
 
 <p>AAA سه مرحله‌ای که همه unit test ها دارند را پوشش می‌دهد. در Arrange تست را با استفاده از ورودی (input) و خروجی مورد انتظار آماده سازی می‌کنیم. در تست اولی که می‌خواهم بنویسم این کار را با معرفی رشته ورودی نمونه و کاراکتری که دنبالش می‌گردم و همچنین خروجی مورد انتظار (عدد 2) به شکل زیر انجام می‌دهم:</p>
 
-<script src="//gist.github.com/hameds/5e31f67e96054fb5002532f980080c36.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/5e31f67e96054fb5002532f980080c36.js"></script>
 
 <p>علاوه بر تعریف ورودی و خروجی مورد انتظار، باید یک وهله (instance) از کلاسی که می‌خواهم تستش کنم هم ایجاد کنم. در اینجا اسم کلاس را StringUtils گذاشته‌ایم، دقت کنید که این کلاس هنوز وجود ندارد و به تعریف آن در قسمت بعدی این سری نوشته خواهیم پرداخت. کد تابع ShouldBeAbleToCountNumberOfLettersInSimpleSentence تا به حال این‌طور خواهد بود:</p>
 
-<script src="//gist.github.com/hameds/497d77d8afab3f508e3dafec4788b041.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/497d77d8afab3f508e3dafec4788b041.js"></script>
 
 <p>مرحله بعد در AAA بخش Act است که جایی است که متد لازم برای تست کلاس فراخوانی شده و نتیجه آن دریافت می‌شود. من اسم این متد را FindNumberOfOccurences گذاشتم. دقت کنید که نه کلاس StringUtils‌ و نه متد FindNumberOfOccurences هنوز نوشته نشده‌اند و ما باید بعداً آن‌ها را ایجاد کنیم.</p>
 
-<script src="//gist.github.com/hameds/bc0b8ca178907244f6fd01f84a2a4d07.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/bc0b8ca178907244f6fd01f84a2a4d07.js"></script>
 
 <p>و در نهایت به بخش Assert می‌رسیم. جایی که بررسی می‌کنیم که آیا نتیجه‌ای که از تست متد کلاس StringUtils بدست آمد با نتیجه مورد انتظار ما مطابقت دارد یا خیر؟ این کار را با استفاده از Assert انجام می‌دهیم. کلاس Assert یک کلاس static در کتابخانه NUnit است که شامل متدهایی برای بررسی و مقایسه نتایج و اعلام pass یا fail یا بی‌نتیجه (inconclusive) بودن تست است. برای این تست من از AreEqual استفاده می‌کنم که دو مقدار را با هم مقایسه می‌کند. اگر دو مقدار با هم برابر باشند، تست ادامه پیدا می‌کند. به این ترتیب امکان استفاده از چند Assert در یک متد تست وجود دارد.</p>
 
@@ -289,7 +289,7 @@
 
 <p>در حال حاضر کد نهایی تست مثال این نوشته به شکل زیر خواهد بود:</p>
 
-<script src="//gist.github.com/hameds/29869640801ff1dcb3878b005d0fad36.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/29869640801ff1dcb3878b005d0fad36.js"></script>
 
 <p>در قسمت بعدی، کاری خواهیم کرد که تست pass شود. در واقع کدهای مربوط به کلاس StringUtils را تکمیل خواهیم کرد.</p>
 
@@ -298,7 +298,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>1613</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>1806</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -318,7 +318,7 @@
     
   </section>
   <footer class="site-footer">
-  <p>© 2017-2018 elmah</p>
+  <p>© 2017-2019 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   
 </footer>
@@ -350,15 +350,6 @@
 </script>
 
 <script src="https://elmah.ir/js/bundle.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-109151384-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 
 
 

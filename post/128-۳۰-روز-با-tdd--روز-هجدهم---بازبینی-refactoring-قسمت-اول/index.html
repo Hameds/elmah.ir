@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.27.1" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/128-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd--%D8%B1%D9%88%D8%B2-%D9%87%D8%AC%D8%AF%D9%87%D9%85---%D8%A8%D8%A7%D8%B2%D8%A8%DB%8C%D9%86%DB%8C-refactoring-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/" />
@@ -199,7 +199,7 @@
 
 <p>در چند نوشته گذشته، متد PlaceOrder را از OrderService بیرون بردیم. برای مرور، متد فعلی این شکلی است:</p>
 
-<script src="//gist.github.com/hameds/84a4e1f9de333a2923a47e143b173a40.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/84a4e1f9de333a2923a47e143b173a40.js"></script>
 
 <p>این متد کمی طولانی شده و همچنین داریم به محدوده نقض Single Responsibility Principel (برای مرور SRP <a href="https://elmah.ir/post/82-30-روز-با-tdd--روز-پنجم---کد-solid-ایجاد-کنید/">روز پنجم</a> را مطالعه کنید) وارد می‌شویم. در حال حاضر شش دلیل برای اینکه این متد باید تغییر کند شمردم:</p>
 
@@ -222,7 +222,7 @@
 
 <p>Just Code کد مورد نیاز را به همراه پارامترهای مورد نیاز استخراج می‌کند و از من درباره نام متد سوال می‌کند و من هم نام PlaceOrdeWithFulfillmentService را انتخاب می‌کنم. همچنین کد اصلی را با فراخوانی این متد تازه ساخته شده تغییر می‌دهد.</p>
 
-<script src="//gist.github.com/hameds/d363637dd93751f7444f1e879efdec6f.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/d363637dd93751f7444f1e879efdec6f.js"></script>
 
 <p>تاثیر این کار بر روی متد PlaceOrder خیلی زیاد است و همین حالا هم بسیار خواناتر شده. متوجه شدم که JustCode متد تازه ساخته شده را با نوع بازگشتی void ایجاد کرده است. این به خاطر آن است که در هیچ کجای کد استخراج شده مقداری تولید نمی‌شود که در ادامه کد اصلی از آن استفاده شده باشد. در این مورد در نوشته بعدی بیشتر صحبت می‌کنیم. برای تایید این کارها و اینکه این تغییرات کد را دچار مشکل نکرده، باید unit test ها را اجرا کنم.</p>
 
@@ -232,11 +232,11 @@
 
 <p>متد PlaceOrderWithFulfillmentService باعث شده که کد ما کمتر شکننده باشد، اما خودش هم مشکلاتی دارد. ما به refactor بیشتری نیاز داریم و حالا می‌خواهم هر یک از مراحل را به متدهای خودشان منتقل کنم. به سراغ اولین مرحله می‌روم: OpenOrderFuilfillmentService</p>
 
-<script src="//gist.github.com/hameds/fee7c4a8f74d44f2bf68675534d614bd.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/fee7c4a8f74d44f2bf68675534d614bd.js"></script>
 
 <p>اجرای تست‌ها نشان می‌دهد که این refactor هم موفق بوده است. حالا مرحله بستن session را هم به متد جدیدی به نام CloseOrderFulfillmentService می‌برم</p>
 
-<script src="//gist.github.com/hameds/d6cecf1b08ce55baead4c7a2d8a9561c.js"></script>
+<script type="application/javascript" src="//gist.github.com/hameds/d6cecf1b08ce55baead4c7a2d8a9561c.js"></script>
 
 <p>اجرای تست‌ها نشان می‌دهد که همچنان کد بدون مشکل کار می‌کند.</p>
 
@@ -249,7 +249,7 @@
     <footer class="post-footer">
       
       <p class="post-copyright">       
-        این نوشته  <strong>569</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+        این نوشته  <strong>762</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
       </p>
     </footer>
     <hr>
@@ -269,7 +269,7 @@
     
   </section>
   <footer class="site-footer">
-  <p>© 2017-2018 elmah</p>
+  <p>© 2017-2019 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   
 </footer>
@@ -301,15 +301,6 @@
 </script>
 
 <script src="https://elmah.ir/js/bundle.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-109151384-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 
 
 
