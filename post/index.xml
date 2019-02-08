@@ -6,10 +6,19 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Tue, 29 Jan 2019 22:10:23 +0330</lastBuildDate>
+    <lastBuildDate>Thu, 07 Feb 2019 19:57:22 +0330</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>اعلام خاتمه و شکست پروژه Bugg.ir &#43; درس‌هایی که آموختم</title>
+      <link>https://elmah.ir/post/bugg/</link>
+      <pubDate>Thu, 07 Feb 2019 19:57:22 +0330</pubDate>
+      
+      <guid>https://elmah.ir/post/bugg/</guid>
+      <description>داستان چیه؟ چند سال پیش وقتی پروژه‌ها زیاد شد، پشتیبانی پروژه‌ها هم بیشتر شد. اون موقع ما کتابخانه‌ای به نام elmah رو به خود پروژه‌ها اضافه می‌کردیم. این کتابخانه که یک کتابخانه لاگر بود، مثل بقیه کتابخانه‌های مشابه می‌تونست لاگ‌ها را به خروجی‌های مختلفی بفرسته. ما دیتابیس رو انتخاب کرده بودیم. در واقع در کنار جداول اصلی پروژه در دیتابیس، یک جدول هم مخصوص نگهداری لاگ‌ها بود. علاوه بر این یک UI تحت وب هم برای لیست کردن لاگ‌ها به پروژه اضافه می‌شد.</description>
+    </item>
     
     <item>
       <title>چطور به کمک APM نرم‌افزارهامون رو بهتر کنیم؟</title>
