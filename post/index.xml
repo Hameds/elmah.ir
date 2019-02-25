@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Thu, 07 Feb 2019 19:57:22 +0330</lastBuildDate>
+    <lastBuildDate>Mon, 25 Feb 2019 10:26:36 +0330</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>تست برای تست</title>
+      <link>https://elmah.ir/post/test-unit-test/</link>
+      <pubDate>Mon, 25 Feb 2019 10:26:36 +0330</pubDate>
+      
+      <guid>https://elmah.ir/post/test-unit-test/</guid>
+      <description>مساله برای تست کردن اجزای کد، Unit Test می‌نویسیم. اما برای تست کردن کد خود تست‌ها چه کنیم؟
+این مساله چه زمانی ایجاد می‌شه؟ وقتی که تست‌ها رو بعد از نوشتن کد اصلی بخواهیم اضافه کنیم. در واقع اگر به روش‌هایی نظیر TDD استفاده کنیم و تست‌ها رو قبل از نوشتن کد اصلی نوشته باشیم احتمال مشکل در تست‌ها به شدت پایین میاد. اما وقتی یک Legacy Code داریم که احتمالاً تستی هم نداره، این مساله خیلی جدیه.</description>
+    </item>
     
     <item>
       <title>اعلام خاتمه و شکست پروژه Bugg.ir &#43; درس‌هایی که آموختم</title>
