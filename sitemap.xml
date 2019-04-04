@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://elmah.ir/post/comments/</loc>
+    <lastmod>2019-03-28T19:02:50+04:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://elmah.ir/post/test-unit-test/</loc>
     <lastmod>2019-02-25T10:26:36+03:30</lastmod>
   </url>
@@ -634,7 +639,7 @@
   
   <url>
     <loc>https://elmah.ir/post/</loc>
-    <lastmod>2019-02-25T10:26:36+03:30</lastmod>
+    <lastmod>2019-03-28T19:02:50+04:30</lastmod>
     <priority>0</priority>
   </url>
   

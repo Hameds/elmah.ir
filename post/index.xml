@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Mon, 25 Feb 2019 10:26:36 +0330</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 19:02:50 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>آیا کدهای شما به کامنت نیاز دارند؟</title>
+      <link>https://elmah.ir/post/comments/</link>
+      <pubDate>Thu, 28 Mar 2019 19:02:50 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/comments/</guid>
+      <description>تا به حال شده کامنت‌های یک کد دیگر را بخوانید و به این فکر کنید که اصلاً چرا نوشته شدند؟ بعضی معتقدند کدها نیاز به کامنت ندارند و باید آنقدر خوانا باشند که بدون توضیحات اضافه بتوان آن‌ها را فهمید. اما آیا همیشه امکان‌پذیر است؟
+کامنت‌های بد یکی از رایج‌ترین نوع کامنت‌های بد، کامنت‌هایی هستند که یک موضوع واضح را توضیح می‌دهند. تصور کنید نام یک متغیر productPrice باشد. حالا اگر کامنتی ببینید که توضیح داده قیمت محصول به خوانایی کد چیزی اضافه نشده.</description>
+    </item>
     
     <item>
       <title>تست برای تست</title>
