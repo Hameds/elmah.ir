@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Thu, 28 Mar 2019 19:02:50 +0430</lastBuildDate>
+    <lastBuildDate>Mon, 06 May 2019 16:12:45 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>چطور انتشار یک پکیج nuget را اتوماتیک کنیم؟</title>
+      <link>https://elmah.ir/post/nuget-package-publish/</link>
+      <pubDate>Mon, 06 May 2019 16:12:45 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/nuget-package-publish/</guid>
+      <description>nuget (با تلفظ نیوگت) در واقع package manager برای .NET است. در این پست درباره انتشار اتوماتیک کتابخانه‌های اپن‌سورس در قالب پکیج nuget با کمک سرویس AppVeyor صحبت می‌کنیم.
+گام اول: دریافت کلید API برای انتشار اتوماتیک پکیج‌ها در سایت nuget ابتدا باید یک کلید API دریافت کنید. برای این کار بعد از ثبت‌نام و ورود به بخش API Keys بروید و یک کلید ایجاد کنید. توجه کنید که مقدار کلید را پس از ایجاد حتماً کپی کنید چون دوباره به شما نمایش داده نمی‌شود و اگر آن را در اختیار نداشته باشید مجبورید یا یک کلید تازه بسازید یا کلید موجود را regenerate کنید.</description>
+    </item>
     
     <item>
       <title>آیا کدهای شما به کامنت نیاز دارند؟</title>
