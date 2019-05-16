@@ -6,10 +6,19 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Mon, 06 May 2019 16:12:45 +0430</lastBuildDate>
+    <lastBuildDate>Fri, 17 May 2019 01:04:57 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>چطور کمتر فحش دریافت کنیم یا هنر نوشتن پیام خطای خوب</title>
+      <link>https://elmah.ir/post/good-error-message/</link>
+      <pubDate>Fri, 17 May 2019 01:04:57 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/good-error-message/</guid>
+      <description>چرا کاربران نرم‌افزار ما را لعنت می‌کنند؟ وقتی نرم‌افزاری به خطا می‌خورد، طبیعی است که کاربران نرم‌افزار ناراحت باشند. اما چه چیزی این ناراحتی را به عصبانیت تبدیل می‌کند؟ قطعاً یکی از پاسخ‌ها،‌ متن پیام خطا است که به کاربر نمایش داده می‌شود. اغلب ما (از جمله خودم) بلد نیستیم متن خطای خوب بنویسیم و این باعث می‌شود در زمان بروز مشکل، نه تنها به کاربر کمکی نکنیم بلکه بیشتر او را گیج یا عصبانی کنیم.</description>
+    </item>
     
     <item>
       <title>چطور انتشار یک پکیج nuget را اتوماتیک کنیم؟</title>
