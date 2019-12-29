@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.59.1" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/51-%DA%A9%D8%A7%D8%B1%D9%87%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1-%D9%84%DB%8C%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D9%BE%D9%88%DB%8C%D9%86%D8%AA-%DA%A9%D9%87-%D9%81%D9%82%D8%B7-%D8%A8%D8%A7-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86-%D8%A7%D9%86%D8%AC%D8%A7%D9%85-%D8%AF%D8%A7%D8%AF/" />
@@ -105,7 +105,7 @@
     </div>
     
     
-  <header class="site-header">
+<header class="site-header">
   <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
   
   <h2 class="title">elmah</h2>
@@ -190,12 +190,14 @@
   </nav>
 </header>
 
-  <section class="main post-detail">
-    <header class="post-header">
-      <h1 class="post-title">کارهایی در لیست‌های شیرپوینت که فقط با برنامه‌نویسی می‌توان انجام داد</h1>
-      <p class="post-meta">@حامد سعیدی فرد · 2 دقیقه خواندن</p>
-    </header>
-    <article class="post-content">
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">کارهایی در لیست‌های شیرپوینت که فقط با برنامه‌نویسی می‌توان انجام داد</h1>
+    <p class="post-meta">
+      @حامد سعیدی فرد ·
+      2 دقیقه خواندن</p>
+  </header>
+  <article class="post-content">
 
 <p>Object Model شیرپوینت این امکان را به شما می‌دهد که کلیه کارهایی که از طریق اینترفیس خود شیرپوینت انجام می‌دهید را با برنامه‌نویسی نیز بتوانید پیاده‌سازی کنید.</p>
 
@@ -207,21 +209,25 @@
 
 <p>هر لیست شیرپوینت، حداقل سه فرم جدید، ویرایش و نمایش دارد. موقعی که یک ستون تعریف می‌کنید به صورت پیش فرض به همه این فرم‌ها اضافه می‌شود اما اگر بخواهید در بعضی از این فرم‌ها نمایش داده نشود به شکل زیر می‌توان کار کرد:</p>
 
-<script type="application/javascript" src="//gist.github.com/hameds/dbdef5b2a5255e24f65070a5cbb1e81c.js"></script>
+<script type="application/javascript" src="https://gist.github.com/hameds/dbdef5b2a5255e24f65070a5cbb1e81c.js"></script>
+
 
 <p>همچنین در صورت نیاز می‌توانید نمایش این ستون در بخش تنظیمات لیست یا نماهای لیست را نیز غیرفعال کنید:</p>
 
-<script type="application/javascript" src="//gist.github.com/hameds/aaa659ed30cacf6041a39a1314104d91.js"></script>
+<script type="application/javascript" src="https://gist.github.com/hameds/aaa659ed30cacf6041a39a1314104d91.js"></script>
+
 
 <h3 id="مخفی-یا-غیر-قابل-حذف-کردن-ستون-ها">مخفی یا غیر قابل حذف کردن ستون‌ها</h3>
 
 <p>جهت مخفی کردن یک ستون از property که به این منظور وجود دارد می‌توانید استفاده کنید:</p>
 
-<script type="application/javascript" src="//gist.github.com/hameds/0aac180085c55021d8b0db73a5106799.js"></script>
+<script type="application/javascript" src="https://gist.github.com/hameds/0aac180085c55021d8b0db73a5106799.js"></script>
+
 
 <p>و برای غیرقابل حذف کردن از کد زیر می‌توانید استفاده کنید. این کد به درد زمانی می‌خورد که بخواهید ستون‌هایی سیستمی در لیست داشته باشید که کاربر امکان حذف کردن آن‌ها را نداشته باشد.</p>
 
-<script type="application/javascript" src="//gist.github.com/hameds/b7867eb161623a1aaec30ff51291868b.js"></script>
+<script type="application/javascript" src="https://gist.github.com/hameds/b7867eb161623a1aaec30ff51291868b.js"></script>
+
 
 <p>امکان ReadOnly کردن ستون نیز وجود دارد، اما در صورتی که از آن استفاده کنید به روز رسانی ستون با مشکل مواجه خواهد شد.</p>
 
@@ -229,37 +235,54 @@
 
 <p>شیرپوینت تعدادی لیست مخفی در هر سایتی که ایجاد می‌شود ایجاد می‌کند و از آن برای ذخیره اطلاعات سیستمی خودش بهره می‌گیرد. به طور کلی از آنجایی که تعداد لیست‌هایی که با فعال کردن feature‌های مختلف ساخته می‌شوند زیاد است و این باعث سردرگمی استفاده کننده می‌شود خوب است لیست‌های اضافی یا کم مصرف که از جایگزین‌هایشان می‌توان استفاده کرد را با SharePoint Designer یا با استفاده از کدنویسی مخفی کنید. برای مخفی کردن یک لیست شیرپوینت از کد زیر می‌توانید استفاده کنید:</p>
 
-<script type="application/javascript" src="//gist.github.com/hameds/10884f4e498f310b0a9419fe3377a31f.js"></script>
+<script type="application/javascript" src="https://gist.github.com/hameds/10884f4e498f310b0a9419fe3377a31f.js"></script>
+
 
 <h3 id="غیرقابل-حذف-کردن-لیست-ها">غیرقابل حذف کردن لیست‌ها</h3>
 
 <p>غیرقابل حذف کردن لیست‌ها برای شرایطی مناسب است که از لیست برای ذخیره اطلاعات سیستمی (نظیر تنظیمات یا داده‌های یک راهکار شیرپوینتی) استفاه می‌کنید. برای این کار از کد زیر می‌توانید استفاده کنید:</p>
 
-<script type="application/javascript" src="//gist.github.com/hameds/ef7080fd521904b834456c6025ca64a4.js"></script>
+<script type="application/javascript" src="https://gist.github.com/hameds/ef7080fd521904b834456c6025ca64a4.js"></script>
+
 </article>
-    <footer class="post-footer">
+  <footer class="post-footer">
+    
+    <p class="post-copyright">
+      این
+      نوشته <strong>2294</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+    </p>
+  </footer>
+  <hr>
+  <div id="graphcomment"></div>
+  <script type="text/javascript">
+
+     
+
+    
+    window.gc_params = {
+      graphcomment_id: 'elmah',
+
       
-      <p class="post-copyright">       
-        این نوشته  <strong>2068</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
-      </p>
-    </footer>
-    <hr>
-    <div id="darinternet_comment"></div>
-    <script type="text/javascript">    
-      (function () {
-        var cmt = document.createElement('script');
-        cmt.type = 'text/javascript';
-        cmt.async = true;
-        cmt.src = 'https://www.darinternet.com/script/commentscript/ccc91a81-b2c4-e711-90f9-005056000124';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(cmt);
-      })();
-    </script>
-    
-    
-      
-    
-  </section>
-  <footer class="site-footer">
+      fixed_header_height: 0,
+    };
+
+     
+
+
+    (function () {
+      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+      gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+
+  </script>
+
+  
+  
+  
+</section>
+<footer class="site-footer">
   <p>© 2017-2019 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   

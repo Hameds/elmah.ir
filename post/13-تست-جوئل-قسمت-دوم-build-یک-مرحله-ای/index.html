@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>تست جوئل قسمت دوم: build یک مرحله‌ای</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="در قسمت قبل سری نوشته‌های مربوط به تست جوئل، درباره جوئل اسپالسکی و همین‌طور تست جوئل گفتم و اولین تست از مجموع 12 تست جوئل را بررسی کردیم. در این قسمت سراغ دومین سوال تست جوئل می‌رویم.
+آیا می‌توانید در یک مرحله برنامه‌تان را build کنید؟ جوئل در توضیح این سوال می‌گوید منظور این است که برای ایجاد نسخه قابل تحویل به مشتری از آخرین سورس، چند مرحله وجود دارد؟" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="تست جوئل قسمت دوم: build یک مرحله‌ای" />
+    <meta name="twitter:description" content="در قسمت قبل سری نوشته‌های مربوط به تست جوئل، درباره جوئل اسپالسکی و همین‌طور تست جوئل گفتم و اولین تست از مجموع 12 تست جوئل را بررسی کردیم. در این قسمت سراغ دومین سوال تست جوئل می‌رویم.
+آیا می‌توانید در یک مرحله برنامه‌تان را build کنید؟ جوئل در توضیح این سوال می‌گوید منظور این است که برای ایجاد نسخه قابل تحویل به مشتری از آخرین سورس، چند مرحله وجود دارد؟" />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/build_a2.png" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1" />
+
+
+<link rel="canonical" href="https://elmah.ir/post/13-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%AF%D9%88%D9%85-build-%DB%8C%DA%A9-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%A7%DB%8C/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+<header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+      
+        <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">تست جوئل قسمت دوم: build یک مرحله‌ای</h1>
+    <p class="post-meta">
+      @حامد سعیدی فرد ·
+      3 دقیقه خواندن</p>
+  </header>
+  <article class="post-content">
+
+<p>در <a href="https://elmah.ir/post/2-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--source-control">قسمت قبل</a> سری نوشته‌های مربوط به تست جوئل، درباره جوئل اسپالسکی و همین‌طور تست جوئل گفتم و اولین تست از مجموع 12 تست جوئل را بررسی کردیم. در این قسمت سراغ دومین سوال تست جوئل می‌رویم.</p>
+
+<h3 id="آیا-می-توانید-در-یک-مرحله-برنامه-تان-را-build-کنید">آیا می‌توانید در یک مرحله برنامه‌تان را build کنید؟</h3>
+
+<p>جوئل در توضیح این سوال می‌گوید منظور این است که برای ایجاد نسخه قابل تحویل به مشتری از آخرین سورس، چند مرحله وجود دارد؟</p>
+
+<p>اگر برنامه‌ای که تولید می‌کند صرفنظر از اینکه پلتفرم آن چیست و مشتری قرار است در چه محیطی آن را اجرا کند، برای ارائه نسخه جدید به بیش از یک build نیاز دارد، این پروسه مستعد اشتباه است. منظور از یک build این نیست که تمام نرم‌افزار در قالب یک پروژه باشد یا حتی در قالب یک solution. نرم‌افزار شما ممکن است دارای اجزای مختلفی باشد: یک دیتابیس داشته باشد، کدهای اجرایی برنامه در قالب فایل exe باشند و مثلاً کتابخانه‌هایی نیز استفاده شوند یا وب سرویس داشته باشد و &hellip; مهم این است که هر زمان بخواهید یک نسخه جدید به مشتری تحویل بدهید، یک اسکریپت بتواند کل مجموعه را build کند و نسخه قابل تحویل به مشتری را ایجاد کند.</p>
+
+<p><img src="https://elmah.ir/oldimg/build_a2.png" alt="" /></p>
+
+<p>در خصوص مساله build یک مرحله‌ای کار در مورد نرم‌افزارهایی که تحت ویندوز هستند ساده‌تر است. شما از یک برنامه installer استفاده می‌کنید و آخرین سورس را به همراه اجزای مختلف (مثل اسکریپت‌های مربوط به دیتابیس یا کتابخانه‌های مورد استفاده و &hellip;) در قالب یک package ارائه می‌دهید. اما در مورد نرم‌افزارهای تحت وب موضوع کمی متفاوت است. هر چند محصولاتی مانند <a href="http://www.iis.net/downloads/microsoft/web-deploy">Web Deploy</a> وجود دارند اما برای نصب خود application‌ (صرفنظر از قرار دادن فایل‌های آن در وب سرور که می‌تواند با copy paste یا توسط یک نرم‌افزار ftp انجام شود) بهتر است دست به کار شوید و یک wizard ایجاد کنید.</p>
+
+<p>در نظر داشته باشید مساله نصب و installer با مساله build جدا هستند، همچنان اگر قرار باشد برای ایجاد یک نسخه قابل نصب برای مشتری، مثلاً سورس را از source control گرفته و build‌ کنید، بعد خودتان به database مراجعه کنید و‌ اسکریپت تهیه کنید. بعد نمونه فایل config را از یک پوشه سیستمی بردارید و &hellip; یعنی مراحل build شما بیش از یکی است و آن طور که جوئل می‌گوید در این پروسه احتمالاً دست به اشتباهات احمقانه خواهید زد.</p>
+
+<p>گرچه تست جوئل از نظر تاریخ قدیمی محسوب می‌شود اما خواندن این توضیح مربوط به انتهای شرح سوال 2 خالی از لطف نیست. جوئل می‌گوید:</p>
+
+<blockquote>
+<p>فقط به همین علت، آخرین شركتی كه در آن كار می‌كردم، از WISE به InstallShield تغییر كرد: لازم بود كه رویه ایجاد installer از روی یك script به صورت خودكار نیمه شبها توسط NT Scheduler اجرا شود و WISE چنین قابلیتی نداشت. (دوستان خوب ما در WISE به من اطمینان داده اند كه آخرین نسخه شان توانایی build های شبانه را دارد.)</p>
+</blockquote>
+
+<p>مساله build شبانه و روزانه را در قسمت بعدی سری مطالب مربوط به تست جوئل که درباره سوال سوم (build روزانه) است با هم بررسی خواهیم کرد.</p>
+</article>
+  <footer class="post-footer">
+    
+    <p class="post-copyright">
+      این
+      نوشته <strong>2344</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+    </p>
+  </footer>
+  <hr>
+  <div id="graphcomment"></div>
+  <script type="text/javascript">
+
+     
+
+    
+    window.gc_params = {
+      graphcomment_id: 'elmah',
+
+      
+      fixed_header_height: 0,
+    };
+
+     
+
+
+    (function () {
+      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+      gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+
+  </script>
+
+  
+  
+  
+</section>
+<footer class="site-footer">
+  <p>© 2017-2019 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>۳۰ روز با TDD: روز پانزدهم - ساده همیشه به معنی واضح نیست قسمت دوم</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="در پایان مطلب قبلی این سری نوشته‌ها گفتیم که در تست‌های نوشته شده مشکلی وجود دارد. در این مطلب که نسخه زبان انگلیسی آن را در این آدرس می‌توانید مطالعه کنید، به بیان و رفع مشکل می‌پردازیم.
+مشکل کجاست؟
+در روز چهاردهم این تست کیس را دریافت کردیم:
+وقتی کاربری سفارشی به تعداد صفر می‌دهد، خطایی از جنس InvalidOrderException می‌بایست برگردد.
+از تست کیس بالا به کد تست زیر رسیدیم:" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="۳۰ روز با TDD: روز پانزدهم - ساده همیشه به معنی واضح نیست قسمت دوم" />
+    <meta name="twitter:description" content="در پایان مطلب قبلی این سری نوشته‌ها گفتیم که در تست‌های نوشته شده مشکلی وجود دارد. در این مطلب که نسخه زبان انگلیسی آن را در این آدرس می‌توانید مطالعه کنید، به بیان و رفع مشکل می‌پردازیم.
+مشکل کجاست؟
+در روز چهاردهم این تست کیس را دریافت کردیم:
+وقتی کاربری سفارشی به تعداد صفر می‌دهد، خطایی از جنس InvalidOrderException می‌بایست برگردد.
+از تست کیس بالا به کد تست زیر رسیدیم:" />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/tdd_cycle.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1" />
+
+
+<link rel="canonical" href="https://elmah.ir/post/114-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd-%D8%B1%D9%88%D8%B2-%D9%BE%D8%A7%D9%86%D8%B2%D8%AF%D9%87%D9%85-%D8%B3%D8%A7%D8%AF%D9%87-%D9%87%D9%85%DB%8C%D8%B4%D9%87-%D8%A8%D9%87-%D9%85%D8%B9%D9%86%DB%8C-%D9%88%D8%A7%D8%B6%D8%AD-%D9%86%DB%8C%D8%B3%D8%AA-%D9%82%D8%B3%D9%85%D8%AA-%D8%AF%D9%88%D9%85/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+<header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+      
+        <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">۳۰ روز با TDD: روز پانزدهم - ساده همیشه به معنی واضح نیست قسمت دوم</h1>
+    <p class="post-meta">
+      @حامد سعیدی فرد ·
+      3 دقیقه خواندن</p>
+  </header>
+  <article class="post-content"><p>در پایان <a href="https://elmah.ir/post/113-۳۰-روز-با-tdd--روز-چهاردهم---ساده-همیشه-به-معنی-واضح-نیست-قسمت-اول/">مطلب قبلی</a> این سری نوشته‌ها گفتیم که در تست‌های نوشته شده مشکلی وجود دارد. در این مطلب که نسخه زبان انگلیسی آن را در <a href="http://blogs.telerik.com/james-bender/posts.aspx/13-10-21/30-days-of-tdd-day-15---simple-does-not-always-mean-obvious-pt-2">این آدرس</a> می‌توانید مطالعه کنید، به بیان و رفع مشکل می‌پردازیم.</p>
+
+<p><strong>مشکل کجاست؟</strong></p>
+
+<p>در روز چهاردهم این تست کیس را دریافت کردیم:</p>
+
+<p>وقتی کاربری سفارشی به تعداد صفر می‌دهد، خطایی از جنس InvalidOrderException می‌بایست برگردد.</p>
+
+<p>از تست کیس بالا به کد تست زیر رسیدیم:</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/d57af3a7a41a4bb727e480e814d6d971.js"></script>
+
+
+<p>تست pass‌ شد، اما هنوز یک مشکل وجود دارد. می‌خواهیم مطمئن شویم که متد PlaceOrder در کلاس OrderService یک InvalidOrderException ایجاد می‌کند و متد Save کلاس OrderDataService را فراخوانی نخواهد کرد. به نظر می‌رسد تست این اعتبارسنجی را انجام می‌دهد. ما به تست گفته‌ایم که انتظار InvalidOrderException داشته باشد و stub را طوری تعریف کرده‌ایم که متد Save فراخوانی نشود. تست pass می‌شود، پس مشکل کجاست؟</p>
+
+<p>مشکل اینجاست که تست pass می‌شود، اما فراخوانی Mock.Assert هرگز اتفاق نمی‌افتد. باور نمی‌کنید؟ بیایید یک آزمایش انجام دهیم. بیایید فراخوانی OccursNever را به OccursOnce تغییر دهیم.</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/2e79e89447b7133a48118a644738b753.js"></script>
+
+
+<p>اگر تست آنطوری که انتظار داریم اجرا شود باید fail شود.</p>
+
+<p><img src="https://elmah.ir/oldimg/image_thumb1DE14E348D2CD.png" alt="" /></p>
+
+<p>به نظر می‌رسد تست fail نشد. مشخصاً Mock.Assert فراخوانی نمی‌شود.</p>
+
+<p>مشخص شد که مشکل از NUnit است یا به عبارت بهتر از خاصیت ExceptedException در NUnit. این خاصیت به تست می‌گوید که کل کد تست را درون یک بلاک try/catch قرار دهد و یک نوع خاص exception را بگیرد. فراخوانی PlaceOrder در خط ۱۶ باعث بروز exception می‌شود. از آنجایی که ما این exception را handle نکرده‌ایم به سطح اجرا کننده تست (NUnit) می‌رود. به محض اینکه اجرا کننده تست exception ای که منتظرش بوده را دریافت کند تست را pass می‌کند و هیچ خط کد دیگری بعد از بروز exception را اجرا نمی‌کند.</p>
+
+<p>در بسیاری از موارد استفاده از ExpectedException خوب است. ما حالا به موقعیتی برخورد کردیم که استفاده از این خاصیت خوب نیست پس باید به دنبال راه جایگزین و دستی‌تری باشیم. اولین چیزی که لازم است انجام دهم، حذف ExpectedException از کد است. سپس باید فراخوانی PlaceOrder را در یک try/catch قرار بدهم.</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/727a829face992f2cc33ad2b845f2ce8.js"></script>
+
+
+<p>برای تایید کد من نوع خاص InvalidOrderExpection را در catch متد PlaceOrder می‌گیرم. بعد از گرفتن این exception نوبت به Mock.Assert می‌رسد. اگر این کار کند، باید به اجرا کننده تست بگویم که تست pass شده است پس از Assert.Pass استفاده می‌کنم. اگر نوع دیگری از exception ایجاد شد یا کد خطا نداد Assert.Fail باعث fail شدن تست می‌شود.</p>
+
+<p>تست را اجرا می‌کنیم تا ببینیم fail می‌شود یا خیر؟</p>
+
+<p><img src="https://elmah.ir/oldimg/1_image_thumb367016D1AC4C4.png" alt="" /></p>
+
+<p>این fail به این خاطر است که setup مربوط به stub ما انتظار دارد که متد Save ذقیقاً یک بار اجرا شود. این را عمداً اصلاح نکردم تا fail شدن تست را ببینید. حالا کد را تغییر می‌دهیم تا مطمئن شویم متد Save هرگز فراخوانی نمی‌شود:</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/90b0603e33f4503be57fd418ac9beb84.js"></script>
+
+
+<p>تست را دوباره اجرا می‌کنیم و می‌بینیم تست pass می‌شود.</p>
+
+<p><img src="https://elmah.ir/oldimg/image_thumb554BB9A300DBD.png" alt="" /></p>
+
+<p>ادامه دارد&hellip;</p>
+</article>
+  <footer class="post-footer">
+    
+    <p class="post-copyright">
+      این
+      نوشته <strong>1732</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+    </p>
+  </footer>
+  <hr>
+  <div id="graphcomment"></div>
+  <script type="text/javascript">
+
+     
+
+    
+    window.gc_params = {
+      graphcomment_id: 'elmah',
+
+      
+      fixed_header_height: 0,
+    };
+
+     
+
+
+    (function () {
+      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+      gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+
+  </script>
+
+  
+  
+  
+</section>
+<footer class="site-footer">
+  <p>© 2017-2019 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

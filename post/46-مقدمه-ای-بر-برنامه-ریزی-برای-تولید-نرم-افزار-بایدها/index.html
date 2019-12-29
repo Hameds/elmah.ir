@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>مقدمه‌ای بر برنامه‌ریزی برای تولید نرم‌افزار: بایدها</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="قبل از شرح قسمت ششم نوشته‌های تست جوئل، گفتم که از بایدها و نبایدهای برنامه‌ریزی و مدیریت پروژه‌های نرم‌افزاری می‌نویسم. در نوشته‌‌ای به مبحث نبایدها پرداختم. این نوشته به موضوع بایدها می‌پردازد.
+برنامه‌ریزی درست و حساب شده مثل داشتن یک نقشه است. ساختن یک ساختمان بدون نقشه دیوانگی است!برنامه ریزی برای تولید نرم‌افزار: بایدها وقتی می‌خواهید برای تولید یک نرم‌افزار برنامه‌ریزی کنید باید همیشه در نظر داشته باشید که تولید نرم‌افزار بر خلاف سایر صنایع، بسیار ریسک پذیر است." />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="مقدمه‌ای بر برنامه‌ریزی برای تولید نرم‌افزار: بایدها" />
+    <meta name="twitter:description" content="قبل از شرح قسمت ششم نوشته‌های تست جوئل، گفتم که از بایدها و نبایدهای برنامه‌ریزی و مدیریت پروژه‌های نرم‌افزاری می‌نویسم. در نوشته‌‌ای به مبحث نبایدها پرداختم. این نوشته به موضوع بایدها می‌پردازد.
+برنامه‌ریزی درست و حساب شده مثل داشتن یک نقشه است. ساختن یک ساختمان بدون نقشه دیوانگی است!برنامه ریزی برای تولید نرم‌افزار: بایدها وقتی می‌خواهید برای تولید یک نرم‌افزار برنامه‌ریزی کنید باید همیشه در نظر داشته باشید که تولید نرم‌افزار بر خلاف سایر صنایع، بسیار ریسک پذیر است." />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/blueprint.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1" />
+
+
+<link rel="canonical" href="https://elmah.ir/post/46-%D9%85%D9%82%D8%AF%D9%85%D9%87-%D8%A7%DB%8C-%D8%A8%D8%B1-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%B1%DB%8C%D8%B2%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D8%A8%D8%A7%DB%8C%D8%AF%D9%87%D8%A7/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+<header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+      
+        <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">مقدمه‌ای بر برنامه‌ریزی برای تولید نرم‌افزار: بایدها</h1>
+    <p class="post-meta">
+      @حامد سعیدی فرد ·
+      3 دقیقه خواندن</p>
+  </header>
+  <article class="post-content">
+
+<p>قبل از شرح قسمت ششم نوشته‌های تست جوئل، گفتم که از بایدها و نبایدهای برنامه‌ریزی و مدیریت پروژه‌های نرم‌افزاری می‌نویسم. در نوشته‌‌ای به مبحث نبایدها <a href="https://elmah.ir/post/30-مقدمه-ای-بر-برنامه-ریزی-برای-تولید-نرم-افزار--نبایدها-در-برنامه-ریزی-تولید-نرم-افزار/">پرداختم</a>. این نوشته به موضوع بایدها می‌پردازد.</p>
+
+
+
+<figure >
+    
+        <img src="https://elmah.ir/oldimg/blueprint.jpg"  />
+    
+    
+    <figcaption>
+        <h4>برنامه‌ریزی درست و حساب شده مثل داشتن یک نقشه است. ساختن یک ساختمان بدون نقشه دیوانگی است!</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="برنامه-ریزی-برای-تولید-نرم-افزار-بایدها">برنامه ریزی برای تولید نرم‌افزار: بایدها</h3>
+
+<p>وقتی می‌خواهید برای تولید یک نرم‌افزار برنامه‌ریزی کنید باید همیشه در نظر داشته باشید که تولید نرم‌افزار بر خلاف سایر صنایع، بسیار ریسک پذیر است. در تولید نرم‌افزار شما با استفاده از توان نیروی انسانی اقدام به ایجاد یک محصول می‌کنید که چنانچه بر اساس اصول مهندسی ساخته نشده باشد، یا به سرانجام نمی‌رسد یا آن‌قدر تیم را مشغول نگهداری و رفع باگ می‌کند که از جنبه اقتصادی آن به شدت کاسته می‌شود. بر این اساس و با تکیه بر نظرات و تجربیات شخصی، ظرایفی که باید در برنامه‌ریزی برای تولید نرم‌افزار مورد توجه قرار بگیرد را با هم بررسی می‌کنیم:</p>
+
+<ul>
+<li>نظارت بر وضعیت پروژه: همیشه و همیشه در برنامه‌ریزی محصول نرم‌افزاری <strong>باید</strong> بتوانید وضعیت جاری پروژه را ارزیابی کنید. در نوشته <a href="https://elmah.ir/post/44-گزارش-پیشرفت-پروژه-در-تیم-های-نرم-افزاری/">گزارش پیشرفت پروژه در تیم‌های نرم‌افزاری</a> در این خصوص صحبت کردم. از دید برنامه‌ریزی اگر نتوانید مشخص کنید که چه مقدار از کارها انجام شده و چه مقدار باقیمانده، همیشه در برابر تغییرات در برنامه (که کم هم نیستند) حالت منفعل خواهید داشت. زمان مناسب برای دریافت فیدبک از اجرا و پیشرفت پروژه به گمان من بازه‌های یک هفته‌ای است.</li>
+<li>ریسک‌های تولید را <strong>باید</strong> قبل از شروع کار شناسایی و در حین انجام پروژه مرتباً مانیتور کنید. رفتار مشتری و تغییرات احتمالی که در کار به وجود خواهند آمد یا مشکلات پلتفرم (شبکه، دیتابیس، دسترسی‌ها و &hellip;) که روی استقرار نهایی کار تاثیر گذارند بخشی از این ریسک‌ها هستند.</li>
+<li>حوزه و چارچوب کار <strong>باید</strong>مشخص شده باشد، اگر ابهامی هست تا رفع نشده، برنامه‌ریزی نکنید. پس از برنامه‌ریزی در ارائه زمان‌بندی‌ها به مشتریان یا افراد ذی‌نفع در پروژه همیشه تاریخ پایان کار را اعلام کنید.</li>
+<li><strong>باید</strong>برای کارها milestone تعریف کنید. برنامه‌ریزی برای اجرا و استقرار یک پروژه شش ماهه در سه فاز 2 ماهه خیلی راحت‌تر از برنامه‌ریزی بلندمدت برای یک فاز اجرای طولانی 6 ماهه است و ریسک fail شدن کارها هم کمتر.</li>
+<li>در برنامه‌ریزی <strong>باید</strong>اهداف را واقع‌بینانه تعریف کنید. اگر کاری مثلاً 10 نفر ساعت تخمین زده شده، اجرای آن در یک روز کاری ممکن نیست. توجه داشته باشید که مدیر پروژه باید نسبت به زمان مفید کاری هر یک از اعضای تیم در یک روز کاری آگاه باشد. تصور اینکه اعضای یک تیم‌ نرم‌افزاری از ابتدا تا انتهای وقت اداری، بدون وقفه به کار و کدنویسی و دیباگ مشغولند تصور نادرستی است!</li>
+<li>چه در تیم‌های پروژه محور و در چه تیم‌هایی که به تولید نرم‌افزارها در قالب package مشغولند، ارتباط درست بین بخش‌های مختلف به خصوص بازرگانی و فنی یک نیاز جدی و جزء <strong>باید</strong>هاست. تصور کنید که اگر از توقف یک پروژه به دلیل اختلافات مالی با کارفرما اطلاع نداشته باشید، چطور می‌خواهید وقتی که به خاطر این عدم اطلاع برای پروژه‌ای بدون سود صرف شده را به تیم بازگردانید؟</li>
+<li><strong>باید</strong>مسئولیت را به عهده بگیرید. اگر هیچ کس مسئولیت برنامه‌ریزی را به عهده نگیرد، شرایط به گونه‌ای رقم خواهد خورد که افراد تیم بیشتر از آنکه به دنبال پیشبرد کارها باشند، به دنبال راهی برای توجیه کردن و رفع مسئولیت از خود خواهند بود!</li>
+<li>برنامه‌ریزی شما <strong>باید</strong>در برابر حدی از تغییرات منعطف باشد. برنامه‌هایی که بیش از حد fix شده باشند، معمولاً به نتیجه نمی‌رسند و کارهای برنامه‌ریزی شده آن‌ها تاخیر می‌خورند. این به معنی دست بالا گرفتن زمان‌های تخمینی نیست. در واقع ترکیبی است از واقع‌بینی، در نظر گرفتن زمان مفید کاری و تجربه.</li>
+</ul>
+</article>
+  <footer class="post-footer">
+    
+    <p class="post-copyright">
+      این
+      نوشته <strong>2306</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+    </p>
+  </footer>
+  <hr>
+  <div id="graphcomment"></div>
+  <script type="text/javascript">
+
+     
+
+    
+    window.gc_params = {
+      graphcomment_id: 'elmah',
+
+      
+      fixed_header_height: 0,
+    };
+
+     
+
+
+    (function () {
+      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+      gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+
+  </script>
+
+  
+  
+  
+</section>
+<footer class="site-footer">
+  <p>© 2017-2019 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

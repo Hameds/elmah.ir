@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>۳۰ روز با TDD: روز چهاردهم - ساده همیشه به معنی واضح نیست قسمت اول</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="در نوشته‌های قبلی دیدیم که چطور با استفاده از stub ها کد کلاسی وابسته زیر تست را mock کردیم. نوشته انگلیسی روز چهاردهم را در این آدرس می‌توانید مطالعه کنید.
+یک روز دیگر، یک تست دیگر برای این نوشته نیز مثال فروشگاه مطالب قبلی را ادامه می‌دهیم. تست بعدی زمانی است که کاربر یک آیتم را سفارش می‌دهد و تعداد سفارش صفر است و InvalidOrderException باید throw شود.
+در ظاهر این یک تست ساده به نظر می‌رسد: هر سفارش لیستی از آیتم‌ها دارد اگر تعداد هر یک از آیتم‌ها برابر صفر بود یک exception را throw‌ کن." />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="۳۰ روز با TDD: روز چهاردهم - ساده همیشه به معنی واضح نیست قسمت اول" />
+    <meta name="twitter:description" content="در نوشته‌های قبلی دیدیم که چطور با استفاده از stub ها کد کلاسی وابسته زیر تست را mock کردیم. نوشته انگلیسی روز چهاردهم را در این آدرس می‌توانید مطالعه کنید.
+یک روز دیگر، یک تست دیگر برای این نوشته نیز مثال فروشگاه مطالب قبلی را ادامه می‌دهیم. تست بعدی زمانی است که کاربر یک آیتم را سفارش می‌دهد و تعداد سفارش صفر است و InvalidOrderException باید throw شود.
+در ظاهر این یک تست ساده به نظر می‌رسد: هر سفارش لیستی از آیتم‌ها دارد اگر تعداد هر یک از آیتم‌ها برابر صفر بود یک exception را throw‌ کن." />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/tdd_cycle.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1" />
+
+
+<link rel="canonical" href="https://elmah.ir/post/113-%DB%B3%DB%B0-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7-tdd-%D8%B1%D9%88%D8%B2-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87%D9%85-%D8%B3%D8%A7%D8%AF%D9%87-%D9%87%D9%85%DB%8C%D8%B4%D9%87-%D8%A8%D9%87-%D9%85%D8%B9%D9%86%DB%8C-%D9%88%D8%A7%D8%B6%D8%AD-%D9%86%DB%8C%D8%B3%D8%AA-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+<header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+      
+        <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">۳۰ روز با TDD: روز چهاردهم - ساده همیشه به معنی واضح نیست قسمت اول</h1>
+    <p class="post-meta">
+      @حامد سعیدی فرد ·
+      5 دقیقه خواندن</p>
+  </header>
+  <article class="post-content">
+
+<p>در نوشته‌های قبلی دیدیم که چطور با استفاده از stub ها کد کلاسی وابسته زیر تست را mock کردیم. نوشته انگلیسی روز چهاردهم را در <a href="http://blogs.telerik.com/james-bender/posts.aspx/13-10-14/30-days-of-tdd-day-14---simple-does-not-always-mean-obvious-pt-1">این آدرس</a> می‌توانید مطالعه کنید.</p>
+
+<h3 id="یک-روز-دیگر-یک-تست-دیگر">یک روز دیگر، یک تست دیگر</h3>
+
+<p>برای این نوشته نیز مثال فروشگاه مطالب قبلی را ادامه می‌دهیم. تست بعدی زمانی است که کاربر یک آیتم را سفارش می‌دهد و تعداد سفارش صفر است و InvalidOrderException باید throw شود.</p>
+
+<p>در ظاهر این یک تست ساده به نظر می‌رسد: هر سفارش لیستی از آیتم‌ها دارد اگر تعداد هر یک از آیتم‌ها برابر صفر بود یک exception را throw‌ کن. در اغلب موارد انتظار داریم همراه exception یک پیغام هم برگردد که مشخص کند مشکل کجا بوده است، اما حالا برای ساده نگه داشتن مثال این best practice را نادیده می‌گیریم (در نوشته بعدی به آن خواهیم رسید) به نظر ساده می‌آید، این طور نیست؟ اجازه بدهید تست را بنویسیم</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/c35afbd45da780745526d0c244a1a973.js"></script>
+
+
+<p>کد بالا ساده‌ترین حالت ممکن است. اگر سری نوشته‌های ۳۰ روز با TDD را از ابتدا دنبال کرده‌اید، چیز جدیدی اینجا نیست. تست خود را با ویژگی Test و همچنین ExpectedExpection معرفی می‌کنیم که به NUnit می‌گوید که انتظار یک exception از نوع InvalidOrderException داشته باشد. تعدادی کامنت هم قرار دادیم که یادآور الگوی AAA باشد و بخش‌های Arrange و Act‌ و Assert را مشخص کند. اغلب توسعه‌دهندگان TDD از بخش Arrange شروع می‌کنند که مشکلی هم برای شروع از این قسمت نیست. شخصاً تمایل دارم از بخش Assert شروع کرده و به عقب بروم. من دوست دارم ابتدا assert را بنویسم که می‌توانم از کلاس تست مشتقش کنم. با داشتن assert از ابتدا می‌دانم که چه چیزی را در بخش Act باید فراخوانی کنم تا نتیجه مورد انتظار تست را داشته باشم و با نوشتن Act در مرحله دوم می‌توانم مطمئن شوم که در قسمت Arrange تنها متغیرها، mock و stub هایی که برای تست در بخش Act نیاز است را تنظیم می‌کنم.</p>
+
+<p>برای این تست یک stub برای OrderDataService نیاز دارم. از آنجایی که انتظار دارم در این تست یک exception ایجاد شود و نه اینکه یک سفارش ثبت شود پس توقع دارم که متد Save اصلاً صدا زده نشود (چون در صورت فراخوانی دردسر بزرگی خواهم داشت!)</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/f6a2c3cf8df699b9c349cad9962ac3b1.js"></script>
+
+
+<p>تا اینجا همه چیز خوب است، حالا باید قسمت Act را بنویسیم</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/8d55d500554ab110a4355b6b617db51c.js"></script>
+
+
+<p>در مثال قبلی، من مقدار متد PlaceOrder را گرفتم و در بخش Assert استفاده کردم. در این مثال یک exception انتظار دارم، پس نتیجه بیهوده است. حالا نوبت به قسمت Arrange می‌رسد. با نگاه به کد اولین چیزی که لازم دارم مشخص می‌شود یک وهله (instance) از OrderService است. تست دیگرم نیز از OrderService استفاده می‌کنم. من مایلم تست‌هایم را تا حد ممکن DRY یا Don&rsquo;t Repeat Yourself نگه دارم و دلیلی نیست که گام‌های ایجاد این instance مانند مطلب قبلی به یک setup method منتقل نشود</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/699f163e8cdb10966aca327ed9e13d9c.js"></script>
+
+
+<p>به نیمه راه رسیدیم. اگر به یاد داشته باشید OrderService یک وابستگی به OrderDataService دارد که باید برایش یک mock ایجاد کنم. خوشبختانه می‌توانم mock را به عنوان یک متغیر تعریف کرده و به سازنده (constructor) مربوط به OrderService در TestFixtureSetup تزریق کنم.</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/ee356b9fdba64ee717610afba7ac90c4.js"></script>
+
+
+<p>وقتی این کار انجام شد می‌توانم کد موجود را برای استفاده از این متغیرها به جای local instance ها refactor کنم.</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/352822489a65099d5c3dbc6761c77ce9.js"></script>
+
+
+<p>همانطور که مشاهده می‌کنید خطوط مربوط به ایجاد mock های OrderDataService و OrderService ‌را حذف کردم. اما بعد از refactor برای استفاده از متغیرهای جدید کد من خطای کامپایلی دریافت می‌کند.</p>
+
+<p><img src="https://elmah.ir/oldimg/image_thumb11ABEFA4C5F3A.png" alt="" /></p>
+
+<p>ما به InvalidOrderException تا حالا نیاز نداشتیم. اما حالا که تستی داریم که exception ای از این نوع ایجاد می‌کند باید یکی بسازیم.</p>
+
+<p>من دوست دارم که پروژه را به شدت مرتب نگه دارم. به عنوان بخشی از این نگاه، exception های سفارشی را در پوشه مخصوصی در پروژه نگه می‌دارم که باعث می‌شود در فضا نام (namespace) مربوط به خود هم قرار بگیرند. در پروژه TddStore.Core پوشه‌ای به نام Exceptions ایجاد می‌کنم. یک کلاس جدید به نام InvalidOrderException در این پوشه می‌سازم و فعلاً پیاده‌سازی‌ام برای این کلاس به سادگی کد زیر خواهد بود:</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/9bff4024c303d2aac75ae338657c08c9.js"></script>
+
+
+<p>تنها لازم است از using برای اشاره به فضا نام TddStore.Core.Exceptions استفاده کنم. بعد از انجام این کار تست اصلی پاس می‌شود و بنابراین می‌توانم به تست جدید برگردم. اول کمی refactor برای کدهای موجود نیاز داریم سپس لازم است روی بخش Arrange کار کنیم. ابتدا باید متغیرها را برای فراخوانی PlaceOrder تنظیم کنیم پس من customerId و shoppingCart را تعریف می‌کنم. در حالی که روی این موضوع کار می‌کنم آیتمی را به shoppingCart با مقدار صفر اضافه می‌کنم</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/abfff4575831ea843d33a30da482d86f.js"></script>
+
+
+<p>سپس لازم است تا mock را آماده کنم</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/32b8560705124210cb10ad8f8472a7bf.js"></script>
+
+
+<p>بر خلاف تست قبلی می‌خواهم مطمئن شوم که متد Save در OrderDataService فراخوانی نمی‌شود. همانطور که در نوشته قبلی این سری نوشته‌ها دیدید Just Mock‌ (محصولی از شرکت Telerik) امکان اجرای یک بار stub ای که exception ایجاد می‌کند را می‌دهد. بنابراین به صورت مشابه از متد OccursNever استفاده می‌کنم که بدان معنی است که این متد در حوزه تست فراخوانی نشود.</p>
+
+<p>اجرای تست به دلیل پیاده‌سازی نشدن منطق برنامه با شکست مواجه می‌شود. بر اساس ایده اجرای ساده‌ترین راه حل ممکن، کد زیر را خواهیم داشت.</p>
+
+<script type="application/javascript" src="https://gist.github.com/hameds/72356d79e7ad78bb19080bb4fa07ee0b.js"></script>
+
+
+<p>با اجرای تست‌ها می‌بینم که هر دو تست Pass می‌شوند.</p>
+
+<p><img src="https://elmah.ir/oldimg/image_thumb39F26886FED6E.png" alt="" /></p>
+
+<p>کار من تمام شد!</p>
+
+<p><strong>آیا کار تمام شده است؟</strong></p>
+
+<p>در نوشته بعدی خواهیم دید که یک اشکال در تست‌ها به ما حس اطمینان اشتباهی می‌دهد.</p>
+
+<p>ادامه دارد&hellip;</p>
+</article>
+  <footer class="post-footer">
+    
+    <p class="post-copyright">
+      این
+      نوشته <strong>1733</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+    </p>
+  </footer>
+  <hr>
+  <div id="graphcomment"></div>
+  <script type="text/javascript">
+
+     
+
+    
+    window.gc_params = {
+      graphcomment_id: 'elmah',
+
+      
+      fixed_header_height: 0,
+    };
+
+     
+
+
+    (function () {
+      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+      gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+
+  </script>
+
+  
+  
+  
+</section>
+<footer class="site-footer">
+  <p>© 2017-2019 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

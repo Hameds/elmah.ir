@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>مقدمه‌ای بر برنامه‌ریزی برای تولید نرم‌افزار: نبایدها در برنامه‌ریزی تولید نرم‌افزار</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="برنامه ریزی برای پروژه‌های نرم‌افزاری مثل حل مکعب روبیک است. اگر راه و چاه را بلد نباشید به آزمون و خطا روی خواهید آورد و نتیجه مایوس کننده است.برنامه ریزی برای تولید نرم‌افزار: نبایدها وقتی منابع مختلف را برای پیدا کردن روش مناسبی جهت برنامه‌ریزی مطالعه می‌کنید، بیشتر آن‌ها پیشنهاداتی می‌دهند که در دسته بندی &amp;ldquo;باید ها&amp;rdquo; قرار می‌گیرند اما کمتر از &amp;ldquo;نبایدها&amp;rdquo; صحبت می‌شود. در زیر لیستی از &amp;ldquo;نبایدها&amp;rdquo; در پروسه برنامه‌ریزی تولید نرم‌افزار یا اجرای پروژه‌های نرم‌افزاری را مشاهده می‌کنید:" />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="مقدمه‌ای بر برنامه‌ریزی برای تولید نرم‌افزار: نبایدها در برنامه‌ریزی تولید نرم‌افزار" />
+    <meta name="twitter:description" content="برنامه ریزی برای پروژه‌های نرم‌افزاری مثل حل مکعب روبیک است. اگر راه و چاه را بلد نباشید به آزمون و خطا روی خواهید آورد و نتیجه مایوس کننده است.برنامه ریزی برای تولید نرم‌افزار: نبایدها وقتی منابع مختلف را برای پیدا کردن روش مناسبی جهت برنامه‌ریزی مطالعه می‌کنید، بیشتر آن‌ها پیشنهاداتی می‌دهند که در دسته بندی &amp;ldquo;باید ها&amp;rdquo; قرار می‌گیرند اما کمتر از &amp;ldquo;نبایدها&amp;rdquo; صحبت می‌شود. در زیر لیستی از &amp;ldquo;نبایدها&amp;rdquo; در پروسه برنامه‌ریزی تولید نرم‌افزار یا اجرای پروژه‌های نرم‌افزاری را مشاهده می‌کنید:" />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/rubic_c08a.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1" />
+
+
+<link rel="canonical" href="https://elmah.ir/post/30-%D9%85%D9%82%D8%AF%D9%85%D9%87-%D8%A7%DB%8C-%D8%A8%D8%B1-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%B1%DB%8C%D8%B2%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF%D9%87%D8%A7-%D8%AF%D8%B1-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%B1%DB%8C%D8%B2%DB%8C-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+<header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+      
+        <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">مقدمه‌ای بر برنامه‌ریزی برای تولید نرم‌افزار: نبایدها در برنامه‌ریزی تولید نرم‌افزار</h1>
+    <p class="post-meta">
+      @حامد سعیدی فرد ·
+      4 دقیقه خواندن</p>
+  </header>
+  <article class="post-content">
+
+
+
+<figure >
+    
+        <img src="https://elmah.ir/oldimg/rubic_c08a.jpg"  />
+    
+    
+    <figcaption>
+        <h4>برنامه ریزی برای پروژه‌های نرم‌افزاری مثل حل مکعب روبیک است. اگر راه و چاه را بلد نباشید به آزمون و خطا روی خواهید آورد و نتیجه مایوس کننده است.</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="برنامه-ریزی-برای-تولید-نرم-افزار-نبایدها">برنامه ریزی برای تولید نرم‌افزار: نبایدها</h3>
+
+<p>وقتی منابع مختلف را برای پیدا کردن روش مناسبی جهت برنامه‌ریزی مطالعه می‌کنید، بیشتر آن‌ها پیشنهاداتی می‌دهند که در دسته بندی &ldquo;باید ها&rdquo; قرار می‌گیرند اما کمتر از &ldquo;نبایدها&rdquo; صحبت می‌شود. در زیر لیستی از &ldquo;نبایدها&rdquo; در پروسه برنامه‌ریزی تولید نرم‌افزار یا اجرای پروژه‌های نرم‌افزاری را مشاهده می‌کنید:</p>
+
+<ul>
+<li>برنامه‌ریزی برای اجرای یک پروژه نرم‌افزاری یا تولید نرم‌افزار دست و پنجه نرم کردن با deadline هاست. شما باید deadline ها را طوری کنار هم قرار بدهید که بتوانید پیش از سررسید کارها، آن‌ها را به اتمام برسانید. <strong>نباید</strong>هیچ deadline‌ غیرمنطقی را بدون مقاومت بپذیرید! اگر این کار را بکنید، این کار به معنی رقصیدن به هر سازی است و زمان‌بندی اجرای پروژه‌های شما را به ناکجا آباد می‌برد.</li>
+<li><strong>نباید</strong>از ابزارهایی استفاده کنید که کار با آن‌ها را بلد نیستید. اگر بلدید با Microsoft Project برنامه‌ریزی کنید ولی نمی‌دانید برنامه‌ریزی به روش اسکرام چگونه است، به گانت چارت‌های MSP بچسبید و به فکر اسپرینت‌های اسکرام نباشید. در نهایت این ابزار نیست که کار را انجام می‌دهد، شما به کمک ابزار نسبت به برنامه‌ریزی انجام شده آگاهی پیدا می‌کنید. اگر به خاطر استفاده از ابزار یا روش نامناسب نتوانید به کل پروژه مسلط شوید و بر زمان‌بندی‌های آن اشراف داشته باشید، برنامه‌ریزی با این نرم‌افزارها و روش‌ها با نقاشی کشیدن هیچ فرقی نخواهد کرد!</li>
+<li><strong>نباید</strong>برای جبران تاخیر در کارها، منابع (اعم از نیروی انسانی یا ماشین‌ها) را overallocated کنید. این کار استرس انجام پروژه و فشار روحی و جسمی را زیاد کرده و در نهایت به احتمال زیاد نه تنها به deadline نمی‌رسید بلکه بیشتر از زمان لازم برای اتمام کار باید وقت بگذارید.</li>
+<li><strong>نباید</strong>درباره شرایط‌ زمانی و کاری اعضای تیمی که برای آن‌ها برنامه‌ریزی می‌کنید یا حتی شرایط اقتصادی (بودجه کار) و بازرگانی پروژه (قرارداد و &hellip;) به حدس و گمان روی بیاورید. از همه چیز اطمینان حاصل کنید، مطمئن شوید چیزی که مشتری درخواست می‌کند در چارچوب قراردادش است. مطمئن شوید زمانی که برنامه‌نویس می‌دهد منطبق با واقعیت است. مطمئن شوید منابعی که لازم دارید (مثلاً یک نرم‌افزار یا سخت افزار خاص) در موقعی که به شما قول داده شده به دستتان می‌رسد و &hellip; این‌طوری مجبور نیستید روی هوا برنامه‌ریزی کنید.</li>
+<li><strong>نباید</strong>بعد از برنامه‌ریزی، پروژه را به حال خود رها کنید. برنامه‌ریزی قدم اول کار است، برنامه ریزی هیچ وقت نهایی نیست. همیشه نیاز به روز رسانی برنامه‌ریزی بر اساس اتفاقات جاری وجود دارد. اگر پروسه آپدیت کردن برنامه‌ریزی را مثلاً هر 15 روز یک بار انجام دهید، خواهید دید که برنامه شما همیشه دچار مشکل است و هیچ چیز طبق برنامه پیش نمی‌رود. در مورد بازه زمانی مناسب برای بررسی پیشرفت و به روز رسانی برنامه در مطلبی &ldquo;بایدها&rdquo; صحبت خواهم کرد.</li>
+<li><strong>نباید</strong>همه تخم‌مرغ‌هایتان را در یک سبد قرار بدهید: آدم‌ها مریض می‌شوند. تعطیلات غیرقابل پیش‌بینی اتفاق می‌افتد. دسترسی شما به اینترنت (در ایران البته) قطع می‌شود. مشتری به دلیل فشار رئیسش به شما فشار می‌آورد که کارش را زودتر از موعد تحویل بدهید و ده‌ها اتفاق غیرقابل پیش‌بینی دیگر. اگر همه کارها را بر اساس یک منبع خاص (نیروی انسانی، نرم‌افزار یا سخت‌افزار) برنامه‌ریزی کرده باشید ریسک fail شدن کار را بالا برده‌اید. همیشه plan b را در نظر داشته باشید.</li>
+<li><strong>نباید</strong>برای وظایف در گذشته برنامه‌ریزی کنید. اگر task ای در گذشته وجود دارد که به هر دلیل انجام نشده، آن را به آینده منتقل کنید و مجدداً برای انجامش برنامه‌ریزی کنید. توجه داشته باشید که امکان سفر در زمان هنوز فقط در فیلم‌های علمی-تخیلی وجود دارد.</li>
+<li><strong>نباید</strong>به زمان به شکل یک منبع نامحدود نگاه کنید. پروژه‌ها باید در یک زمان منطقی بسته شوند. پروژه باز و برنامه‌ریزی باز یعنی استفاده نادرست از زمان. زمان قیمت دارد. شما به ازای هر ساعت کاری که توسط اعضای تیم نرم‌افزاری انجام می‌شود و به ازای هر ساعت کاری که مدیر پروژه یا شخصی که کار برنامه‌ریزی تیم را به عهده دارد انجام می‌دهد هزینه پرداخت می‌کنید. مشتری‌ها دوست دارند که با بودجه محدودشان شما را در یک زمان نامحدود در اختیار داشته باشند، وارد این بازی با آن‌ها نشوید.</li>
+</ul>
+</article>
+  <footer class="post-footer">
+    
+    <p class="post-copyright">
+      این
+      نوشته <strong>2327</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+    </p>
+  </footer>
+  <hr>
+  <div id="graphcomment"></div>
+  <script type="text/javascript">
+
+     
+
+    
+    window.gc_params = {
+      graphcomment_id: 'elmah',
+
+      
+      fixed_header_height: 0,
+    };
+
+     
+
+
+    (function () {
+      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+      gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+
+  </script>
+
+  
+  
+  
+</section>
+<footer class="site-footer">
+  <p>© 2017-2019 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>

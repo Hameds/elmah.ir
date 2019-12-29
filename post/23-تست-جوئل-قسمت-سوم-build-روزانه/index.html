@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+<head>
+
+  <meta charset="utf-8" />
+
+  
+  <title>تست جوئل قسمت سوم: build روزانه</title>
+
+  
+  
+
+
+
+
+  
+  <meta name="author" content="حامد سعیدی فرد" />
+  <meta name="description" content="در نوشته‌های قبلی سری بررسی و شرح تست جوئل درباره Source Control و همچنین build یک مرحله‌ای صحبت کردم. در این نوشته درباره موضوعی صحبت می‌کنم که شاید کمتر برای شرکت‌های ایرانی کاربرد داشته باشد، اما اطلاع از مزایای آن ممکن است شما را مشتاق کند تا درباره سیاست فنی در تیم نرم‌افزاری‌تان تجدید نظر کنید.
+آیا دارای build روزانه هستید؟ build روزانه‌ای که جوئل اسپالسکی از آن صحبت می‌کند، در واقع مخصوص تیم‌هایی است که به طور مداوم در حال بهبود برنامه‌های جاری خود می‌باشند." />
+
+  
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@hamed" />
+    <meta name="twitter:title" content="تست جوئل قسمت سوم: build روزانه" />
+    <meta name="twitter:description" content="در نوشته‌های قبلی سری بررسی و شرح تست جوئل درباره Source Control و همچنین build یک مرحله‌ای صحبت کردم. در این نوشته درباره موضوعی صحبت می‌کنم که شاید کمتر برای شرکت‌های ایرانی کاربرد داشته باشد، اما اطلاع از مزایای آن ممکن است شما را مشتاق کند تا درباره سیاست فنی در تیم نرم‌افزاری‌تان تجدید نظر کنید.
+آیا دارای build روزانه هستید؟ build روزانه‌ای که جوئل اسپالسکی از آن صحبت می‌کند، در واقع مخصوص تیم‌هایی است که به طور مداوم در حال بهبود برنامه‌های جاری خود می‌باشند." />
+    <meta name="twitter:image" content="https://elmah.ir/oldimg/i_broke_the_build.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.59.1" />
+
+
+<link rel="canonical" href="https://elmah.ir/post/23-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%B3%D9%88%D9%85-build-%D8%B1%D9%88%D8%B2%D8%A7%D9%86%D9%87/" />
+<link rel="alternative" href="https://elmah.ir/index.xml" title="elmah" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="elmah" />
+<meta name="msapplication-tooltip" content="elmah" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://elmah.ir/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://elmah.ir/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://elmah.ir/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://elmah.ir/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://elmah.ir/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://elmah.ir/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://elmah.ir/css/bundle.css" />
+<link rel="stylesheet" href="https://elmah.ir/css/elmah.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+    
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+      
+        
+      
+    </div>
+    
+    
+<header class="site-header">
+  <img class="avatar" src="https://avatars1.githubusercontent.com/u/1385656?s=460&amp;v=4" alt="Avatar">
+  
+  <h2 class="title">elmah</h2>
+  
+  <p class="subtitle">~ یادداشت‌های یک برنامه‌نویس خوشحال ~</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+      
+      
+      
+      
+        <li class="menu-item  is-active"><a href="https://elmah.ir/">صفحه نخست</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/series/">نوشته‌های دنباله‌دار</a></li>
+      
+        <li class="menu-item "><a href="https://hameds.github.io/slides/">پرزنت‌های من</a></li>
+      
+        <li class="menu-item "><a href="https://elmah.ir/about/">درباره من</a></li>
+      
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+      
+
+      
+      <li class="social-item">
+        <a href="//github.com/hameds" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+      <li class="social-item">
+        <a href="//twitter.com/hamed" title="Twitter"><span class="icon icon-twitter"></span></a>
+      </li>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="social-item">
+        <a href="https://elmah.ir/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">تست جوئل قسمت سوم: build روزانه</h1>
+    <p class="post-meta">
+      @حامد سعیدی فرد ·
+      4 دقیقه خواندن</p>
+  </header>
+  <article class="post-content">
+
+<p>در نوشته‌های قبلی سری بررسی و شرح تست جوئل درباره <a href="https://elmah.ir/post/2-%D8%AA%D8%B3%D8%AA-%D8%AC%D9%88%D8%A6%D9%84-%D9%82%D8%B3%D9%85%D8%AA-%D8%A7%D9%88%D9%84--source-control">Source Control</a> و همچنین <a href="https://elmah.ir/post/13-تست-جوئل-قسمت-دوم--build-یک-مرحله-ای/">build یک مرحله‌ای</a> صحبت کردم. در این نوشته درباره موضوعی صحبت می‌کنم که شاید کمتر برای شرکت‌های ایرانی کاربرد داشته باشد، اما اطلاع از مزایای آن ممکن است شما را مشتاق کند تا درباره سیاست فنی در تیم نرم‌افزاری‌تان تجدید نظر کنید.</p>
+
+<h3 id="آیا-دارای-build-روزانه-هستید">آیا دارای build روزانه هستید؟</h3>
+
+<p>build روزانه‌ای که جوئل اسپالسکی از آن صحبت می‌کند، در واقع مخصوص تیم‌هایی است که به طور مداوم در حال بهبود برنامه‌های جاری خود می‌باشند. این به معنی وجود تیم‌های نرم‌افزاری است که کار اعضای آن فقط و فقط کدنویسی و توسعه نرم‌افزار بر اساس roadmap های تعیین شده باشد. در چنین تیم‌هایی، شما همیشه لازم است مطمئن باشید که دارید روی یک نسخه سالم از نرم‌افزار کار می‌کنید.</p>
+
+
+
+<figure >
+    
+        <img src="https://elmah.ir/oldimg/i_broke_the_build.jpg"  />
+    
+    
+    <figcaption>
+        <h4>می‌توانید به برنامه‌نویسانی که باعث شکست build می‌شوند، چیزی مثل این را بدهید تا حداقل برای همان روز شرمگین باشند!</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>اجازه بدهید موضوع را با یک مثال توضیح بدهم: وقتی شما از یک نرم‌افزار source control استفاده می‌کنید، هر زمان بخواهید روی فایل سورسی تغییری بدهید باید آن فایل را تحویل بگیرید (check out) و هر زمان که کارتان بر روی آن فایل به اتمام برسد آن را تحویل می‌دهید (check in) بعد از اینکه همه فایل‌ها check in شوند، در واقع نسخه جدیدتری از نرم‌افزار را خواهید داشت (که یا feature ای به آن اضافه شده یا bug برطرف شده یا هر دو) البته ممکن است بسته به نوع نرم‌افزار source control و نحوه مدیریت شما بر کد مراحل دیگری نیز نیاز باشد، مثلاً اگر در تیم شما branch هایی از سورس اصلی ایجاد شده باشد، در نهایت لازم است کدها را ادغام (merge) کنید. صرفنظر از روش کار با سورس‌ها، فایل‌های نهایی که ایجاد می‌شوند ممکن است باعث fail شدن پروسه build بشوند! یعنی برنامه‌نویسی کدی را check in کرده که روی سیستم خودش درست بوده و کار می‌کرده اما باعث fail شدن build‌ محصول نهایی شود و محصول نهایی دیگر یک نرم‌افزار سالم و stable (چنانکه در نسخه قبل بوده) نباشد. به این مساله <strong>شکستن build</strong>هم گفته می‌شود. جوئل در این مورد پیشنهادی دارد و آن استفاده از build روزانه است. <strong>build روزانه یعنی build کامل روزانه اتوماتیک تمام source.</strong> خودش درباره پیشنهاد build روزانه برای رفع مساله شکستن build چنین توضیح می‌دهد:</p>
+
+<p>&ldquo;شكستن بیلد آنقدر بد (و رایج) است كه درست كردن بیلد روزانه کمک می‌كند كه چنین موضوعی ناشناخته نماند. در تیم‌های بزرگ، یک راه این كه مطمئن شوید كه چنین مشكلاتی در اولین فرصت برطرف شوند، این است كه بیلد روزانه را هر روز، هنگام ناهار انجام دهید.<br />
+ همه تمامی check in هایی را كه می‌توانند قبل از رفتن به ناهار انجام می‌دهند. بیلد، زمانی كه همه برگشتند تمام شده است. اگر كه همه چیز درست است، كه فبحال! آخرین نسخه سورس توسط همه check out شده و كار ادامه پیدا می‌كند. اما اگر كه عمل بیلد با موفقیت روبرو نشده باشد، افراد با نسخه سالم قبلی به كار خود ادامه می‌دهند.&rdquo;</p>
+
+<h3 id="مزایای-build-روزانه">مزایای build روزانه</h3>
+
+<p>اسپالسکی در <a href="http://www.joelonsoftware.com/articles/fog0000000023.html">نوشته دیگری</a> به معرفی مزایای build‌ روزانه و روش اجرایی کردن آن می‌پردازد. خلاصه‌ای از آن مزایای build روزانه از نظر جوئل اسپالسکی به شرح زیر هستند:</p>
+
+<ul>
+<li>اگر باگی fix شده باشد، tester ها خیلی سریع آخرین نسخه را دریافت می‌کنند و می‌توانند با تست مجدد بررسی کنند که آیا باگ واقعا fix شده یا خیر؟</li>
+<li>توسعه‌دهنده‌ها خیالشان راحت است که کدی که تغییر دادند باعث شکسته شدن 1024 تا نسخه قبلی نرم‌افزار نشده است.</li>
+<li>توسعه‌دهنده‌هایی که قبل از زمان برنامه‌ریزی شده برای build روزانه کدشان را check in می‌کنند مطمئن هستند که کدی که تغییر دادند باعث شکست build نمی‌شود (شرایطی پیش نمی‌آید که بقیه نتوانند کل source را کامپایل کنند) این حالت معادل صفحه آبی مرگ برای کل تیم نرم‌افزاری است!</li>
+<li>گروه‌های خارج از تیم فنی، مثل تیم بازرگانی، تست کننده‌های نسخه بتا و &hellip; می‌توانند از یک نسخه‌ روزانه که تا حد قابل قبولی stable است تا مدتی استفاده کنند.</li>
+<li>با نگه داشتن history کل build های روزانه، وقتی که یک خطای عجیب و غریب که مشخص نیست از کدام check in به بعد ایجاد شده به وجود می‌آید. با یک جستجو بر روی build ها می‌توانید متوجه شوید که خطا از کدام build به بعد ایجاد شده و اگر از یک نرم‌افزار source control‌ قوی استفاده کنید حتی می‌توانید مشخص کنید که کدام check in‌ باعث بروز این خطا شده است.</li>
+<li>وقتی tester مشکلی را گزارش می‌کند که برنامه‌نویس گمان می‌کند قبلاً fix شده، tester می‌تواند شماره build روزانه را هم که خطا در آن دیده شده به برنامه‌نویس اعلام کند، برنامه‌نویس می‌تواند تاریخ کدی که باگ را fix کرده بوده با تاریخ build باگ دار مقایسه کرده و از صحت fix اطمینان حاصل کند.</li>
+</ul>
+</article>
+  <footer class="post-footer">
+    
+    <p class="post-copyright">
+      این
+      نوشته <strong>2334</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
+    </p>
+  </footer>
+  <hr>
+  <div id="graphcomment"></div>
+  <script type="text/javascript">
+
+     
+
+    
+    window.gc_params = {
+      graphcomment_id: 'elmah',
+
+      
+      fixed_header_height: 0,
+    };
+
+     
+
+
+    (function () {
+      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+      gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+
+  </script>
+
+  
+  
+  
+</section>
+<footer class="site-footer">
+  <p>© 2017-2019 elmah</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+  
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://elmah.ir/js/bundle.js"></script>
+
+
+
+
+  </body>
+</html>
