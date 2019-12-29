@@ -1,51 +1,70 @@
 {{ define "main" }}
-  {{ partial "header.html" . }}
-  <section class="main post-detail">
-    <header class="post-header">
-      <h1 class="post-title">{{ .Title }}</h1>
-      <p class="post-meta">@{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .ReadingTime }} دقیقه خواندن</p>
-    </header>
-    <article class="post-content">{{ .Content }}</article>
-    <footer class="post-footer">
-      {{ if isset .Params "tags" }}
-      <ul class="post-tags">
-        {{ range $tag := .Params.tags }}
-          <li><a href="/tags/{{ $tag | urlize }}"><span class="tag">{{ $tag | title }}</span></a></li>
-        {{ end }}
-      </ul>
+{{ partial "header.html" . }}
+<section class="main post-detail">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <p class="post-meta">
+      @{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} ·
+      {{ .ReadingTime }} دقیقه خواندن</p>
+  </header>
+  <article class="post-content">{{ .Content }}</article>
+  <footer class="post-footer">
+    {{ if isset .Params "tags" }}
+    <ul class="post-tags">
+      {{ range $tag := .Params.tags }}
+      <li><a href="/tags/{{ $tag | urlize }}"><span class="tag">{{ $tag | title }}</span></a></li>
       {{ end }}
-      <p class="post-copyright">       
-        {{ if .Site.Copyright }}{{ .Site.Copyright }}{{ end }}{{ if gt (div (sub now.Unix .Lastmod.Unix) 86400) 100 }}این نوشته  <strong>{{ div (sub now.Unix .Lastmod.Unix) 86400 }}</strong> روز پیش منتشر شده و محتوای آن ممکن است برای امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.{{ end }}
-      </p>
-    </footer>
-    <hr>
-    <div id="darinternet_comment"></div>
-    <script type="text/javascript">    
-      (function () {
-        var cmt = document.createElement('script');
-        cmt.type = 'text/javascript';
-        cmt.async = true;
-        cmt.src = 'https://www.darinternet.com/script/commentscript/ccc91a81-b2c4-e711-90f9-005056000124';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(cmt);
-      })();
-    </script>
-    
-    {{ if ne .Params.comments false }}
-      {{ if .Site.Params.changyan }}
-      <div id="cyReward" role="cylabs" data-use="reward"></div>
-      <script src="//changyan.itc.cn/js/lib/jquery.js"></script>
-      <script src="//changyan.sohu.com/js/changyan.labs.https.js?appid={{ .Site.Params.changyanId }}"></script>
-      <div id="SOHUCS" sid="{{ .URL }}" ></div>
-      <script>
-      (function(){
+    </ul>
+    {{ end }}
+    <p class="post-copyright">
+      {{ if .Site.Copyright }}{{ .Site.Copyright }}{{ end }}{{ if gt (div (sub now.Unix .Lastmod.Unix) 86400) 100 }}این
+      نوشته <strong>{{ div (sub now.Unix .Lastmod.Unix) 86400 }}</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.{{ end }}
+    </p>
+  </footer>
+  <hr>
+  <div id="graphcomment"></div>
+  <script type="text/javascript">
+
+    /* - - - CONFIGURATION VARIABLES - - - */
+
+    // make sure the id is yours
+    window.gc_params = {
+      graphcomment_id: 'elmah',
+
+      // if your website has a fixed header, indicate it's height in pixels
+      fixed_header_height: 0,
+    };
+
+    /* - - - DON'T EDIT BELOW THIS LINE - - - */
+
+
+    (function () {
+      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+      gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    })();
+
+  </script>
+
+  {{ if ne .Params.comments false }}
+  {{ if .Site.Params.changyan }}
+  <div id="cyReward" role="cylabs" data-use="reward"></div>
+  <script src="//changyan.itc.cn/js/lib/jquery.js"></script>
+  <script src="//changyan.sohu.com/js/changyan.labs.https.js?appid={{ .Site.Params.changyanId }}"></script>
+  <div id="SOHUCS" sid="{{ .URL }}"></div>
+  <script>
+    (function () {
       var appid = '{{ .Site.Params.changyanId }}';
       var conf = '{{ .Site.Params.changyanConf }}';
       var width = window.innerWidth || document.documentElement.clientWidth;
       if (width < 960) {
-      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-      {{ else if .Site.DisqusShortname }}{{ template "_internal/disqus.html" . }}
-      {{ else }}{{ end }}
-    {{ end }}
-  </section>
-  {{ partial "footer.html" . }}
+        window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+      } else { var loadJs = function (d, a) { var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement; var b = document.createElement("script"); b.setAttribute("type", "text/javascript"); b.setAttribute("charset", "UTF-8"); b.setAttribute("src", d); if (typeof a === "function") { if (window.attachEvent) { b.onreadystatechange = function () { var e = b.readyState; if (e === "loaded" || e === "complete") { b.onreadystatechange = null; a() } } } else { b.onload = a } } c.appendChild(b) }; loadJs("https://changyan.sohu.com/upload/changyan.js", function () { window.changyan.api.config({ appid: appid, conf: conf }) }); }
+    })(); </script>
+  {{ else if .Site.DisqusShortname }}{{ template "_internal/disqus.html" . }}
+  {{ else }}{{ end }}
+  {{ end }}
+</section>
+{{ partial "footer.html" . }}
 {{ end }}
