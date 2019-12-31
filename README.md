@@ -1,5 +1,8 @@
 # elmah.ir
 
+![](https://wakatime.com/badge/github/Hameds/elmah.ir.svg "Total time on this Project")
+
+
 [elmah.ir](http://elmah.ir) is my personal weblog built with [Hugo](https://github.com/gohugoio/hugo) (A Fast and Flexible Static Site Generator built in [Go](https://golang.org/)). 
 
 ### Run source code locally
