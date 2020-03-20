@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/116-%D8%A2%DA%AF%D8%A7%D9%87%DB%8C-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C-%DA%86%DA%AF%D9%88%D9%86%DA%AF%DB%8C-%D8%A8%D8%AF%D8%B3%D8%AA-%D8%A2%D9%88%D8%B1%D8%AF%D9%86-%DA%A9%D9%84%D9%85%D9%87-%D8%B9%D8%A8%D9%88%D8%B1-application-pool-%D9%87%D8%A7%DB%8C-iis/" />
@@ -196,18 +196,15 @@
       1 دقیقه خواندن</p>
   </header>
   <article class="post-content"><p>این نوشته را در دسته‌بندی برنامه‌نویسی شیرپوینت قرار دادم چرا که بیشترین زمانی که با Application Pool ها سر و کار داشتم زمان نصب و تنظیم شیرپوینت بوده است.</p>
-
 <p>کد اصلی مربوط به نوشته آقای Sahil Malik<a href="http://blah.winsmarts.com/2014-5-Find_an_Application_Pool-and-rsquo;s_password.aspx"> است</a>. در شیرپوینت ۲۰۰۷ می‌توانستیم با استفاده از SPApplicationPool.Password کلمه عبور Application Pool را بدست آوریم که در نسخه‌های بعدی دیگر استفاده نمی‌شود. برنامه‌ای به نام appcmd در آدرس c:\windows\system32\inetsrv وجود دارد که با استفاده از دستور زیر کلمه عبور Application Pool را به شما نمایش می‌دهد. کافی است به جای Your_ApplicationPool_Name نام ApplicationPool‌ مورد نظر را قرار دهید.</p>
-
 <p><code>appcmd.exe list apppool &quot;Your_ApplicationPool_Name&quot; /text:ProcessModel.Password</code></p>
-
 <p>پی نوشت: دستور بالا کلمه عبور را به صورت plain text نمایش می‌دهد. مایکروسافت جهت تنظیم Application Pool ‌های شیرپوینت راهنماهایی دارد. کاری که عموماً به مظور تسریع در نصب و راه‌اندازی در سرورهای توسعه (development) انجام می‌دهیم استفاده از کاربرانی با حداکثر سطح دسترسی در اکتیو دایرکتوری (بعضاً domain admin) است. این کار به هیچ وجه برای محیط‌ مشتری توصیه نمی‌شود.</p>
 </article>
   <footer class="post-footer">
     
     <p class="post-copyright">
       این
-      نوشته <strong>1727</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      نوشته <strong>1809</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
       امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
     </p>
   </footer>
@@ -241,7 +238,7 @@
   
 </section>
 <footer class="site-footer">
-  <p>© 2017-2019 elmah</p>
+  <p>© 2017-2020 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   
 </footer>

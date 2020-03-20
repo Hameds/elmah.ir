@@ -31,7 +31,7 @@ Glimpse چیست؟ به زبان خیلی ساده Glimpse یک چارچوب di
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.62.2" />
 
 
 <link rel="canonical" href="https://elmah.ir/post/27-%D8%A8%DA%86%D9%87-%D9%87%D8%A7-glimpse.-glimpse-%D8%A8%DA%86%D9%87-%D9%87%D8%A7/" />
@@ -195,14 +195,9 @@ Glimpse چیست؟ به زبان خیلی ساده Glimpse یک چارچوب di
       @حامد سعیدی فرد ·
       2 دقیقه خواندن</p>
   </header>
-  <article class="post-content">
-
-<p>این نوشته یک مطلب کوتاه تخصصی در معرفی <a href="http://getglimpse.com/">Glimpse</a> برای ASP.NET MVC است. در نوشته‌های دیگری درباره استفاده‌های glimpse بیشتر صحبت خواهم کرد.</p>
-
+  <article class="post-content"><p>این نوشته یک مطلب کوتاه تخصصی در معرفی <a href="http://getglimpse.com/">Glimpse</a> برای ASP.NET MVC است. در نوشته‌های دیگری درباره استفاده‌های glimpse بیشتر صحبت خواهم کرد.</p>
 <h3 id="glimpse-چیست">Glimpse چیست؟</h3>
-
 <p>به زبان خیلی ساده Glimpse یک چارچوب diagnostic‌ تحت وب است. رایگان و اپن سورس است و خیلی خوب با ASP.NET MVC کار می‌کند، البته نسخه‌هایی از آن برای <a href="https://github.com/Glimpse/Glimpse.PHP">PHP</a> و <a href="https://github.com/Glimpse/Glimpse.WSGI">Python</a> نیز وجود دارد. به کمک Glimpse می‌توانید ببینید برای صفحه جاری چه اتفاقاتی در سمت سرور رخ می‌دهد، مثلاً اطلاعاتی در مورد زمان اجرا، تنظیمات سرور، داده‌های request و &hellip; را می‌توانید مشاهده کنید. Glimpse مشابه Firebug روی مرورگر اجرا می‌شود.</p>
-
 
 
 <figure >
@@ -217,34 +212,23 @@ Glimpse چیست؟ به زبان خیلی ساده Glimpse یک چارچوب di
     
 </figure>
 
-
-<h3 id="چطور-glimpse-را-به-پروژه-asp-net-mvc-خودم-اضافه-کنم">چطور Glimpse را به پروژه ASP.NET MVC خودم اضافه کنم؟</h3>
-
+<h3 id="چطور-glimpse-را-به-پروژه-aspnet-mvc-خودم-اضافه-کنم">چطور Glimpse را به پروژه ASP.NET MVC خودم اضافه کنم؟</h3>
 <p>خیلی ساده، بسته nuget آن را دریافت کنید، برای این کار در پنجره Package Manager Console بنویسید:</p>
-
 <p><code>Install-Package Glimpse.Mvc4</code></p>
-
 <p>با اجرای دستور فوق، کتابخانه‌های مربوط به Glimpse به پروژه شما اضافه شده و خود Glimpse تغییراتی هم در web.config‌ پروژه شما می‌دهد. اگر در نصب glimpse به مشکلی برخورد کردید <a href="http://getglimpse.com/Help/Installation">این راهنمای نصب</a> را مطالعه کنید.</p>
-
 <p>بعد از نصب Glimpse‌ نوبت فعال کردن آن است. پروژه خودتان را run کنید و در انتهای آدرس آن عبارت Glimpse.axd را اضافه کنید تا آدرس شما به صورت زیر درآید: <code>http://your-application-url/Glimpse.axd</code> که به جای your-application-url آدرس برنامه ASP.NET MVC ای شما قرار می‌گیرد. با رفتن به این آدرس صفحه‌ای مطابق شکل زیر ظاهر می‌شود. در این صفحه روی دکمه Turn Glimpse On کلیک کنید تا glimpse برای وب اپلکیشن شما فعال شود.</p>
-
-<p><img src="https://elmah.ir/oldimg/glimpse2.png" alt="" /></p>
-
+<p><img src="https://elmah.ir/oldimg/glimpse2.png" alt=""></p>
 <p>بعد از فعال کردن glimpse به هر صفحه‌ای در برنامه‌تان که بروید یک نوار در بخش پایین صفحه ظاهر می‌شود که اطلاعات مختصری درباره آن صفحه و سرعت لود و تعداد درخواست‌های ajax آن صفحه را به شما نشان می‌دهد. این نوار، مربوط به glimpse است و با کلیک بر روی آن می‌توانید جزئیات بیشتری را مشاهده کنید.</p>
-
-<p><img src="https://elmah.ir/oldimg/glimpse3.png" alt="" /></p>
-
+<p><img src="https://elmah.ir/oldimg/glimpse3.png" alt=""></p>
 <h3 id="خب-من-یک-سری-عدد-درباره-سرعت-لود-صفحه-دیدم-همین-بود">خب من یک سری عدد درباره سرعت لود صفحه دیدم، همین بود؟</h3>
-
 <p>خیر، می‌توانید پلاگین‌های مختلف را به Glimpse اضافه کنید. مثلاً اگر <a href="https://www.nuget.org/packages/Glimpse.EF5/1.3.1">پلاگین Entity Framework</a> را اضافه کنید، می‌توانید در tab های Glimpse کد SQL تولید شده برای نمایش دیتا مدل صفحه را ببینید! به همراه زمانی که برای دریافت اطلاعات صرف شده است.</p>
-
 <p>لیستی از پلاگین‌های مختلف Glimpse‌ را در <a href="http://getglimpse.com/Packages">این آدرس</a> می‌توانید مشاهده کنید. در نوشته دیگری به موضوع نوشتن پلاگین برای glimpse خواهم پرداخت.</p>
 </article>
   <footer class="post-footer">
     
     <p class="post-copyright">
       این
-      نوشته <strong>2330</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
+      نوشته <strong>2412</strong> روز پیش منتشر شده و محتوای آن ممکن است برای
       امروز، غیردقیق یا حتی اشتباه باشد. اگر اشتباهی دیدید لطفاً در گیت‌هاب اعلام یا رفعش کنید.
     </p>
   </footer>
@@ -278,7 +262,7 @@ Glimpse چیست؟ به زبان خیلی ساده Glimpse یک چارچوب di
   
 </section>
 <footer class="site-footer">
-  <p>© 2017-2019 elmah</p>
+  <p>© 2017-2020 elmah</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
   
 </footer>
