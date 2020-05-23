@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Fri, 22 May 2020 01:18:43 +0430</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 23:27:20 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>چطور بفهمیم چه اطلاعاتی از ما در سایت‌ها هک شده و لو رفته است؟</title>
+      <link>https://elmah.ir/post/find-leaked-info/</link>
+      <pubDate>Sat, 23 May 2020 23:27:20 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/find-leaked-info/</guid>
+      <description>هر سال سایت‌های بزرگ و کوچک زیادی هک می‌شن و اطلاعات کاربرانشون افشا می‌شن. بعضی مواقع هم اشتباهات برنامه‌نویسان باعث می‌شه که بخشی از اطلاعات کاربران نشت پیدا کنه. مثال اخیرش لو رفتن اطلاعات ثبت احوال مربوط به ۸۰ میلیون ایرانی به خاطر مشکل در سامانه‌های وزارت بهداشت بود. اما چطور متوجه بشیم که چه اطلاعاتی از ما لو رفته؟
+سرویس فایرفاکس مانیتور موزیلا یک سرویس اینترنتی راه انداخته به نام Firefox Monitor که ایمیل شما رو می‌گیره و اگر در نشت‌های اطلاعاتی اعلام شده پیداش کنه به شما اطلاع می‌ده.</description>
+    </item>
     
     <item>
       <title>چرا حریم شخصی در زندگی آنلاین مهم است؟</title>
