@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Sat, 23 May 2020 23:27:20 +0430</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 21:10:40 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>خروجی اکسل، کابوس حریم شخصی و امنیت اطلاعات</title>
+      <link>https://elmah.ir/post/export-excel/</link>
+      <pubDate>Sun, 24 May 2020 21:10:40 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/export-excel/</guid>
+      <description>نکته کلیدی در موضوع امنیت اینه که «استحکام یک زنجیر به اندازه ضعیف‌ترین حلقه اون زنجیره» وقتی یک نرم‌افزار ایجاد می‌کنیم هم همین نکته در موردش صادقه و امنیت کل سیستم به اندازه ضعیف‌ترین بخش سیستمه. یکی از راهکارهایی که باعث دور زدن تمام تنظیمات امنیتی دسترسی به اطلاعات می‌شه امکان «خروجی اکسل» در نرم‌افزارهاست.
+تصور کنید که امنیت نرم‌افزار و سرورها و شبکه رو برقرار کردید. سیستم عامل و پکیج‌های مورد استفاده رو بروز کردین.</description>
+    </item>
     
     <item>
       <title>چطور بفهمیم چه اطلاعاتی از ما در سایت‌ها هک شده و لو رفته است؟</title>
