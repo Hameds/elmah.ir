@@ -6,10 +6,21 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Sun, 24 May 2020 21:10:40 +0430</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 21:05:09 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>سوال مهم در توسعه نرم‌افزار: آیا مشکل درستی را حل می‌کنیم؟</title>
+      <link>https://elmah.ir/post/right-problem/</link>
+      <pubDate>Mon, 25 May 2020 21:05:09 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/right-problem/</guid>
+      <description>خواندن این نوشته کوتاه باعث شد من هم کمی درباره اهمیت پرسیدن اینکه آیا مشکل درستی را حل می‌کنیم بنویسم.
+مشابه صحبتی که آقای Hemel به درستی اشاره کرده بود اغلب اوقات یا در حال پرسیدن هستیم (تا دیدگاه نسبت به مساله را با دیدگاه مدیر محصول/ مدیر پروژه/کارفرما هماهنگ کنیم) یا در حال اجرای تصمیمات تصویب شده (وظایف برنامه‌نویسی) هستیم.
+رفع مشکل درست = دریافت ارزش درست وظایف تعریف شده در یک پروژه نرم‌افزاری قرار است به تولید یک امکان جدید یا رفع مشکلات موجود محصول کمک کند.</description>
+    </item>
     
     <item>
       <title>خروجی اکسل، کابوس حریم شخصی و امنیت اطلاعات</title>
