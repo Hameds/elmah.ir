@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Tue, 26 May 2020 23:05:30 +0430</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2020 23:28:19 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>لیست APIهای ساخت ایران</title>
+      <link>https://elmah.ir/post/apis-made-in-iran/</link>
+      <pubDate>Wed, 27 May 2020 23:28:19 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/apis-made-in-iran/</guid>
+      <description>این یک نوشته کوتاه برای معرفی لیست API های ارائه شده توسط سایت‌های ایرانی است. حدود ۳ سال پیش من این لیست رو در گیت‌هاب درست کردم و از اون موقع با کمک ۱۹ نفر دیگه یک لیست بلند و بالا از سایت‌های ایرانی که API ارائه می‌کنند رو به صورت دسته‌بندی شده توسعه دادیم.
+روی مخزن پروژه تا حالا بیشتر از ۱۶۰ تغییر انجام شده و یکی از ویژگی‌هاش اینه که در یک نگاه می‌تونید API مورد نظرتون رو در دسته‌بندی مشخص ببینید و از وضعیت بهای ارائه اون API (اینکه آیا رایگان یا غیررایگان است) هم مطلع بشین.</description>
+    </item>
     
     <item>
       <title>شرکت‌های بزرگ ارائه‌دهنده خدمات آنلاین چه حقوقی برای ما قائل هستند؟</title>
