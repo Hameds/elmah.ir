@@ -6,10 +6,20 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Wed, 27 May 2020 23:28:19 +0430</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2020 22:33:01 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>چطور فایل‌ها و آدرس‌های دریافتی را برای ویروس یا بدافزار بررسی کنیم؟</title>
+      <link>https://elmah.ir/post/check-virus/</link>
+      <pubDate>Fri, 29 May 2020 22:33:01 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/check-virus/</guid>
+      <description>این روزها با افزایش استفاده از پیام‌رسان‌ها و متاسفانه به دلیل استفاده از فایل‌های نصب اپلیکیشن اندروید خارج از Google Play گوشی‌های تلفن همراه در کشور ما بسیار آلوده هستند. در مورد کامپیوترهای شخصی هم همیشه با همین مساله روبرو هستیم. گاهی اوقات ممکن است حتی در صورت استفاده از آنتی‌ویروس به دلایلی نظیر بروز نبودن بانک اطلاعات آنتی‌ویروس، یک فایل مخرب شناسایی نشود. راه حل؟
+با Virus Total آشنا شوید نکته بسیار مهم از ارسال فایل‌ها یا آدرس‌های شخصی به Virus Total خودداری کنید.</description>
+    </item>
     
     <item>
       <title>لیست APIهای ساخت ایران</title>
