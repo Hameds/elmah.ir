@@ -6,10 +6,22 @@
     <description>Recent content in Posts on elmah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Fri, 29 May 2020 22:33:01 +0430</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 21:41:32 +0430</lastBuildDate>
     
 	<atom:link href="https://elmah.ir/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>این که فقط دو خط کد بود، پس چرا دو روز طول کشید؟</title>
+      <link>https://elmah.ir/post/code-value/</link>
+      <pubDate>Mon, 20 Jul 2020 21:41:32 +0430</pubDate>
+      
+      <guid>https://elmah.ir/post/code-value/</guid>
+      <description>ارزش کد شما چقدره؟ موقع وبگردی رسیدم به این مقاله که قصد دارم یک ترجمه آزاد و خلاصه ازش رو بنویسم و کمی درباره‌اش صحبت کنیم. موضوع اصلی درباره ارزش کد و دیدگاه‌های اشتباه در مورد این موضوعه.
+تو فقط دو خط کد اضافه کردی، چرا دو روز طول کشید؟
+ممکنه سوال منطقی به نظر برسه، ولی پیش‌فرض‌های وحشتناکی داره:
+ فرض شده که تعداد خط کد = تلاش صورت گرفته فرض شده که تعداد خط کد = ارزش کسب شده فرض شده که همه خط‌های کد یکسان هستند.</description>
+    </item>
     
     <item>
       <title>چطور فایل‌ها و آدرس‌های دریافتی را برای ویروس یا بدافزار بررسی کنیم؟</title>
